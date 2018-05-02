@@ -148,7 +148,7 @@
             this.txtcode.Size = new System.Drawing.Size(133, 20);
             this.txtcode.TabIndex = 17;
             this.txtcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcode_KeyPress);
-            this.txtcode.Leave += new System.EventHandler(this.txtcode_Leave);
+         //   this.txtcode.Leave += new System.EventHandler(this.txtcode_Leave);
             // 
             // label4
             // 

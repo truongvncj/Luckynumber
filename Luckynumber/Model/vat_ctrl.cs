@@ -32,16 +32,16 @@ namespace arconfirmationletter.Model
         }
 
 
-        public IQueryable vatsetlect_all(LinqtoSQLDataContext db)
-        {
+        //public IQueryable vatsetlect_all(LinqtoSQLDataContext db)
+        //{
 
-            //var db = new LinqtoSQLDataContext(connection_string);
-            var rs = from tblVat in db.tblVats
-                     select tblVat;
+        //    //var db = new LinqtoSQLDataContext(connection_string);
+        //    var rs = from tblVat in db.tblVats
+        //             select tblVat;
 
-            return rs;
+        //    return rs;
 
-        }
+        //}
 
         class datainportF
         {
@@ -75,83 +75,83 @@ namespace arconfirmationletter.Model
 
         }
 
-        public void vat_input()
-        {
+        //public void vat_input()
+        //{
 
 
-            //      BackgroundWorker backgroundWorker1;
-            //   CultureInfo provider = CultureInfo.InvariantCulture;
-            //     backgroundWorker1 = new BackgroundWorker();
+        //    //      BackgroundWorker backgroundWorker1;
+        //    //   CultureInfo provider = CultureInfo.InvariantCulture;
+        //    //     backgroundWorker1 = new BackgroundWorker();
 
-            OpenFileDialog theDialog = new OpenFileDialog();
-            theDialog.Title = "Open Excel File Vat_out_zfi excel";
-            theDialog.Filter = "Excel files|*.xlsx; *.xls";
-            theDialog.InitialDirectory = @"C:\";
-            if (theDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filename = theDialog.FileName.ToString();
-
-
-                Thread t1 = new Thread(importsexcel);
-                t1.IsBackground = true;
-                t1.Start(new datainportF() { filename = filename });
+        //    OpenFileDialog theDialog = new OpenFileDialog();
+        //    theDialog.Title = "Open Excel File Vat_out_zfi excel";
+        //    theDialog.Filter = "Excel files|*.xlsx; *.xls";
+        //    theDialog.InitialDirectory = @"C:\";
+        //    if (theDialog.ShowDialog() == DialogResult.OK)
+        //    {
+        //        string filename = theDialog.FileName.ToString();
 
 
-
-                View.Caculating wat = new View.Caculating();
-                Thread t2 = new Thread(showwait);
-                t2.Start(new datashowwait() { wat = wat });
-
-
-                t1.Join();
-                if (t1.ThreadState != ThreadState.Running)
-                {
-
-                    // t2.Abort();
-
-                    wat.Invoke(wat.myDelegate);
+        //        Thread t1 = new Thread(importsexcel);
+        //        t1.IsBackground = true;
+        //        t1.Start(new datainportF() { filename = filename });
 
 
 
-                }
+        //        View.Caculating wat = new View.Caculating();
+        //        Thread t2 = new Thread(showwait);
+        //        t2.Start(new datashowwait() { wat = wat });
+
+
+        //        t1.Join();
+        //        if (t1.ThreadState != ThreadState.Running)
+        //        {
+
+        //            // t2.Abort();
+
+        //            wat.Invoke(wat.myDelegate);
 
 
 
-
-                // check data download
-                string connection_string = Utils.getConnectionstr();
-                LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-                var rs = from tblVat in db.tblVats
-                         where tblVat.Invoice_Amount_Before_VAT == null || tblVat.VAT_Amount == null
-                         select tblVat;
-
-
-                if (rs.Count() > 0)
-                {
+        //        }
 
 
 
 
-                    Viewtable viewtbl = new Viewtable(rs, db, "KHÔNG UPDLOAD ĐƯỢC DO LIST CÁC VAT THIẾU DATA  INVOICE AMOUNT & VAT AMOUNT !",1, DateTime.Today, DateTime.Today);
-                    viewtbl.Visible = false;
-                    viewtbl.ShowDialog();
-
-                    db.ExecuteCommand("DELETE FROM tblVat");
-                    db.SubmitChanges();
-
-
-
-                }
+        //        // check data download
+        //        string connection_string = Utils.getConnectionstr();
+        //        LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
+        //        var rs = from tblVat in db.tblVats
+        //                 where tblVat.Invoice_Amount_Before_VAT == null || tblVat.VAT_Amount == null
+        //                 select tblVat;
 
 
+        //        if (rs.Count() > 0)
+        //        {
 
 
 
-            }
+
+        //            Viewtable viewtbl = new Viewtable(rs, db, "KHÔNG UPDLOAD ĐƯỢC DO LIST CÁC VAT THIẾU DATA  INVOICE AMOUNT & VAT AMOUNT !",1, DateTime.Today, DateTime.Today);
+        //            viewtbl.Visible = false;
+        //            viewtbl.ShowDialog();
+
+        //            db.ExecuteCommand("DELETE FROM tblVat");
+        //            db.SubmitChanges();
 
 
 
-        }
+        //        }
+
+
+
+
+
+        //    }
+
+
+
+        //}
 
 
         private void importsexcel(object obj)

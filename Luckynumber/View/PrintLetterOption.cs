@@ -18,106 +18,106 @@ namespace arconfirmationletter.View
 
         public string groupsending { get; set; }
 
-        public List<Viewtable.ComboboxItem> Getcomboudata()
-        {
+        //public List<Viewtable.ComboboxItem> Getcomboudata()
+        //{
 
 
 
 
-            List<Viewtable.ComboboxItem> dataCollection = new List<Viewtable.ComboboxItem>();
-            string connection_string = Utils.getConnectionstr();
-            LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-            var rs1 = from tbl_CustomerGroup in dc.tbl_CustomerGroups
-                      select tbl_CustomerGroup.Customercode;
+        //    List<Viewtable.ComboboxItem> dataCollection = new List<Viewtable.ComboboxItem>();
+        //    string connection_string = Utils.getConnectionstr();
+        //    LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
+        //    var rs1 = from tbl_CustomerGroup in dc.tbl_CustomerGroups
+        //              select tbl_CustomerGroup.Customercode;
 
 
 
 
-            #region lấy từ customer không có trong group
+        //    #region lấy từ customer không có trong group
 
 
-            var rs = from tblCustomer in dc.tblCustomers
-                         //  from tbl_CustomerGroup in dc.tbl_CustomerGroups
-                     where tblCustomer.Reportsend == true && !(from tbl_CustomerGroup in dc.tbl_CustomerGroups
-                                                               select tbl_CustomerGroup.Customercode).Contains(tblCustomer.Customer)
-                     group tblCustomer by tblCustomer.Customer into g
-                     select new
-                     {
-                         Customer = g.Key,
-                         Name_1 = g.Select(gg => gg.Name_1).FirstOrDefault()
+        //    var rs = from tblCustomer in dc.tblCustomers
+        //                 //  from tbl_CustomerGroup in dc.tbl_CustomerGroups
+        //             where tblCustomer.Reportsend == true && !(from tbl_CustomerGroup in dc.tbl_CustomerGroups
+        //                                                       select tbl_CustomerGroup.Customercode).Contains(tblCustomer.Customer)
+        //             group tblCustomer by tblCustomer.Customer into g
+        //             select new
+        //             {
+        //                 Customer = g.Key,
+        //                 Name_1 = g.Select(gg => gg.Name_1).FirstOrDefault()
 
-                     };
+        //             };
 
-            if (rs.Count() > 0)
-            {
-
-
-                foreach (var item in rs)
-                {
-                    string drowdowvalue = "";
-
-                    drowdowvalue = item.Customer.ToString() + " " + item.Name_1;
+        //    if (rs.Count() > 0)
+        //    {
 
 
-                    Viewtable.ComboboxItem itemcb = new Viewtable.ComboboxItem();
-                    itemcb.Text = drowdowvalue;
-                    itemcb.Value = item.Customer.ToString();
+        //        foreach (var item in rs)
+        //        {
+        //            string drowdowvalue = "";
+
+        //            drowdowvalue = item.Customer.ToString() + " " + item.Name_1;
+
+
+        //            Viewtable.ComboboxItem itemcb = new Viewtable.ComboboxItem();
+        //            itemcb.Text = drowdowvalue;
+        //            itemcb.Value = item.Customer.ToString();
 
 
 
-                    dataCollection.Add(itemcb);
+        //            dataCollection.Add(itemcb);
 
-                }
-
-
-            }
+        //        }
 
 
-            #endregion  c khách ahfng nếu nhóm group koong có dat
+        //    }
+
+
+        //    #endregion  c khách ahfng nếu nhóm group koong có dat
 
    
 
-            #region lấy tên từ customer grop
-            var rs2 = from tbl_CustomerGroup in dc.tbl_CustomerGroups
-                          //  from tbl_CustomerGroup in dc.tbl_CustomerGroups
-                      where (from tblCustomer in dc.tblCustomers
-                             where tblCustomer.Reportsend == true
-                             select tblCustomer.Customer).Contains(tbl_CustomerGroup.Customercode)
-                      group tbl_CustomerGroup by tbl_CustomerGroup.Customergropcode into g2
-                      select new
-                      {
-                          Customer = g2.Key,
-                          Name_1 = g2.Select(gg => gg.Group_Name).FirstOrDefault()
+        //    #region lấy tên từ customer grop
+        //    var rs2 = from tbl_CustomerGroup in dc.tbl_CustomerGroups
+        //                  //  from tbl_CustomerGroup in dc.tbl_CustomerGroups
+        //              where (from tblCustomer in dc.tblCustomers
+        //                     where tblCustomer.Reportsend == true
+        //                     select tblCustomer.Customer).Contains(tbl_CustomerGroup.Customercode)
+        //              group tbl_CustomerGroup by tbl_CustomerGroup.Customergropcode into g2
+        //              select new
+        //              {
+        //                  Customer = g2.Key,
+        //                  Name_1 = g2.Select(gg => gg.Group_Name).FirstOrDefault()
 
-                      };
-
-
-
-            if (rs2.Count() > 0)
-            {
+        //              };
 
 
-                foreach (var item in rs2)
-                {
-                    string drowdowvalue = "";
 
-                    drowdowvalue = item.Customer.ToString() + " " + item.Name_1;
+        //    if (rs2.Count() > 0)
+        //    {
 
 
-                    Viewtable.ComboboxItem itemcb = new Viewtable.ComboboxItem();
-                    itemcb.Text = drowdowvalue;
-                    itemcb.Value = item.Customer.ToString();
-                    dataCollection.Add(itemcb);
+        //        foreach (var item in rs2)
+        //        {
+        //            string drowdowvalue = "";
 
-                }
+        //            drowdowvalue = item.Customer.ToString() + " " + item.Name_1;
 
-            }
-            #endregion
 
-            return dataCollection;
-            //  return null;
+        //            Viewtable.ComboboxItem itemcb = new Viewtable.ComboboxItem();
+        //            itemcb.Text = drowdowvalue;
+        //            itemcb.Value = item.Customer.ToString();
+        //            dataCollection.Add(itemcb);
 
-        }
+        //        }
+
+        //    }
+        //    #endregion
+
+        //    return dataCollection;
+        //    //  return null;
+
+        //}
 
         public PrintLetterOption()
         {
@@ -129,83 +129,83 @@ namespace arconfirmationletter.View
             this.cb_fromcodetocode.CheckState = CheckState.Unchecked;
 
 
-            #region tạo datafileter cho code group
+            //#region tạo datafileter cho code group
 
-            //  List<Viewtable.ComboboxItem> dataCollection = new List<Viewtable.ComboboxItem>();
-            string connection_string = Utils.getConnectionstr();
-            LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
+            ////  List<Viewtable.ComboboxItem> dataCollection = new List<Viewtable.ComboboxItem>();
+            //string connection_string = Utils.getConnectionstr();
+            //LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
 
-            var rs = from tblCustomer in dc.tblCustomers
-                         //    where tblCustomer.Reportsend == true
+            //var rs = from tblCustomer in dc.tblCustomers
+            //             //    where tblCustomer.Reportsend == true
                   
-                     group tblCustomer by tblCustomer.SendingGroup into g
-                     orderby g.Key
-                     select new
-                     {
-                         SendingGroup = g.Key,
-                         //       Customer = g.Select(gg => gg.Customer).FirstOrDefault(),
+            //         group tblCustomer by tblCustomer.SendingGroup into g
+            //         orderby g.Key
+            //         select new
+            //         {
+            //             SendingGroup = g.Key,
+            //             //       Customer = g.Select(gg => gg.Customer).FirstOrDefault(),
 
 
 
 
 
-                     };
+            //         };
 
 
-            //   string drowdowvalue = "";
-            if (rs.Count() > 0)
-            {
+            ////   string drowdowvalue = "";
+            //if (rs.Count() > 0)
+            //{
 
 
-                foreach (var item in rs)
-                {
+            //    foreach (var item in rs)
+            //    {
 
 
-                    if (item.SendingGroup != null)
-                    {
-                        this.input_groupcode.Items.Add(item.SendingGroup.Trim());
-                    }
+            //        if (item.SendingGroup != null)
+            //        {
+            //            this.input_groupcode.Items.Add(item.SendingGroup.Trim());
+            //        }
 
 
-                    // dataCollection.Add(itemcb);
+            //        // dataCollection.Add(itemcb);
 
-                }
+            //    }
 
-                //  return dataCollection;
-            }
-            //    return null;
-
-
-
-            #endregion
-
-
-            #region tạo  only customer fill
-
-            List<Viewtable.ComboboxItem> lisdat = Getcomboudata();
-            if (lisdat != null)
-            {
-                this.input_onlycode.DropDownStyle = ComboBoxStyle.DropDown;
-
-                //      int i = -1;
-                foreach (var item in lisdat)
-                {
-
-                    this.input_onlycode.Items.Add(item);
-                    //i = i + 1;
-                    //if (item.Value.ToString() == cb_cust.Text)
-                    //{
-                    //    cb_cust.SelectedIndex = i;
-
-                    //}
-                }
+            //    //  return dataCollection/*;*/
+            //}
+            ////    return null;
 
 
 
+            //#endregion
 
-            }
 
-            #endregion
+            //#region tạo  only customer fill
+
+            //List<Viewtable.ComboboxItem> lisdat = Getcomboudata();
+            //if (lisdat != null)
+            //{
+            //    this.input_onlycode.DropDownStyle = ComboBoxStyle.DropDown;
+
+            //    //      int i = -1;
+            //    foreach (var item in lisdat)
+            //    {
+
+            //        this.input_onlycode.Items.Add(item);
+            //        //i = i + 1;
+            //        //if (item.Value.ToString() == cb_cust.Text)
+            //        //{
+            //        //    cb_cust.SelectedIndex = i;
+
+            //        //}
+            //    }
+
+
+
+
+            //}
+
+            //#endregion
 
 
         }

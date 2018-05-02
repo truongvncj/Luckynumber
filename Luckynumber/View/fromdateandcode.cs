@@ -75,19 +75,19 @@ namespace arconfirmationletter.View
 
         private void txtcode_Leave(object sender, EventArgs e)
         {
-            if (!Utils.IsValidnumber(txtcode.Text) && txtcode.Text != "")
-            {
-              //  MessageBox.Show("Code khác hàng phải là số !");
-                MessageBox.Show("Code khác hàng phải là số !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //if (!Utils.IsValidnumber(txtcode.Text) && txtcode.Text != "")
+            //{
+            //  //  MessageBox.Show("Code khác hàng phải là số !");
+            //    MessageBox.Show("Code khác hàng phải là số !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                txtcode.Text = "";
-                return;
+            //    txtcode.Text = "";
+            //    return;
 
-            }
-            else
-            {
-                lbname.Text = Model.customerinput_ctrl.getNamecustomer(double.Parse(txtcode.Text));
-            }
+            //}
+            //else
+            //{
+            //    lbname.Text = Model.customerinput_ctrl.getNamecustomer(double.Parse(txtcode.Text));
+            //}
 
 
 

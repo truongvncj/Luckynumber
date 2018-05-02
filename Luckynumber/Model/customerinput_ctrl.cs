@@ -17,29 +17,6 @@ namespace arconfirmationletter.Model
     {
 
 
-        public IQueryable customersetlect_all(LinqtoSQLDataContext db)
-        {
-
-            //  var db = new LinqtoSQLDataContext(connection_string);
-            var rs = from tblCustomer in db.tblCustomers
-                     orderby tblCustomer.Customer
-                     select tblCustomer;
-
-            return rs;
-
-        }
-
-        public static string getNamecustomer(double codekhachang)
-        {
-            string connection_string = Utils.getConnectionstr();
-            var db = new LinqtoSQLDataContext(connection_string);
-            string name = (from tblCustomer in db.tblCustomers
-                           where tblCustomer.Customer == codekhachang
-                           select tblCustomer.Name_1).FirstOrDefault();
-
-            return name;
-
-        }
         public void deleteunuselistcustomer()
         {
 

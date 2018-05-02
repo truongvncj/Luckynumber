@@ -15,17 +15,7 @@ namespace arconfirmationletter.Model
 {
     class fbl5n_ctrl
     {
-        public IQueryable fbl5nsetlect_all(LinqtoSQLDataContext dblink)
-        {
-
-            // var db = new LinqtoSQLDataContext(connection_string);
-            var rs = from tblFBL5N in dblink.tblFBL5Ns
-                     select tblFBL5N;
-
-            return rs;
-
-        }
-
+       
         public bool deleteFbl5n()
         {
             string connection_string = Utils.getConnectionstr();

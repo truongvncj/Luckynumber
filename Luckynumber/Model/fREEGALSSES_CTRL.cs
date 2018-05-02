@@ -46,16 +46,16 @@ namespace arconfirmationletter.Model
         }
 
 
-        public IQueryable Fregalssessetlect_all(LinqtoSQLDataContext db)
-        {
+        //public IQueryable Fregalssessetlect_all(LinqtoSQLDataContext db)
+        //{
 
-            //var db = new LinqtoSQLDataContext(connection_string);
-            var rs = from tbl_FreGlass in db.tbl_FreGlasses
-                     select tbl_FreGlass;
+        //    //var db = new LinqtoSQLDataContext(connection_string);
+        //    var rs = from tbl_FreGlass in db.tbl_FreGlasses
+        //             select tbl_FreGlass;
 
-            return rs;
+        //    return rs;
 
-        }
+        //}
 
 
 
@@ -732,33 +732,6 @@ namespace arconfirmationletter.Model
             string connection_string = Utils.getConnectionstr();
             LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
 
-
-
-
-
-            if (kq == true)
-            {
-
-                var wrong = from b in dc.tblFBL5Nnews
-                            where b.Document_Type.Trim() == "COL"
-                            && b.userupdate == Utils.getusername()
-                            && b.Posting_Date == postingdate
-                            select b;
-
-                if (wrong.Count() > 0)
-                {
-                    dc.tblFBL5Nnews.DeleteAllOnSubmit(wrong);
-                    dc.SubmitChanges();
-                    MessageBox.Show("Done !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-                else
-                {
-                    MessageBox.Show("There are no data to delete !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-
-            }
 
 
 

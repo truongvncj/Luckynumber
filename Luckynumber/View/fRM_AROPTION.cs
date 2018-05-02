@@ -19,48 +19,48 @@ namespace arconfirmationletter.View
     public partial class fRM_AROPTION : Form
     {
 
-        public List<Viewtable.ComboboxItem> Getcomboudata()
-        {
+        //public List<Viewtable.ComboboxItem> Getcomboudata()
+        //{
 
 
 
 
-            List<Viewtable.ComboboxItem> dataCollection = new List<Viewtable.ComboboxItem>();
-            string connection_string = Utils.getConnectionstr();
-            LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
+        //    List<Viewtable.ComboboxItem> dataCollection = new List<Viewtable.ComboboxItem>();
+        //    string connection_string = Utils.getConnectionstr();
+        //    LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
 
-            var rs = from tblCustomer in dc.tblCustomers
-                     where tblCustomer.Reportsend == true
-                     select tblCustomer;
-
-
-            string drowdowvalue = "";
-            if (rs.Count() > 0)
-            {
+        //    var rs = from tblCustomer in dc.tblCustomers
+        //             where tblCustomer.Reportsend == true
+        //             select tblCustomer;
 
 
-                foreach (var item in rs)
-                {
+        //    string drowdowvalue = "";
+        //    if (rs.Count() > 0)
+        //    {
 
 
-                    drowdowvalue = item.Customer.ToString() + " " + item.Name_1;
+        //        foreach (var item in rs)
+        //        {
 
 
-                    Viewtable.ComboboxItem itemcb = new Viewtable.ComboboxItem();
-                    itemcb.Text = drowdowvalue;
-                    itemcb.Value = item.Customer.ToString();
+        //            drowdowvalue = item.Customer.ToString() + " " + item.Name_1;
+
+
+        //            Viewtable.ComboboxItem itemcb = new Viewtable.ComboboxItem();
+        //            itemcb.Text = drowdowvalue;
+        //            itemcb.Value = item.Customer.ToString();
 
 
 
-                    dataCollection.Add(itemcb);
+        //            dataCollection.Add(itemcb);
 
-                }
+        //        }
 
-                return dataCollection;
-            }
-            return null;
+        //        return dataCollection;
+        //    }
+        //    return null;
 
-        }
+        //}
 
 
         public DateTime returndate { get; set; }
@@ -181,24 +181,24 @@ namespace arconfirmationletter.View
             }
         }
 
-        private void txtcode_Leave(object sender, EventArgs e)
-        {
-            if (!Utils.IsValidnumber(txtcode.Text))
-            {
-                //  MessageBox.Show("Code khác hàng phải là số !");
-                MessageBox.Show("Code khác hàng phải là số !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //private void txtcode_Leave(object sender, EventArgs e)
+        //{
+        //    if (!Utils.IsValidnumber(txtcode.Text))
+        //    {
+        //        //  MessageBox.Show("Code khác hàng phải là số !");
+        //        MessageBox.Show("Code khác hàng phải là số !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                txtcode.Text = "";
-                return;
+        //        txtcode.Text = "";
+        //        return;
 
-            }
-            else
-            {
-                lbname.Text = Model.customerinput_ctrl.getNamecustomer(double.Parse(txtcode.Text));
-            }
+        //    }
+        //    else
+        //    {
+        //        lbname.Text = Model.customerinput_ctrl.getNamecustomer(double.Parse(txtcode.Text));
+        //    }
 
 
-        }
+        //}
 
         private void txtcode_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -68,30 +68,30 @@ namespace arconfirmationletter.View
                 LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
 
 
-                var rs2 = from tbl_Comboundtemp in dc.tbl_Comboundtemps
-                          group tbl_Comboundtemp by tbl_Comboundtemp.Region into grthis2
-                          select grthis2;
+                //var rs2 = from tbl_Comboundtemp in dc.tbl_Comboundtemps
+                //          group tbl_Comboundtemp by tbl_Comboundtemp.Region into grthis2
+                //          select grthis2;
 
-                string drowdownshow = "";
+                //string drowdownshow = "";
 
-                foreach (var item in rs2)
-                {
+                //foreach (var item in rs2)
+                //{
                     
-                    if (item.Key.ToString() != "")
-                    {
+                //    if (item.Key.ToString() != "")
+                //    {
 
                 
-                    if (item.Key.ToString().Trim() !="")
-                    {
-                        drowdownshow = item.Key.ToString();
-                        cbregion.Items.Add(drowdownshow);
+                //    if (item.Key.ToString().Trim() !="")
+                //    {
+                //        drowdownshow = item.Key.ToString();
+                //        cbregion.Items.Add(drowdownshow);
 
-                    }
+                //    }
 
-                    }
-                }
-                cbregion.Items.Add("ALL");
-                //    i = -1;
+                //    }
+                //}
+                //cbregion.Items.Add("ALL");
+                ////    i = -1;
                 //   i = i + 1;
 
                 for (int ii = 0; ii < cbregion.Items.Count-1; ii++)
@@ -137,20 +137,20 @@ namespace arconfirmationletter.View
                 LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
 
 
-                var rs2 = from tbl_Comboundtemp in dc.tbl_Comboundtemps
-                          group tbl_Comboundtemp by tbl_Comboundtemp.Region into grthis2
-                          select grthis2;
+                //var rs2 = from tbl_Comboundtemp in dc.tbl_Comboundtemps
+                //          group tbl_Comboundtemp by tbl_Comboundtemp.Region into grthis2
+                //          select grthis2;
 
-                string drowdownshow = "";
+                //string drowdownshow = "";
              
-                foreach (var item in rs2)
-                {
-                    drowdownshow = item.Key.ToString();
-                    cbregion.Items.Add(drowdownshow);
+                //foreach (var item in rs2)
+                //{
+                //    drowdownshow = item.Key.ToString();
+                //    cbregion.Items.Add(drowdownshow);
 
                  
-                }
-                cbregion.Items.Add("ALL");
+                //}
+                //cbregion.Items.Add("ALL");
             //    i = -1;
              //   i = i + 1;
 

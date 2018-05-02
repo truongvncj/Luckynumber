@@ -74,40 +74,40 @@ namespace arconfirmationletter.Model
             return true;
         }
 
-        public IQueryable NKACustomerselect_all(LinqtoSQLDataContext dblink)
-        {
+        //public IQueryable NKACustomerselect_all(LinqtoSQLDataContext dblink)
+        //{
 
-            // var db = new LinqtoSQLDataContext(connection_string);
-            var rs = from p in dblink.tblNKACustomers
-                     select p;
+        //    //// var db = new LinqtoSQLDataContext(connection_string);
+        //    //var rs = from p in dblink.tblNKACustomers
+        //    //         select p;
 
-            return rs;
+        //    //return rs;
 
-        }
+        //}
 
-        public IQueryable NKASumarylistselect_all(LinqtoSQLDataContext dblink)
-        {
+        //public IQueryable NKASumarylistselect_all(LinqtoSQLDataContext dblink)
+        //{
 
-            // var db = new LinqtoSQLDataContext(connection_string);
-            var rs = from p in dblink.tblNKAArletterRpts
-                     select p;
+        //    //// var db = new LinqtoSQLDataContext(connection_string);
+        //    //var rs = from p in dblink.tblNKAArletterRpts
+        //    //         select p;
 
-            return rs;
+        //    //return rs;
 
-        }
+        //}
 
 
-        //    NKADetaillistselect_all
-        public IQueryable NKADetaillistselect_all(LinqtoSQLDataContext dblink)
-        {
+        ////    NKADetaillistselect_all
+        //public IQueryable NKADetaillistselect_all(LinqtoSQLDataContext dblink)
+        //{
 
-            // var db = new LinqtoSQLDataContext(connection_string);
-            var rs = from p in dblink.tblNKAdetailDirectUps
-                     select p;
+        //    //// var db = new LinqtoSQLDataContext(connection_string);
+        //    //var rs = from p in dblink.tblNKAdetailDirectUps
+        //    //         select p;
 
-            return rs;
+        //    //return rs;
 
-        }
+        //}
 
         class datashowwait
         {

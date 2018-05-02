@@ -31,16 +31,16 @@ namespace arconfirmationletter.Model
         }
 
 
-        public IQueryable Edlpsetlect_all(LinqtoSQLDataContext db)
-        {
+        //public IQueryable Edlpsetlect_all(LinqtoSQLDataContext db)
+        //{
 
-            //    var db = new LinqtoSQLDataContext(connection_string);
-            var rs = from tblEDLP in db.tblEDLPs
-                     select tblEDLP;
+        //    //    var db = new LinqtoSQLDataContext(connection_string);
+        //    var rs = from tblEDLP in db.tblEDLPs
+        //             select tblEDLP;
 
-            return rs;
+        //    return rs;
 
-        }
+        //}
 
         class datainportF
         {

@@ -99,10 +99,7 @@ namespace arconfirmationletter.View
             }
             else
             {
-                if (Utils.IsValidnumber(txtcode.Text))
-                {
-                    lbname.Text = Model.customerinput_ctrl.getNamecustomer(double.Parse(txtcode.Text));
-                }
+              
                
             }
 

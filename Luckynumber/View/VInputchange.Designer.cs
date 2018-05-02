@@ -101,11 +101,11 @@ namespace arconfirmationletter.View
             // 
             this.lbseachedit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbseachedit.AutoSize = true;
-            this.lbseachedit.Font = new System.Drawing.Font("Microsoft MHei", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbseachedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbseachedit.ForeColor = System.Drawing.Color.Red;
             this.lbseachedit.Location = new System.Drawing.Point(224, 457);
             this.lbseachedit.Name = "lbseachedit";
-            this.lbseachedit.Size = new System.Drawing.Size(64, 17);
+            this.lbseachedit.Size = new System.Drawing.Size(77, 16);
             this.lbseachedit.TabIndex = 51;
             this.lbseachedit.Text = "F3 :Seach";
             // 
@@ -166,10 +166,12 @@ namespace arconfirmationletter.View
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(403, 19);
+            this.pictureBox2.ErrorImage = global::arconfirmationletter.Properties.Resources.coca_anim_48;
+            this.pictureBox2.Image = global::arconfirmationletter.Properties.Resources.coca_anim_48;
+            this.pictureBox2.InitialImage = global::arconfirmationletter.Properties.Resources.coca_anim_48;
+            this.pictureBox2.Location = new System.Drawing.Point(562, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(304, 45);
+            this.pictureBox2.Size = new System.Drawing.Size(145, 74);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 38;
             this.pictureBox2.TabStop = false;

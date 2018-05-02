@@ -31,16 +31,16 @@ namespace arconfirmationletter.Model
         }
 
 
-        public IQueryable Remarksetlect_all(LinqtoSQLDataContext db)
-        {
+        //public IQueryable Remarksetlect_all(LinqtoSQLDataContext db)
+        //{
 
-            //var db = new LinqtoSQLDataContext(connection_string);
-            var rs = from tbl_Remark in db.tbl_Remarks
-                     select tbl_Remark;
+        //    //var db = new LinqtoSQLDataContext(connection_string);
+        //    var rs = from tbl_Remark in db.tbl_Remarks
+        //             select tbl_Remark;
 
-            return rs;
+        //    return rs;
 
-        }
+        //}
 
 
 
