@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A73260CF-F7D1-4B42-AC47-6F8FFBC418E7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>arconfirmationletter</RootNamespace>
+    <AssemblyName>arconfirmationletter</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>arconfirmationletter.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LOGO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\KAmanagement\KAmanagement\bin\x86\Debug\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\..\KAmanagement\KAmanagement\bin\x86\Debug\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BeeAccouting\BeeAccounting\Service References\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.DataVisualization\12.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.ProcessingObjectModel\12.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\Control_ac.cs" />
+    <Compile Include="Control\ExportToExcel.cs" />
+    <Compile Include="LinqtoSQL.designer.cs">
+      <DependentUpon>LinqtoSQL.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Model\edlpinput_ctrl.cs" />
+    <Compile Include="Model\customerinput_ctrl.cs" />
+    <Compile Include="Model\fREEGALSSES_CTRL.cs" />
+    <Compile Include="Model\L_Gfbl5nnew.cs" />
+    <Compile Include="Model\NKA.cs" />
+    <Compile Include="Model\Remarks.cs" />
+    <Compile Include="Model\vat_ctrl.cs" />
+    <Compile Include="Model\fbl5n_ctrl.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\dsCallogs.cs">
+      <DependentUpon>dsCallogs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\dsCallogs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCallogs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shared\Constants.cs" />
+    <Compile Include="shared\LinQToExcel.cs" />
+    <Compile Include="shared\StringExtensions.cs" />
+    <Compile Include="View\Caculating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Caculating.Designer.cs">
+      <DependentUpon>Caculating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DatecodePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DatecodePicker.Designer.cs">
+      <DependentUpon>DatecodePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DatePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DatePicker.Designer.cs">
+      <DependentUpon>DatePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Depositconfirmline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Depositconfirmline.Designer.cs">
+      <DependentUpon>Depositconfirmline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\filteroption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\filteroption.Designer.cs">
+      <DependentUpon>filteroption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fromdateandcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fromdateandcode.Designer.cs">
+      <DependentUpon>fromdateandcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NKAfRM_AROPTION_Upload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NKAfRM_AROPTION_Upload.Designer.cs">
+      <DependentUpon>NKAfRM_AROPTION_Upload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fRM_AROPTION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fRM_AROPTION.Designer.cs">
+      <DependentUpon>fRM_AROPTION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fromdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fromdate.Designer.cs">
+      <DependentUpon>fromdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrintLetterOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PrintLetterOption.Designer.cs">
+      <DependentUpon>PrintLetterOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Seachcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Seachcode.Designer.cs">
+      <DependentUpon>Seachcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Serversetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Serversetup.Designer.cs">
+      <DependentUpon>Serversetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\valueinput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\valueinput.Designer.cs">
+      <DependentUpon>valueinput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VInputchange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VInputchange.Designer.cs">
+      <DependentUpon>VInputchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="shared\Utils.cs" />
+    <Compile Include="View\Reportsview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reportsview.Designer.cs">
+      <DependentUpon>Reportsview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Viewtable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Viewtable.Designer.cs">
+      <DependentUpon>Viewtable.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Reports\ARCOLrpt.rdlc" />
+    <EmbeddedResource Include="Reports\NKAARletter.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SubARcoldetail.rdlc" />
+    <EmbeddedResource Include="Reports\SubARletterdetail.rdlc" />
+    <EmbeddedResource Include="Reports\ARletterdetail.rdlc" />
+    <EmbeddedResource Include="Reports\ARletter.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Caculating.resx">
+      <DependentUpon>Caculating.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DatecodePicker.resx">
+      <DependentUpon>DatecodePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DatePicker.resx">
+      <DependentUpon>DatePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Depositconfirmline.resx">
+      <DependentUpon>Depositconfirmline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\filteroption.resx">
+      <DependentUpon>filteroption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\fromdateandcode.resx">
+      <DependentUpon>fromdateandcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NKAfRM_AROPTION_Upload.resx">
+      <DependentUpon>NKAfRM_AROPTION_Upload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\fRM_AROPTION.resx">
+      <DependentUpon>fRM_AROPTION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\fromdate.resx">
+      <DependentUpon>fromdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PrintLetterOption.resx">
+      <DependentUpon>PrintLetterOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Seachcode.resx">
+      <DependentUpon>Seachcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Serversetup.resx">
+      <DependentUpon>Serversetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\valueinput.resx">
+      <DependentUpon>valueinput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VInputchange.resx">
+      <DependentUpon>VInputchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reportsview.resx">
+      <DependentUpon>Reportsview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Viewtable.resx">
+      <DependentUpon>Viewtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="View\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="LinqtoSQL.dbml.layout">
+      <DependentUpon>LinqtoSQL.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="LinqtoSQL.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LinqtoSQL.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\tblFBL5Nnew.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reports\dsCallogs.xsc">
+      <DependentUpon>dsCallogs.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\dsCallogs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCallogs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\dsCallogs.xss">
+      <DependentUpon>dsCallogs.xsd</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\thTPVPNXXL.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thJ5M7KRM8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coca-cola-pictures-hd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\th5YSKEK6I1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\th5YSKEK6I.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coca_vs_pepsi_-_anh_chinh - Copy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LOGO.ico" />
+    <None Include="Resources\coca_anim_48.gif" />
+    <None Include="Resources\progress.gif" />
+    <None Include="Resources\cocacola.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

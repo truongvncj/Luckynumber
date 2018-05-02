@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ARconfirmationletter" Class="LinqtoSQLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HAN-L-3PFF7H2;Initial Catalog=ARconfirmationletter;Persist Security Info=True;User ID=sa" SettingsObjectName="arconfirmationletter.Properties.Settings" SettingsPropertyName="ARconfirmationletterConnectionString3" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_ARdetalheaderRpt" Member="tbl_ARdetalheaderRpts">
+    <Type Name="tbl_ARdetalheaderRpt">
+      <Column Name="custcodeGRoup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="customername" Type="System.String" DbType="NVarChar(225)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(225)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="code" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="region" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="dknuoc" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="psnuoc" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="cknuoc" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dkvo" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="psvo" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ckvo" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Fromdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Todate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hideprint" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVat" Member="tblVats">
+    <Type Name="tblVat">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Invoice Registration Number]" Member="Invoice_Registration_Number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Invoice Number]" Member="Invoice_Number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[SAP Delivery Number]" Member="SAP_Delivery_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[SAP Invoice Number]" Member="SAP_Invoice_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Pro Forma Date]" Member="Pro_Forma_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Invoice Amount Before VAT]" Member="Invoice_Amount_Before_VAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[VAT Amount]" Member="VAT_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Customer Number]" Member="Customer_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Customer Name]" Member="Customer_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Street Address]" Member="Street_Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Statuscheck" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_ArletterdetailRpt" Member="tbl_ArletterdetailRpts">
+    <Type Name="tbl_ArletterdetailRpt">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PostingDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DocNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InvoiceAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Paymentamount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Adjamount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Depositamount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="customergroup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="amountinloca" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="prt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hideprint" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_ArletterRpt" Member="tbl_ArletterRpts">
+    <Type Name="tbl_ArletterRpt">
+      <Column Name="custcodegRoup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="customername" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="code" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="sumAmountfull" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="sumEmptydeposit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="StringAmountEmpty" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="sumoffreeclass" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="toDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fromdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="returndate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="prt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hideprint" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_checktemp" Member="tbl_checktemps">
+    <Type Name="tbl_checktemp">
+      <Column Name="docnumber" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(225)" CanBeNull="true" />
+      <Column Name="region" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="CountValueinFBLandVAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="contvalueinEDLP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_ColdetailRpt" Member="tbl_ColdetailRpts">
+    <Type Name="tbl_ColdetailRpt">
+      <Column Name="Account" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Assignment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Postingdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Document Type]" Member="Document_Type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InvoiceNumber" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Document Date]" Member="Document_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Business Area]" Member="Business_Area" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Invoice Registration]" Member="Invoice_Registration" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Invoice Number]" Member="Invoice_Number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Invoice amount before VAT]" Member="Invoice_amount_before_VAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Deposit amount]" Member="Deposit_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codeGroup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SoDelivery" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="dkKetvothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dkChaivothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dkKetvolit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvolit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dkChaivo1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivo1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dkKetnhuathuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhuathuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dkKetnhua1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhua1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dkjoy20" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="joy20l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dkBinhpmicc02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Binhpmicc02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dkbinhpmix9l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="binhpmix9l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dkpalletgo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="palletgo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dkpaletnhua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paletnhua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hideprint" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Comboundtemp" Member="tbl_Comboundtemps">
+    <Type Name="tbl_Comboundtemp">
+      <Column Name="Code" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="codeGroup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(225)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Region" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_CustomerGroup" Member="tbl_CustomerGroups">
+    <Type Name="tbl_CustomerGroup">
+      <Column Name="Customercode" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Customergropcode" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Group Name]" Member="Group_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdressGroup" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_CustomerGroupTemp" Member="tbl_CustomerGroupTemps">
+    <Type Name="tbl_CustomerGroupTemp">
+      <Column Name="Customercode" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Customergropcode" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Group Name]" Member="Group_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AdressGroup" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_detailTEMP" Member="tbl_detailTEMPs">
+    <Type Name="tbl_detailTEMP">
+      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_EmptyGroup" Member="tbl_EmptyGroups">
+    <Type Name="tbl_EmptyGroup">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Name Group Emptty]" Member="Name_Group_Emptty" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_EmptyGroup_tbl_Productlist" Member="tbl_Productlists" ThisKey="id" OtherKey="Empty_Group" Type="tbl_Productlist" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_FreGlass" Member="tbl_FreGlasses">
+    <Type Name="tbl_FreGlass">
+      <Column Name="CUSTOMER" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SALORG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="COLAMT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PERNO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUSTOMERgroupcode" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_FreGlassCleartemp" Member="tbl_FreGlassCleartemps">
+    <Type Name="tbl_FreGlassCleartemp">
+      <Column Name="CUSTOMER" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SALORG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[COL Amount]" Member="COL_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[COL Quantity]" Member="COL_Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_LetterForlow" Member="tbl_LetterForlows">
+    <Type Name="tbl_LetterForlow">
+      <Column Name="Fromdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Todate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="No" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Code" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Return]" Member="Return" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="AgreeorNot" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Preriod" Member="tbl_Preriods">
+    <Type Name="tbl_Preriod">
+      <Column Name="customercodeGR" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NChar(5)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="Realbalace" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Deposit amount]" Member="Deposit_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EmptyString" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="LetterReturn" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AgreeOrDisAgree" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CustomerFeedback" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="NoteByAR" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="fromdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="todate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Productlist" Member="tbl_Productlists">
+    <Type Name="tbl_Productlist">
+      <Column Name="[Mat Number]" Member="Mat_Number" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Mat Text]" Member="Mat_Text" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Mat Group]" Member="Mat_Group" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Mat Group Text]" Member="Mat_Group_Text" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Empty Group]" Member="Empty_Group" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="tbl_EmptyGroup_tbl_Productlist" Member="tbl_EmptyGroup" ThisKey="Empty_Group" OtherKey="id" Type="tbl_EmptyGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_ProductlistTMP" Member="tbl_ProductlistTMPs">
+    <Type Name="tbl_ProductlistTMP">
+      <Column Name="[Mat Number]" Member="Mat_Number" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Mat Text]" Member="Mat_Text" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Mat Group]" Member="Mat_Group" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Mat Group Text]" Member="Mat_Group_Text" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Empty Group]" Member="Empty_Group" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Remark" Member="tbl_Remarks">
+    <Type Name="tbl_Remark">
+      <Column Name="DocumentNo" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Customer" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Temp" Member="tbl_Temps">
+    <Type Name="tbl_Temp">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="server" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="signoffby" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="possition" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="phonecontact" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="siteid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="contactperson" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="nameofbarnch" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="addressofbarnch" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="DeleteData" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditServerData" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Depositintput" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditReportsaffter" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InputDepositInpass" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PriodMake" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Systemconfig" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="uploadBeginbalance" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="endyearPackdata" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="makedepostfromadjamount" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="deductdepositamount" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="redoInputviry" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="uploadpriviousPriod" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="imagesign" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="nationKA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Unsendlist" Member="tbl_Unsendlists">
+    <Type Name="tbl_Unsendlist">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Sorg" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Customer" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(225)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_unuserCustomer" Member="tbl_unuserCustomers">
+    <Type Name="tbl_unuserCustomer">
+      <Column Name="Customer" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCustomer" Member="tblCustomers">
+    <Type Name="tblCustomer">
+      <Column Name="Customer" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SOrg" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Name 1]" Member="Name_1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Telephone 1]" Member="Telephone_1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Cusromergroup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Reportsend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SendingGroup" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCustomerTmp" Member="tblCustomerTmps">
+    <Type Name="tblCustomerTmp">
+      <Column Name="Customer" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SOrg" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Name 1]" Member="Name_1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Telephone 1]" Member="Telephone_1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Reportsend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SendingGroup" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEDLP" Member="tblEDLPs">
+    <Type Name="tblEDLP">
+      <Column Name="[Sold-to]" Member="Sold_to" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Sales Org]" Member="Sales_Org" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Cust Name]" Member="Cust_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Invoice Doc Nr]" Member="Invoice_Doc_Nr" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Outbound Delivery]" Member="Outbound_Delivery" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Mat Number]" Member="Mat_Number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Mat Text]" Member="Mat_Text" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Billed Qty]" Member="Billed_Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Cond Value]" Member="Cond_Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Mat Group]" Member="Mat_Group" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Mat Group Text]" Member="Mat_Group_Text" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UoM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpyGroup" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEDLPfull" Member="tblEDLPfulls">
+    <Type Name="tblEDLPfull">
+      <Column Name="[Sold-to]" Member="Sold_to" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Sales Org]" Member="Sales_Org" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Cust Name]" Member="Cust_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Invoice Doc Nr]" Member="Invoice_Doc_Nr" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Outbound Delivery]" Member="Outbound_Delivery" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Mat Number]" Member="Mat_Number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Mat Text]" Member="Mat_Text" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Billed Qty]" Member="Billed_Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Cond Value]" Member="Cond_Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Mat Group]" Member="Mat_Group" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Mat Group Text]" Member="Mat_Group_Text" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UoM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFBL5beginbalace" Member="tblFBL5beginbalaces">
+    <Type Name="tblFBL5beginbalace">
+      <Column Name="Account" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[Business Area]" Member="Business_Area" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Amount in local currency]" Member="Amount_in_local_currency" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Fullgood amount]" Member="Fullgood_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Deposit amount]" Member="Deposit_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Empty Amount]" Member="Empty_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Empty Amount Notmach]" Member="Empty_Amount_Notmach" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Adjusted amount]" Member="Adjusted_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Payment amount]" Member="Payment_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codeGroup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Ketvothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvolit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivo1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhuathuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhua1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="joy20l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Binhpmicc02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="binhpmix9l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="palletgo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paletnhua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFBL5beginbalaceTemp" Member="tblFBL5beginbalaceTemps">
+    <Type Name="tblFBL5beginbalaceTemp">
+      <Column Name="Account" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[Business Area]" Member="Business_Area" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Amount in local currency]" Member="Amount_in_local_currency" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Fullgood amount]" Member="Fullgood_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Deposit amount]" Member="Deposit_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Empty Amount]" Member="Empty_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Empty Amount Notmach]" Member="Empty_Amount_Notmach" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Adjusted amount]" Member="Adjusted_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Payment amount]" Member="Payment_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codeGroup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Ketvothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvolit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivo1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhuathuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhua1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="joy20l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Binhpmicc02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="binhpmix9l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="palletgo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paletnhua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFBL5N" Member="tblFBL5Ns">
+    <Type Name="tblFBL5N">
+      <Column Name="Fbl5nID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Account" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Assignment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Posting Date]" Member="Posting_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Document Type]" Member="Document_Type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Document Number]" Member="Document_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Business Area]" Member="Business_Area" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Amount in local currency]" Member="Amount_in_local_currency" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Deposit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Completed use]" Member="Completed_use" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFBL5Nnew" Member="tblFBL5Nnews">
+    <Type Name="tblFBL5Nnew">
+      <Column Name="Account" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[Posting Date]" Member="Posting_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Document Type]" Member="Document_Type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Document Number]" Member="Document_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Business Area]" Member="Business_Area" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Invoice" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Formula invoice date]" Member="Formula_invoice_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Amount in local currency]" Member="Amount_in_local_currency" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Invoice Amount]" Member="Invoice_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Fullgood amount]" Member="Fullgood_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Deposit amount]" Member="Deposit_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Empty Amount]" Member="Empty_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Empty Amount Notmach]" Member="Empty_Amount_Notmach" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Payment amount]" Member="Payment_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Adjusted amount]" Member="Adjusted_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Assignment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="codeGroup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SoDelivery" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ketvothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvolit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivo1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhuathuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhua1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="joy20l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Binhpmicc02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="binhpmix9l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="palletgo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paletnhua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="userupdate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Completed use]" Member="Completed_use" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
+      <Column Name="Tempmark" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFBL5NnewRptbalance" Member="tblFBL5NnewRptbalances">
+    <Type Name="tblFBL5NnewRptbalance">
+      <Column Name="Account" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[Posting Date]" Member="Posting_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Document Number]" Member="Document_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Amount in local currency]" Member="Amount_in_local_currency" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Invoice Amount]" Member="Invoice_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Fullgood amount]" Member="Fullgood_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Deposit amount]" Member="Deposit_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Payment amount]" Member="Payment_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Adjusted amount]" Member="Adjusted_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="codeGroup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Ketvothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvolit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivo1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhuathuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhua1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="joy20l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Binhpmicc02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="binhpmix9l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="palletgo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paletnhua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFBL5Nnewthisperiod" Member="tblFBL5Nnewthisperiods">
+    <Type Name="tblFBL5Nnewthisperiod">
+      <Column Name="Account" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[Posting Date]" Member="Posting_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Document Type]" Member="Document_Type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Document Number]" Member="Document_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Business Area]" Member="Business_Area" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Invoice" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Formula invoice date]" Member="Formula_invoice_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Amount in local currency]" Member="Amount_in_local_currency" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Invoice Amount]" Member="Invoice_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Fullgood amount]" Member="Fullgood_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Deposit amount]" Member="Deposit_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Empty Amount]" Member="Empty_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Empty Amount Notmach]" Member="Empty_Amount_Notmach" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Payment amount]" Member="Payment_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Adjusted amount]" Member="Adjusted_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Assignment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="codeGroup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SoDelivery" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ketvothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvolit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivo1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhuathuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhua1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="joy20l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Binhpmicc02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="binhpmix9l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="palletgo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paletnhua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="userupdate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Completed use]" Member="Completed_use" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[COL value]" Member="COL_value" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFBL5NTempRPtview" Member="tblFBL5NTempRPtviews">
+    <Type Name="tblFBL5NTempRPtview">
+      <Column Name="Account" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[Business Area]" Member="Business_Area" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Amount in local currency]" Member="Amount_in_local_currency" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Invoice Amount]" Member="Invoice_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Fullgood amount]" Member="Fullgood_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Deposit amount]" Member="Deposit_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Empty Amount]" Member="Empty_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Payment amount]" Member="Payment_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Adjusted amount]" Member="Adjusted_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="codeGroup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Ketvothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvolit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivo1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhuathuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhua1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="joy20l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Binhpmicc02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="binhpmix9l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="palletgo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paletnhua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFBL5NthisperiodSum" Member="tblFBL5NthisperiodSums">
+    <Type Name="tblFBL5NthisperiodSum">
+      <Column Name="Account" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Customer_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[FBL5N amountps]" Member="FBL5N_amountps" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[FBL5N amountdk]" Member="FBL5N_amountdk" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[FBL5N amountbg]" Member="FBL5N_amountbg" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[FBL5N amount]" Member="FBL5N_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Payment amountps]" Member="Payment_amountps" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Payment amountdk]" Member="Payment_amountdk" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Payment amountbg]" Member="Payment_amountbg" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Adj amountdk]" Member="Adj_amountdk" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Adj amountbg]" Member="Adj_amountbg" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Adj amountps]" Member="Adj_amountps" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Fullgood amountps]" Member="Fullgood_amountps" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Fullgood amountdk]" Member="Fullgood_amountdk" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Fullgood amountbg]" Member="Fullgood_amountbg" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Fullgood amount]" Member="Fullgood_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Empty Amountps]" Member="Empty_Amountps" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Empty Amountdk]" Member="Empty_Amountdk" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Empty Amountbg]" Member="Empty_Amountbg" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Empty Amount]" Member="Empty_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Deposit amountps]" Member="Deposit_amountps" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Deposit amountdk]" Member="Deposit_amountdk" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Deposit amountbg]" Member="Deposit_amountbg" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Deposit_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Ketvothuongdk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvothuongbg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvothuongps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivothuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivothuongdk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivothuongbg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivothuongps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvolitdk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvolitbg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvolitps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketvolit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivo1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivo1litdk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivo1litbg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Chaivo1litps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhuathuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhuathuongdk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhuathuongbg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhuathuongps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhua1lit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhua1litdk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhua1litbg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ketnhua1litps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="joy20l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="joy20ldk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="joy20lbg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="joy20lps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Binhpmicc02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Binhpmicc02dk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Binhpmicc02bg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Binhpmicc02ps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="binhpmix9ldk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="binhpmix9lbg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="binhpmix9l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="binhpmix9lps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="palletgo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="palletgodk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="palletgobg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="palletgops" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paletnhua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paletnhuadk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paletnhuabg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paletnhuaps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reportsend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RealBalance" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Payment amount]" Member="Payment_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Adj amount]" Member="Adj_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNKAArletterRpts" Member="tblNKAArletterRpts">
+    <Type Name="tblNKAArletterRpt">
+      <Column Name="GroupLetter" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Nameletter" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="tongnonuoc" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="tongtienthanhtoan" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="tongno" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="toDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="stt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="returndate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="prt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hideprint" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNKACustomer" Member="tblNKACustomers">
+    <Type Name="tblNKACustomer">
+      <Column Name="No" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Customer" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SOrg" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Area" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Group]" Member="Group" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Group Letter]" Member="Group_Letter" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Branch" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IncoT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="KeyAcc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Pt" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Plant" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ASM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Name in letter]" Member="Name_in_letter" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Name's Account of Customer]" Member="Name_s_Account_of_Customer" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Mail" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Account" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNKAdetailDirectUp" Member="tblNKAdetailDirectUps">
+    <Type Name="tblNKAdetailDirectUp">
+      <Column Name="Account" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Group]" Member="Group" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Group Letter]" Member="Group_Letter" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Name letter]" Member="Name_letter" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Assignment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Document Type]" Member="Document_Type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Document Number]" Member="Document_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Document Date]" Member="Document_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Business Area]" Member="Business_Area" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[PF Inv Date]" Member="PF_Inv_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Invoice Registration No#]" Member="Invoice_Registration_No_" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[PF Inv Number]" Member="PF_Inv_Number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Content + VAT]" Member="Content___VAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Extended Reference]" Member="Extended_Reference" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Net due date]" Member="Net_due_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Arrears after net due date]" Member="Arrears_after_net_due_date" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
