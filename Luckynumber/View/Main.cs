@@ -327,7 +327,7 @@ namespace arconfirmationletter.View
 
         private void updateNewAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fbl5n_ctrl md = new fbl5n_ctrl();
+            luckyno md = new luckyno();
             //   customerinput_ctrl md = new customerinput_ctrl();
             DialogResult kq1 = MessageBox.Show("Xóa tblFBL5n thay thế bằng bảng mới ? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             // bool kq;
@@ -386,7 +386,7 @@ namespace arconfirmationletter.View
 
         private void addUpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //  fbl5n_ctrl md = new fbl5n_ctrl();
+            //  luckyno md = new luckyno();
             //   md.Fbl5n_input();
 
 
@@ -403,16 +403,57 @@ namespace arconfirmationletter.View
 
         private void viewFBL5NToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             string connection_string = Utils.getConnectionstr();
+            var dc = new LinqtoSQLDataContext(connection_string);
 
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
+            var rs2 = from p in dc.tbl_dacbiets
+                      orderby p.luckydate
+                      select new {
+                          Ngày_tháng = p.luckydate,
+                          Giải_đặc_biệt = p.luckynumber
 
-            fbl5n_ctrl md = new fbl5n_ctrl();
-      //      var rs = md.fbl5nsetlect_all(db);
 
-       //     Viewtable viewtbl = new Viewtable(rs, db, "FBL5n data", 100, DateTime.Today, DateTime.Today);
-            //     viewtbl.Visible = false;
-            //       viewtbl.Show();
+                           };
+                          //  where p.username == username
+                          //group p by p.Account into h
+                      //select new
+                      //{
+                      //    Account = h.Key,
+
+                      //    Amount_in_local_currency = h.Sum(m => m.Amount_in_local_currency),
+                      //    Payment_amount = h.Sum(m => m.Payment_amount),
+                      //    Adjusted_amount = h.Sum(m => m.Adjusted_amount),
+                      //    Fullgood_amount = h.Sum(m => m.Fullgood_amount),
+                      //    Invoice_Amount = h.Sum(m => m.Invoice_Amount),
+
+                      //    Deposit_amount = h.Sum(m => m.Deposit_amount),
+
+                      //    Ketvothuong = h.Sum(m => m.Ketvothuong),
+                      //    paletnhua = h.Sum(m => m.paletnhua),
+                      //    palletgo = h.Sum(m => m.palletgo),
+
+                      //    Binhpmicc02 = h.Sum(m => m.Binhpmicc02),
+                      //    binhpmix9l = h.Sum(m => m.binhpmix9l),
+                      //    Chaivo1lit = h.Sum(m => m.Chaivo1lit),
+                      //    Chaivothuong = h.Sum(m => m.Chaivothuong),
+                      //    Document_Number = h.Sum(m => m.Document_Number),
+                      //    joy20l = h.Sum(m => m.joy20l),
+                      //    Ketvolit = h.Sum(m => m.Ketvolit),
+                      //    Ketnhua1lit = h.Sum(m => m.Ketnhua1lit),
+                      //    Ketnhuathuong = h.Sum(m => m.Ketnhuathuong),
+
+
+
+
+
+                      //};
+
+
+            Viewtable viewtbl = new Viewtable(rs2, dc, "LUCKY NUMBER REPORTS" , 100, DateTime.Today, DateTime.Today); //view loại 100 view bình thường là có fromdatetodate
+            viewtbl.Show();
+
+                
         }
 
         private void viewCustomerDataToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2595,7 +2636,7 @@ namespace arconfirmationletter.View
 
             //if (rsthisperiod.Count() != 0)
             //{
-            //    // fbl5n_ctrl md = new fbl5n_ctrl();
+            //    // luckyno md = new luckyno();
             //    //var rs = md.fbl5nsetlect_all();
 
             //    Viewtable viewtbl = new Viewtable(rsthisperiod, dc, "LIST BEGIN BALANCE !", 100, DateTime.Today, DateTime.Today);
@@ -3378,68 +3419,12 @@ namespace arconfirmationletter.View
 
         private void uPLOADCUSTOMERLISTToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            NKA NKA = new NKA();
-            DialogResult kq1 = MessageBox.Show("Xóa toàn bộ dataCustomer ? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //      bool kq;
-            switch (kq1)
-            {
-                case DialogResult.None:
-                    break;
-                case DialogResult.Yes:
-
-                    // this.uploadCustomerToolStripMenuItem.Enabled = false;
-
-                    // this.reportsToolStripMenuItem.Enabled = false;
-
-
-                    NKA.deletetblNKACustomer();
-
-                    NKA.NKACustomer_input();
-
-
-
-                    break;
-                case DialogResult.Cancel:
-                    break;
-                case DialogResult.Abort:
-                    break;
-                case DialogResult.Retry:
-                    break;
-                case DialogResult.Ignore:
-                    break;
-                case DialogResult.OK:
-                    break;
-                case DialogResult.No:
-
-                    NKA.NKACustomer_input();
-
-
-                    break;
-                default:
-                    break;
-            }
-            string connection_string = Utils.getConnectionstr();
-
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-            NKA md = new NKA();
-      //      var rs = md.NKACustomerselect_all(db);
-
-            //  MessageBox.Show("Data add/ change Customer done !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-       //     Viewtable viewtbl = new Viewtable(rs, db, "CUSTOMER DATA", 1, DateTime.Today, DateTime.Today);
-            //     viewtbl.Show();
+          
         }
 
         private void vIEWCUSTOMERToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string connection_string = Utils.getConnectionstr();
-
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-            NKA md = new NKA();
-     //       var rs = md.NKACustomerselect_all(db);
-
-            //  MessageBox.Show("Data add/ change Customer done !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-     //       Viewtable viewtbl = new Viewtable(rs, db, "CUSTOMER DATA", 1, DateTime.Today, DateTime.Today);
-            //     viewtbl.Show();
+      
         }
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
@@ -3472,16 +3457,16 @@ namespace arconfirmationletter.View
 
             Boolean choice = PrintOption.choice;
 
-            if (choice)
-            {
+            //if (choice)
+            //{
 
-                NKA NKA = new NKA();
+            //    NKA NKA = new NKA();
 
-                NKA.deleteNKASumarylist();
+            //    NKA.deleteNKASumarylist();
 
-                NKA.NKAsumary_input(todate, returndate);
+            //    NKA.NKAsumary_input(todate, returndate);
 
-            }
+            //}
 
 
             //  NKAupdateNameletter
@@ -3529,42 +3514,17 @@ namespace arconfirmationletter.View
 
 
 
-
-            string connection_string = Utils.getConnectionstr();
-
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-            NKA md = new NKA();
-    //        var rs = md.NKASumarylistselect_all(db);
-
-            //  MessageBox.Show("Data add/ change Customer done !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-       //     Viewtable viewtbl = new Viewtable(rs, db, "SUMARY DATA", 1, DateTime.Today, DateTime.Today);
-
         }
 
         private void toolStripMenuItem12_Click(object sender, EventArgs e)
         {
 
-            string connection_string = Utils.getConnectionstr();
-
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-            NKA md = new NKA();
-   //      var rs = md.NKASumarylistselect_all(db);
-
-            //  MessageBox.Show("Data add/ change Customer done !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-          //  Viewtable viewtbl = new Viewtable(rs, db, "SUMARY DATA", 1, DateTime.Today, DateTime.Today);
+         
         }
 
         private void toolStripMenuItem11_Click(object sender, EventArgs e)
         {
 
-            string connection_string = Utils.getConnectionstr();
-
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-            NKA md = new NKA();
-        //    var rs = md.NKADetaillistselect_all(db);
-
-            //  MessageBox.Show("Data add/ change Customer done !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-    //        Viewtable viewtbl = new Viewtable(rs, db, "SUMARY DATA", 1, DateTime.Today, DateTime.Today);
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)

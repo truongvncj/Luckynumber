@@ -130,10 +130,9 @@
     <Compile Include="Model\customerinput_ctrl.cs" />
     <Compile Include="Model\fREEGALSSES_CTRL.cs" />
     <Compile Include="Model\L_Gfbl5nnew.cs" />
-    <Compile Include="Model\NKA.cs" />
     <Compile Include="Model\Remarks.cs" />
     <Compile Include="Model\vat_ctrl.cs" />
-    <Compile Include="Model\fbl5n_ctrl.cs" />
+    <Compile Include="Model\Lucky.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

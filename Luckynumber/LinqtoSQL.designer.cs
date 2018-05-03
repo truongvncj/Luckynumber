@@ -30,6 +30,9 @@ namespace arconfirmationletter
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void Inserttbl_dacbiet(tbl_dacbiet instance);
+    partial void Updatetbl_dacbiet(tbl_dacbiet instance);
+    partial void Deletetbl_dacbiet(tbl_dacbiet instance);
     partial void Inserttbl_Temp(tbl_Temp instance);
     partial void Updatetbl_Temp(tbl_Temp instance);
     partial void Deletetbl_Temp(tbl_Temp instance);
@@ -65,11 +68,129 @@ namespace arconfirmationletter
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<tbl_dacbiet> tbl_dacbiets
+		{
+			get
+			{
+				return this.GetTable<tbl_dacbiet>();
+			}
+		}
+		
 		public System.Data.Linq.Table<tbl_Temp> tbl_Temps
 		{
 			get
 			{
 				return this.GetTable<tbl_Temp>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_dacbiet")]
+	public partial class tbl_dacbiet : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Nullable<int> _luckynumber;
+		
+		private System.Nullable<System.DateTime> _luckydate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnluckynumberChanging(System.Nullable<int> value);
+    partial void OnluckynumberChanged();
+    partial void OnluckydateChanging(System.Nullable<System.DateTime> value);
+    partial void OnluckydateChanged();
+    #endregion
+		
+		public tbl_dacbiet()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_luckynumber", DbType="Int")]
+		public System.Nullable<int> luckynumber
+		{
+			get
+			{
+				return this._luckynumber;
+			}
+			set
+			{
+				if ((this._luckynumber != value))
+				{
+					this.OnluckynumberChanging(value);
+					this.SendPropertyChanging();
+					this._luckynumber = value;
+					this.SendPropertyChanged("luckynumber");
+					this.OnluckynumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_luckydate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> luckydate
+		{
+			get
+			{
+				return this._luckydate;
+			}
+			set
+			{
+				if ((this._luckydate != value))
+				{
+					this.OnluckydateChanging(value);
+					this.SendPropertyChanging();
+					this._luckydate = value;
+					this.SendPropertyChanged("luckydate");
+					this.OnluckydateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

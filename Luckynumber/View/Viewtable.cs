@@ -5537,5 +5537,16 @@ namespace arconfirmationletter.View
 
 
         }
+
+        private void dataGridView1_Paint(object sender, PaintEventArgs e)
+        {
+
+            foreach (var c in dataGridView1.Columns)
+            {
+                DataGridViewColumn clm = (DataGridViewColumn)c;
+                clm.HeaderText = clm.HeaderText.Replace("_", " ");
+            }
+
+        }
     }
 }

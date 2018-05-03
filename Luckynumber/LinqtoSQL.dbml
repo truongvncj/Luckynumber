@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Luckynumber" Class="LinqtoSQLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=HAN-L-3PFF7H2;Initial Catalog=Luckynumber;Persist Security Info=True;User ID=sa" SettingsObjectName="arconfirmationletter.Properties.Settings" SettingsPropertyName="LuckynumberConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_dacbiet" Member="tbl_dacbiets">
+    <Type Name="tbl_dacbiet">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="luckynumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="luckydate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.tbl_Temp" Member="tbl_Temps">
     <Type Name="tbl_Temp">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

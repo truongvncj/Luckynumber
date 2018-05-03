@@ -35,13 +35,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lb_user = new System.Windows.Forms.Label();
-            this.lbusername = new System.Windows.Forms.Label();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.lblocate = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inputDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uploadCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -150,9 +145,14 @@
             this.systemConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serverNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userAndRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lb_user = new System.Windows.Forms.Label();
+            this.lbusername = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.lblocate = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -167,6 +167,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(820, 419);
             this.panel1.TabIndex = 20;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.ErrorImage = global::arconfirmationletter.Properties.Resources.coca_anim_48;
+            this.pictureBox1.Image = global::arconfirmationletter.Properties.Resources.coca_anim_48;
+            this.pictureBox1.InitialImage = global::arconfirmationletter.Properties.Resources.coca_anim_48;
+            this.pictureBox1.Location = new System.Drawing.Point(191, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(456, 408);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // menuStrip1
             // 
@@ -184,78 +197,6 @@
             this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // lb_user
-            // 
-            this.lb_user.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lb_user.AutoSize = true;
-            this.lb_user.Location = new System.Drawing.Point(9, 450);
-            this.lb_user.Name = "lb_user";
-            this.lb_user.Size = new System.Drawing.Size(58, 13);
-            this.lb_user.TabIndex = 23;
-            this.lb_user.Text = "User name";
-            // 
-            // lbusername
-            // 
-            this.lbusername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbusername.AutoSize = true;
-            this.lbusername.ForeColor = System.Drawing.Color.Red;
-            this.lbusername.Location = new System.Drawing.Point(73, 450);
-            this.lbusername.Name = "lbusername";
-            this.lbusername.Size = new System.Drawing.Size(35, 13);
-            this.lbusername.TabIndex = 24;
-            this.lbusername.Text = "label1";
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.AllowNavigation = false;
-            this.webBrowser1.AllowWebBrowserDrop = false;
-            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser1.Location = new System.Drawing.Point(831, 31);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.ScrollBarsEnabled = false;
-            this.webBrowser1.Size = new System.Drawing.Size(205, 419);
-            this.webBrowser1.TabIndex = 25;
-            this.webBrowser1.TabStop = false;
-            this.webBrowser1.Url = new System.Uri("https://sites.google.com/site/advcocacolagogle/", System.UriKind.Absolute);
-            this.webBrowser1.WebBrowserShortcutsEnabled = false;
-            // 
-            // lblocate
-            // 
-            this.lblocate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblocate.AutoSize = true;
-            this.lblocate.ForeColor = System.Drawing.Color.Red;
-            this.lblocate.Location = new System.Drawing.Point(268, 453);
-            this.lblocate.Name = "lblocate";
-            this.lblocate.Size = new System.Drawing.Size(23, 13);
-            this.lblocate.TabIndex = 27;
-            this.lblocate.Text = "HN";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(215, 453);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Region: ";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.ErrorImage = global::arconfirmationletter.Properties.Resources.coca_anim_48;
-            this.pictureBox1.Image = global::arconfirmationletter.Properties.Resources.coca_anim_48;
-            this.pictureBox1.InitialImage = global::arconfirmationletter.Properties.Resources.coca_anim_48;
-            this.pictureBox1.Location = new System.Drawing.Point(191, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(456, 408);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // inputDataToolStripMenuItem
             // 
@@ -482,32 +423,32 @@
             this.editFBL5NDataToolStripMenuItem});
             this.fBL5nInputToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fBL5nInputToolStripMenuItem.Name = "fBL5nInputToolStripMenuItem";
-            this.fBL5nInputToolStripMenuItem.Size = new System.Drawing.Size(300, 24);
-            this.fBL5nInputToolStripMenuItem.Text = "FBL5N INPUT";
+            this.fBL5nInputToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
+            this.fBL5nInputToolStripMenuItem.Text = "LUCKY NUMBER";
             this.fBL5nInputToolStripMenuItem.Click += new System.EventHandler(this.fBL5nInputToolStripMenuItem_Click);
             // 
             // updateNewAllToolStripMenuItem
             // 
             this.updateNewAllToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateNewAllToolStripMenuItem.Name = "updateNewAllToolStripMenuItem";
-            this.updateNewAllToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.updateNewAllToolStripMenuItem.Text = "UPLOAD FBL5N ";
+            this.updateNewAllToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.updateNewAllToolStripMenuItem.Text = "UPLOAD ";
             this.updateNewAllToolStripMenuItem.Click += new System.EventHandler(this.updateNewAllToolStripMenuItem_Click);
             // 
             // viewFBL5NToolStripMenuItem
             // 
             this.viewFBL5NToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewFBL5NToolStripMenuItem.Name = "viewFBL5NToolStripMenuItem";
-            this.viewFBL5NToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.viewFBL5NToolStripMenuItem.Text = "VIEW FBL5N ";
+            this.viewFBL5NToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.viewFBL5NToolStripMenuItem.Text = "VIEW LUCKY NUMBER";
             this.viewFBL5NToolStripMenuItem.Click += new System.EventHandler(this.viewFBL5NToolStripMenuItem_Click);
             // 
             // editFBL5NDataToolStripMenuItem
             // 
             this.editFBL5NDataToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editFBL5NDataToolStripMenuItem.Name = "editFBL5NDataToolStripMenuItem";
-            this.editFBL5NDataToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.editFBL5NDataToolStripMenuItem.Text = "EDIT FBL5N ";
+            this.editFBL5NDataToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.editFBL5NDataToolStripMenuItem.Text = "EDIT LUCKY NUMBER";
             this.editFBL5NDataToolStripMenuItem.Click += new System.EventHandler(this.editFBL5NDataToolStripMenuItem_Click);
             // 
             // vATInputToolStripMenuItem
@@ -518,7 +459,7 @@
             this.eDITVATDATAToolStripMenuItem});
             this.vATInputToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vATInputToolStripMenuItem.Name = "vATInputToolStripMenuItem";
-            this.vATInputToolStripMenuItem.Size = new System.Drawing.Size(300, 24);
+            this.vATInputToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.vATInputToolStripMenuItem.Text = "VAT INPUT";
             this.vATInputToolStripMenuItem.Click += new System.EventHandler(this.vATInputToolStripMenuItem_Click);
             // 
@@ -551,7 +492,7 @@
             this.eDITEDLPDATAToolStripMenuItem});
             this.eDLPInputToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eDLPInputToolStripMenuItem.Name = "eDLPInputToolStripMenuItem";
-            this.eDLPInputToolStripMenuItem.Size = new System.Drawing.Size(300, 24);
+            this.eDLPInputToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.eDLPInputToolStripMenuItem.Text = "EDLP INPUT";
             this.eDLPInputToolStripMenuItem.Click += new System.EventHandler(this.eDLPInputToolStripMenuItem_Click);
             // 
@@ -584,7 +525,7 @@
             this.viewChangeDataToolStripMenuItem});
             this.remarkUploadToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remarkUploadToolStripMenuItem.Name = "remarkUploadToolStripMenuItem";
-            this.remarkUploadToolStripMenuItem.Size = new System.Drawing.Size(300, 24);
+            this.remarkUploadToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.remarkUploadToolStripMenuItem.Text = "REMARK UPLOAD";
             // 
             // uploadToolStripMenuItem
@@ -622,7 +563,7 @@
             this.deleteWrongClearFreeGalassToolStripMenuItem});
             this.uploadFreeGlassToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uploadFreeGlassToolStripMenuItem.Name = "uploadFreeGlassToolStripMenuItem";
-            this.uploadFreeGlassToolStripMenuItem.Size = new System.Drawing.Size(300, 24);
+            this.uploadFreeGlassToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.uploadFreeGlassToolStripMenuItem.Text = "FREEGLASSES UPLOAD";
             this.uploadFreeGlassToolStripMenuItem.Click += new System.EventHandler(this.uploadFreeGlassToolStripMenuItem_Click);
             // 
@@ -688,7 +629,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(297, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(301, 6);
             // 
             // dataCheckToolStripMenuItem
             // 
@@ -696,7 +637,7 @@
             this.dataCheckToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataCheckToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dataCheckToolStripMenuItem.Image")));
             this.dataCheckToolStripMenuItem.Name = "dataCheckToolStripMenuItem";
-            this.dataCheckToolStripMenuItem.Size = new System.Drawing.Size(300, 24);
+            this.dataCheckToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.dataCheckToolStripMenuItem.Text = "RECONCILE DATA";
             this.dataCheckToolStripMenuItem.Click += new System.EventHandler(this.dataCheckToolStripMenuItem_Click);
             // 
@@ -705,7 +646,7 @@
             this.iNPUTPERIODDEPOSITAMOUNTToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.iNPUTPERIODDEPOSITAMOUNTToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iNPUTPERIODDEPOSITAMOUNTToolStripMenuItem.Name = "iNPUTPERIODDEPOSITAMOUNTToolStripMenuItem";
-            this.iNPUTPERIODDEPOSITAMOUNTToolStripMenuItem.Size = new System.Drawing.Size(300, 24);
+            this.iNPUTPERIODDEPOSITAMOUNTToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.iNPUTPERIODDEPOSITAMOUNTToolStripMenuItem.Text = "DEPOSIT VERIFY";
             this.iNPUTPERIODDEPOSITAMOUNTToolStripMenuItem.Click += new System.EventHandler(this.iNPUTPERIODDEPOSITAMOUNTToolStripMenuItem_Click);
             // 
@@ -714,14 +655,14 @@
             this.toolStripMenuItem1.BackColor = System.Drawing.Color.White;
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(300, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(304, 26);
             this.toolStripMenuItem1.Text = "TEMP CLOSE THIS PRERIOD";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(297, 6);
+            this.toolStripSeparator14.Size = new System.Drawing.Size(301, 6);
             // 
             // cLOSETHISPRERIODToolStripMenuItem
             // 
@@ -729,21 +670,21 @@
             this.cLOSETHISPRERIODToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cLOSETHISPRERIODToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cLOSETHISPRERIODToolStripMenuItem.Image")));
             this.cLOSETHISPRERIODToolStripMenuItem.Name = "cLOSETHISPRERIODToolStripMenuItem";
-            this.cLOSETHISPRERIODToolStripMenuItem.Size = new System.Drawing.Size(300, 24);
+            this.cLOSETHISPRERIODToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.cLOSETHISPRERIODToolStripMenuItem.Text = "CLOSE THIS PRERIOD";
             this.cLOSETHISPRERIODToolStripMenuItem.Click += new System.EventHandler(this.cLOSETHISPRERIODToolStripMenuItem_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(297, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(301, 6);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.BackColor = System.Drawing.Color.Gold;
             this.toolStripMenuItem2.Image = global::arconfirmationletter.Properties.Resources.th5YSKEK6I1;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(300, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(304, 26);
             this.toolStripMenuItem2.Text = "VIEW BALANCE ";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -751,20 +692,20 @@
             // 
             this.toolStripMenuItem4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(300, 24);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(304, 26);
             this.toolStripMenuItem4.Text = "DEPOSIT CHANGE AFTER CLOSE";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(297, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(301, 6);
             // 
             // rEEDITDEPOSITVERIFYToolStripMenuItem
             // 
             this.rEEDITDEPOSITVERIFYToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.rEEDITDEPOSITVERIFYToolStripMenuItem.Name = "rEEDITDEPOSITVERIFYToolStripMenuItem";
-            this.rEEDITDEPOSITVERIFYToolStripMenuItem.Size = new System.Drawing.Size(300, 24);
+            this.rEEDITDEPOSITVERIFYToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.rEEDITDEPOSITVERIFYToolStripMenuItem.Text = "RE_EDIT DEPOSIT VERIFY";
             this.rEEDITDEPOSITVERIFYToolStripMenuItem.Click += new System.EventHandler(this.rEEDITDEPOSITVERIFYToolStripMenuItem_Click);
             // 
@@ -772,20 +713,20 @@
             // 
             this.uNBLOCKDEPOSITVERIFYToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uNBLOCKDEPOSITVERIFYToolStripMenuItem.Name = "uNBLOCKDEPOSITVERIFYToolStripMenuItem";
-            this.uNBLOCKDEPOSITVERIFYToolStripMenuItem.Size = new System.Drawing.Size(300, 24);
+            this.uNBLOCKDEPOSITVERIFYToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.uNBLOCKDEPOSITVERIFYToolStripMenuItem.Text = "REDO DEPOSIT VERIFY";
             this.uNBLOCKDEPOSITVERIFYToolStripMenuItem.Click += new System.EventHandler(this.uNBLOCKDEPOSITVERIFYToolStripMenuItem_Click);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(297, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(301, 6);
             // 
             // vIEWALLDATABASEONSERVERToolStripMenuItem
             // 
             this.vIEWALLDATABASEONSERVERToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vIEWALLDATABASEONSERVERToolStripMenuItem.Name = "vIEWALLDATABASEONSERVERToolStripMenuItem";
-            this.vIEWALLDATABASEONSERVERToolStripMenuItem.Size = new System.Drawing.Size(300, 24);
+            this.vIEWALLDATABASEONSERVERToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.vIEWALLDATABASEONSERVERToolStripMenuItem.Text = "VIEW DATABASE";
             this.vIEWALLDATABASEONSERVERToolStripMenuItem.Click += new System.EventHandler(this.vIEWALLDATABASEONSERVERToolStripMenuItem_Click);
             // 
@@ -793,20 +734,20 @@
             // 
             this.eDITALLDATABASEToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eDITALLDATABASEToolStripMenuItem.Name = "eDITALLDATABASEToolStripMenuItem";
-            this.eDITALLDATABASEToolStripMenuItem.Size = new System.Drawing.Size(300, 24);
+            this.eDITALLDATABASEToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.eDITALLDATABASEToolStripMenuItem.Text = "SERVER DATABASE EDIT ";
             this.eDITALLDATABASEToolStripMenuItem.Click += new System.EventHandler(this.eDITALLDATABASEToolStripMenuItem_Click);
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(297, 6);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(301, 6);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(300, 24);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(304, 26);
             this.toolStripMenuItem3.Text = "MASS BALANCE DEPOSIT AMOUNT";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
@@ -814,7 +755,7 @@
             // 
             this.dELETEALLDATABASEEDITToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dELETEALLDATABASEEDITToolStripMenuItem.Name = "dELETEALLDATABASEEDITToolStripMenuItem";
-            this.dELETEALLDATABASEEDITToolStripMenuItem.Size = new System.Drawing.Size(300, 24);
+            this.dELETEALLDATABASEEDITToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.dELETEALLDATABASEEDITToolStripMenuItem.Text = "DELETE  DATABASE ";
             this.dELETEALLDATABASEEDITToolStripMenuItem.Click += new System.EventHandler(this.dELETEALLDATABASEEDITToolStripMenuItem_Click);
             // 
@@ -1152,6 +1093,65 @@
             this.userAndRightToolStripMenuItem.Text = "USER && PASSWORD";
             this.userAndRightToolStripMenuItem.Click += new System.EventHandler(this.userAndRightToolStripMenuItem_Click);
             // 
+            // lb_user
+            // 
+            this.lb_user.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lb_user.AutoSize = true;
+            this.lb_user.Location = new System.Drawing.Point(9, 450);
+            this.lb_user.Name = "lb_user";
+            this.lb_user.Size = new System.Drawing.Size(58, 13);
+            this.lb_user.TabIndex = 23;
+            this.lb_user.Text = "User name";
+            // 
+            // lbusername
+            // 
+            this.lbusername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbusername.AutoSize = true;
+            this.lbusername.ForeColor = System.Drawing.Color.Red;
+            this.lbusername.Location = new System.Drawing.Point(73, 450);
+            this.lbusername.Name = "lbusername";
+            this.lbusername.Size = new System.Drawing.Size(35, 13);
+            this.lbusername.TabIndex = 24;
+            this.lbusername.Text = "label1";
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.AllowNavigation = false;
+            this.webBrowser1.AllowWebBrowserDrop = false;
+            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webBrowser1.Location = new System.Drawing.Point(831, 31);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScriptErrorsSuppressed = true;
+            this.webBrowser1.ScrollBarsEnabled = false;
+            this.webBrowser1.Size = new System.Drawing.Size(205, 419);
+            this.webBrowser1.TabIndex = 25;
+            this.webBrowser1.TabStop = false;
+            this.webBrowser1.Url = new System.Uri("https://sites.google.com/site/advcocacolagogle/", System.UriKind.Absolute);
+            this.webBrowser1.WebBrowserShortcutsEnabled = false;
+            // 
+            // lblocate
+            // 
+            this.lblocate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblocate.AutoSize = true;
+            this.lblocate.ForeColor = System.Drawing.Color.Red;
+            this.lblocate.Location = new System.Drawing.Point(268, 453);
+            this.lblocate.Name = "lblocate";
+            this.lblocate.Size = new System.Drawing.Size(23, 13);
+            this.lblocate.TabIndex = 27;
+            this.lblocate.Text = "HN";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(215, 453);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Region: ";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1172,9 +1172,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
