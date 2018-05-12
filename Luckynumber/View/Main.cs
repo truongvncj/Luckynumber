@@ -404,54 +404,54 @@ namespace arconfirmationletter.View
         private void viewFBL5NToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            string connection_string = Utils.getConnectionstr();
-            var dc = new LinqtoSQLDataContext(connection_string);
+            //string connection_string = Utils.getConnectionstr();
+            //var dc = new LinqtoSQLDataContext(connection_string);
 
-            var rs2 = from p in dc.tbl_dacbiets
-                      orderby p.luckydate
-                      select new {
-                          Ngày_tháng = p.luckydate,
-                          Giải_đặc_biệt = p.luckynumber
-
-
-                           };
-                          //  where p.username == username
-                          //group p by p.Account into h
-                      //select new
-                      //{
-                      //    Account = h.Key,
-
-                      //    Amount_in_local_currency = h.Sum(m => m.Amount_in_local_currency),
-                      //    Payment_amount = h.Sum(m => m.Payment_amount),
-                      //    Adjusted_amount = h.Sum(m => m.Adjusted_amount),
-                      //    Fullgood_amount = h.Sum(m => m.Fullgood_amount),
-                      //    Invoice_Amount = h.Sum(m => m.Invoice_Amount),
-
-                      //    Deposit_amount = h.Sum(m => m.Deposit_amount),
-
-                      //    Ketvothuong = h.Sum(m => m.Ketvothuong),
-                      //    paletnhua = h.Sum(m => m.paletnhua),
-                      //    palletgo = h.Sum(m => m.palletgo),
-
-                      //    Binhpmicc02 = h.Sum(m => m.Binhpmicc02),
-                      //    binhpmix9l = h.Sum(m => m.binhpmix9l),
-                      //    Chaivo1lit = h.Sum(m => m.Chaivo1lit),
-                      //    Chaivothuong = h.Sum(m => m.Chaivothuong),
-                      //    Document_Number = h.Sum(m => m.Document_Number),
-                      //    joy20l = h.Sum(m => m.joy20l),
-                      //    Ketvolit = h.Sum(m => m.Ketvolit),
-                      //    Ketnhua1lit = h.Sum(m => m.Ketnhua1lit),
-                      //    Ketnhuathuong = h.Sum(m => m.Ketnhuathuong),
+            //var rs2 = from p in dc.tbl_dacbiets
+            //          orderby p.luckydate
+            //          select new {
+            //              Ngày_tháng = p.luckydate,
+            //              Giải_đặc_biệt = p.luckynumber
 
 
+            //               };
+            //              //  where p.username == username
+            //              //group p by p.Account into h
+            //          //select new
+            //          //{
+            //          //    Account = h.Key,
+
+            //          //    Amount_in_local_currency = h.Sum(m => m.Amount_in_local_currency),
+            //          //    Payment_amount = h.Sum(m => m.Payment_amount),
+            //          //    Adjusted_amount = h.Sum(m => m.Adjusted_amount),
+            //          //    Fullgood_amount = h.Sum(m => m.Fullgood_amount),
+            //          //    Invoice_Amount = h.Sum(m => m.Invoice_Amount),
+
+            //          //    Deposit_amount = h.Sum(m => m.Deposit_amount),
+
+            //          //    Ketvothuong = h.Sum(m => m.Ketvothuong),
+            //          //    paletnhua = h.Sum(m => m.paletnhua),
+            //          //    palletgo = h.Sum(m => m.palletgo),
+
+            //          //    Binhpmicc02 = h.Sum(m => m.Binhpmicc02),
+            //          //    binhpmix9l = h.Sum(m => m.binhpmix9l),
+            //          //    Chaivo1lit = h.Sum(m => m.Chaivo1lit),
+            //          //    Chaivothuong = h.Sum(m => m.Chaivothuong),
+            //          //    Document_Number = h.Sum(m => m.Document_Number),
+            //          //    joy20l = h.Sum(m => m.joy20l),
+            //          //    Ketvolit = h.Sum(m => m.Ketvolit),
+            //          //    Ketnhua1lit = h.Sum(m => m.Ketnhua1lit),
+            //          //    Ketnhuathuong = h.Sum(m => m.Ketnhuathuong),
 
 
 
-                      //};
 
 
-            Viewtable viewtbl = new Viewtable(rs2, dc, "LUCKY NUMBER REPORTS" , 100, DateTime.Today, DateTime.Today); //view loại 100 view bình thường là có fromdatetodate
-            viewtbl.Show();
+            //          //};
+
+
+            //Viewtable viewtbl = new Viewtable(rs2, dc, "LUCKY NUMBER REPORTS" , 100, DateTime.Today, DateTime.Today); //view loại 100 view bình thường là có fromdatetodate
+            //viewtbl.Show();
 
                 
         }
@@ -737,17 +737,17 @@ namespace arconfirmationletter.View
 
 
 
-            //string connection_string = Utils.getConnectionstr();
+            string connection_string = Utils.getConnectionstr();
 
-            //LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
+            LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
 
+           
+            var typeff = typeof(tbl_Product);
 
-            //var typeff = typeof(tbl_Productlist);
-
-            //VInputchange inputcdata = new VInputchange("", "LIST PRODUCT AND EMPTY GROUP", dc, "tbl_Productlist", "tbl_Productlist", typeff, "id", "id");
-            //inputcdata.Visible = false;
-            //inputcdata.ShowDialog();
-            ////View.Inputchange kq = new View.Inputchange
+            VInputchange inputcdata = new VInputchange("", "LIST PRODUCT", dc, "tbl_Product", "tbl_Product", typeff, "id", "id");
+            inputcdata.Visible = false;
+            inputcdata.ShowDialog();
+            //View.Inputchange kq = new View.Inputchange
         }
 
         private void viewProductsListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -755,34 +755,15 @@ namespace arconfirmationletter.View
 
 
 
-            //string connection_string = Utils.getConnectionstr();
+            string connection_string = Utils.getConnectionstr();
 
-            //var db = new LinqtoSQLDataContext(connection_string);
-            //var rs = (from tbl_Productlist in db.tbl_Productlists
-            //          join tbl_EmptyGroup in db.tbl_EmptyGroups on tbl_Productlist.Empty_Group equals tbl_EmptyGroup.id into tblnew
-            //          from cat in tblnew
-            //          select new
-            //          {
+            var db = new LinqtoSQLDataContext(connection_string);
+           
+            var rs = from p in db.tbl_Products
+                     select p;
 
-            //              tbl_Productlist.Mat_Number,
-            //              tbl_Productlist.Mat_Text,
-            //              tbl_Productlist.Empty_Group,
-            //              tbl_Productlist.Mat_Group,
-            //              tbl_Productlist.Mat_Group_Text,
-            //              cat.Name_Group_Emptty
-
-
-
-            //              //tbl_Productlist.Empty_Group
-
-
-            //          }
-            //          );
-
-
-
-            //Viewtable viewtbl = new Viewtable(rs, db, "List of product", 100, DateTime.Today, DateTime.Today);
-            ////      viewtbl.Show();
+            Viewtable viewtbl = new Viewtable(rs, db, "List of product", 100, DateTime.Today, DateTime.Today);
+            viewtbl.Show();
 
 
 

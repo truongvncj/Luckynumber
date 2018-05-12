@@ -917,7 +917,7 @@ namespace arconfirmationletter.View
 
                     valueinput valueinput = new valueinput("Plese input new  Deposit amount value: ");
 
-                    valueinput.ShowDialog();
+                   valueinput.ShowDialog();
                     string newvalue = valueinput.valuetext;
                     string headfield = valueinput.field;
                     bool kq = valueinput.kq;
