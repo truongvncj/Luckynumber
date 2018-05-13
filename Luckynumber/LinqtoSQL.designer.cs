@@ -1257,15 +1257,15 @@ namespace arconfirmationletter
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MatNumber;
+		private string _Marterial_code;
 		
-		private string _MatText;
+		private string _Marterial_name;
 		
-		private string _UoM;
+		private string _Pack_size;
 		
-		private System.Nullable<double> _Pcrate;
+		private System.Nullable<double> _PC_Quy_chuan;
 		
-		private System.Nullable<double> _Ucrate;
+		private System.Nullable<double> _UC_Rate;
 		
 		private int _id;
 		
@@ -1273,16 +1273,16 @@ namespace arconfirmationletter
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMatNumberChanging(string value);
-    partial void OnMatNumberChanged();
-    partial void OnMatTextChanging(string value);
-    partial void OnMatTextChanged();
-    partial void OnUoMChanging(string value);
-    partial void OnUoMChanged();
-    partial void OnPcrateChanging(System.Nullable<double> value);
-    partial void OnPcrateChanged();
-    partial void OnUcrateChanging(System.Nullable<double> value);
-    partial void OnUcrateChanged();
+    partial void OnMarterial_codeChanging(string value);
+    partial void OnMarterial_codeChanged();
+    partial void OnMarterial_nameChanging(string value);
+    partial void OnMarterial_nameChanged();
+    partial void OnPack_sizeChanging(string value);
+    partial void OnPack_sizeChanged();
+    partial void OnPC_Quy_chuanChanging(System.Nullable<double> value);
+    partial void OnPC_Quy_chuanChanged();
+    partial void OnUC_RateChanging(System.Nullable<double> value);
+    partial void OnUC_RateChanged();
     partial void OnidChanging(int value);
     partial void OnidChanged();
     #endregion
@@ -1292,102 +1292,102 @@ namespace arconfirmationletter
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatNumber", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
-		public string MatNumber
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Marterial code]", Storage="_Marterial_code", DbType="NVarChar(255)")]
+		public string Marterial_code
 		{
 			get
 			{
-				return this._MatNumber;
+				return this._Marterial_code;
 			}
 			set
 			{
-				if ((this._MatNumber != value))
+				if ((this._Marterial_code != value))
 				{
-					this.OnMatNumberChanging(value);
+					this.OnMarterial_codeChanging(value);
 					this.SendPropertyChanging();
-					this._MatNumber = value;
-					this.SendPropertyChanged("MatNumber");
-					this.OnMatNumberChanged();
+					this._Marterial_code = value;
+					this.SendPropertyChanged("Marterial_code");
+					this.OnMarterial_codeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatText", DbType="NVarChar(255)")]
-		public string MatText
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Marterial name]", Storage="_Marterial_name", DbType="NVarChar(255)")]
+		public string Marterial_name
 		{
 			get
 			{
-				return this._MatText;
+				return this._Marterial_name;
 			}
 			set
 			{
-				if ((this._MatText != value))
+				if ((this._Marterial_name != value))
 				{
-					this.OnMatTextChanging(value);
+					this.OnMarterial_nameChanging(value);
 					this.SendPropertyChanging();
-					this._MatText = value;
-					this.SendPropertyChanged("MatText");
-					this.OnMatTextChanged();
+					this._Marterial_name = value;
+					this.SendPropertyChanged("Marterial_name");
+					this.OnMarterial_nameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UoM", DbType="NVarChar(255)")]
-		public string UoM
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Pack size]", Storage="_Pack_size", DbType="NVarChar(255)")]
+		public string Pack_size
 		{
 			get
 			{
-				return this._UoM;
+				return this._Pack_size;
 			}
 			set
 			{
-				if ((this._UoM != value))
+				if ((this._Pack_size != value))
 				{
-					this.OnUoMChanging(value);
+					this.OnPack_sizeChanging(value);
 					this.SendPropertyChanging();
-					this._UoM = value;
-					this.SendPropertyChanged("UoM");
-					this.OnUoMChanged();
+					this._Pack_size = value;
+					this.SendPropertyChanged("Pack_size");
+					this.OnPack_sizeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pcrate", DbType="Float")]
-		public System.Nullable<double> Pcrate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[PC Quy chuan]", Storage="_PC_Quy_chuan", DbType="Float")]
+		public System.Nullable<double> PC_Quy_chuan
 		{
 			get
 			{
-				return this._Pcrate;
+				return this._PC_Quy_chuan;
 			}
 			set
 			{
-				if ((this._Pcrate != value))
+				if ((this._PC_Quy_chuan != value))
 				{
-					this.OnPcrateChanging(value);
+					this.OnPC_Quy_chuanChanging(value);
 					this.SendPropertyChanging();
-					this._Pcrate = value;
-					this.SendPropertyChanged("Pcrate");
-					this.OnPcrateChanged();
+					this._PC_Quy_chuan = value;
+					this.SendPropertyChanged("PC_Quy_chuan");
+					this.OnPC_Quy_chuanChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ucrate", DbType="Float")]
-		public System.Nullable<double> Ucrate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[UC Rate]", Storage="_UC_Rate", DbType="Float")]
+		public System.Nullable<double> UC_Rate
 		{
 			get
 			{
-				return this._Ucrate;
+				return this._UC_Rate;
 			}
 			set
 			{
-				if ((this._Ucrate != value))
+				if ((this._UC_Rate != value))
 				{
-					this.OnUcrateChanging(value);
+					this.OnUC_RateChanging(value);
 					this.SendPropertyChanging();
-					this._Ucrate = value;
-					this.SendPropertyChanged("Ucrate");
-					this.OnUcrateChanged();
+					this._UC_Rate = value;
+					this.SendPropertyChanged("UC_Rate");
+					this.OnUC_RateChanged();
 				}
 			}
 		}

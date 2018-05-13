@@ -13,6 +13,7 @@ using System.Globalization;
 using System.Threading;
 using arconfirmationletter.Model;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace arconfirmationletter.View
 {
@@ -193,7 +194,7 @@ namespace arconfirmationletter.View
                 //    this.db = dc;
 
                 //    this.rs = rsthisperiod;
-            //    }
+                //    }
 
 
                 // Viewtable viewtbl = new Viewtable(rs, db, "LETTER RETURN STATUS UPDATE");
@@ -651,7 +652,7 @@ namespace arconfirmationletter.View
             //         };
 
 
-           // string drowdowvalue = "";
+            // string drowdowvalue = "";
             //foreach (var item in rs)
             //{
 
@@ -917,7 +918,7 @@ namespace arconfirmationletter.View
 
                     valueinput valueinput = new valueinput("Plese input new  Deposit amount value: ");
 
-                   valueinput.ShowDialog();
+                    valueinput.ShowDialog();
                     string newvalue = valueinput.valuetext;
                     string headfield = valueinput.field;
                     bool kq = valueinput.kq;
@@ -2313,7 +2314,7 @@ namespace arconfirmationletter.View
 
                 if (colheadertext == "Invoice")// nếu kích ô empty 
                 {
-                    
+
                 }
 
                 if (colheadertext == "FBL5N_amount"
@@ -4638,7 +4639,7 @@ namespace arconfirmationletter.View
 
 
 
-       //     }
+            //     }
 
             //   "LETTER RETURN STATUS UPDATE"
 
@@ -5465,7 +5466,7 @@ namespace arconfirmationletter.View
 
 
 
-            if (kq == true )
+            if (kq == true)
             {
 
 
@@ -5546,6 +5547,13 @@ namespace arconfirmationletter.View
                 DataGridViewColumn clm = (DataGridViewColumn)c;
                 clm.HeaderText = clm.HeaderText.Replace("_", " ");
             }
+
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+
 
         }
     }

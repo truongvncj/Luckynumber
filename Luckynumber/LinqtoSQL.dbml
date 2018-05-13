@@ -56,11 +56,11 @@
   </Table>
   <Table Name="dbo.tbl_Product" Member="tbl_Products">
     <Type Name="tbl_Product">
-      <Column Name="MatNumber" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="MatText" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="UoM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Pcrate" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Ucrate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Marterial code]" Member="Marterial_code" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Marterial name]" Member="Marterial_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Pack size]" Member="Pack_size" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[PC Quy chuan]" Member="PC_Quy_chuan" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[UC Rate]" Member="UC_Rate" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>

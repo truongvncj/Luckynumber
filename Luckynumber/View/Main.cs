@@ -55,59 +55,46 @@ namespace arconfirmationletter.View
 
 
             }
-            if (user.deleteAlldate)
-            {
-                this.dELETEALLDATABASEEDITToolStripMenuItem.Visible = true;
-            }
-            else
-            {
-                this.dELETEALLDATABASEEDITToolStripMenuItem.Visible = false;
-            }
+            //if (user.deleteAlldate)
+            //{
+            //    this.dELETEALLDATABASEEDITToolStripMenuItem.Visible = true;
+            //}
+            //else
+            //{
+            //    this.dELETEALLDATABASEEDITToolStripMenuItem.Visible = false;
+            //}
 
-            if (user.nationKA)
-            {
+            //if (user.nationKA)
+            //{
 
 
 
-                this.inputDataToolStripMenuItem.Enabled = false;
-                this.masterDataToolStripMenuItem.Enabled = false;
-                this.reportsToolStripMenuItem.Enabled = false;
-                this.nKAToolStripMenuItem.Visible = true;
-            }
-            else
-            {
+            //    this.inputDataToolStripMenuItem.Enabled = false;
+            //    this.masterDataToolStripMenuItem.Enabled = false;
+            //    this.reportsToolStripMenuItem.Enabled = false;
+            //    this.nKAToolStripMenuItem.Visible = true;
+            //}
+            //else
+            //{
 
-                this.inputDataToolStripMenuItem.Enabled = true;
-                this.masterDataToolStripMenuItem.Enabled = true;
-                this.reportsToolStripMenuItem.Enabled = true;
-                this.nKAToolStripMenuItem.Visible = false;
-            }
+            //    this.inputDataToolStripMenuItem.Enabled = true;
+            //    this.masterDataToolStripMenuItem.Enabled = true;
+            //    this.reportsToolStripMenuItem.Enabled = true;
+            //    this.nKAToolStripMenuItem.Visible = false;
+            //}
 
             // editOlddatabase
-            if (user.editOlddatabase)
-            {
-                this.eDITALLDATABASEToolStripMenuItem.Visible = true;
-            }
-            else
-            {
-                this.eDITALLDATABASEToolStripMenuItem.Visible = false;
-            }
+            //if (user.editOlddatabase)
+            //{
+            //    this.eDITALLDATABASEToolStripMenuItem.Visible = true;
+            //}
+            //else
+            //{
+            //    this.eDITALLDATABASEToolStripMenuItem.Visible = false;
+            //}
 
             //   Depositintput
-            if (user.Depositintput)
-            {
-                this.dataCheckToolStripMenuItem.Visible = true;
-                this.iNPUTPERIODDEPOSITAMOUNTToolStripMenuItem.Visible = true;
-                this.cLOSETHISPRERIODToolStripMenuItem.Visible = true;
-                this.toolStripSeparator6.Visible = true;
-            }
-            else
-            {
-                this.dataCheckToolStripMenuItem.Visible = false;
-                this.iNPUTPERIODDEPOSITAMOUNTToolStripMenuItem.Visible = false;
-                this.cLOSETHISPRERIODToolStripMenuItem.Visible = false;
-                this.toolStripSeparator6.Visible = false;
-            }
+         
             //  Systemconfig
 
             if (user.Systemconfig)
@@ -121,46 +108,10 @@ namespace arconfirmationletter.View
 
             // uploadBeginbalance
 
-            if (user.uploadBeginbalance)
-            {
-                this.beginingBalanceToolStripMenuItem1.Visible = true;
-            }
-            else
-            {
-                this.beginingBalanceToolStripMenuItem1.Visible = false;
-            }
-
+          
             // endyearPackdata
 
-            if (user.endyearPackdata)
-            {
-                this.yEARENDPACKDATAToolStripMenuItem.Enabled = true;
-            }
-            else
-            {
-                this.yEARENDPACKDATAToolStripMenuItem.Enabled = false;
-            }
-            // InputDepositInpass
-            if (user.InputDepositInpass)
-            {
-                this.rEEDITDEPOSITVERIFYToolStripMenuItem.Visible = true;
-            }
-            else
-            {
-                this.rEEDITDEPOSITVERIFYToolStripMenuItem.Visible = false;
-            }
-
-
-            if (user.redoInputviry)
-            {
-                this.uNBLOCKDEPOSITVERIFYToolStripMenuItem.Visible = true;
-            }
-            else
-            {
-                this.uNBLOCKDEPOSITVERIFYToolStripMenuItem.Visible = false;
-            }
-
-
+          
 
 
             #endregion
