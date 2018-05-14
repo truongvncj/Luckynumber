@@ -3877,7 +3877,7 @@ namespace arconfirmationletter.View
 
             var typeff = typeof(tbl_CTKM);
 
-            VInputchange inputcdata = new VInputchange("", "LIST PRODUCT", dc, "tbl_CTKM", "tbl_CTKM", typeff, "id", "id");
+            VInputchange inputcdata = new VInputchange("", "LIST Programe", dc, "tbl_CTKM", "tbl_CTKM", typeff, "id", "id");
        //     inputcdata.Visible = false;
             inputcdata.ShowDialog();
             //View.Inputchange kq = new View.Inputchange
@@ -3950,6 +3950,40 @@ namespace arconfirmationletter.View
             Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại", 100, DateTime.Today, DateTime.Today);
             viewtbl.Show();
 
+
+
+        }
+
+        private void eDITCUSTOMERLISTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            string connection_string = Utils.getConnectionstr();
+
+            LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
+
+
+            var typeff = typeof(tbl_NhomKHKM);
+
+            VInputchange inputcdata = new VInputchange("", "LIST NHÓM KHKM", dc, "tbl_NhomKHKM", "tbl_NhomKHKM", typeff, "id", "id");
+            //     inputcdata.Visible = false;
+            inputcdata.ShowDialog();
+            //View.Inputchange kq = new View.Inputchange
+        }
+
+        private void uPLOADCUSTOMERDATAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            luckyno md = new luckyno();
+
+            md.UpnhomCTKM();
+
+        }
+
+        private void fREEORDERToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            luckyno md = new luckyno();
+
+            md.UpPUCHASEORDER();
 
 
         }

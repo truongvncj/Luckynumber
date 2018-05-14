@@ -62,6 +62,56 @@ namespace arconfirmationletter.Model
             return true;
         }
 
+        public bool deletePuchasesorderlist()
+        {
+
+            string connection_string = Utils.getConnectionstr();
+            var db = new LinqtoSQLDataContext(connection_string);
+            //   var rs = from tblFBL5N in db.tblFBL5Ns
+            //          select tblFBL5N;
+            db.CommandTimeout = 0;
+            try
+            {
+                db.ExecuteCommand("DELETE FROM tbl_Salesorder");
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Lỗi khi xóa bảng tbl_Salesorder " + ex.ToString());
+            }
+            //    dc.tblFBL5Nnewthisperiods.DeleteAllOnSubmit(rsthisperiod);
+            db.SubmitChanges();
+
+            return true;
+
+            // throw new NotImplementedException();
+        }
+
+
+        public bool deletelishnhomKHKMlist()
+        {
+            string connection_string = Utils.getConnectionstr();
+            var db = new LinqtoSQLDataContext(connection_string);
+            //   var rs = from tblFBL5N in db.tblFBL5Ns
+            //          select tblFBL5N;
+            db.CommandTimeout = 0;
+            try
+            {
+                db.ExecuteCommand("DELETE FROM tbl_NhomKHKM");
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Lỗi khi xóa bảng tbl_CTKM " + ex.ToString());
+            }
+            //    dc.tblFBL5Nnewthisperiods.DeleteAllOnSubmit(rsthisperiod);
+            db.SubmitChanges();
+
+            return true;
+        }
+
 
         public static void viewall()
         {
@@ -556,6 +606,395 @@ namespace arconfirmationletter.Model
         }
 
 
+        private void importNhomCTKMsexcel(object obj)
+        {
+            //     List<tblFBL5N> fbl5n_ctrllist = new List<tblFBL5N>();
+            luckyno md = new luckyno();
+
+            bool kq = md.deletelishnhomKHKMlist();
+
+            datainportF inf = (datainportF)obj;
+
+            string filename = inf.filename;
+
+
+
+            //      ExcelProvider ExcelProvide = new ExcelProvider();
+            //#endregion
+            System.Data.DataTable sourceData = ExcelProvider.GetDataFromExcel(filename);
+
+            System.Data.DataTable batable = new System.Data.DataTable();
+
+            batable.Columns.Add("manhomkh", typeof(string));
+            batable.Columns.Add("cokh", typeof(double));
+         
+
+            int manhomkhid = -1;
+            int cokhid = -1;
+        
+            string value = "";
+            for (int rowid = 0; rowid < 5; rowid++)
+            {
+                // headindex = 1;
+                for (int columid = 0; columid < sourceData.Columns.Count; columid++)
+                {
+                    #region
+
+                    try
+                    {
+                        value = sourceData.Rows[rowid][columid].ToString();
+
+                    }
+                    catch (Exception)
+                    {
+                        value = "";
+                        //  throw;
+                    }
+                    //            MessageBox.Show(value +":"+ rowid);
+
+                    if (value != null && value != "")
+                    {
+
+                        //    #region setcolum
+                        if (value.Trim() == "Mã CTKM")  //Account
+                        {
+                            manhomkhid = columid;
+                            //  headindex = rowid;
+                        }
+
+                        if (value.Trim() == ("Sold-to pt"))
+                        {
+
+                            cokhid = columid;
+                            //    headindex = 0;
+
+                        }
+
+
+                     
+                    }
+                    #endregion
+
+
+                }// colum
+
+            }// roww off heatder
+
+
+
+            if (manhomkhid == -1)
+            {
+                MessageBox.Show("Dữ liệu thiếu cột Mã CTKM", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (cokhid == -1)
+            {
+                MessageBox.Show("Dữ liệu thiếu cột Sold-to pt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            for (int rowixd = 0; rowixd < sourceData.Rows.Count; rowixd++)
+            {
+
+                #region
+
+
+
+                string codekhahang = sourceData.Rows[rowixd][cokhid].ToString();
+                if (codekhahang != "" && Utils.IsValidnumber(codekhahang) && sourceData.Rows[rowixd][cokhid].ToString().Trim() != "")
+                {
+
+                    if (double.Parse(codekhahang) > 0)
+                    {
+                        DataRow dr = batable.NewRow();
+                        dr["manhomkh"] = sourceData.Rows[rowixd][manhomkhid].ToString().Truncate(225).Trim();
+                         dr["cokh"] = double.Parse(sourceData.Rows[rowixd][cokhid].ToString());//.Truncate(225).Trim();
+
+                       batable.Rows.Add(dr);
+
+
+                    }
+
+                }
+
+                #endregion
+            }
+
+            //    Utils util = new Utils();
+            string destConnString = Utils.getConnectionstr();
+
+            //---------------fill data
+
+
+            using (SqlBulkCopy bulkCopy = new SqlBulkCopy(destConnString))
+            {
+
+                bulkCopy.DestinationTableName = "tbl_NhomKHKM";
+                // Write from the source to the destination.
+                bulkCopy.ColumnMappings.Add("manhomkh", "[Mã_nhóm_KH]");
+                bulkCopy.ColumnMappings.Add("cokh", "[CodeKH]");
+            
+
+
+                try
+                {
+                    bulkCopy.WriteToServer(batable);
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString(), "Thông báo lỗi Bulk Copy !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Thread.CurrentThread.Abort();
+                }
+
+            }
+
+
+
+
+
+        }
+
+        private void importPuchaseorderlistsexcel(object obj)
+        {
+            //     List<tblFBL5N> fbl5n_ctrllist = new List<tblFBL5N>();
+            luckyno md = new luckyno();
+
+            bool kq = md.deletePuchasesorderlist();
+
+            datainportF inf = (datainportF)obj;
+
+            string filename = inf.filename;
+
+
+
+            //      ExcelProvider ExcelProvide = new ExcelProvider();
+            //#endregion
+            System.Data.DataTable sourceData = ExcelProvider.GetDataFromExcel(filename);
+
+            System.Data.DataTable batable = new System.Data.DataTable();
+
+            batable.Columns.Add("Created", typeof(string));
+            batable.Columns.Add("SOrg", typeof(string));
+            batable.Columns.Add("POnumber", typeof(string));
+            batable.Columns.Add("docDate", typeof(DateTime));
+            batable.Columns.Add("dlvDate", typeof(DateTime));
+            batable.Columns.Add("Document", typeof(string));
+            batable.Columns.Add("Soldtopt", typeof(double));
+            batable.Columns.Add("Name", typeof(string));
+            batable.Columns.Add("Material", typeof(string));
+            batable.Columns.Add("Description", typeof(string));
+            batable.Columns.Add("Orderqty", typeof(double));
+            batable.Columns.Add("ConfirmQty", typeof(double));
+            batable.Columns.Add("Status", typeof(string));
+            batable.Columns.Add("Item", typeof(double));
+
+
+            //bulkCopy.ColumnMappings.Add("UCRate", "[Net price]");
+            //bulkCopy.ColumnMappings.Add("UCRate", "[Rj]");
+            //bulkCopy.ColumnMappings.Add("UCRate", "[Plnt]");
+            //bulkCopy.ColumnMappings.Add("UCRate", "[Net Value]");
+
+
+            int Marterialcodeid = -1;
+            int Marterialnameid = -1;
+            int Packsizeid = -1;
+            int PCQuychuanid = -1;
+            int UCRateid = -1;
+
+            for (int rowid = 0; rowid < 5; rowid++)
+            {
+                // headindex = 1;
+                for (int columid = 0; columid < sourceData.Columns.Count; columid++)
+                {
+                    #region
+                    string value = "";
+                    try
+                    {
+                        value = sourceData.Rows[rowid][columid].ToString();
+
+                    }
+                    catch (Exception)
+                    {
+                        value = "";
+                        //  throw;
+                    }
+                    //            MessageBox.Show(value +":"+ rowid);
+
+                    if (value != null && value != "")
+                    {
+
+                        //    #region setcolum
+                        if (value.Trim() == ("Marterial code"))  //Account
+                        {
+                            Marterialcodeid = columid;
+                            //  headindex = rowid;
+                        }
+
+                        if (value.Trim() == ("Marterial name"))
+                        {
+
+                            Marterialnameid = columid;
+                            //    headindex = 0;
+
+                        }
+
+
+                        if (value.Trim() == ("Pack size"))
+                        {
+
+                            Packsizeid = columid;
+                            //   headindex = 0;
+
+
+
+                        }
+
+                        if (value.Trim() == ("PC Quy chuan"))
+                        {
+
+                            PCQuychuanid = columid;
+                            //   headindex = 0;
+
+
+
+                        }
+
+
+                        if (value.Trim() == ("UC Rate"))
+                        {
+                            UCRateid = columid;
+
+                        }
+
+                    }
+                    #endregion
+
+
+                }// colum
+
+            }// roww off heatder
+
+
+            if (Marterialcodeid == -1)
+            {
+                MessageBox.Show("Dữ liệu thiếu cột Marterial code", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (Marterialnameid == -1)
+            {
+                MessageBox.Show("Dữ liệu thiếu cột Marterial name", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (Packsizeid == -1)
+            {
+                MessageBox.Show("Dữ liệu thiếu cột Pack size", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (PCQuychuanid == -1)
+            {
+                MessageBox.Show("Dữ liệu thiếu cột PCQuychuan", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (UCRateid == -1)
+            {
+                MessageBox.Show("Dữ liệu thiếu cột UC Rate", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+
+            for (int rowixd = 0; rowixd < sourceData.Rows.Count; rowixd++)
+            {
+
+                #region
+
+
+                //   string valuepricelist = Utils.GetValueOfCellInExcel(worksheet, rowid, columpricelist);
+                string PCQuychuan = sourceData.Rows[rowixd][PCQuychuanid].ToString();
+                if (PCQuychuan != "" && Utils.IsValidnumber(PCQuychuan) && sourceData.Rows[rowixd][PCQuychuanid].ToString().Trim() != "")
+                {
+
+                    if (double.Parse(PCQuychuan) > 0)
+                    {
+                        DataRow dr = batable.NewRow();
+                        dr["Marterialcode"] = sourceData.Rows[rowixd][Marterialcodeid].ToString().Truncate(225).Trim();
+                        dr["Marterialname"] = sourceData.Rows[rowixd][Marterialnameid].ToString().Truncate(225).Trim();
+                        dr["Packsize"] = sourceData.Rows[rowixd][Packsizeid].ToString().Truncate(225).Trim();
+                        dr["PCQuychuan"] = double.Parse(sourceData.Rows[rowixd][PCQuychuanid].ToString());//.Truncate(225).Trim();
+                        dr["UCRate"] = double.Parse(sourceData.Rows[rowixd][UCRateid].ToString());//.Truncate(225).Trim();
+
+
+
+
+                        batable.Rows.Add(dr);
+
+
+                    }
+
+                }
+
+                #endregion
+            }
+
+            //    Utils util = new Utils();
+            string destConnString = Utils.getConnectionstr();
+
+            //---------------fill data
+
+
+            using (SqlBulkCopy bulkCopy = new SqlBulkCopy(destConnString))
+            {
+
+                bulkCopy.DestinationTableName = "tbl_Salesorder";
+                // Write from the source to the destination.
+                bulkCopy.ColumnMappings.Add("UCRate", "[Created]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[SOrg#]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[PO number]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[Doc# Date]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[Dlv#Date]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[Document]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[Sold-to pt]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[Name 1]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[Material]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[Description]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[Order qty]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[ConfirmQty]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[Status]");
+
+                bulkCopy.ColumnMappings.Add("UCRate", "[Item]");
+
+                bulkCopy.ColumnMappings.Add("UCRate", "[Net price]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[Rj]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[Plnt]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[Net Value]");
+           
+
+                try
+                {
+                    bulkCopy.WriteToServer(batable);
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString(), "Thông báo lỗi Bulk Copy !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Thread.CurrentThread.Abort();
+                }
+
+            }
+
+
+
+
+
+        }
+
+
         class datashowwait
         {
 
@@ -646,7 +1085,52 @@ namespace arconfirmationletter.Model
 
                 string filename = theDialog.FileName.ToString();
 
-                Thread t1 = new Thread(importProgamelistsexcel);
+                Thread t1 = new Thread(importPuchaseorderlistsexcel);
+                t1.IsBackground = true;
+                t1.Start(new datainportF() { filename = filename });
+
+
+
+                View.Caculating wat = new View.Caculating();
+                Thread t2 = new Thread(showwait);
+                t2.Start(new datashowwait() { wat = wat });
+
+
+                t1.Join();
+                if (t1.ThreadState != ThreadState.Running)
+                {
+
+                    // t2.Abort();
+
+                    wat.Invoke(wat.myDelegate);
+
+
+
+                }
+
+
+            }
+
+        }
+
+
+        public void UpPUCHASEORDER()
+        {
+
+
+            //   CultureInfo provider = CultureInfo.InvariantCulture;
+
+            OpenFileDialog theDialog = new OpenFileDialog();
+            theDialog.Title = "Open Excel File Puchase Order List excel";
+            theDialog.Filter = "Excel files|*.xlsx; *.xls";
+            theDialog.InitialDirectory = @"C:\";
+            if (theDialog.ShowDialog() == DialogResult.OK)
+            {
+
+
+                string filename = theDialog.FileName.ToString();
+
+                Thread t1 = new Thread(importPuchaseorderlistsexcel);
                 t1.IsBackground = true;
                 t1.Start(new datainportF() { filename = filename });
 
@@ -676,5 +1160,52 @@ namespace arconfirmationletter.Model
 
 
 
+        public void UpnhomCTKM()
+        {
+            //  throw new NotImplementedException();
+
+            //   CultureInfo provider = CultureInfo.InvariantCulture;
+
+            OpenFileDialog theDialog = new OpenFileDialog();
+            theDialog.Title = "Open Excel File Nhóm CTKM theo code khách hàng List excel";
+            theDialog.Filter = "Excel files|*.xlsx; *.xls";
+            theDialog.InitialDirectory = @"C:\";
+            if (theDialog.ShowDialog() == DialogResult.OK)
+            {
+
+
+                string filename = theDialog.FileName.ToString();
+
+                Thread t1 = new Thread(importNhomCTKMsexcel);
+                t1.IsBackground = true;
+                t1.Start(new datainportF() { filename = filename });
+
+
+
+                View.Caculating wat = new View.Caculating();
+                Thread t2 = new Thread(showwait);
+                t2.Start(new datashowwait() { wat = wat });
+
+
+                t1.Join();
+                if (t1.ThreadState != ThreadState.Running)
+                {
+
+                    // t2.Abort();
+
+                    wat.Invoke(wat.myDelegate);
+
+
+
+                }
+
+
+            }
+
+
+
+        }
+
+     
     } // en class
 } // endname space
