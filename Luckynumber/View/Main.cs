@@ -303,7 +303,7 @@ namespace arconfirmationletter.View
                     //   this.reportsToolStripMenuItem.Enabled = false;
 
 
-                    md.Fbl5n_input2();
+                    md.Uploadproductlist();
 
 
                     break;
@@ -511,120 +511,7 @@ namespace arconfirmationletter.View
 
         private void dataCheckToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string connection_string = Utils.getConnectionstr();
-
-            //        LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-            LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-
-            dc.CommandTimeout = 0;
-            dc.ExecuteCommand("DELETE FROM tbl_ProductlistTMP");
-
-            dc.SubmitChanges();
-
-
-            dc.ExecuteCommand("DELETE FROM tblEDLP WHERE  tblEDLP.[Sold-to] IN (SELECT  tbl_unuserCustomer.Customer FROM tbl_unuserCustomer )");
-            dc.SubmitChanges();
-
-
-            dc.ExecuteCommand("DELETE FROM tblVat  WHERE  tblVat.[Customer Number] IN (SELECT  tbl_unuserCustomer.Customer FROM tbl_unuserCustomer )");
-            dc.SubmitChanges();
-
-
-            dc.ExecuteCommand("DELETE FROM tblFBL5N  WHERE  tblFBL5N.[Account] IN (SELECT  tbl_unuserCustomer.Customer FROM tbl_unuserCustomer )");
-            dc.SubmitChanges();
-
-            //dc.ExecuteCommand("DELETE FROM tblFBL5Nnew  WHERE  tblFBL5Nnew.[Tempmark] = 1");  // xóa các tem
-            //dc.SubmitChanges();
-
-
-
-
-            //#region  DeleteTempFBL5nnew DeleteTempFBL5nnew
-            //SqlConnection conn2 = null;
-            //SqlDataReader rdr1 = null;
-
-            //string destConnString = Utils.getConnectionstr();
-            //try
-            //{
-
-            //    conn2 = new SqlConnection(destConnString);
-            //    conn2.Open();
-            //    SqlCommand cmd1 = new SqlCommand("DeleteTempFBL5nnew", conn2);
-            //    cmd1.CommandType = CommandType.StoredProcedure;
-
-            //    ////     cmd1.Parameters.Add("@fromdate", SqlDbType.Date).Value = fromdate;
-            //    ///     cmd1.Parameters.Add("@todate", SqlDbType.Date).Value = todate;
-            //    //  System.Data.SqlDbType.DateTime
-            //    try
-            //    {
-            //        rdr1 = cmd1.ExecuteReader();
-            //        //  MessageBox.Show("OK, please go to Input verify to reinput !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //    catch (Exception ex)
-            //    {
-
-            //        MessageBox.Show("Error  Delete TempFBL5n new \n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-
-
-
-
-            //    //       rdr1 = cmd1.ExecuteReader();
-
-            //}
-            //finally
-            //{
-            //    if (conn2 != null)
-            //    {
-            //        conn2.Close();
-            //    }
-            //    if (rdr1 != null)
-            //    {
-            //        rdr1.Close();
-            //    }
-            //}
-
-            //#endregion
-
-            //SqlConnection conn2 = null;
-            //SqlDataReader rdr1 = null;
-            //string destConnString = Utils.getConnectionstr();
-
-
-
-            //var rs = (from tblEDLP in dc.tblEDLPs
-            //          select tblEDLP).Take(5);
-            //if (rs.Count() <= 0)
-            //{
-            //    MessageBox.Show("Ban chưa up load bản data EDLP , please check again !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
-            //    return;
-            //}
-
-
-
-            //var rs2 = (from tblVat in dc.tblVats
-            //           select tblVat).Take(5);
-            //if (rs2.Count() <= 0)
-            //{
-            //    MessageBox.Show("Ban chưa up load bảng data VAT , please check again !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
-            //    return;
-            //}
-
-            //var rs3 = (from tblFBL5N in dc.tblFBL5Ns
-            //           select tblFBL5N).Take(5);
-            //if (rs3.Count() <= 0)
-            //{
-            //    MessageBox.Show("Bạn đã up load data tblFBL5N chưa , please check again !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
-            //    return;
-            //}
-
-            Control_ac ct = new Control_ac();
-            DialogResult Kq = MessageBox.Show("Bạn xóa workingdata bởi bản mới hay chỉ add thêm ?" + "\n" + "                 Xóa->Yes/ Add thêm->No !", "Thông báo !", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-
-
-
-
-        
+           
 
 
         }
@@ -3943,6 +3830,57 @@ namespace arconfirmationletter.View
 
 
 
+        }
+
+        private void uPLOADPRODUCTLISTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            luckyno md = new luckyno();
+
+             md.Uploadproductlist();
+
+            
+
+
+
+        }
+
+        private void vIIEWPROGARAMEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+
+            var rs = from p in db.tbl_CTKMs
+                     select p;
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách chương trình khuyến mại", 100, DateTime.Today, DateTime.Today);
+            viewtbl.Show();
+
+
+
+
+
+
+
+
+
+        }
+
+        private void eDITPROGRAMEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            string connection_string = Utils.getConnectionstr();
+
+            LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
+
+
+            var typeff = typeof(tbl_CTKM);
+
+            VInputchange inputcdata = new VInputchange("", "LIST PRODUCT", dc, "tbl_CTKM", "tbl_CTKM", typeff, "id", "id");
+       //     inputcdata.Visible = false;
+            inputcdata.ShowDialog();
+            //View.Inputchange kq = new View.Inputchange
         }
     }
 

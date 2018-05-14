@@ -16,7 +16,7 @@ namespace arconfirmationletter.Model
     class luckyno
     {
        
-        public bool deleteFbl5n()
+        public bool deleteProductlist()
         {
             string connection_string = Utils.getConnectionstr();
             var db = new LinqtoSQLDataContext(connection_string);
@@ -25,13 +25,13 @@ namespace arconfirmationletter.Model
             db.CommandTimeout = 0;
             try
             {
-                db.ExecuteCommand("DELETE FROM tblFBL5N");
+                db.ExecuteCommand("DELETE FROM tbl_Product");
 
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show("Lỗi khi xóa bảng FBL5n " + ex.ToString());
+                MessageBox.Show("Lỗi khi xóa bảng tbl_Product " + ex.ToString());
             }
             //    dc.tblFBL5Nnewthisperiods.DeleteAllOnSubmit(rsthisperiod);
             db.SubmitChanges();
@@ -52,12 +52,12 @@ namespace arconfirmationletter.Model
 
         }
 
-        private void importsexcel(object obj)
+        private void importproductlistsexcel(object obj)
         {
             //     List<tblFBL5N> fbl5n_ctrllist = new List<tblFBL5N>();
             luckyno md = new luckyno();
 
-            bool kq = md.deleteFbl5n();
+            bool kq = md.deleteProductlist();
 
             datainportF inf = (datainportF)obj;
 
@@ -71,28 +71,23 @@ namespace arconfirmationletter.Model
 
             System.Data.DataTable batable = new System.Data.DataTable();
 
-            batable.Columns.Add("Account", typeof(double));
-            batable.Columns.Add("Assignment", typeof(string));
-            batable.Columns.Add("PostingDate", typeof(DateTime));
-            batable.Columns.Add("DocumentType", typeof(string));
-            batable.Columns.Add("BusinessArea", typeof(string));
-            batable.Columns.Add("DocumentNumber", typeof(double));
-            batable.Columns.Add("Amountinlocalcurrency", typeof(double));
-            batable.Columns.Add("Deposit", typeof(double));
+            batable.Columns.Add("Marterialcode", typeof(string));
+            batable.Columns.Add("Marterialname", typeof(string));
+            batable.Columns.Add("Packsize", typeof(string));
+            batable.Columns.Add("PCQuychuan", typeof(double));
+            batable.Columns.Add("UCRate", typeof(double));
+            //batable.Columns.Add("DocumentNumber", typeof(double));
+            //batable.Columns.Add("Amountinlocalcurrency", typeof(double));
+            //batable.Columns.Add("Deposit", typeof(double));
 
 
-
-
-            int Depositid = -1;
-            int Accountid = -1;
-            int Assignmentid = -1;
-            int PostingDateid = -1;
-            int DocumentTypeid = -1;
-            int DocumentNumberid = -1;
-            int BusinessAreaid = -1;
-            int Amountinlocalcurrencyid = -1;
-
-            for (int rowid = 0; rowid < 20; rowid++)
+            int Marterialcodeid = -1;
+            int Marterialnameid = -1;
+            int Packsizeid = -1;
+            int PCQuychuanid = -1;
+            int UCRateid = -1;
+      
+            for (int rowid = 0; rowid < 5; rowid++)
             {
                 // headindex = 1;
                 for (int columid = 0; columid < sourceData.Columns.Count; columid++)
@@ -115,35 +110,35 @@ namespace arconfirmationletter.Model
                     {
 
                         //    #region setcolum
-                        if (value.Trim() == ("Account"))  //Account
+                        if (value.Trim() == ("Marterial code"))  //Account
                         {
-                            Accountid = columid;
+                            Marterialcodeid = columid;
                             //  headindex = rowid;
                         }
 
-                        if (value.Trim() == ("Assignment"))
+                        if (value.Trim() == ("Marterial name"))
                         {
 
-                            Assignmentid = columid;
+                            Marterialnameid = columid;
                             //    headindex = 0;
 
                         }
 
 
-                        if (value.Trim() == ("Pstng Date"))
+                        if (value.Trim() == ("Pack size"))
                         {
 
-                            PostingDateid = columid;
+                            Packsizeid = columid;
                             //   headindex = 0;
 
 
 
                         }
 
-                        if (value.Trim() == ("Deposit"))
+                        if (value.Trim() == ("PC Quy chuan"))
                         {
 
-                            Depositid = columid;
+                            PCQuychuanid = columid;
                             //   headindex = 0;
 
 
@@ -151,30 +146,12 @@ namespace arconfirmationletter.Model
                         }
 
 
-                        if (value.Trim() == ("Typ"))
+                        if (value.Trim() == ("UC Rate"))
                         {
-                            DocumentTypeid = columid;
+                            UCRateid = columid;
 
                         }
-                        if (value.Trim() == ("DocumentNo"))
-                        {
-                            DocumentNumberid = columid;
-
-                        }
-
-
-
-                        if (value.Trim() == ("Amt in loc.cur."))
-                        {
-                            Amountinlocalcurrencyid = columid;
-
-                        }
-                        if (value.Trim() == ("BusA"))
-                        {
-                            BusinessAreaid = columid;
-
-                        }
-
+                      
                     }
                     #endregion
 
@@ -184,104 +161,59 @@ namespace arconfirmationletter.Model
             }// roww off heatder
 
 
-            if (Accountid == -1)
+            if (Marterialcodeid == -1)
             {
-                MessageBox.Show("Dữ liệu thiếu cột Account", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Dữ liệu thiếu cột Marterial code", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (Depositid == -1)
+            if (Marterialnameid == -1)
             {
-                MessageBox.Show("Dữ liệu thiếu cột Deposit", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Dữ liệu thiếu cột Marterial name", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (Assignmentid == -1)
+            if (Packsizeid == -1)
             {
-                MessageBox.Show("Dữ liệu thiếu cột Assignment", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Dữ liệu thiếu cột Pack size", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (DocumentNumberid == -1)
+            if (PCQuychuanid == -1)
             {
-                MessageBox.Show("Dữ liệu thiếu cột Document Number", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Dữ liệu thiếu cột PCQuychuan", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (DocumentTypeid == -1)
+            if (UCRateid == -1)
             {
-                MessageBox.Show("Dữ liệu thiếu cột Document Type", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Dữ liệu thiếu cột UC Rate", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (BusinessAreaid == -1)
-            {
-                MessageBox.Show("Dữ liệu thiếu cột Business Area", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (Amountinlocalcurrencyid == -1)
-            {
-                MessageBox.Show("Dữ liệu thiếu cột Amount in local currencyid", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (PostingDateid == -1)
-            {
-                MessageBox.Show("Dữ liệu thiếu cột Posting Date", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+      
 
             for (int rowixd = 0; rowixd < sourceData.Rows.Count; rowixd++)
             {
 
                 #region
-
+                
 
                 //   string valuepricelist = Utils.GetValueOfCellInExcel(worksheet, rowid, columpricelist);
-                string Account = sourceData.Rows[rowixd][Accountid].ToString();
-                if (Account != "" && Utils.IsValidnumber(Account) && sourceData.Rows[rowixd][DocumentTypeid].ToString().Trim() != "")
+                string PCQuychuan = sourceData.Rows[rowixd][PCQuychuanid].ToString();
+                if (PCQuychuan != "" && Utils.IsValidnumber(PCQuychuan) && sourceData.Rows[rowixd][PCQuychuanid].ToString().Trim() != "")
                 {
 
-                    if (double.Parse(Account) > 0)
+                    if (double.Parse(PCQuychuan) > 0)
                     {
                         DataRow dr = batable.NewRow();
-                        dr["Account"] = double.Parse(sourceData.Rows[rowixd][Accountid].ToString());//.Trim();
-                        dr["Assignment"] = sourceData.Rows[rowixd][Assignmentid].ToString().Truncate(225).Trim();
-                        dr["PostingDate"] = Utils.chageExceldatetoData(sourceData.Rows[rowixd][PostingDateid].ToString());
-                        dr["DocumentType"] = sourceData.Rows[rowixd][DocumentTypeid].ToString().Truncate(225).Trim();
+                        dr["Marterialcode"] = sourceData.Rows[rowixd][Marterialcodeid].ToString().Truncate(225).Trim();
+                        dr["Marterialname"] = sourceData.Rows[rowixd][Marterialnameid].ToString().Truncate(225).Trim();
+                        dr["Packsize"] = sourceData.Rows[rowixd][Packsizeid].ToString().Truncate(225).Trim();
+                        dr["PCQuychuan"] = double.Parse(sourceData.Rows[rowixd][PCQuychuanid].ToString());//.Truncate(225).Trim();
+                        dr["UCRate"] = double.Parse(sourceData.Rows[rowixd][UCRateid].ToString());//.Truncate(225).Trim();
 
-                        if (Utils.IsValidnumber(sourceData.Rows[rowixd][DocumentNumberid].ToString()))
-                        {
-                            dr["DocumentNumber"] = double.Parse(sourceData.Rows[rowixd][DocumentNumberid].ToString());//.Trim();
-
-                        }
-                        else
-                        {
-                            dr["DocumentNumber"] = 0;
-                        }
-
-                        if (Utils.IsValidnumber(sourceData.Rows[rowixd][Amountinlocalcurrencyid].ToString()))
-                        {
-                            dr["Amountinlocalcurrency"] = double.Parse(sourceData.Rows[rowixd][Amountinlocalcurrencyid].ToString());//.Trim();
-
-                        }
-                        else
-                        {
-                            dr["Amountinlocalcurrency"] = 0;
-                        }
-                        dr["BusinessArea"] = sourceData.Rows[rowixd][BusinessAreaid].ToString().Truncate(225).Trim();
-
-                        if (Utils.IsValidnumber(sourceData.Rows[rowixd][Depositid].ToString().Trim()))
-                        {
-                            dr["Deposit"] = double.Parse(sourceData.Rows[rowixd][Depositid].ToString().Trim());
-
-                        }
-                        else
-                        {
-                            dr["Deposit"] = 0;
-                        }
-
+                  
 
 
                         batable.Rows.Add(dr);
@@ -303,17 +235,14 @@ namespace arconfirmationletter.Model
             using (SqlBulkCopy bulkCopy = new SqlBulkCopy(destConnString))
             {
 
-                bulkCopy.DestinationTableName = "tblFBL5N";
+                bulkCopy.DestinationTableName = "tbl_Product";
                 // Write from the source to the destination.
-                bulkCopy.ColumnMappings.Add("[Account]", "[Account]");
-                bulkCopy.ColumnMappings.Add("[Assignment]", "[Assignment]");
-                bulkCopy.ColumnMappings.Add("[PostingDate]", "[Posting Date]");
-                bulkCopy.ColumnMappings.Add("[DocumentType]", "[Document Type]");
-                bulkCopy.ColumnMappings.Add("[DocumentNumber]", "[Document Number]");
-                bulkCopy.ColumnMappings.Add("[BusinessArea]", "[Business Area]");
-                bulkCopy.ColumnMappings.Add("[Amountinlocalcurrency]", "[Amount in local currency]");
-                bulkCopy.ColumnMappings.Add("[Deposit]", "[Deposit]");
-
+                bulkCopy.ColumnMappings.Add("Marterialcode", "[Marterial code]");
+                bulkCopy.ColumnMappings.Add("Marterialname", "[Marterial name]");
+                bulkCopy.ColumnMappings.Add("Packsize", "[Pack size]");
+                bulkCopy.ColumnMappings.Add("PCQuychuan", "[PC Quy chuan]");
+                bulkCopy.ColumnMappings.Add("UCRate", "[UC Rate]");
+             
 
                 try
                 {
@@ -362,14 +291,14 @@ namespace arconfirmationletter.Model
 
 
 
-        public void Fbl5n_input2()
+        public void Uploadproductlist()
         {
 
 
             //   CultureInfo provider = CultureInfo.InvariantCulture;
 
             OpenFileDialog theDialog = new OpenFileDialog();
-            theDialog.Title = "Open Excel File FBL5n excel";
+            theDialog.Title = "Open Excel File Product List excel";
             theDialog.Filter = "Excel files|*.xlsx; *.xls";
             theDialog.InitialDirectory = @"C:\";
             if (theDialog.ShowDialog() == DialogResult.OK)
@@ -378,7 +307,7 @@ namespace arconfirmationletter.Model
 
                 string filename = theDialog.FileName.ToString();
 
-                Thread t1 = new Thread(importsexcel);
+                Thread t1 = new Thread(importproductlistsexcel);
                 t1.IsBackground = true;
                 t1.Start(new datainportF() { filename = filename });
 
