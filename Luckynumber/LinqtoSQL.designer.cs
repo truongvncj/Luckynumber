@@ -135,15 +135,17 @@ namespace arconfirmationletter
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private System.Nullable<double> _Mã_CT;
+		private string _Mã_CT;
 		
 		private string _PO_Message;
 		
-		private System.Nullable<double> _Mã_SP_Mua;
+		private string _Mã_SP_Mua;
 		
-		private System.Nullable<double> _Mã_SP_KM;
+		private string _Mã_SP_KM;
 		
 		private string _Tên_SP_mua;
+		
+		private string _Tên_SP_KM;
 		
 		private System.Nullable<double> _Tỷ_lệ_CTKM;
 		
@@ -153,24 +155,24 @@ namespace arconfirmationletter
 		
 		private string _Nhóm_khách_hàng;
 		
-		private string _Tên_SP_KM;
-		
 		private int _id;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMã_CTChanging(System.Nullable<double> value);
+    partial void OnMã_CTChanging(string value);
     partial void OnMã_CTChanged();
     partial void OnPO_MessageChanging(string value);
     partial void OnPO_MessageChanged();
-    partial void OnMã_SP_MuaChanging(System.Nullable<double> value);
+    partial void OnMã_SP_MuaChanging(string value);
     partial void OnMã_SP_MuaChanged();
-    partial void OnMã_SP_KMChanging(System.Nullable<double> value);
+    partial void OnMã_SP_KMChanging(string value);
     partial void OnMã_SP_KMChanged();
     partial void OnTên_SP_muaChanging(string value);
     partial void OnTên_SP_muaChanged();
+    partial void OnTên_SP_KMChanging(string value);
+    partial void OnTên_SP_KMChanged();
     partial void OnTỷ_lệ_CTKMChanging(System.Nullable<double> value);
     partial void OnTỷ_lệ_CTKMChanged();
     partial void OnTừ_ngàyChanging(System.Nullable<System.DateTime> value);
@@ -179,8 +181,6 @@ namespace arconfirmationletter
     partial void OnĐến_NgàyChanged();
     partial void OnNhóm_khách_hàngChanging(string value);
     partial void OnNhóm_khách_hàngChanged();
-    partial void OnTên_SP_KMChanging(string value);
-    partial void OnTên_SP_KMChanged();
     partial void OnidChanging(int value);
     partial void OnidChanged();
     #endregion
@@ -190,8 +190,8 @@ namespace arconfirmationletter
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã CT]", Storage="_Mã_CT", DbType="Float")]
-		public System.Nullable<double> Mã_CT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã CT]", Storage="_Mã_CT", DbType="NVarChar(255)")]
+		public string Mã_CT
 		{
 			get
 			{
@@ -230,8 +230,8 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã SP Mua]", Storage="_Mã_SP_Mua", DbType="Float")]
-		public System.Nullable<double> Mã_SP_Mua
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã SP Mua]", Storage="_Mã_SP_Mua", DbType="NVarChar(255)")]
+		public string Mã_SP_Mua
 		{
 			get
 			{
@@ -250,8 +250,8 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã SP KM]", Storage="_Mã_SP_KM", DbType="Float")]
-		public System.Nullable<double> Mã_SP_KM
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã SP KM]", Storage="_Mã_SP_KM", DbType="NVarChar(255)")]
+		public string Mã_SP_KM
 		{
 			get
 			{
@@ -286,6 +286,26 @@ namespace arconfirmationletter
 					this._Tên_SP_mua = value;
 					this.SendPropertyChanged("Tên_SP_mua");
 					this.OnTên_SP_muaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Tên SP KM]", Storage="_Tên_SP_KM", DbType="NVarChar(255)")]
+		public string Tên_SP_KM
+		{
+			get
+			{
+				return this._Tên_SP_KM;
+			}
+			set
+			{
+				if ((this._Tên_SP_KM != value))
+				{
+					this.OnTên_SP_KMChanging(value);
+					this.SendPropertyChanging();
+					this._Tên_SP_KM = value;
+					this.SendPropertyChanged("Tên_SP_KM");
+					this.OnTên_SP_KMChanged();
 				}
 			}
 		}
@@ -366,26 +386,6 @@ namespace arconfirmationletter
 					this._Nhóm_khách_hàng = value;
 					this.SendPropertyChanged("Nhóm_khách_hàng");
 					this.OnNhóm_khách_hàngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Tên SP KM]", Storage="_Tên_SP_KM", DbType="NVarChar(255)")]
-		public string Tên_SP_KM
-		{
-			get
-			{
-				return this._Tên_SP_KM;
-			}
-			set
-			{
-				if ((this._Tên_SP_KM != value))
-				{
-					this.OnTên_SP_KMChanging(value);
-					this.SendPropertyChanging();
-					this._Tên_SP_KM = value;
-					this.SendPropertyChanged("Tên_SP_KM");
-					this.OnTên_SP_KMChanged();
 				}
 			}
 		}
@@ -1455,7 +1455,7 @@ namespace arconfirmationletter
 		
 		private string _Name_1;
 		
-		private System.Nullable<double> _Material;
+		private string _Material;
 		
 		private string _Description;
 		
@@ -1499,7 +1499,7 @@ namespace arconfirmationletter
     partial void OnSold_to_ptChanged();
     partial void OnName_1Changing(string value);
     partial void OnName_1Changed();
-    partial void OnMaterialChanging(System.Nullable<double> value);
+    partial void OnMaterialChanging(string value);
     partial void OnMaterialChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
@@ -1690,8 +1690,8 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Material", DbType="Float")]
-		public System.Nullable<double> Material
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Material", DbType="NVarChar(255)")]
+		public string Material
 		{
 			get
 			{
@@ -1973,7 +1973,7 @@ namespace arconfirmationletter
 		
 		private string _Name_1;
 		
-		private System.Nullable<double> _Material;
+		private string _Material;
 		
 		private string _Description;
 		
@@ -2015,7 +2015,7 @@ namespace arconfirmationletter
     partial void OnSold_to_ptChanged();
     partial void OnName_1Changing(string value);
     partial void OnName_1Changed();
-    partial void OnMaterialChanging(System.Nullable<double> value);
+    partial void OnMaterialChanging(string value);
     partial void OnMaterialChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
@@ -2204,8 +2204,8 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Material", DbType="Float")]
-		public System.Nullable<double> Material
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Material", DbType="NVarChar(255)")]
+		public string Material
 		{
 			get
 			{

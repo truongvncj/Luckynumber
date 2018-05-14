@@ -2,16 +2,16 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=HAN-L-3PFF7H2;Initial Catalog=Luckynumber;Persist Security Info=True;User ID=sa" SettingsObjectName="arconfirmationletter.Properties.Settings" SettingsPropertyName="LuckynumberConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbl_CTKM" Member="tbl_CTKMs">
     <Type Name="tbl_CTKM">
-      <Column Name="[Mã CT]" Member="Mã_CT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Mã CT]" Member="Mã_CT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="[PO Message]" Member="PO_Message" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Mã SP Mua]" Member="Mã_SP_Mua" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[Mã SP KM]" Member="Mã_SP_KM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Mã SP Mua]" Member="Mã_SP_Mua" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Mã SP KM]" Member="Mã_SP_KM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="[Tên SP mua]" Member="Tên_SP_mua" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Tên SP KM]" Member="Tên_SP_KM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="[Tỷ lệ CTKM]" Member="Tỷ_lệ_CTKM" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="[Từ ngày]" Member="Từ_ngày" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="[Đến Ngày]" Member="Đến_Ngày" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="[Nhóm khách hàng]" Member="Nhóm_khách_hàng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Tên SP KM]" Member="Tên_SP_KM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>
@@ -74,7 +74,7 @@
       <Column Name="Document" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="[Sold-to pt]" Member="Sold_to_pt" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="[Name 1]" Member="Name_1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Material" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Material" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="[ Order qty]" Member="_Order_qty" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ConfirmQty" Type="System.Double" DbType="Float" CanBeNull="true" />
@@ -98,7 +98,7 @@
       <Column Name="Document" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="[Sold-to pt]" Member="Sold_to_pt" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="[Name 1]" Member="Name_1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Material" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Material" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="[ Order qty]" Member="_Order_qty" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ConfirmQty" Type="System.Double" DbType="Float" CanBeNull="true" />

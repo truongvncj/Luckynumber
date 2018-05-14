@@ -3882,6 +3882,77 @@ namespace arconfirmationletter.View
             inputcdata.ShowDialog();
             //View.Inputchange kq = new View.Inputchange
         }
+
+        private void uPLOADPROGARMEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            luckyno md = new luckyno();
+
+            md.UploadProgamelist();
+
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+
+            var rs = from p in db.tbl_CTKMs
+                     select p;
+
+            foreach (var item in rs)
+            {
+               //var newvalue = (from p in db.tbl_Products
+               //                where p.Marterial_code == item.Mã_SP_Mua
+               //               select p.Marterial_name).FirstOrDefault();
+                item.Tên_SP_mua = (from p in db.tbl_Products
+                                  where p.Marterial_code.Trim() == item.Mã_SP_Mua.Trim()
+                                  select p.Marterial_name).FirstOrDefault();
+                item.Tên_SP_KM = (from p in db.tbl_Products
+                                  where p.Marterial_code.Trim() == item.Mã_SP_KM.Trim()
+                                  select p.Marterial_name).FirstOrDefault();
+
+
+                db.SubmitChanges();
+
+
+            }
+
+
+
+
+        }
+
+        private void oRDERBYEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+
+            var rs = from p in db.tbl_Salesorders
+                     select p;
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng mua", 100, DateTime.Today, DateTime.Today);
+            viewtbl.Show();
+
+
+
+
+        }
+
+        private void vIEWORDERToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+
+            var rs = from p in db.tbl_SalesFrees
+                     select p;
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại", 100, DateTime.Today, DateTime.Today);
+            viewtbl.Show();
+
+
+
+        }
     }
 
 
