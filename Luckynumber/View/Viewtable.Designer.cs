@@ -113,9 +113,9 @@ namespace arconfirmationletter.View
             this.Pl_endview.Controls.Add(this.lb_tongamount);
             this.Pl_endview.Controls.Add(this.label1);
             this.Pl_endview.ForeColor = System.Drawing.Color.Black;
-            this.Pl_endview.Location = new System.Drawing.Point(102, 407);
+            this.Pl_endview.Location = new System.Drawing.Point(158, 406);
             this.Pl_endview.Name = "Pl_endview";
-            this.Pl_endview.Size = new System.Drawing.Size(1236, 19);
+            this.Pl_endview.Size = new System.Drawing.Size(1180, 19);
             this.Pl_endview.TabIndex = 1;
             // 
             // lbpayment

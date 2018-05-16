@@ -42,9 +42,9 @@ namespace arconfirmationletter
     partial void Inserttbl_Product(tbl_Product instance);
     partial void Updatetbl_Product(tbl_Product instance);
     partial void Deletetbl_Product(tbl_Product instance);
-    partial void Inserttbl_SalesFree(tbl_SalesFree instance);
-    partial void Updatetbl_SalesFree(tbl_SalesFree instance);
-    partial void Deletetbl_SalesFree(tbl_SalesFree instance);
+    partial void Inserttbl_SalesFreeOrder(tbl_SalesFreeOrder instance);
+    partial void Updatetbl_SalesFreeOrder(tbl_SalesFreeOrder instance);
+    partial void Deletetbl_SalesFreeOrder(tbl_SalesFreeOrder instance);
     partial void Inserttbl_Salesorder(tbl_Salesorder instance);
     partial void Updatetbl_Salesorder(tbl_Salesorder instance);
     partial void Deletetbl_Salesorder(tbl_Salesorder instance);
@@ -112,11 +112,11 @@ namespace arconfirmationletter
 			}
 		}
 		
-		public System.Data.Linq.Table<tbl_SalesFree> tbl_SalesFrees
+		public System.Data.Linq.Table<tbl_SalesFreeOrder> tbl_SalesFreeOrders
 		{
 			get
 			{
-				return this.GetTable<tbl_SalesFree>();
+				return this.GetTable<tbl_SalesFreeOrder>();
 			}
 		}
 		
@@ -1433,49 +1433,47 @@ namespace arconfirmationletter
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_SalesFree")]
-	public partial class tbl_SalesFree : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_SalesFreeOrder")]
+	public partial class tbl_SalesFreeOrder : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private string _Created;
 		
-		private string _SOrg_;
+		private string _SOrg;
 		
 		private string _PO_number;
 		
-		private string _Doc__Date;
+		private string _Doc_Date;
 		
 		private string _Dlv_Date;
 		
-		private System.Nullable<double> _Document;
+		private System.Nullable<double> _Order_Number;
 		
-		private System.Nullable<double> _Sold_to_pt;
+		private System.Nullable<double> _Sold_to_party;
 		
-		private string _Name_1;
+		private string _Name;
 		
 		private string _Material;
 		
 		private string _Description;
 		
-		private System.Nullable<double> @__Order_qty;
+		private System.Nullable<double> _Order_quantity;
 		
 		private System.Nullable<double> _ConfirmQty;
 		
 		private string _Status;
 		
-		private System.Nullable<double> _Time;
-		
 		private System.Nullable<double> _Item;
 		
-		private System.Nullable<double> @__Net_price;
+		private System.Nullable<double> _Net_price;
 		
 		private string _Rj;
 		
 		private string _Plnt;
 		
-		private System.Nullable<double> ____Net_Value;
+		private System.Nullable<double> _Net_value;
 		
 		private int _id;
 		
@@ -1485,47 +1483,45 @@ namespace arconfirmationletter
     partial void OnCreated();
     partial void OnCreatedChanging(string value);
     partial void OnCreatedChanged();
-    partial void OnSOrg_Changing(string value);
-    partial void OnSOrg_Changed();
+    partial void OnSOrgChanging(string value);
+    partial void OnSOrgChanged();
     partial void OnPO_numberChanging(string value);
     partial void OnPO_numberChanged();
-    partial void OnDoc__DateChanging(string value);
-    partial void OnDoc__DateChanged();
+    partial void OnDoc_DateChanging(string value);
+    partial void OnDoc_DateChanged();
     partial void OnDlv_DateChanging(string value);
     partial void OnDlv_DateChanged();
-    partial void OnDocumentChanging(System.Nullable<double> value);
-    partial void OnDocumentChanged();
-    partial void OnSold_to_ptChanging(System.Nullable<double> value);
-    partial void OnSold_to_ptChanged();
-    partial void OnName_1Changing(string value);
-    partial void OnName_1Changed();
+    partial void OnOrder_NumberChanging(System.Nullable<double> value);
+    partial void OnOrder_NumberChanged();
+    partial void OnSold_to_partyChanging(System.Nullable<double> value);
+    partial void OnSold_to_partyChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
     partial void OnMaterialChanging(string value);
     partial void OnMaterialChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
-    partial void On_Order_qtyChanging(System.Nullable<double> value);
-    partial void On_Order_qtyChanged();
+    partial void OnOrder_quantityChanging(System.Nullable<double> value);
+    partial void OnOrder_quantityChanged();
     partial void OnConfirmQtyChanging(System.Nullable<double> value);
     partial void OnConfirmQtyChanged();
     partial void OnStatusChanging(string value);
     partial void OnStatusChanged();
-    partial void OnTimeChanging(System.Nullable<double> value);
-    partial void OnTimeChanged();
     partial void OnItemChanging(System.Nullable<double> value);
     partial void OnItemChanged();
-    partial void On_Net_priceChanging(System.Nullable<double> value);
-    partial void On_Net_priceChanged();
+    partial void OnNet_priceChanging(System.Nullable<double> value);
+    partial void OnNet_priceChanged();
     partial void OnRjChanging(string value);
     partial void OnRjChanged();
     partial void OnPlntChanging(string value);
     partial void OnPlntChanged();
-    partial void On___Net_ValueChanging(System.Nullable<double> value);
-    partial void On___Net_ValueChanged();
+    partial void OnNet_valueChanging(System.Nullable<double> value);
+    partial void OnNet_valueChanged();
     partial void OnidChanging(int value);
     partial void OnidChanged();
     #endregion
 		
-		public tbl_SalesFree()
+		public tbl_SalesFreeOrder()
 		{
 			OnCreated();
 		}
@@ -1550,27 +1546,27 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="SOrg#", Storage="_SOrg_", DbType="NVarChar(255)")]
-		public string SOrg_
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOrg", DbType="NVarChar(255)")]
+		public string SOrg
 		{
 			get
 			{
-				return this._SOrg_;
+				return this._SOrg;
 			}
 			set
 			{
-				if ((this._SOrg_ != value))
+				if ((this._SOrg != value))
 				{
-					this.OnSOrg_Changing(value);
+					this.OnSOrgChanging(value);
 					this.SendPropertyChanging();
-					this._SOrg_ = value;
-					this.SendPropertyChanged("SOrg_");
-					this.OnSOrg_Changed();
+					this._SOrg = value;
+					this.SendPropertyChanged("SOrg");
+					this.OnSOrgChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[PO number]", Storage="_PO_number", DbType="NVarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PO_number", DbType="NVarChar(255)")]
 		public string PO_number
 		{
 			get
@@ -1590,27 +1586,27 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Doc# Date]", Storage="_Doc__Date", DbType="NVarChar(255)")]
-		public string Doc__Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Doc_Date", DbType="NVarChar(255)")]
+		public string Doc_Date
 		{
 			get
 			{
-				return this._Doc__Date;
+				return this._Doc_Date;
 			}
 			set
 			{
-				if ((this._Doc__Date != value))
+				if ((this._Doc_Date != value))
 				{
-					this.OnDoc__DateChanging(value);
+					this.OnDoc_DateChanging(value);
 					this.SendPropertyChanging();
-					this._Doc__Date = value;
-					this.SendPropertyChanged("Doc__Date");
-					this.OnDoc__DateChanged();
+					this._Doc_Date = value;
+					this.SendPropertyChanged("Doc_Date");
+					this.OnDoc_DateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Dlv#Date", Storage="_Dlv_Date", DbType="NVarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dlv_Date", DbType="NVarChar(255)")]
 		public string Dlv_Date
 		{
 			get
@@ -1630,62 +1626,62 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Document", DbType="Float")]
-		public System.Nullable<double> Document
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Order_Number", DbType="Float")]
+		public System.Nullable<double> Order_Number
 		{
 			get
 			{
-				return this._Document;
+				return this._Order_Number;
 			}
 			set
 			{
-				if ((this._Document != value))
+				if ((this._Order_Number != value))
 				{
-					this.OnDocumentChanging(value);
+					this.OnOrder_NumberChanging(value);
 					this.SendPropertyChanging();
-					this._Document = value;
-					this.SendPropertyChanged("Document");
-					this.OnDocumentChanged();
+					this._Order_Number = value;
+					this.SendPropertyChanged("Order_Number");
+					this.OnOrder_NumberChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sold-to pt]", Storage="_Sold_to_pt", DbType="Float")]
-		public System.Nullable<double> Sold_to_pt
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sold_to_party", DbType="Float")]
+		public System.Nullable<double> Sold_to_party
 		{
 			get
 			{
-				return this._Sold_to_pt;
+				return this._Sold_to_party;
 			}
 			set
 			{
-				if ((this._Sold_to_pt != value))
+				if ((this._Sold_to_party != value))
 				{
-					this.OnSold_to_ptChanging(value);
+					this.OnSold_to_partyChanging(value);
 					this.SendPropertyChanging();
-					this._Sold_to_pt = value;
-					this.SendPropertyChanged("Sold_to_pt");
-					this.OnSold_to_ptChanged();
+					this._Sold_to_party = value;
+					this.SendPropertyChanged("Sold_to_party");
+					this.OnSold_to_partyChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Name 1]", Storage="_Name_1", DbType="NVarChar(255)")]
-		public string Name_1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(255)")]
+		public string Name
 		{
 			get
 			{
-				return this._Name_1;
+				return this._Name;
 			}
 			set
 			{
-				if ((this._Name_1 != value))
+				if ((this._Name != value))
 				{
-					this.OnName_1Changing(value);
+					this.OnNameChanging(value);
 					this.SendPropertyChanging();
-					this._Name_1 = value;
-					this.SendPropertyChanged("Name_1");
-					this.OnName_1Changed();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
 				}
 			}
 		}
@@ -1730,22 +1726,22 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[ Order qty]", Storage="__Order_qty", DbType="Float")]
-		public System.Nullable<double> _Order_qty
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Order_quantity", DbType="Float")]
+		public System.Nullable<double> Order_quantity
 		{
 			get
 			{
-				return this.@__Order_qty;
+				return this._Order_quantity;
 			}
 			set
 			{
-				if ((this.@__Order_qty != value))
+				if ((this._Order_quantity != value))
 				{
-					this.On_Order_qtyChanging(value);
+					this.OnOrder_quantityChanging(value);
 					this.SendPropertyChanging();
-					this.@__Order_qty = value;
-					this.SendPropertyChanged("_Order_qty");
-					this.On_Order_qtyChanged();
+					this._Order_quantity = value;
+					this.SendPropertyChanged("Order_quantity");
+					this.OnOrder_quantityChanged();
 				}
 			}
 		}
@@ -1790,26 +1786,6 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Time", DbType="Float")]
-		public System.Nullable<double> Time
-		{
-			get
-			{
-				return this._Time;
-			}
-			set
-			{
-				if ((this._Time != value))
-				{
-					this.OnTimeChanging(value);
-					this.SendPropertyChanging();
-					this._Time = value;
-					this.SendPropertyChanged("Time");
-					this.OnTimeChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Item", DbType="Float")]
 		public System.Nullable<double> Item
 		{
@@ -1830,22 +1806,22 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[ Net price]", Storage="__Net_price", DbType="Float")]
-		public System.Nullable<double> _Net_price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Net_price", DbType="Float")]
+		public System.Nullable<double> Net_price
 		{
 			get
 			{
-				return this.@__Net_price;
+				return this._Net_price;
 			}
 			set
 			{
-				if ((this.@__Net_price != value))
+				if ((this._Net_price != value))
 				{
-					this.On_Net_priceChanging(value);
+					this.OnNet_priceChanging(value);
 					this.SendPropertyChanging();
-					this.@__Net_price = value;
-					this.SendPropertyChanged("_Net_price");
-					this.On_Net_priceChanged();
+					this._Net_price = value;
+					this.SendPropertyChanged("Net_price");
+					this.OnNet_priceChanged();
 				}
 			}
 		}
@@ -1890,22 +1866,22 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[   Net Value]", Storage="____Net_Value", DbType="Float")]
-		public System.Nullable<double> ___Net_Value
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Net_value", DbType="Float")]
+		public System.Nullable<double> Net_value
 		{
 			get
 			{
-				return this.____Net_Value;
+				return this._Net_value;
 			}
 			set
 			{
-				if ((this.____Net_Value != value))
+				if ((this._Net_value != value))
 				{
-					this.On___Net_ValueChanging(value);
+					this.OnNet_valueChanging(value);
 					this.SendPropertyChanging();
-					this.____Net_Value = value;
-					this.SendPropertyChanged("___Net_Value");
-					this.On___Net_ValueChanged();
+					this._Net_value = value;
+					this.SendPropertyChanged("Net_value");
+					this.OnNet_valueChanged();
 				}
 			}
 		}
@@ -1959,25 +1935,25 @@ namespace arconfirmationletter
 		
 		private string _Created;
 		
-		private string _SOrg_;
+		private string _SOrg;
 		
 		private string _PO_number;
 		
-		private string _Doc__Date;
+		private string _Doc_Date;
 		
 		private string _Dlv_Date;
 		
-		private System.Nullable<double> _Document;
+		private System.Nullable<double> _Order_Number;
 		
-		private System.Nullable<double> _Sold_to_pt;
+		private System.Nullable<double> _Sold_to_party;
 		
-		private string _Name_1;
+		private string _Name;
 		
 		private string _Material;
 		
 		private string _Description;
 		
-		private System.Nullable<double> @__Order_qty;
+		private System.Nullable<double> _Order_quantity;
 		
 		private System.Nullable<double> _ConfirmQty;
 		
@@ -1985,13 +1961,13 @@ namespace arconfirmationletter
 		
 		private System.Nullable<double> _Item;
 		
-		private System.Nullable<double> @__Net_price;
+		private System.Nullable<double> _Net_price;
 		
 		private string _Rj;
 		
 		private string _Plnt;
 		
-		private System.Nullable<double> ____Net_Value;
+		private System.Nullable<double> _Net_value;
 		
 		private int _id;
 		
@@ -2001,40 +1977,40 @@ namespace arconfirmationletter
     partial void OnCreated();
     partial void OnCreatedChanging(string value);
     partial void OnCreatedChanged();
-    partial void OnSOrg_Changing(string value);
-    partial void OnSOrg_Changed();
+    partial void OnSOrgChanging(string value);
+    partial void OnSOrgChanged();
     partial void OnPO_numberChanging(string value);
     partial void OnPO_numberChanged();
-    partial void OnDoc__DateChanging(string value);
-    partial void OnDoc__DateChanged();
+    partial void OnDoc_DateChanging(string value);
+    partial void OnDoc_DateChanged();
     partial void OnDlv_DateChanging(string value);
     partial void OnDlv_DateChanged();
-    partial void OnDocumentChanging(System.Nullable<double> value);
-    partial void OnDocumentChanged();
-    partial void OnSold_to_ptChanging(System.Nullable<double> value);
-    partial void OnSold_to_ptChanged();
-    partial void OnName_1Changing(string value);
-    partial void OnName_1Changed();
+    partial void OnOrder_NumberChanging(System.Nullable<double> value);
+    partial void OnOrder_NumberChanged();
+    partial void OnSold_to_partyChanging(System.Nullable<double> value);
+    partial void OnSold_to_partyChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
     partial void OnMaterialChanging(string value);
     partial void OnMaterialChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
-    partial void On_Order_qtyChanging(System.Nullable<double> value);
-    partial void On_Order_qtyChanged();
+    partial void OnOrder_quantityChanging(System.Nullable<double> value);
+    partial void OnOrder_quantityChanged();
     partial void OnConfirmQtyChanging(System.Nullable<double> value);
     partial void OnConfirmQtyChanged();
     partial void OnStatusChanging(string value);
     partial void OnStatusChanged();
     partial void OnItemChanging(System.Nullable<double> value);
     partial void OnItemChanged();
-    partial void On_Net_priceChanging(System.Nullable<double> value);
-    partial void On_Net_priceChanged();
+    partial void OnNet_priceChanging(System.Nullable<double> value);
+    partial void OnNet_priceChanged();
     partial void OnRjChanging(string value);
     partial void OnRjChanged();
     partial void OnPlntChanging(string value);
     partial void OnPlntChanged();
-    partial void On___Net_ValueChanging(System.Nullable<double> value);
-    partial void On___Net_ValueChanged();
+    partial void OnNet_valueChanging(System.Nullable<double> value);
+    partial void OnNet_valueChanged();
     partial void OnidChanging(int value);
     partial void OnidChanged();
     #endregion
@@ -2064,27 +2040,27 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="SOrg#", Storage="_SOrg_", DbType="NVarChar(255)")]
-		public string SOrg_
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOrg", DbType="NVarChar(255)")]
+		public string SOrg
 		{
 			get
 			{
-				return this._SOrg_;
+				return this._SOrg;
 			}
 			set
 			{
-				if ((this._SOrg_ != value))
+				if ((this._SOrg != value))
 				{
-					this.OnSOrg_Changing(value);
+					this.OnSOrgChanging(value);
 					this.SendPropertyChanging();
-					this._SOrg_ = value;
-					this.SendPropertyChanged("SOrg_");
-					this.OnSOrg_Changed();
+					this._SOrg = value;
+					this.SendPropertyChanged("SOrg");
+					this.OnSOrgChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[PO number]", Storage="_PO_number", DbType="NVarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PO_number", DbType="NVarChar(255)")]
 		public string PO_number
 		{
 			get
@@ -2104,27 +2080,27 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Doc# Date]", Storage="_Doc__Date", DbType="NVarChar(255)")]
-		public string Doc__Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Doc_Date", DbType="NVarChar(255)")]
+		public string Doc_Date
 		{
 			get
 			{
-				return this._Doc__Date;
+				return this._Doc_Date;
 			}
 			set
 			{
-				if ((this._Doc__Date != value))
+				if ((this._Doc_Date != value))
 				{
-					this.OnDoc__DateChanging(value);
+					this.OnDoc_DateChanging(value);
 					this.SendPropertyChanging();
-					this._Doc__Date = value;
-					this.SendPropertyChanged("Doc__Date");
-					this.OnDoc__DateChanged();
+					this._Doc_Date = value;
+					this.SendPropertyChanged("Doc_Date");
+					this.OnDoc_DateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Dlv#Date", Storage="_Dlv_Date", DbType="NVarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dlv_Date", DbType="NVarChar(255)")]
 		public string Dlv_Date
 		{
 			get
@@ -2144,62 +2120,62 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Document", DbType="Float")]
-		public System.Nullable<double> Document
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Order_Number", DbType="Float")]
+		public System.Nullable<double> Order_Number
 		{
 			get
 			{
-				return this._Document;
+				return this._Order_Number;
 			}
 			set
 			{
-				if ((this._Document != value))
+				if ((this._Order_Number != value))
 				{
-					this.OnDocumentChanging(value);
+					this.OnOrder_NumberChanging(value);
 					this.SendPropertyChanging();
-					this._Document = value;
-					this.SendPropertyChanged("Document");
-					this.OnDocumentChanged();
+					this._Order_Number = value;
+					this.SendPropertyChanged("Order_Number");
+					this.OnOrder_NumberChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sold-to pt]", Storage="_Sold_to_pt", DbType="Float")]
-		public System.Nullable<double> Sold_to_pt
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sold_to_party", DbType="Float")]
+		public System.Nullable<double> Sold_to_party
 		{
 			get
 			{
-				return this._Sold_to_pt;
+				return this._Sold_to_party;
 			}
 			set
 			{
-				if ((this._Sold_to_pt != value))
+				if ((this._Sold_to_party != value))
 				{
-					this.OnSold_to_ptChanging(value);
+					this.OnSold_to_partyChanging(value);
 					this.SendPropertyChanging();
-					this._Sold_to_pt = value;
-					this.SendPropertyChanged("Sold_to_pt");
-					this.OnSold_to_ptChanged();
+					this._Sold_to_party = value;
+					this.SendPropertyChanged("Sold_to_party");
+					this.OnSold_to_partyChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Name 1]", Storage="_Name_1", DbType="NVarChar(255)")]
-		public string Name_1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(255)")]
+		public string Name
 		{
 			get
 			{
-				return this._Name_1;
+				return this._Name;
 			}
 			set
 			{
-				if ((this._Name_1 != value))
+				if ((this._Name != value))
 				{
-					this.OnName_1Changing(value);
+					this.OnNameChanging(value);
 					this.SendPropertyChanging();
-					this._Name_1 = value;
-					this.SendPropertyChanged("Name_1");
-					this.OnName_1Changed();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
 				}
 			}
 		}
@@ -2244,22 +2220,22 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[ Order qty]", Storage="__Order_qty", DbType="Float")]
-		public System.Nullable<double> _Order_qty
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Order_quantity", DbType="Float")]
+		public System.Nullable<double> Order_quantity
 		{
 			get
 			{
-				return this.@__Order_qty;
+				return this._Order_quantity;
 			}
 			set
 			{
-				if ((this.@__Order_qty != value))
+				if ((this._Order_quantity != value))
 				{
-					this.On_Order_qtyChanging(value);
+					this.OnOrder_quantityChanging(value);
 					this.SendPropertyChanging();
-					this.@__Order_qty = value;
-					this.SendPropertyChanged("_Order_qty");
-					this.On_Order_qtyChanged();
+					this._Order_quantity = value;
+					this.SendPropertyChanged("Order_quantity");
+					this.OnOrder_quantityChanged();
 				}
 			}
 		}
@@ -2324,22 +2300,22 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[ Net price]", Storage="__Net_price", DbType="Float")]
-		public System.Nullable<double> _Net_price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Net_price", DbType="Float")]
+		public System.Nullable<double> Net_price
 		{
 			get
 			{
-				return this.@__Net_price;
+				return this._Net_price;
 			}
 			set
 			{
-				if ((this.@__Net_price != value))
+				if ((this._Net_price != value))
 				{
-					this.On_Net_priceChanging(value);
+					this.OnNet_priceChanging(value);
 					this.SendPropertyChanging();
-					this.@__Net_price = value;
-					this.SendPropertyChanged("_Net_price");
-					this.On_Net_priceChanged();
+					this._Net_price = value;
+					this.SendPropertyChanged("Net_price");
+					this.OnNet_priceChanged();
 				}
 			}
 		}
@@ -2384,22 +2360,22 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[   Net Value]", Storage="____Net_Value", DbType="Float")]
-		public System.Nullable<double> ___Net_Value
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Net_value", DbType="Float")]
+		public System.Nullable<double> Net_value
 		{
 			get
 			{
-				return this.____Net_Value;
+				return this._Net_value;
 			}
 			set
 			{
-				if ((this.____Net_Value != value))
+				if ((this._Net_value != value))
 				{
-					this.On___Net_ValueChanging(value);
+					this.OnNet_valueChanging(value);
 					this.SendPropertyChanging();
-					this.____Net_Value = value;
-					this.SendPropertyChanged("___Net_Value");
-					this.On___Net_ValueChanged();
+					this._Net_value = value;
+					this.SendPropertyChanged("Net_value");
+					this.OnNet_valueChanged();
 				}
 			}
 		}

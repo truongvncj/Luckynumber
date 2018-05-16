@@ -64,50 +64,49 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.tbl_SalesFree" Member="tbl_SalesFrees">
-    <Type Name="tbl_SalesFree">
+  <Table Name="dbo.tbl_SalesFreeOrder" Member="tbl_SalesFreeOrders">
+    <Type Name="tbl_SalesFreeOrder">
       <Column Name="Created" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="SOrg#" Member="SOrg_" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[PO number]" Member="PO_number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Doc# Date]" Member="Doc__Date" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Dlv#Date" Member="Dlv_Date" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Document" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[Sold-to pt]" Member="Sold_to_pt" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[Name 1]" Member="Name_1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SOrg" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PO_number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Doc_Date" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Dlv_Date" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Order_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Sold_to_party" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Material" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[ Order qty]" Member="_Order_qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Order_quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ConfirmQty" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="Status" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Time" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="Item" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[ Net price]" Member="_Net_price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Net_price" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="Rj" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Plnt" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[   Net Value]" Member="___Net_Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Net_value" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_Salesorder" Member="tbl_Salesorders">
     <Type Name="tbl_Salesorder">
       <Column Name="Created" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="SOrg#" Member="SOrg_" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[PO number]" Member="PO_number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Doc# Date]" Member="Doc__Date" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Dlv#Date" Member="Dlv_Date" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Document" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[Sold-to pt]" Member="Sold_to_pt" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[Name 1]" Member="Name_1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SOrg" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PO_number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Doc_Date" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Dlv_Date" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Order_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Sold_to_party" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Material" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[ Order qty]" Member="_Order_qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Order_quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ConfirmQty" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="Status" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Item" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[ Net price]" Member="_Net_price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Net_price" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="Rj" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Plnt" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[   Net Value]" Member="___Net_Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Net_value" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>

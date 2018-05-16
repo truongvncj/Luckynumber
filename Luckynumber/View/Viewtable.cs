@@ -752,6 +752,8 @@ namespace arconfirmationletter.View
             this.bt_listunsend.Visible = false;
             btpostclear.Visible = false;
             lb_seach.Visible = false;
+            lb_totalrecord.Text = dataGridView1.RowCount.ToString();
+
 
 
         }

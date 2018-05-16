@@ -3944,7 +3944,7 @@ namespace arconfirmationletter.View
 
             var db = new LinqtoSQLDataContext(connection_string);
 
-            var rs = from p in db.tbl_SalesFrees
+            var rs = from p in db.tbl_SalesFreeOrders
                      select p;
 
             Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại", 100, DateTime.Today, DateTime.Today);
@@ -3984,6 +3984,33 @@ namespace arconfirmationletter.View
             luckyno md = new luckyno();
 
             md.UpPUCHASEORDER();
+
+
+        }
+
+        private void uPLOADORDERLISTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            luckyno md = new luckyno();
+
+            md.UpFreePUCHASEORDER();
+        }
+
+        private void lISTORDERWRONGMESSAGEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+
+            //var pors = from x in db.tbl_CTKMs
+            //           //where x.Mã_SP_KM 
+            //           select x;
+
+
+            var rs = from p in db.tbl_SalesFreeOrders
+                     select p;
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách các đơn hàng khuyến mại sai Message PO", 100, DateTime.Today, DateTime.Today);
+            viewtbl.Show();
 
 
         }

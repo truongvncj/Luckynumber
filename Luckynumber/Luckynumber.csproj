@@ -126,6 +126,7 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Model\Conditioncheck.cs" />
     <Compile Include="Model\edlpinput_ctrl.cs" />
     <Compile Include="Model\customerinput_ctrl.cs" />
     <Compile Include="Model\fREEGALSSES_CTRL.cs" />
