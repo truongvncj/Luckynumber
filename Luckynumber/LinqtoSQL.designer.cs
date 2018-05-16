@@ -42,6 +42,9 @@ namespace arconfirmationletter
     partial void Inserttbl_Product(tbl_Product instance);
     partial void Updatetbl_Product(tbl_Product instance);
     partial void Deletetbl_Product(tbl_Product instance);
+    partial void Inserttbl_rptnotEnought(tbl_rptnotEnought instance);
+    partial void Updatetbl_rptnotEnought(tbl_rptnotEnought instance);
+    partial void Deletetbl_rptnotEnought(tbl_rptnotEnought instance);
     partial void Inserttbl_SalesFreeOrder(tbl_SalesFreeOrder instance);
     partial void Updatetbl_SalesFreeOrder(tbl_SalesFreeOrder instance);
     partial void Deletetbl_SalesFreeOrder(tbl_SalesFreeOrder instance);
@@ -51,7 +54,7 @@ namespace arconfirmationletter
     #endregion
 		
 		public LinqtoSQLDataContext() : 
-				base(global::arconfirmationletter.Properties.Settings.Default.LuckynumberConnectionString, mappingSource)
+				base(global::arconfirmationletter.Properties.Settings.Default.LuckynumberConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -109,6 +112,14 @@ namespace arconfirmationletter
 			get
 			{
 				return this.GetTable<tbl_Product>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_rptnotEnought> tbl_rptnotEnoughts
+		{
+			get
+			{
+				return this.GetTable<tbl_rptnotEnought>();
 			}
 		}
 		
@@ -1433,6 +1444,236 @@ namespace arconfirmationletter
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_rptnotEnought")]
+	public partial class tbl_rptnotEnought : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Created;
+		
+		private string _Material;
+		
+		private System.Nullable<double> _Quantytibuy;
+		
+		private System.Nullable<double> _Quantityfree;
+		
+		private System.Nullable<double> _FreeclasesPaid;
+		
+		private bool _filter;
+		
+		private string _username;
+		
+		private int _id;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCreatedChanging(string value);
+    partial void OnCreatedChanged();
+    partial void OnMaterialChanging(string value);
+    partial void OnMaterialChanged();
+    partial void OnQuantytibuyChanging(System.Nullable<double> value);
+    partial void OnQuantytibuyChanged();
+    partial void OnQuantityfreeChanging(System.Nullable<double> value);
+    partial void OnQuantityfreeChanged();
+    partial void OnFreeclasesPaidChanging(System.Nullable<double> value);
+    partial void OnFreeclasesPaidChanged();
+    partial void OnfilterChanging(bool value);
+    partial void OnfilterChanged();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    #endregion
+		
+		public tbl_rptnotEnought()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Created", DbType="NVarChar(255)")]
+		public string Created
+		{
+			get
+			{
+				return this._Created;
+			}
+			set
+			{
+				if ((this._Created != value))
+				{
+					this.OnCreatedChanging(value);
+					this.SendPropertyChanging();
+					this._Created = value;
+					this.SendPropertyChanged("Created");
+					this.OnCreatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Material", DbType="NVarChar(255)")]
+		public string Material
+		{
+			get
+			{
+				return this._Material;
+			}
+			set
+			{
+				if ((this._Material != value))
+				{
+					this.OnMaterialChanging(value);
+					this.SendPropertyChanging();
+					this._Material = value;
+					this.SendPropertyChanged("Material");
+					this.OnMaterialChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantytibuy", DbType="Float")]
+		public System.Nullable<double> Quantytibuy
+		{
+			get
+			{
+				return this._Quantytibuy;
+			}
+			set
+			{
+				if ((this._Quantytibuy != value))
+				{
+					this.OnQuantytibuyChanging(value);
+					this.SendPropertyChanging();
+					this._Quantytibuy = value;
+					this.SendPropertyChanged("Quantytibuy");
+					this.OnQuantytibuyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantityfree", DbType="Float")]
+		public System.Nullable<double> Quantityfree
+		{
+			get
+			{
+				return this._Quantityfree;
+			}
+			set
+			{
+				if ((this._Quantityfree != value))
+				{
+					this.OnQuantityfreeChanging(value);
+					this.SendPropertyChanging();
+					this._Quantityfree = value;
+					this.SendPropertyChanged("Quantityfree");
+					this.OnQuantityfreeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FreeclasesPaid", DbType="Float")]
+		public System.Nullable<double> FreeclasesPaid
+		{
+			get
+			{
+				return this._FreeclasesPaid;
+			}
+			set
+			{
+				if ((this._FreeclasesPaid != value))
+				{
+					this.OnFreeclasesPaidChanging(value);
+					this.SendPropertyChanging();
+					this._FreeclasesPaid = value;
+					this.SendPropertyChanged("FreeclasesPaid");
+					this.OnFreeclasesPaidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_filter", DbType="Bit NOT NULL")]
+		public bool filter
+		{
+			get
+			{
+				return this._filter;
+			}
+			set
+			{
+				if ((this._filter != value))
+				{
+					this.OnfilterChanging(value);
+					this.SendPropertyChanging();
+					this._filter = value;
+					this.SendPropertyChanged("filter");
+					this.OnfilterChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(255)")]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
+					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_SalesFreeOrder")]
 	public partial class tbl_SalesFreeOrder : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1477,6 +1718,10 @@ namespace arconfirmationletter
 		
 		private int _id;
 		
+		private System.Nullable<double> _byOrder;
+		
+		private bool _select;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1519,6 +1764,10 @@ namespace arconfirmationletter
     partial void OnNet_valueChanged();
     partial void OnidChanging(int value);
     partial void OnidChanged();
+    partial void OnbyOrderChanging(System.Nullable<double> value);
+    partial void OnbyOrderChanged();
+    partial void OnselectChanging(bool value);
+    partial void OnselectChanged();
     #endregion
 		
 		public tbl_SalesFreeOrder()
@@ -1906,6 +2155,46 @@ namespace arconfirmationletter
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_byOrder", DbType="Float")]
+		public System.Nullable<double> byOrder
+		{
+			get
+			{
+				return this._byOrder;
+			}
+			set
+			{
+				if ((this._byOrder != value))
+				{
+					this.OnbyOrderChanging(value);
+					this.SendPropertyChanging();
+					this._byOrder = value;
+					this.SendPropertyChanged("byOrder");
+					this.OnbyOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[select]", Storage="_select", DbType="Bit NOT NULL")]
+		public bool select
+		{
+			get
+			{
+				return this._select;
+			}
+			set
+			{
+				if ((this._select != value))
+				{
+					this.OnselectChanging(value);
+					this.SendPropertyChanging();
+					this._select = value;
+					this.SendPropertyChanged("select");
+					this.OnselectChanged();
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1971,6 +2260,8 @@ namespace arconfirmationletter
 		
 		private int _id;
 		
+		private bool _selectprt;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2013,6 +2304,8 @@ namespace arconfirmationletter
     partial void OnNet_valueChanged();
     partial void OnidChanging(int value);
     partial void OnidChanged();
+    partial void OnselectprtChanging(bool value);
+    partial void OnselectprtChanged();
     #endregion
 		
 		public tbl_Salesorder()
@@ -2396,6 +2689,26 @@ namespace arconfirmationletter
 					this._id = value;
 					this.SendPropertyChanged("id");
 					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_selectprt", DbType="Bit NOT NULL")]
+		public bool selectprt
+		{
+			get
+			{
+				return this._selectprt;
+			}
+			set
+			{
+				if ((this._selectprt != value))
+				{
+					this.OnselectprtChanging(value);
+					this.SendPropertyChanging();
+					this._selectprt = value;
+					this.SendPropertyChanged("selectprt");
+					this.OnselectprtChanged();
 				}
 			}
 		}

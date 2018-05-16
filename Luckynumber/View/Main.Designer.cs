@@ -299,7 +299,8 @@
             // 
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Name = "lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem";
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
-            this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Text = "ORDER LOST FREECASE ";
+            this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Text = "ORDER  NOT ENOUGH FREECASE ";
+            this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Click += new System.EventHandler(this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem_Click);
             // 
             // lISTORDERHAVEOVERFREECASEToolStripMenuItem
             // 

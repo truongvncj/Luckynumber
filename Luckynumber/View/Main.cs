@@ -4014,6 +4014,37 @@ namespace arconfirmationletter.View
 
 
         }
+
+        private void lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+
+            var pors = from x in db.tbl_CTKMs
+                       select x;
+
+
+            foreach (var item in pors)
+            {
+                Model.Conditioncheck.checkIsunenoughtpaid((double)item.Tỷ_lệ_CTKM, item.Mã_SP_Mua, item.Mã_SP_KM);
+
+                
+            }
+
+            var rs = from x in db.tbl_rptnotEnoughts
+                     where x.filter == true
+                     select x;
+
+            
+            Viewtable viewtbl = new Viewtable(rs, db, "Order Not enought Freecase ", 100, DateTime.Today, DateTime.Today);
+            viewtbl.Show();
+
+
+
+
+        }
     }
 
 

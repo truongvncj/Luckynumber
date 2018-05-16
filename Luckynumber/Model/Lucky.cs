@@ -1669,7 +1669,7 @@ namespace arconfirmationletter.Model
 
                 string filename = theDialog.FileName.ToString();
 
-                Thread t1 = new Thread(importPuchaseorderlistsexcel);
+                Thread t1 = new Thread(importProgamelistsexcel);
                 t1.IsBackground = true;
                 t1.Start(new datainportF() { filename = filename });
 

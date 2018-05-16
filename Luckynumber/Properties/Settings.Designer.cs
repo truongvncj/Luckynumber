@@ -88,5 +88,16 @@ namespace arconfirmationletter.Properties {
                 return ((string)(this["LuckynumberConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-8D4F853\\SQLEXPRESS;Initial Catalog=Luckynumber;Integrated Sec" +
+            "urity=True")]
+        public string LuckynumberConnectionString1 {
+            get {
+                return ((string)(this["LuckynumberConnectionString1"]));
+            }
+        }
     }
 }
