@@ -59,7 +59,9 @@ namespace arconfirmationletter.Model
                          Created = g.Key.Created,
                          Material = g.Key.Material,
                          Quantytibuy = g.Sum(m => m.Order_quantity),
-                         Quantityfree = g.Sum(m => m.Order_quantity) * tyle,
+                          
+                      
+                         Quantityfree = (g.Sum(m => m.Order_quantity))/ tyle,
                          FreeclasesPaid = 0.0,
                          filter = 0,
 
@@ -86,14 +88,14 @@ namespace arconfirmationletter.Model
                 if (rsQuantityfree != null)
                 {
 
-                    if (item.Quantityfree < rsQuantityfree.Quantityfree)
+                    if (item.Quantityfree > rsQuantityfree.Quantityfree)
                     {
                         tbl_rptnotEnought rpt = new tbl_rptnotEnought();
                         rpt.Created = item.Created;
                         rpt.Material = item.Material;
                         rpt.Quantytibuy = item.Quantytibuy;
                         rpt.Quantityfree = item.Quantityfree;
-                        rpt.FreeclasesPaid = rsQuantityfree.Quantityfree;
+                      rpt.FreeclasesPaid = rsQuantityfree.Quantityfree;
 
                         rpt.filter = true;
 
@@ -105,9 +107,9 @@ namespace arconfirmationletter.Model
 
 
 
-                  
+
                 }
-             
+
 
             }
 

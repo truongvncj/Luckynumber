@@ -4034,7 +4034,7 @@ namespace arconfirmationletter.View
             }
 
             var rs = from x in db.tbl_rptnotEnoughts
-                     where x.filter == true
+                   //  where x.filter == true
                      select x;
 
             
