@@ -1,1 +1,1 @@
-DESKTOP-8D4F853\SQLEXPRESS;sa;Tienmat102$;Luckynumber;tr1
+HAN-L-3PFF7H2;sa;Tienmat102$;Luckynumber;tr1

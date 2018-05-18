@@ -54,7 +54,7 @@ namespace arconfirmationletter
     #endregion
 		
 		public LinqtoSQLDataContext() : 
-				base(global::arconfirmationletter.Properties.Settings.Default.LuckynumberConnectionString1, mappingSource)
+				base(global::arconfirmationletter.Properties.Settings.Default.LuckynumberConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1686,9 +1686,9 @@ namespace arconfirmationletter
 		
 		private string _PO_number;
 		
-		private string _Doc_Date;
+		private System.Nullable<System.DateTime> _Doc_Date;
 		
-		private string _Dlv_Date;
+		private System.Nullable<System.DateTime> _Dlv_Date;
 		
 		private System.Nullable<double> _Order_Number;
 		
@@ -1720,7 +1720,9 @@ namespace arconfirmationletter
 		
 		private System.Nullable<double> _byOrder;
 		
-		private bool _select;
+		private bool _rptselect;
+		
+		private string _ma_CTKM;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1732,9 +1734,9 @@ namespace arconfirmationletter
     partial void OnSOrgChanged();
     partial void OnPO_numberChanging(string value);
     partial void OnPO_numberChanged();
-    partial void OnDoc_DateChanging(string value);
+    partial void OnDoc_DateChanging(System.Nullable<System.DateTime> value);
     partial void OnDoc_DateChanged();
-    partial void OnDlv_DateChanging(string value);
+    partial void OnDlv_DateChanging(System.Nullable<System.DateTime> value);
     partial void OnDlv_DateChanged();
     partial void OnOrder_NumberChanging(System.Nullable<double> value);
     partial void OnOrder_NumberChanged();
@@ -1766,8 +1768,10 @@ namespace arconfirmationletter
     partial void OnidChanged();
     partial void OnbyOrderChanging(System.Nullable<double> value);
     partial void OnbyOrderChanged();
-    partial void OnselectChanging(bool value);
-    partial void OnselectChanged();
+    partial void OnrptselectChanging(bool value);
+    partial void OnrptselectChanged();
+    partial void Onma_CTKMChanging(string value);
+    partial void Onma_CTKMChanged();
     #endregion
 		
 		public tbl_SalesFreeOrder()
@@ -1835,8 +1839,8 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Doc_Date", DbType="NVarChar(255)")]
-		public string Doc_Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Doc_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Doc_Date
 		{
 			get
 			{
@@ -1855,8 +1859,8 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dlv_Date", DbType="NVarChar(255)")]
-		public string Dlv_Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dlv_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Dlv_Date
 		{
 			get
 			{
@@ -2175,22 +2179,42 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[select]", Storage="_select", DbType="Bit NOT NULL")]
-		public bool select
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rptselect", DbType="Bit NOT NULL")]
+		public bool rptselect
 		{
 			get
 			{
-				return this._select;
+				return this._rptselect;
 			}
 			set
 			{
-				if ((this._select != value))
+				if ((this._rptselect != value))
 				{
-					this.OnselectChanging(value);
+					this.OnrptselectChanging(value);
 					this.SendPropertyChanging();
-					this._select = value;
-					this.SendPropertyChanged("select");
-					this.OnselectChanged();
+					this._rptselect = value;
+					this.SendPropertyChanged("rptselect");
+					this.OnrptselectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_CTKM", DbType="NVarChar(255)")]
+		public string ma_CTKM
+		{
+			get
+			{
+				return this._ma_CTKM;
+			}
+			set
+			{
+				if ((this._ma_CTKM != value))
+				{
+					this.Onma_CTKMChanging(value);
+					this.SendPropertyChanging();
+					this._ma_CTKM = value;
+					this.SendPropertyChanged("ma_CTKM");
+					this.Onma_CTKMChanged();
 				}
 			}
 		}

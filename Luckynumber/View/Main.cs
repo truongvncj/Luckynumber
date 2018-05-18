@@ -24,7 +24,7 @@ namespace arconfirmationletter.View
 
 
         //   private string rptname;
-      //  private IQueryable rs1;
+        //  private IQueryable rs1;
         //private IQueryable rs2;
         //
         public Main()
@@ -94,7 +94,7 @@ namespace arconfirmationletter.View
             //}
 
             //   Depositintput
-         
+
             //  Systemconfig
 
             if (user.Systemconfig)
@@ -108,10 +108,10 @@ namespace arconfirmationletter.View
 
             // uploadBeginbalance
 
-          
+
             // endyearPackdata
 
-          
+
 
 
             #endregion
@@ -404,7 +404,7 @@ namespace arconfirmationletter.View
             //Viewtable viewtbl = new Viewtable(rs2, dc, "LUCKY NUMBER REPORTS" , 100, DateTime.Today, DateTime.Today); //view loại 100 view bình thường là có fromdatetodate
             //viewtbl.Show();
 
-                
+
         }
 
         private void viewCustomerDataToolStripMenuItem_Click(object sender, EventArgs e)
@@ -420,10 +420,10 @@ namespace arconfirmationletter.View
 
             LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
             customerinput_ctrl md = new customerinput_ctrl();
-       //     var rs = md.customersetlect_all(db);
+            //     var rs = md.customersetlect_all(db);
 
-      //      //  MessageBox.Show("Data add/ change Customer done !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    Viewtable viewtbl = new Viewtable(rs, db, "CUSTOMER DATA", 100, DateTime.Today, DateTime.Today);
+            //      //  MessageBox.Show("Data add/ change Customer done !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    Viewtable viewtbl = new Viewtable(rs, db, "CUSTOMER DATA", 100, DateTime.Today, DateTime.Today);
             //     viewtbl.Show();
 
         }
@@ -456,7 +456,7 @@ namespace arconfirmationletter.View
                 case DialogResult.Yes:
 
 
-               //    md.vat_input();
+                    //    md.vat_input();
 
 
                     break;
@@ -511,7 +511,7 @@ namespace arconfirmationletter.View
 
         private void dataCheckToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
 
 
         }
@@ -579,7 +579,7 @@ namespace arconfirmationletter.View
 
             LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
 
-           
+
             var typeff = typeof(tbl_Product);
 
             VInputchange inputcdata = new VInputchange("", "LIST PRODUCT", dc, "tbl_Product", "tbl_Product", typeff, "id", "id");
@@ -596,7 +596,7 @@ namespace arconfirmationletter.View
             string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
-           
+
             var rs = from p in db.tbl_Products
                      select p;
 
@@ -649,11 +649,11 @@ namespace arconfirmationletter.View
             var db = new LinqtoSQLDataContext(connection_string);
 
 
-        //  string rptname = "ARletterdetail.rdlc";
+            //  string rptname = "ARletterdetail.rdlc";
             //      string rptname = "SubARletterdetail.rdlc";
             Control_ac ctrac = new Control_ac();
 
-        
+
         }
 
         private void cOLReportsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -866,11 +866,11 @@ namespace arconfirmationletter.View
             var db = new LinqtoSQLDataContext(connection_string);
 
 
-       //     string rptname = "ARCOLrpt.rdlc";
+            //     string rptname = "ARCOLrpt.rdlc";
             //      string rptname = "SubARletterdetail.rdlc";
             Control_ac ctrac = new Control_ac();
 
-           
+
 
 
         }
@@ -1924,88 +1924,88 @@ namespace arconfirmationletter.View
             //     bool onlycodechoi = fromoptiong.onlycheckbook;
             if (choice == true && onlycode != 0)  // chi tạo báo cáo 1 code
             {
-             
-//                #region    // kiểm tra xem có số dư đầu kỳ không nếu không có bật ra bản thêm vào và kết thúc
 
-//                //    db.SubmitChanges();
+                //                #region    // kiểm tra xem có số dư đầu kỳ không nếu không có bật ra bản thêm vào và kết thúc
 
-//                //    db.CommandTimeout = 10000;
-//                var q13 = from tblCustomer in db.tblCustomers
-//                          where tblCustomer.Customer == onlycode && !(from tblFBL5beginbalace in db.tblFBL5beginbalaces
-//                                                                      select tblFBL5beginbalace.Account.ToString() + tblFBL5beginbalace.Business_Area).Contains(tblCustomer.Customer.ToString() + tblCustomer.SOrg)
-//                          //  orderby tblCustomer.Customer
-//                          group tblCustomer by new
-//                          {
-//                              tblCustomer.Customer,
-//                              tblCustomer.SOrg,
-//                          }
-//                         into g
-//                          select g;
+                //                //    db.SubmitChanges();
 
-
-
-//                if (q13.Count() > 0)
-
-//                {
-
-
-//                    #region mở update số dư dầu kỳ khi codegroupkhoong co trong so du dau ky nếu không có bắn ra bàng không có
+                //                //    db.CommandTimeout = 10000;
+                //                var q13 = from tblCustomer in db.tblCustomers
+                //                          where tblCustomer.Customer == onlycode && !(from tblFBL5beginbalace in db.tblFBL5beginbalaces
+                //                                                                      select tblFBL5beginbalace.Account.ToString() + tblFBL5beginbalace.Business_Area).Contains(tblCustomer.Customer.ToString() + tblCustomer.SOrg)
+                //                          //  orderby tblCustomer.Customer
+                //                          group tblCustomer by new
+                //                          {
+                //                              tblCustomer.Customer,
+                //                              tblCustomer.SOrg,
+                //                          }
+                //                         into g
+                //                          select g;
 
 
 
-//                    foreach (var item in q13)
-//                    {
+                //                if (q13.Count() > 0)
+
+                //                {
 
 
-//                        var slqtext = @"insert into  tblFBL5beginbalaceTemp ( Account, [Business Area],[Amount in local currency],
-// Binhpmicc02,binhpmix9l,Chaivo1lit,Chaivothuong,[Deposit amount],[Adjusted amount],[Empty Amount],[Empty Amount Notmach],
-//[Fullgood amount],joy20l,Ketnhua1lit,Ketnhuathuong,paletnhua,palletgo,[Payment amount] ) 
-
-//values (" + (double)item.Key.Customer + ",'" + item.Key.SOrg + @"',0,
-// 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
-
-
-//                        db.CommandTimeout = 0;
-
-//                        try
-//                        {
-//                            db.ExecuteCommand(slqtext);
-//                        }
-//                        catch (Exception ex)
-//                        {
-
-//                            MessageBox.Show("ERRor insert : tblFBL5beginbalaceTemp \n" + slqtext + "\n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//                            return;
-//                        }
-
-
-//                        db.SubmitChanges();
+                //                    #region mở update số dư dầu kỳ khi codegroupkhoong co trong so du dau ky nếu không có bắn ra bàng không có
 
 
 
-//                    }
+                //                    foreach (var item in q13)
+                //                    {
+
+
+                //                        var slqtext = @"insert into  tblFBL5beginbalaceTemp ( Account, [Business Area],[Amount in local currency],
+                // Binhpmicc02,binhpmix9l,Chaivo1lit,Chaivothuong,[Deposit amount],[Adjusted amount],[Empty Amount],[Empty Amount Notmach],
+                //[Fullgood amount],joy20l,Ketnhua1lit,Ketnhuathuong,paletnhua,palletgo,[Payment amount] ) 
+
+                //values (" + (double)item.Key.Customer + ",'" + item.Key.SOrg + @"',0,
+                // 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
+
+
+                //                        db.CommandTimeout = 0;
+
+                //                        try
+                //                        {
+                //                            db.ExecuteCommand(slqtext);
+                //                        }
+                //                        catch (Exception ex)
+                //                        {
+
+                //                            MessageBox.Show("ERRor insert : tblFBL5beginbalaceTemp \n" + slqtext + "\n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //                            return;
+                //                        }
+
+
+                //                        db.SubmitChanges();
 
 
 
-//                    var typeff = typeof(tblFBL5beginbalaceTemp);
-
-//                    //     LinqtoSQLDataContext dbx = new LinqtoSQLDataContext(connection_string);
-
-
-//                    View.VInputchange inputcdata = new View.VInputchange("MASTER BEGIN BALACE ", "LIST CUST NOT HAVE BEGIN BALACE, PLEASE CHECK ! ", db, "tblFBL5beginbalace", "tblFBL5beginbalaceTemp", typeff, "id", "id");
-//                    inputcdata.Show();// = false;
-//                    inputcdata.Focus();
-//                    return;
-
-//                    #endregion mở update số dư dầu kỳ khi codegroupkhoong co trong so du dau ky
+                //                    }
 
 
 
-//                }
+                //                    var typeff = typeof(tblFBL5beginbalaceTemp);
 
-//                //  MessageBox.Show("ok");
+                //                    //     LinqtoSQLDataContext dbx = new LinqtoSQLDataContext(connection_string);
 
-//                #endregion  // kiểm tra xem có so du dau ky không
+
+                //                    View.VInputchange inputcdata = new View.VInputchange("MASTER BEGIN BALACE ", "LIST CUST NOT HAVE BEGIN BALACE, PLEASE CHECK ! ", db, "tblFBL5beginbalace", "tblFBL5beginbalaceTemp", typeff, "id", "id");
+                //                    inputcdata.Show();// = false;
+                //                    inputcdata.Focus();
+                //                    return;
+
+                //                    #endregion mở update số dư dầu kỳ khi codegroupkhoong co trong so du dau ky
+
+
+
+                //                }
+
+                //                //  MessageBox.Show("ok");
+
+                //                #endregion  // kiểm tra xem có so du dau ky không
 
                 //if (q13.Count() == 0)
                 //{
@@ -2203,86 +2203,86 @@ namespace arconfirmationletter.View
 
 
 
-//                #region    // kiểm tra xem có số dư đầu kỳ không nếu không có bật ra bản thêm vào và kết thúc
+                //                #region    // kiểm tra xem có số dư đầu kỳ không nếu không có bật ra bản thêm vào và kết thúc
 
-//                //    db.SubmitChanges();
+                //                //    db.SubmitChanges();
 
-//                //    db.CommandTimeout = 10000;
-//                var q9 = from tblCustomer in db.tblCustomers
-//                         where (tblCustomer.Reportsend == true) && !(from tblFBL5beginbalace in db.tblFBL5beginbalaces
-//                                                                     select tblFBL5beginbalace.Account.ToString() + tblFBL5beginbalace.Business_Area).Contains(tblCustomer.Customer.ToString() + tblCustomer.SOrg)
-//                         //  orderby tblCustomer.Customer
-//                         group tblCustomer by new
-//                         {
-//                             tblCustomer.Customer,
-//                             tblCustomer.SOrg,
-//                         }
-//                         into g
-//                         select g;
-
-
-
-//                if (q9.Count() > 0)
-
-//                {
-
-
-//                    #region mở update số dư dầu kỳ khi codegroupkhoong co trong so du dau ky nếu không có bắn ra bàng không có
+                //                //    db.CommandTimeout = 10000;
+                //                var q9 = from tblCustomer in db.tblCustomers
+                //                         where (tblCustomer.Reportsend == true) && !(from tblFBL5beginbalace in db.tblFBL5beginbalaces
+                //                                                                     select tblFBL5beginbalace.Account.ToString() + tblFBL5beginbalace.Business_Area).Contains(tblCustomer.Customer.ToString() + tblCustomer.SOrg)
+                //                         //  orderby tblCustomer.Customer
+                //                         group tblCustomer by new
+                //                         {
+                //                             tblCustomer.Customer,
+                //                             tblCustomer.SOrg,
+                //                         }
+                //                         into g
+                //                         select g;
 
 
 
-//                    foreach (var item in q9)
-//                    {
+                //                if (q9.Count() > 0)
+
+                //                {
 
 
-//                        var slqtext = @"insert into  tblFBL5beginbalaceTemp ( Account, [Business Area],[Amount in local currency],
-// Binhpmicc02,binhpmix9l,Chaivo1lit,Chaivothuong,[Deposit amount],[Adjusted amount],[Empty Amount],[Empty Amount Notmach],
-//[Fullgood amount],joy20l,Ketnhua1lit,Ketnhuathuong,paletnhua,palletgo,[Payment amount] ) 
-
-//values (" + (double)item.Key.Customer + ",'" + item.Key.SOrg + @"',0,
-// 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
-
-
-//                        db.CommandTimeout = 0;
-
-//                        try
-//                        {
-//                            db.ExecuteCommand(slqtext);
-//                        }
-//                        catch (Exception ex)
-//                        {
-
-//                            MessageBox.Show("ERRor insert : tblFBL5beginbalaceTemp \n" + slqtext + "\n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//                        }
-
-
-//                        db.SubmitChanges();
+                //                    #region mở update số dư dầu kỳ khi codegroupkhoong co trong so du dau ky nếu không có bắn ra bàng không có
 
 
 
-//                    }
+                //                    foreach (var item in q9)
+                //                    {
+
+
+                //                        var slqtext = @"insert into  tblFBL5beginbalaceTemp ( Account, [Business Area],[Amount in local currency],
+                // Binhpmicc02,binhpmix9l,Chaivo1lit,Chaivothuong,[Deposit amount],[Adjusted amount],[Empty Amount],[Empty Amount Notmach],
+                //[Fullgood amount],joy20l,Ketnhua1lit,Ketnhuathuong,paletnhua,palletgo,[Payment amount] ) 
+
+                //values (" + (double)item.Key.Customer + ",'" + item.Key.SOrg + @"',0,
+                // 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
+
+
+                //                        db.CommandTimeout = 0;
+
+                //                        try
+                //                        {
+                //                            db.ExecuteCommand(slqtext);
+                //                        }
+                //                        catch (Exception ex)
+                //                        {
+
+                //                            MessageBox.Show("ERRor insert : tblFBL5beginbalaceTemp \n" + slqtext + "\n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //                        }
+
+
+                //                        db.SubmitChanges();
 
 
 
-//                    var typeff = typeof(tblFBL5beginbalaceTemp);
-
-//                    //     LinqtoSQLDataContext dbx = new LinqtoSQLDataContext(connection_string);
-
-
-//                    View.VInputchange inputcdata = new View.VInputchange("MASTER BEGIN BALACE ", "LIST CUST NOT HAVE BEGIN BALACE, PLEASE CHECK ! ", db, "tblFBL5beginbalace", "tblFBL5beginbalaceTemp", typeff, "id", "id");
-//                    inputcdata.Show();// = false;
-//                    inputcdata.Focus();
-
-
-//                    #endregion mở update số dư dầu kỳ khi codegroupkhoong co trong so du dau ky
+                //                    }
 
 
 
-//                }
+                //                    var typeff = typeof(tblFBL5beginbalaceTemp);
 
-//                //  MessageBox.Show("ok");
+                //                    //     LinqtoSQLDataContext dbx = new LinqtoSQLDataContext(connection_string);
 
-//                #endregion  // kiểm tra xem có so du dau ky không
+
+                //                    View.VInputchange inputcdata = new View.VInputchange("MASTER BEGIN BALACE ", "LIST CUST NOT HAVE BEGIN BALACE, PLEASE CHECK ! ", db, "tblFBL5beginbalace", "tblFBL5beginbalaceTemp", typeff, "id", "id");
+                //                    inputcdata.Show();// = false;
+                //                    inputcdata.Focus();
+
+
+                //                    #endregion mở update số dư dầu kỳ khi codegroupkhoong co trong so du dau ky
+
+
+
+                //                }
+
+                //                //  MessageBox.Show("ok");
+
+                //                #endregion  // kiểm tra xem có so du dau ky không
 
 
 
@@ -3238,12 +3238,12 @@ namespace arconfirmationletter.View
 
         private void uPLOADCUSTOMERLISTToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void vIEWCUSTOMERToolStripMenuItem_Click(object sender, EventArgs e)
         {
-      
+
         }
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
@@ -3259,7 +3259,7 @@ namespace arconfirmationletter.View
 
             Control_ac ctrac = new Control_ac();
 
-     
+
 
         }
 
@@ -3338,7 +3338,7 @@ namespace arconfirmationletter.View
         private void toolStripMenuItem12_Click(object sender, EventArgs e)
         {
 
-         
+
         }
 
         private void toolStripMenuItem11_Click(object sender, EventArgs e)
@@ -3595,7 +3595,7 @@ namespace arconfirmationletter.View
                     //this.updateNewAllToolStripMenuItem1.Enabled = false;
 
                     //this.reportsToolStripMenuItem.Enabled = false;
-         //           md.deletewrongclearFeeglasseeinput();
+                    //           md.deletewrongclearFeeglasseeinput();
 
 
                     // var rs = md.vatsetlect_all();
@@ -3646,8 +3646,8 @@ namespace arconfirmationletter.View
 
             if (kq == true)
             {
-      //          SqlConnection conn2 = null;
-             //   SqlDataReader rdr1 = null;
+                //          SqlConnection conn2 = null;
+                //   SqlDataReader rdr1 = null;
 
                 string destConnString = Utils.getConnectionstr();
                 dc.CommandTimeout = 0;
@@ -3836,9 +3836,9 @@ namespace arconfirmationletter.View
         {
             luckyno md = new luckyno();
 
-             md.Uploadproductlist();
+            md.Uploadproductlist();
 
-            
+
 
 
 
@@ -3878,7 +3878,7 @@ namespace arconfirmationletter.View
             var typeff = typeof(tbl_CTKM);
 
             VInputchange inputcdata = new VInputchange("", "LIST Programe", dc, "tbl_CTKM", "tbl_CTKM", typeff, "id", "id");
-       //     inputcdata.Visible = false;
+            //     inputcdata.Visible = false;
             inputcdata.ShowDialog();
             //View.Inputchange kq = new View.Inputchange
         }
@@ -3898,12 +3898,12 @@ namespace arconfirmationletter.View
 
             foreach (var item in rs)
             {
-               //var newvalue = (from p in db.tbl_Products
-               //                where p.Marterial_code == item.Mã_SP_Mua
-               //               select p.Marterial_name).FirstOrDefault();
+                //var newvalue = (from p in db.tbl_Products
+                //                where p.Marterial_code == item.Mã_SP_Mua
+                //               select p.Marterial_name).FirstOrDefault();
                 item.Tên_SP_mua = (from p in db.tbl_Products
-                                  where p.Marterial_code.Trim() == item.Mã_SP_Mua.Trim()
-                                  select p.Marterial_name).FirstOrDefault();
+                                   where p.Marterial_code.Trim() == item.Mã_SP_Mua.Trim()
+                                   select p.Marterial_name).FirstOrDefault();
                 item.Tên_SP_KM = (from p in db.tbl_Products
                                   where p.Marterial_code.Trim() == item.Mã_SP_KM.Trim()
                                   select p.Marterial_name).FirstOrDefault();
@@ -4001,12 +4001,31 @@ namespace arconfirmationletter.View
 
             var db = new LinqtoSQLDataContext(connection_string);
 
-            //var pors = from x in db.tbl_CTKMs
-            //           //where x.Mã_SP_KM 
-            //           select x;
+            var rsfreee = from p in db.tbl_SalesFreeOrders
+                         // where p.rptselect == true
+                          select p;
+            foreach (var item in rsfreee)
+            {
+
+                if (Model.Conditioncheck.Iswrongmessage(item.PO_number, item.Material.Trim()))
+                {
+                    item.rptselect = true;
+
+
+
+                }
+                else
+                {
+                    item.rptselect = false;
+                }
+
+                db.SubmitChanges();
+
+            }
 
 
             var rs = from p in db.tbl_SalesFreeOrders
+                     where p.rptselect == true
                      select p;
 
             Viewtable viewtbl = new Viewtable(rs, db, "Danh sách các đơn hàng khuyến mại sai Message PO", 100, DateTime.Today, DateTime.Today);
@@ -4030,16 +4049,100 @@ namespace arconfirmationletter.View
             {
                 Model.Conditioncheck.checkIsunenoughtpaid((double)item.Tỷ_lệ_CTKM, item.Mã_SP_Mua, item.Mã_SP_KM);
 
-                
+
             }
 
             var rs = from x in db.tbl_rptnotEnoughts
-                   //  where x.filter == true
+                         //  where x.filter == true
                      select x;
 
-            
+
             Viewtable viewtbl = new Viewtable(rs, db, "Order Not enought Freecase ", 100, DateTime.Today, DateTime.Today);
             viewtbl.Show();
+
+
+
+
+        }
+
+        private void cHECKMÃCTKHUYENMAIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Model.Conditioncheck.UpdateMaCTKM();
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+
+            var rs = from p in db.tbl_SalesFreeOrders
+                     where p.ma_CTKM ==""
+                     select p;
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại chưa phân loại được mã chương trình", 555, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
+            viewtbl.Show();
+
+        }
+
+        private void oRDERWRONGSKILLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         //   Model.Conditioncheck.UpdateMaCTKM();
+
+
+            string connection_string = Utils.getConnectionstr();
+            var db = new LinqtoSQLDataContext(connection_string);
+            var pors = from x in db.tbl_CTKMs
+                       select x.Mã_SP_KM;
+            var rs = from p in db.tbl_SalesFreeOrders
+                     where !pors.Contains(p.Material) 
+                     select p;
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại key sai code sp khuyến mại", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
+            viewtbl.Show();
+
+
+
+
+
+
+        }
+
+        private void oRDEROVERTIMEOFPROGARMEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Model.Conditioncheck.UpdateMaCTKM();
+
+
+            string connection_string = Utils.getConnectionstr();
+            var db = new LinqtoSQLDataContext(connection_string);
+
+          
+
+            var rscheck = from p in db.tbl_SalesFreeOrders
+                          where p.ma_CTKM !=""
+                      select p;
+
+            foreach (var item in rscheck)
+            {
+                item.rptselect = false;
+                if (Model.Conditioncheck.checkIsOvertimeofGROgarame(item.ma_CTKM, (DateTime)item.Dlv_Date))
+                {
+
+                    item.rptselect = true;
+                }
+
+
+                db.SubmitChanges();
+            }
+
+            var rs = from p in db.tbl_SalesFreeOrders
+                     where p.rptselect == true
+                     select p;
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại ngoài khung thời gian", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
+            viewtbl.Show();
+
+
+
+
+
 
 
 

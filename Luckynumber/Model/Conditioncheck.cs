@@ -10,31 +10,96 @@ namespace arconfirmationletter.Model
 
         public static bool Iswrongmessage(string message, string material)
         {
-            #region // kiem tra xem co sai mesage
+            //  #region // kiem tra xem co sai mesage
+            bool kq = true;
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+
+            var rs = from p in db.tbl_CTKMs
+                     where p.Mã_SP_KM.Trim() == material
+                     //    && message.IndexOf(p.PO_Message) > 0
+                     select p;
+            foreach (var item in rs)
+            {
+
+                if (message.Contains(item.PO_Message.Trim()))
+                {
+                    // message dung
+                    // order message sai
+                    kq = false;
+                    //    return true;
+
+                }
+
+            }
+
+
+
+            return kq;
+
+        }
+
+        public static string FindProgarmebymessageandmaterial(string message, string material)
+        {
+            //  #region // kiem tra xem co sai mesage
+            //    bool kq = true;
+            string maprogarme = "";
 
             string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
 
             var rs = from p in db.tbl_CTKMs
-                     where p.Mã_SP_KM == material
-                     && message.IndexOf(p.PO_Message) > 0
+                     where p.Mã_SP_KM.Trim() == material
+                     //    && message.IndexOf(p.PO_Message) > 0
                      select p;
-
-            if (rs.Count() > 0)
+            foreach (var item in rs)
             {
-                return true;
+
+                if (message.Contains(item.PO_Message.Trim()))
+                {
+                    // message dung
+                    // order message sai
+                    //     kq = false;
+                    maprogarme = item.Mã_CT;
+
+                    //    return true;
+
+                }
+
             }
 
-            // s1.IndexOf(s2)
-            // / string.Compare
 
-
-
-            return false;
-            #endregion
+            return maprogarme;
+            //      return kq;
 
         }
+
+
+        public static void UpdateMaCTKM()
+        {
+
+
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+
+            var rs = from p in db.tbl_SalesFreeOrders
+                     select p;
+
+
+            foreach (var item in rs)
+            {
+
+                item.ma_CTKM = Model.Conditioncheck.FindProgarmebymessageandmaterial(item.PO_number, item.Material.Trim());
+
+                db.SubmitChanges();
+
+            }
+
+        }
+
 
         public static void checkIsunenoughtpaid(double tyle, string materialbuy, string materialfree)
         {
@@ -59,9 +124,9 @@ namespace arconfirmationletter.Model
                          Created = g.Key.Created,
                          Material = g.Key.Material,
                          Quantytibuy = g.Sum(m => m.Order_quantity),
-                          
-                      
-                         Quantityfree = (g.Sum(m => m.Order_quantity))/ tyle,
+
+
+                         Quantityfree = (g.Sum(m => m.Order_quantity)) / tyle,
                          FreeclasesPaid = 0.0,
                          filter = 0,
 
@@ -95,7 +160,7 @@ namespace arconfirmationletter.Model
                         rpt.Material = item.Material;
                         rpt.Quantytibuy = item.Quantytibuy;
                         rpt.Quantityfree = item.Quantityfree;
-                      rpt.FreeclasesPaid = rsQuantityfree.Quantityfree;
+                        rpt.FreeclasesPaid = rsQuantityfree.Quantityfree;
 
                         rpt.filter = true;
 
@@ -118,5 +183,34 @@ namespace arconfirmationletter.Model
 
         }
 
+        public static bool checkIsOvertimeofGROgarame(string mact, DateTime deliverydate)
+        {
+            bool kq = true;
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+
+            var ctkm = (from p in db.tbl_CTKMs
+                     where p.Mã_CT == mact
+                     select p).FirstOrDefault();
+
+            if (ctkm != null)
+            {
+                if (ctkm.Từ_ngày <= deliverydate && ctkm.Đến_Ngày >=deliverydate)
+                {
+                    kq = false;
+                }
+
+
+            }
+
+            return kq;
+          
+
+
+
+
+
+        }
     }
 }

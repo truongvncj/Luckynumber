@@ -72,6 +72,7 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.lblocate = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cHECKMÃCTKHUYENMAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -221,7 +222,8 @@
             // 
             this.dATAENTRYToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.uPLOADDATAToolStripMenuItem,
-            this.fREECASESORDERToolStripMenuItem});
+            this.fREECASESORDERToolStripMenuItem,
+            this.cHECKMÃCTKHUYENMAIToolStripMenuItem});
             this.dATAENTRYToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.thTPVPNXXL;
             this.dATAENTRYToolStripMenuItem.Name = "dATAENTRYToolStripMenuItem";
             this.dATAENTRYToolStripMenuItem.Size = new System.Drawing.Size(130, 25);
@@ -233,7 +235,7 @@
             this.oRDERBYEToolStripMenuItem,
             this.fREEORDERToolStripMenuItem});
             this.uPLOADDATAToolStripMenuItem.Name = "uPLOADDATAToolStripMenuItem";
-            this.uPLOADDATAToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.uPLOADDATAToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
             this.uPLOADDATAToolStripMenuItem.Text = "PUCHASE ORDER";
             // 
             // oRDERBYEToolStripMenuItem
@@ -256,7 +258,7 @@
             this.vIEWORDERToolStripMenuItem,
             this.uPLOADORDERLISTToolStripMenuItem});
             this.fREECASESORDERToolStripMenuItem.Name = "fREECASESORDERToolStripMenuItem";
-            this.fREECASESORDERToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.fREECASESORDERToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
             this.fREECASESORDERToolStripMenuItem.Text = "FREECASES ORDER";
             // 
             // vIEWORDERToolStripMenuItem
@@ -325,12 +327,14 @@
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Name = "oRDEROVERTIMEOFPROGARMEToolStripMenuItem";
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Text = "ORDER OVERTIME OF PROGARME";
+            this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Click += new System.EventHandler(this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem_Click);
             // 
             // oRDERWRONGSKILLToolStripMenuItem
             // 
             this.oRDERWRONGSKILLToolStripMenuItem.Name = "oRDERWRONGSKILLToolStripMenuItem";
             this.oRDERWRONGSKILLToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
             this.oRDERWRONGSKILLToolStripMenuItem.Text = "ORDER WRONG SCHEME";
+            this.oRDERWRONGSKILLToolStripMenuItem.Click += new System.EventHandler(this.oRDERWRONGSKILLToolStripMenuItem_Click);
             // 
             // systemConfigToolStripMenuItem
             // 
@@ -419,6 +423,14 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Region: ";
             // 
+            // cHECKMÃCTKHUYENMAIToolStripMenuItem
+            // 
+            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.th5YSKEK6I;
+            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Name = "cHECKMÃCTKHUYENMAIToolStripMenuItem";
+            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
+            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Text = "UPDATE MÃ FREECASE PROGARME";
+            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Click += new System.EventHandler(this.cHECKMÃCTKHUYENMAIToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,6 +498,7 @@
         private ToolStripMenuItem vIEWORDERToolStripMenuItem;
         private ToolStripMenuItem uPLOADORDERLISTToolStripMenuItem;
         private ToolStripMenuItem uPLOADPROGARMEToolStripMenuItem;
+        private ToolStripMenuItem cHECKMÃCTKHUYENMAIToolStripMenuItem;
     }
 }
 
