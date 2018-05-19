@@ -177,9 +177,10 @@ namespace arconfirmationletter.Model
             batable.Columns.Add("Packsize", typeof(string));
             batable.Columns.Add("PCQuychuan", typeof(double));
             batable.Columns.Add("UCRate", typeof(double));
-            //batable.Columns.Add("DocumentNumber", typeof(double));
-            //batable.Columns.Add("Amountinlocalcurrency", typeof(double));
-            //batable.Columns.Add("Deposit", typeof(double));
+            batable.Columns.Add("enduser", typeof(string));
+
+
+       
 
 
             int Marterialcodeid = -1;
@@ -292,7 +293,7 @@ namespace arconfirmationletter.Model
                 return;
             }
 
-
+            string enduser = Utils.getusername();
 
             for (int rowixd = 0; rowixd < sourceData.Rows.Count; rowixd++)
             {
@@ -314,6 +315,8 @@ namespace arconfirmationletter.Model
                         dr["PCQuychuan"] = double.Parse(sourceData.Rows[rowixd][PCQuychuanid].ToString());//.Truncate(225).Trim();
                         dr["UCRate"] = double.Parse(sourceData.Rows[rowixd][UCRateid].ToString());//.Truncate(225).Trim();
 
+                        dr["Marterialcode"] = sourceData.Rows[rowixd][Marterialcodeid].ToString().Truncate(225).Trim();
+                        dr["enduser"] = enduser;// sourceData.Rows[rowixd][Marterialcodeid].ToString().Truncate(225).Trim();
 
 
 
@@ -343,7 +346,7 @@ namespace arconfirmationletter.Model
                 bulkCopy.ColumnMappings.Add("Packsize", "[Pack size]");
                 bulkCopy.ColumnMappings.Add("PCQuychuan", "[PC Quy chuan]");
                 bulkCopy.ColumnMappings.Add("UCRate", "[UC Rate]");
-
+                bulkCopy.ColumnMappings.Add("enduser", "enduser");
 
                 try
                 {
@@ -654,6 +657,8 @@ namespace arconfirmationletter.Model
 
             batable.Columns.Add("manhomkh", typeof(string));
             batable.Columns.Add("cokh", typeof(double));
+            batable.Columns.Add("enduser", typeof(string));
+
 
 
             int manhomkhid = -1;
@@ -721,6 +726,8 @@ namespace arconfirmationletter.Model
                 return;
             }
 
+            string enduser = Utils.getusername();
+
             for (int rowixd = 0; rowixd < sourceData.Rows.Count; rowixd++)
             {
 
@@ -737,6 +744,7 @@ namespace arconfirmationletter.Model
                         DataRow dr = batable.NewRow();
                         dr["manhomkh"] = sourceData.Rows[rowixd][manhomkhid].ToString().Truncate(225).Trim();
                         dr["cokh"] = double.Parse(sourceData.Rows[rowixd][cokhid].ToString());//.Truncate(225).Trim();
+                        dr["enduser"] = enduser;// sourceData.Rows[rowixd][manhomkhid].ToString().Truncate(225).Trim();
 
                         batable.Rows.Add(dr);
 
@@ -761,6 +769,7 @@ namespace arconfirmationletter.Model
                 // Write from the source to the destination.
                 bulkCopy.ColumnMappings.Add("manhomkh", "[Mã_nhóm_KH]");
                 bulkCopy.ColumnMappings.Add("cokh", "[CodeKH]");
+                bulkCopy.ColumnMappings.Add("enduser", "enduser");
 
 
 
@@ -821,7 +830,7 @@ namespace arconfirmationletter.Model
             batable.Columns.Add("Rj", typeof(string));
 
             batable.Columns.Add("NetValue", typeof(double));
-
+            batable.Columns.Add("enduser", typeof(string));
 
             int Createdid = -1;
             int SOrgid = -1;
@@ -1071,7 +1080,7 @@ namespace arconfirmationletter.Model
 
 
 
-
+            string enduser = Utils.getusername();
 
             for (int rowixd = 0; rowixd < sourceData.Rows.Count; rowixd++)
             {
@@ -1113,8 +1122,8 @@ namespace arconfirmationletter.Model
                     dr["Netprice"] = double.Parse(sourceData.Rows[rowixd][Netpriceid].ToString());//.Truncate(225).Trim();
 
                     dr["NetValue"] = double.Parse(sourceData.Rows[rowixd][NetValueid].ToString());//.Truncate(225).Trim();
-
-
+                    dr["enduser"] = enduser;// sourceData.Rows[rowixd][Statusid].ToString().Truncate(225).Trim();
+                    
 
                     batable.Rows.Add(dr);
 
@@ -1157,9 +1166,10 @@ namespace arconfirmationletter.Model
                 bulkCopy.ColumnMappings.Add("Rj", "Rj");
                 //   bulkCopy.ColumnMappings.Add("UCRate", "[Plnt]");
                 bulkCopy.ColumnMappings.Add("NetValue", "Net_value");
+                bulkCopy.ColumnMappings.Add("enduser", "enduser");
 
 
-
+                
 
                 try
                 {
@@ -1219,8 +1229,8 @@ namespace arconfirmationletter.Model
             batable.Columns.Add("Rj", typeof(string));
 
             batable.Columns.Add("NetValue", typeof(double));
-
-
+            batable.Columns.Add("enduser", typeof(string));
+            
             int Createdid = -1;
             int SOrgid = -1;
             int POnumberid = -1;
@@ -1468,6 +1478,7 @@ namespace arconfirmationletter.Model
             }
 
 
+            string enduser = Utils.getusername();
 
 
 
@@ -1512,6 +1523,7 @@ namespace arconfirmationletter.Model
 
                     dr["NetValue"] = double.Parse(sourceData.Rows[rowixd][NetValueid].ToString());//.Truncate(225).Trim();
 
+                    dr["enduser"] = enduser;// sourceData.Rows[rowixd][Nameid].ToString().Truncate(225).Trim();
 
 
                     batable.Rows.Add(dr);
@@ -1555,6 +1567,7 @@ namespace arconfirmationletter.Model
                 bulkCopy.ColumnMappings.Add("Rj", "Rj");
                 //   bulkCopy.ColumnMappings.Add("UCRate", "[Plnt]");
                 bulkCopy.ColumnMappings.Add("NetValue", "Net_value");
+                bulkCopy.ColumnMappings.Add("enduser", "enduser");
 
 
 

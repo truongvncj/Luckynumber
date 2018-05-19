@@ -594,10 +594,11 @@ namespace arconfirmationletter.View
 
 
             string connection_string = Utils.getConnectionstr();
-
+            string enduser = Utils.getusername();
             var db = new LinqtoSQLDataContext(connection_string);
 
             var rs = from p in db.tbl_Products
+                     where p.enduser == enduser
                      select p;
 
             Viewtable viewtbl = new Viewtable(rs, db, "List of product", 100, DateTime.Today, DateTime.Today);
@@ -3850,8 +3851,9 @@ namespace arconfirmationletter.View
             string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
-
+            string enduser = Utils.getusername();
             var rs = from p in db.tbl_CTKMs
+                     where p.enduser == enduser
                      select p;
 
             Viewtable viewtbl = new Viewtable(rs, db, "Danh sách chương trình khuyến mại", 100, DateTime.Today, DateTime.Today);
@@ -3926,8 +3928,9 @@ namespace arconfirmationletter.View
             string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
-
+            string enduser = Utils.getusername();
             var rs = from p in db.tbl_Salesorders
+                     where p.enduser == enduser
                      select p;
 
             Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng mua", 100, DateTime.Today, DateTime.Today);
@@ -3943,8 +3946,9 @@ namespace arconfirmationletter.View
             string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
-
+            string enduser = Utils.getusername();
             var rs = from p in db.tbl_SalesFreeOrders
+                     where p.enduser == enduser
                      select p;
 
             Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại", 100, DateTime.Today, DateTime.Today);
@@ -4071,8 +4075,10 @@ namespace arconfirmationletter.View
             string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
 
             var rs = from p in db.tbl_SalesFreeOrders
+                     where p.enduser == enduser
                      where p.ma_CTKM ==""
                      select p;
 
@@ -4083,15 +4089,18 @@ namespace arconfirmationletter.View
 
         private void oRDERWRONGSKILLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-         //   Model.Conditioncheck.UpdateMaCTKM();
-
+            //   Model.Conditioncheck.UpdateMaCTKM();
+            string enduser = Utils.getusername();
 
             string connection_string = Utils.getConnectionstr();
             var db = new LinqtoSQLDataContext(connection_string);
             var pors = from x in db.tbl_CTKMs
+                       where x.enduser == enduser
                        select x.Mã_SP_KM;
+
             var rs = from p in db.tbl_SalesFreeOrders
                      where !pors.Contains(p.Material) 
+                     && p.enduser == enduser
                      select p;
 
             Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại key sai code sp khuyến mại", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
@@ -4113,9 +4122,10 @@ namespace arconfirmationletter.View
             string connection_string = Utils.getConnectionstr();
             var db = new LinqtoSQLDataContext(connection_string);
 
-          
+            string enduser = Utils.getusername();
 
             var rscheck = from p in db.tbl_SalesFreeOrders
+                          where p.enduser == enduser
                           where p.ma_CTKM !=""
                       select p;
 
@@ -4133,7 +4143,8 @@ namespace arconfirmationletter.View
             }
 
             var rs = from p in db.tbl_SalesFreeOrders
-                     where p.rptselect == true
+
+                     where p.rptselect == true && p.enduser == enduser
                      select p;
 
             Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại ngoài khung thời gian", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai

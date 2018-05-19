@@ -49,9 +49,11 @@ namespace arconfirmationletter.Model
             string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
-
+            string enduser = Utils.getusername();
             var rs = from p in db.tbl_CTKMs
+
                      where p.Mã_SP_KM.Trim() == material
+                     && p.enduser == enduser
                      //    && message.IndexOf(p.PO_Message) > 0
                      select p;
             foreach (var item in rs)
@@ -84,8 +86,9 @@ namespace arconfirmationletter.Model
             string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
-
+            string enduser = Utils.getusername();
             var rs = from p in db.tbl_SalesFreeOrders
+                     where p.enduser ==enduser
                      select p;
 
 
@@ -187,11 +190,13 @@ namespace arconfirmationletter.Model
         {
             bool kq = true;
             string connection_string = Utils.getConnectionstr();
-
+            string enduser = Utils.getusername();
             var db = new LinqtoSQLDataContext(connection_string);
 
             var ctkm = (from p in db.tbl_CTKMs
+
                      where p.Mã_CT == mact
+                     && p.enduser == enduser
                      select p).FirstOrDefault();
 
             if (ctkm != null)

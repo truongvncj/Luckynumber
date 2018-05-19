@@ -54,7 +54,7 @@ namespace arconfirmationletter
     #endregion
 		
 		public LinqtoSQLDataContext() : 
-				base(global::arconfirmationletter.Properties.Settings.Default.LuckynumberConnectionString, mappingSource)
+				base(global::arconfirmationletter.Properties.Settings.Default.LuckynumberConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -168,6 +168,8 @@ namespace arconfirmationletter
 		
 		private int _id;
 		
+		private string _enduser;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -194,6 +196,8 @@ namespace arconfirmationletter
     partial void OnNhóm_khách_hàngChanged();
     partial void OnidChanging(int value);
     partial void OnidChanged();
+    partial void OnenduserChanging(string value);
+    partial void OnenduserChanged();
     #endregion
 		
 		public tbl_CTKM()
@@ -417,6 +421,26 @@ namespace arconfirmationletter
 					this._id = value;
 					this.SendPropertyChanged("id");
 					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enduser", DbType="NVarChar(255)")]
+		public string enduser
+		{
+			get
+			{
+				return this._enduser;
+			}
+			set
+			{
+				if ((this._enduser != value))
+				{
+					this.OnenduserChanging(value);
+					this.SendPropertyChanging();
+					this._enduser = value;
+					this.SendPropertyChanged("enduser");
+					this.OnenduserChanged();
 				}
 			}
 		}
@@ -1164,6 +1188,8 @@ namespace arconfirmationletter
 		
 		private int _id;
 		
+		private string _enduser;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1174,6 +1200,8 @@ namespace arconfirmationletter
     partial void OnCodeKHChanged();
     partial void OnidChanging(int value);
     partial void OnidChanged();
+    partial void OnenduserChanging(string value);
+    partial void OnenduserChanged();
     #endregion
 		
 		public tbl_NhomKHKM()
@@ -1241,6 +1269,26 @@ namespace arconfirmationletter
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enduser", DbType="NVarChar(225)")]
+		public string enduser
+		{
+			get
+			{
+				return this._enduser;
+			}
+			set
+			{
+				if ((this._enduser != value))
+				{
+					this.OnenduserChanging(value);
+					this.SendPropertyChanging();
+					this._enduser = value;
+					this.SendPropertyChanged("enduser");
+					this.OnenduserChanged();
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1280,6 +1328,8 @@ namespace arconfirmationletter
 		
 		private int _id;
 		
+		private string _enduser;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1296,6 +1346,8 @@ namespace arconfirmationletter
     partial void OnUC_RateChanged();
     partial void OnidChanging(int value);
     partial void OnidChanged();
+    partial void OnenduserChanging(string value);
+    partial void OnenduserChanged();
     #endregion
 		
 		public tbl_Product()
@@ -1423,6 +1475,26 @@ namespace arconfirmationletter
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enduser", DbType="NVarChar(255)")]
+		public string enduser
+		{
+			get
+			{
+				return this._enduser;
+			}
+			set
+			{
+				if ((this._enduser != value))
+				{
+					this.OnenduserChanging(value);
+					this.SendPropertyChanging();
+					this._enduser = value;
+					this.SendPropertyChanged("enduser");
+					this.OnenduserChanged();
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1462,7 +1534,7 @@ namespace arconfirmationletter
 		
 		private bool _filter;
 		
-		private string _username;
+		private string _enduser;
 		
 		private int _id;
 		
@@ -1482,8 +1554,8 @@ namespace arconfirmationletter
     partial void OnFreeclasesPaidChanged();
     partial void OnfilterChanging(bool value);
     partial void OnfilterChanged();
-    partial void OnusernameChanging(string value);
-    partial void OnusernameChanged();
+    partial void OnenduserChanging(string value);
+    partial void OnenduserChanged();
     partial void OnidChanging(int value);
     partial void OnidChanged();
     #endregion
@@ -1613,22 +1685,22 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(255)")]
-		public string username
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enduser", DbType="NVarChar(255)")]
+		public string enduser
 		{
 			get
 			{
-				return this._username;
+				return this._enduser;
 			}
 			set
 			{
-				if ((this._username != value))
+				if ((this._enduser != value))
 				{
-					this.OnusernameChanging(value);
+					this.OnenduserChanging(value);
 					this.SendPropertyChanging();
-					this._username = value;
-					this.SendPropertyChanged("username");
-					this.OnusernameChanged();
+					this._enduser = value;
+					this.SendPropertyChanged("enduser");
+					this.OnenduserChanged();
 				}
 			}
 		}
@@ -1724,6 +1796,8 @@ namespace arconfirmationletter
 		
 		private string _ma_CTKM;
 		
+		private string _enduser;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1772,6 +1846,8 @@ namespace arconfirmationletter
     partial void OnrptselectChanged();
     partial void Onma_CTKMChanging(string value);
     partial void Onma_CTKMChanged();
+    partial void OnenduserChanging(string value);
+    partial void OnenduserChanged();
     #endregion
 		
 		public tbl_SalesFreeOrder()
@@ -2219,6 +2295,26 @@ namespace arconfirmationletter
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enduser", DbType="NVarChar(255)")]
+		public string enduser
+		{
+			get
+			{
+				return this._enduser;
+			}
+			set
+			{
+				if ((this._enduser != value))
+				{
+					this.OnenduserChanging(value);
+					this.SendPropertyChanging();
+					this._enduser = value;
+					this.SendPropertyChanged("enduser");
+					this.OnenduserChanged();
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2286,6 +2382,8 @@ namespace arconfirmationletter
 		
 		private bool _selectprt;
 		
+		private string _enduser;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2330,6 +2428,8 @@ namespace arconfirmationletter
     partial void OnidChanged();
     partial void OnselectprtChanging(bool value);
     partial void OnselectprtChanged();
+    partial void OnenduserChanging(string value);
+    partial void OnenduserChanged();
     #endregion
 		
 		public tbl_Salesorder()
@@ -2733,6 +2833,26 @@ namespace arconfirmationletter
 					this._selectprt = value;
 					this.SendPropertyChanged("selectprt");
 					this.OnselectprtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enduser", DbType="NVarChar(255)")]
+		public string enduser
+		{
+			get
+			{
+				return this._enduser;
+			}
+			set
+			{
+				if ((this._enduser != value))
+				{
+					this.OnenduserChanging(value);
+					this.SendPropertyChanging();
+					this._enduser = value;
+					this.SendPropertyChanged("enduser");
+					this.OnenduserChanged();
 				}
 			}
 		}
