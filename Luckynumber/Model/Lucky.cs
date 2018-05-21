@@ -20,12 +20,11 @@ namespace arconfirmationletter.Model
         {
             string connection_string = Utils.getConnectionstr();
             var db = new LinqtoSQLDataContext(connection_string);
-            //   var rs = from tblFBL5N in db.tblFBL5Ns
-            //          select tblFBL5N;
+            string enduser = Utils.getusername();
             db.CommandTimeout = 0;
             try
             {
-                db.ExecuteCommand("DELETE FROM tbl_Product");
+                db.ExecuteCommand("DELETE FROM tbl_Product  WHERE [tbl_Product].enduser  = '" + enduser + "'");
 
             }
             catch (Exception ex)
@@ -44,11 +43,13 @@ namespace arconfirmationletter.Model
             string connection_string = Utils.getConnectionstr();
             var db = new LinqtoSQLDataContext(connection_string);
             //   var rs = from tblFBL5N in db.tblFBL5Ns
+            string enduser = Utils.getusername();
+           
             //          select tblFBL5N;
             db.CommandTimeout = 0;
             try
             {
-                db.ExecuteCommand("DELETE FROM tbl_CTKM");
+                db.ExecuteCommand("DELETE FROM [dbo].[tbl_CTKM]   WHERE [tbl_CTKM].enduser = '"+ enduser+"'");
 
             }
             catch (Exception ex)
@@ -68,12 +69,12 @@ namespace arconfirmationletter.Model
 
             string connection_string = Utils.getConnectionstr();
             var db = new LinqtoSQLDataContext(connection_string);
-            //   var rs = from tblFBL5N in db.tblFBL5Ns
-            //          select tblFBL5N;
+            string enduser = Utils.getusername();
+
             db.CommandTimeout = 0;
             try
-            {
-                db.ExecuteCommand("DELETE FROM tbl_Salesorder");
+            { // [tbl_CTKM]
+                db.ExecuteCommand("DELETE FROM tbl_Salesorder  WHERE [tbl_Salesorder].enduser  = '" + enduser + "'");
 
             }
             catch (Exception ex)
@@ -94,12 +95,11 @@ namespace arconfirmationletter.Model
 
             string connection_string = Utils.getConnectionstr();
             var db = new LinqtoSQLDataContext(connection_string);
-            //   var rs = from tblFBL5N in db.tblFBL5Ns
-            //          select tblFBL5N;
+            string enduser = Utils.getusername();
             db.CommandTimeout = 0;
             try
             {
-                db.ExecuteCommand("DELETE FROM tbl_SalesFreeOrder");
+                db.ExecuteCommand("DELETE FROM tbl_SalesFreeOrder  WHERE [tbl_SalesFreeOrder].enduser  = '" + enduser + "'");
 
             }
             catch (Exception ex)
@@ -120,12 +120,11 @@ namespace arconfirmationletter.Model
         {
             string connection_string = Utils.getConnectionstr();
             var db = new LinqtoSQLDataContext(connection_string);
-            //   var rs = from tblFBL5N in db.tblFBL5Ns
-            //          select tblFBL5N;
+            string enduser = Utils.getusername();
             db.CommandTimeout = 0;
             try
             {
-                db.ExecuteCommand("DELETE FROM tbl_NhomKHKM");
+                db.ExecuteCommand("DELETE FROM [dbo].[tbl_NhomKHKM]    WHERE [tbl_NhomKHKM].enduser  = '" + enduser + "'");
 
             }
             catch (Exception ex)
@@ -398,8 +397,10 @@ namespace arconfirmationletter.Model
 
             batable.Columns.Add("denngay", typeof(DateTime));
             batable.Columns.Add("manhomKHkhuyenmai", typeof(string));
+            batable.Columns.Add("enduser", typeof(string));
 
 
+            string enduser = Utils.getusername();
 
 
 
@@ -581,8 +582,9 @@ namespace arconfirmationletter.Model
 
                         dr["denngay"] = Utils.chageExceldatetoData(sourceData.Rows[rowixd][denngayid].ToString());//.Truncate(225).Trim();
                         dr["manhomKHkhuyenmai"] = sourceData.Rows[rowixd][manhomKHkhuyenmai].ToString().Truncate(225).Trim();// double.Parse(sourceData.Rows[rowixd][manhomKHkhuyenmai].ToString());//.Truncate(225).Trim();
+                        dr["enduser"] = enduser;// sourceData.Rows[rowixd][manhomKHkhuyenmai].ToString().Truncate(225).Trim();// double.Parse(sourceData.Rows[rowixd][manhomKHkhuyenmai].ToString());//.Truncate(225).Trim();
 
-
+                    //    string enduser = Utils.getusername();
 
                         batable.Rows.Add(dr);
 
@@ -613,8 +615,9 @@ namespace arconfirmationletter.Model
                 bulkCopy.ColumnMappings.Add("tungay", "[Từ ngày]");
                 bulkCopy.ColumnMappings.Add("denngay", "[Đến Ngày]");
                 bulkCopy.ColumnMappings.Add("manhomKHkhuyenmai", "[Nhóm khách hàng]");
+                bulkCopy.ColumnMappings.Add("enduser", "enduser");
 
-
+              
 
                 try
                 {

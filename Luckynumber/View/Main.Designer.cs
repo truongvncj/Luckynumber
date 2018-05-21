@@ -56,6 +56,7 @@
             this.fREECASESORDERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vIEWORDERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uPLOADORDERLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cHECKMÃCTKHUYENMAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +73,6 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.lblocate = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cHECKMÃCTKHUYENMAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -235,7 +235,7 @@
             this.oRDERBYEToolStripMenuItem,
             this.fREEORDERToolStripMenuItem});
             this.uPLOADDATAToolStripMenuItem.Name = "uPLOADDATAToolStripMenuItem";
-            this.uPLOADDATAToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
+            this.uPLOADDATAToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
             this.uPLOADDATAToolStripMenuItem.Text = "PUCHASE ORDER";
             // 
             // oRDERBYEToolStripMenuItem
@@ -258,7 +258,7 @@
             this.vIEWORDERToolStripMenuItem,
             this.uPLOADORDERLISTToolStripMenuItem});
             this.fREECASESORDERToolStripMenuItem.Name = "fREECASESORDERToolStripMenuItem";
-            this.fREECASESORDERToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
+            this.fREECASESORDERToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
             this.fREECASESORDERToolStripMenuItem.Text = "FREECASES ORDER";
             // 
             // vIEWORDERToolStripMenuItem
@@ -274,6 +274,14 @@
             this.uPLOADORDERLISTToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
             this.uPLOADORDERLISTToolStripMenuItem.Text = "UPLOAD ORDER LIST";
             this.uPLOADORDERLISTToolStripMenuItem.Click += new System.EventHandler(this.uPLOADORDERLISTToolStripMenuItem_Click);
+            // 
+            // cHECKMÃCTKHUYENMAIToolStripMenuItem
+            // 
+            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.th5YSKEK6I;
+            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Name = "cHECKMÃCTKHUYENMAIToolStripMenuItem";
+            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
+            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Text = "UPDATE MÃ FREECASE PROGARME";
+            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Click += new System.EventHandler(this.cHECKMÃCTKHUYENMAIToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
@@ -309,6 +317,7 @@
             this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Name = "lISTORDERHAVEOVERFREECASEToolStripMenuItem";
             this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
             this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Text = "ORDER HAVE OVER BUGET";
+            this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Click += new System.EventHandler(this.lISTORDERHAVEOVERFREECASEToolStripMenuItem_Click);
             // 
             // lISTORDERWRONGMESSAGEToolStripMenuItem
             // 
@@ -422,14 +431,6 @@
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 26;
             this.label2.Text = "Region: ";
-            // 
-            // cHECKMÃCTKHUYENMAIToolStripMenuItem
-            // 
-            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.th5YSKEK6I;
-            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Name = "cHECKMÃCTKHUYENMAIToolStripMenuItem";
-            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
-            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Text = "UPDATE MÃ FREECASE PROGARME";
-            this.cHECKMÃCTKHUYENMAIToolStripMenuItem.Click += new System.EventHandler(this.cHECKMÃCTKHUYENMAIToolStripMenuItem_Click);
             // 
             // Main
             // 

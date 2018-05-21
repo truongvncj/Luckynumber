@@ -4004,9 +4004,10 @@ namespace arconfirmationletter.View
             string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
 
             var rsfreee = from p in db.tbl_SalesFreeOrders
-                         // where p.rptselect == true
+                          where p.enduser == enduser
                           select p;
             foreach (var item in rsfreee)
             {
@@ -4151,6 +4152,17 @@ namespace arconfirmationletter.View
             viewtbl.Show();
 
 
+
+
+
+
+
+
+
+        }
+
+        private void lISTORDERHAVEOVERFREECASEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
 
 

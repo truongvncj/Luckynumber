@@ -13,10 +13,11 @@ namespace arconfirmationletter.Model
             //  #region // kiem tra xem co sai mesage
             bool kq = true;
             string connection_string = Utils.getConnectionstr();
-
+            string enduser = Utils.getusername();
             var db = new LinqtoSQLDataContext(connection_string);
 
             var rs = from p in db.tbl_CTKMs
+                   where  p.enduser == enduser
                      where p.Mã_SP_KM.Trim() == material
                      //    && message.IndexOf(p.PO_Message) > 0
                      select p;
