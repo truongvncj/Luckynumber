@@ -105,53 +105,7 @@ namespace arconfirmationletter.View
        //     #region right setup
             this.lbseachedit.Visible = false;
             this.Bt_uploadbegin.Visible = false;
-            // this.lbusername.Text = Utils.getusername();
-
-            //int rightnumber = Utils.getrightnumber();
-
-            //if (rightnumber == 0) // không ró quyền/ đóng luôn
-            //{
-            //    this.Close();
-
-
-
-            //}
-            //if (rightnumber == 1) // super user
-            //{
-
-
-
-
-
-            //}
-            //if (rightnumber == 2) // admin  user
-            //{
-
-            //    //  dELETEALLDATABASEEDITToolStripMenuItem.Visible = false;
-            //    //   beginingBalanceToolStripMenuItem1.Visible = false;
-            //    //      eDITALLDATABASEToolStripMenuItem.Visible = false;
-
-            //    //       systemConfigToolStripMenuItem.Visible = false;
-            //    //   uploadCustomerToolStripMenuItem.Visible = false;
-            //    //    eDITCUSTOMERDATAToolStripMenuItem.Visible = false;
-
-
-            //}
-            //if (rightnumber == 3) // nomal user
-            //{
-
-            //    this.bt_detletedsetlectmain.Visible = false;
-
-            //}
-            //if (rightnumber == 4) // display user
-            //{
-
-            //    this.bt_detletedsetlectmain.Visible = false;
-
-            //}
-            //#endregion
-
-
+            string enduser = Utils.getusername();
 
 
             this.bnt_adddataselected.Visible = false;
@@ -192,7 +146,7 @@ namespace arconfirmationletter.View
             this.lb_headersub.Text = lbsub;
 
 
-            string slqtext = "select * from " + tblnamemain;
+            string slqtext = "select * from " + tblnamemain + " where "+ tblnamemain+".enduser ='" +enduser+"'";
 
             var results3 = db.ExecuteQuery(Typeofftable, slqtext);
 
@@ -228,7 +182,7 @@ namespace arconfirmationletter.View
 
 
 
-            slqtext = "select *  from  " + tblnamesub; // EXCEPT (" + IDsub + ") 
+            slqtext = "select *  from  " + tblnamesub + " where " + tblnamesub + ".enduser ='" + enduser + "'";
 
 
             var results2 = db.ExecuteQuery(Typeofftable, slqtext);
@@ -247,158 +201,6 @@ namespace arconfirmationletter.View
             this.dataGridView1.AutoGenerateColumns = true;
 
 
-            #region  // IF NULL   tbl_CustomerGroupTemp
-            if (tblnamesub == "tbl_CustomerGroupTemp")
-            {
-
-                //if (source1.Count == 0)
-
-                //{
-
-                //    //       MessageBox.Show("ok !!!!!!!!");
-                //    string connection_string = Utils.getConnectionstr();
-                //    //      UpdateDatagridview
-                //    System.Data.DataTable dt = new System.Data.DataTable();
-                //    LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-                //    var rsthisperiod = from tbl_CustomerGroupTemp in dc.tbl_CustomerGroupTemps
-                //                       select tbl_CustomerGroupTemp;
-
-                //  //  Utils ut = new Utils();
-                //    dt = Utils.ToDataTable(dc, rsthisperiod);
-
-                //    this.dataGridView1.DataSource = dt;
-
-
-                //}
-
-            }
-
-            #endregion
-
-
-
-
-            //#region  // IF NULL   tbl_ProductlistTMP
-            //if (tblnamesub == "tbl_ProductlistTMP")
-            //{
-
-            //    if (source1.Count == 0)
-
-            //    {
-
-            //        //       MessageBox.Show("ok !!!!!!!!");
-            //        string connection_string = Utils.getConnectionstr();
-            //        //      UpdateDatagridview
-            //        System.Data.DataTable dt = new System.Data.DataTable();
-            //        LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-            //        var rsthisperiod = from tbl_ProductlistTMP in dc.tbl_ProductlistTMPs
-            //                           select tbl_ProductlistTMP;
-
-            //    //    Utils ut = new Utils();
-            //        dt = Utils.ToDataTable(dc, rsthisperiod);
-
-            //        this.dataGridView1.DataSource = dt;
-
-
-            //    }
-
-            //}
-
-            //#endregion
-
-
-
-
-            //#region  // IF NULL   tblCustomerTmp
-            //if (tblnamesub == "tblCustomerTmp")
-            //{
-
-            //    if (source1.Count == 0)
-
-            //    {
-
-            //        //       MessageBox.Show("ok !!!!!!!!");
-            //        string connection_string = Utils.getConnectionstr();
-            //        //      UpdateDatagridview
-            //        System.Data.DataTable dt = new System.Data.DataTable();
-            //        LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-            //        var rsthisperiod = from tblCustomerTmp in dc.tblCustomerTmps
-            //                           select tblCustomerTmp;
-
-            //     //   Utils ut = new Utils();
-            //        dt = Utils.ToDataTable(dc, rsthisperiod);
-
-            //        this.dataGridView1.DataSource = dt;
-
-
-            //    }
-
-            //}
-
-            //#endregion
-
-
-
-            //#region  // IF NULL   tbl_Productlist
-            //if (tblnamesub == "tbl_Productlist")
-            //{
-
-            //    if (source1.Count == 0)
-
-            //    {
-
-            //        //       MessageBox.Show("ok !!!!!!!!");
-            //        string connection_string = Utils.getConnectionstr();
-            //        //      UpdateDatagridview
-            //        System.Data.DataTable dt = new System.Data.DataTable();
-            //        LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-            //        var rsthisperiod = from tbl_Productlist in dc.tbl_Productlists
-            //                           select tbl_Productlist;
-
-            //     //   Utils ut = new Utils();
-            //        dt = Utils.ToDataTable(dc, rsthisperiod);
-
-            //        this.dataGridView1.DataSource = dt;
-
-
-            //    }
-
-            //}
-
-            //#endregion
-
-
-            //#region  // IF NULL   tbl_CustomerGroup
-            //if (tblnamesub == "tbl_CustomerGroup")
-            //{
-
-            //    if (source1.Count == 0)
-
-            //    {
-
-            //        //       MessageBox.Show("ok !!!!!!!!");
-            //        string connection_string = Utils.getConnectionstr();
-            //        //      UpdateDatagridview
-            //        System.Data.DataTable dt = new System.Data.DataTable();
-            //        LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-            //        var rsthisperiod = from tbl_CustomerGroup in dc.tbl_CustomerGroups
-            //                           select tbl_CustomerGroup;
-
-            //     //   Utils ut = new Utils();
-            //        dt = Utils.ToDataTable(dc, rsthisperiod);
-
-            //        this.dataGridView1.DataSource = dt;
-
-
-            //    }
-
-            //}
-
-            //#endregion
-
-
-
-            // IF NULL
 
 
             if (this.dataGridView1.Columns[IDsub] != null)
@@ -410,63 +212,7 @@ namespace arconfirmationletter.View
             this.dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dataGridView2.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
 
-            if (lbsub == "LIST PRODUCT AND EMPTY GROUP")
-            {
-
-                this.dataGridView1.Columns["tbl_EmptyGroup"].Visible = false;
-            }
-
-
-
-
-
-
-            if (lbsub == "BEGINNING BALANCE ARCONFIRMATION LETTER")
-            {
-                //  this.bnt_adddataselected.Visible = true;
-                //  this.Bt_Adddata.Visible = false;
-                //     tblFBL5beginbalace tb = new tblFBL5beginbalace();
-                //tb.codeGroup
-                //  this.dataGridView1.Columns["codeGroup"].Visible = false;
-                this.Bt_uploadbegin.Visible = true;
-
-
-
-
-
-
-
-
-            }
-
-            this.KeyPreview = true;
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(Control_KeyPress);
-            if (lbsub == "LIST CUSTOMER MAKE REPORTS")
-            {
-
-                this.lbseachedit.Visible = true;
-
-
-
-
-
-
-
-            }
-
-
-            if (tblnamesub == "tblFBL5beginbalace")
-            {
-
-                this.lbseachedit.Visible = true;
-
-
-
-
-
-
-
-            }
+      
 
 
             //tblCustomer cct = new tblCustomer();
@@ -843,160 +589,15 @@ namespace arconfirmationletter.View
             db.SubmitChanges();
 
             // view lại
-            string slqtext = "select *  from  " + tblnamesub; // EXCEPT (" + IDsub + ") 
+            string enduser = Utils.getusername();
+            string slqtext = "select *  from  " + tblnamesub + " where " + tblnamesub + ".enduser ='" + enduser + "'";
             var results2 = db.ExecuteQuery(Typeofftable, slqtext);
             source1.DataSource = results2;
             this.dataGridView1.DataSource = source1;
             // view lại
             MessageBox.Show("Data update done !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            #region  // IF NULL   tbl_CustomerGroupTemp
-            if (tblnamesub == "tbl_CustomerGroupTemp")
-            {
-
-                //if (source1.Count == 0)
-
-                //{
-
-                //    //       MessageBox.Show("ok !!!!!!!!");
-                //    string connection_string = Utils.getConnectionstr();
-                //    //      UpdateDatagridview
-                //    System.Data.DataTable dt = new System.Data.DataTable();
-                //    LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-                //    var rsthisperiod = from tbl_CustomerGroupTemp in dc.tbl_CustomerGroupTemps
-                //                       select tbl_CustomerGroupTemp;
-
-                ////    Utils ut = new Utils();
-                //    dt = Utils.ToDataTable(dc, rsthisperiod);
-
-                //    this.dataGridView1.DataSource = dt;
 
 
-                //}
-
-            }
-
-            #endregion
-
-
-
-
-            //#region  // IF NULL   tbl_ProductlistTMP
-            //if (tblnamesub == "tbl_ProductlistTMP")
-            //{
-
-            //    if (source1.Count == 0)
-
-            //    {
-
-            //        //       MessageBox.Show("ok !!!!!!!!");
-            //        string connection_string = Utils.getConnectionstr();
-            //        //      UpdateDatagridview
-            //        System.Data.DataTable dt = new System.Data.DataTable();
-            //        LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-            //        var rsthisperiod = from tbl_ProductlistTMP in dc.tbl_ProductlistTMPs
-            //                           select tbl_ProductlistTMP;
-
-            //   //     Utils ut = new Utils();
-            //        dt = Utils.ToDataTable(dc, rsthisperiod);
-
-            //        this.dataGridView1.DataSource = dt;
-
-
-            //    }
-
-            //}
-
-            //#endregion
-
-
-
-
-            //#region  // IF NULL   tblCustomerTmp
-            //if (tblnamesub == "tblCustomerTmp")
-            //{
-
-            //    if (source1.Count == 0)
-
-            //    {
-
-            //        //       MessageBox.Show("ok !!!!!!!!");
-            //        string connection_string = Utils.getConnectionstr();
-            //        //      UpdateDatagridview
-            //        System.Data.DataTable dt = new System.Data.DataTable();
-            //        LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-            //        var rsthisperiod = from tblCustomerTmp in dc.tblCustomerTmps
-            //                           select tblCustomerTmp;
-
-            //     //   Utils ut = new Utils();
-            //        dt = Utils.ToDataTable(dc, rsthisperiod);
-
-            //        this.dataGridView1.DataSource = dt;
-
-
-            //    }
-
-            //}
-
-            //#endregion
-
-
-
-            //#region  // IF NULL   tbl_Productlist
-            //if (tblnamesub == "tbl_Productlist")
-            //{
-
-            //    if (source1.Count == 0)
-
-            //    {
-
-            //        //       MessageBox.Show("ok !!!!!!!!");
-            //        string connection_string = Utils.getConnectionstr();
-            //        //      UpdateDatagridview
-            //        System.Data.DataTable dt = new System.Data.DataTable();
-            //        LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-            //        var rsthisperiod = from tbl_Productlist in dc.tbl_Productlists
-            //                           select tbl_Productlist;
-
-            //     //   Utils ut = new Utils();
-            //        dt = Utils.ToDataTable(dc, rsthisperiod);
-
-            //        this.dataGridView1.DataSource = dt;
-
-
-            //    }
-
-            //}
-
-            //#endregion
-
-
-            //#region  // IF NULL   tbl_CustomerGroup
-            //if (tblnamesub == "tbl_CustomerGroup")
-            //{
-
-            //    if (source1.Count == 0)
-
-            //    {
-
-            //        //       MessageBox.Show("ok !!!!!!!!");
-            //        string connection_string = Utils.getConnectionstr();
-            //        //      UpdateDatagridview
-            //        System.Data.DataTable dt = new System.Data.DataTable();
-            //        LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-            //        var rsthisperiod = from tbl_CustomerGroup in dc.tbl_CustomerGroups
-            //                           select tbl_CustomerGroup;
-
-            //      //  Utils ut = new Utils();
-            //        dt = Utils.ToDataTable(dc, rsthisperiod);
-
-            //        this.dataGridView1.DataSource = dt;
-
-
-            //    }
-
-            //}
-
-            //#endregion
 
         }
 
