@@ -132,7 +132,7 @@ namespace arconfirmationletter
                     //Excel sheet cell has data as "11-30-11" but when i import it convert to "78608".  So i want import those data with data as "11-30-11".  
 
 
-                    string x = Convert.ToString(myValues.GetValue(a, 2));  // vừa sửa a2  th   ???/
+             //       string x = Convert.ToString(myValues.GetValue(a, 2));  // vừa sửa a2  th   ???/
                     object[] poop = new object[horizontal];
                     //if (x == "11-30-11")
                     //{                    

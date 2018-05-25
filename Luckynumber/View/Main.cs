@@ -4008,11 +4008,12 @@ namespace arconfirmationletter.View
 
             var rsfreee = from p in db.tbl_SalesFreeOrders
                           where p.enduser == enduser
+                        
                           select p;
             foreach (var item in rsfreee)
             {
 
-                if (Model.Conditioncheck.Iswrongmessage(item.PO_number, item.Material.Trim()))
+                if (item.ma_CTKM != "0" && item.ma_CTKM != "" && Model.Conditioncheck.Iswrongmessage(item.PO_number, item.Material.Trim()))
                 {
                     item.rptselect = true;
 
@@ -4023,6 +4024,12 @@ namespace arconfirmationletter.View
                 {
                     item.rptselect = false;
                 }
+
+                
+                       
+                        
+
+
 
                 db.SubmitChanges();
 
@@ -4042,30 +4049,7 @@ namespace arconfirmationletter.View
         private void lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            string connection_string = Utils.getConnectionstr();
-
-            var db = new LinqtoSQLDataContext(connection_string);
-
-            var pors = from x in db.tbl_CTKMs
-                       select x;
-
-
-            foreach (var item in pors)
-            {
-                Model.Conditioncheck.checkIsunenoughtpaid((double)item.Tỷ_lệ_CTKM, item.Mã_SP_Mua, item.Mã_SP_KM);
-
-
-            }
-
-            var rs = from x in db.tbl_rptnotEnoughts
-                         //  where x.filter == true
-                     select x;
-
-
-            Viewtable viewtbl = new Viewtable(rs, db, "Order Not enought Freecase ", 100, DateTime.Today, DateTime.Today);
-            viewtbl.Show();
-
-
+         
 
 
         }
@@ -4073,6 +4057,7 @@ namespace arconfirmationletter.View
         private void cHECKMÃCTKHUYENMAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Model.Conditioncheck.UpdateMaCTKM();
+
             string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
@@ -4090,24 +4075,7 @@ namespace arconfirmationletter.View
 
         private void oRDERWRONGSKILLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //   Model.Conditioncheck.UpdateMaCTKM();
-            string enduser = Utils.getusername();
-
-            string connection_string = Utils.getConnectionstr();
-            var db = new LinqtoSQLDataContext(connection_string);
-            var pors = from x in db.tbl_CTKMs
-                       where x.enduser == enduser
-                       select x.Mã_SP_KM;
-
-            var rs = from p in db.tbl_SalesFreeOrders
-                     where !pors.Contains(p.Material) 
-                     && p.enduser == enduser
-                     select p;
-
-            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại key sai code sp khuyến mại", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
-            viewtbl.Show();
-
-
+         
 
 
 
@@ -4127,6 +4095,8 @@ namespace arconfirmationletter.View
 
             var rscheck = from p in db.tbl_SalesFreeOrders
                           where p.enduser == enduser
+                          && p.ma_CTKM != "0"
+                          && p.ma_CTKM !=""
                           where p.ma_CTKM !=""
                       select p;
 
@@ -4169,6 +4139,51 @@ namespace arconfirmationletter.View
 
 
 
+
+        }
+
+        private void masterViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+
+            var pors = from x in db.tbl_CTKMs
+                       select x;
+
+
+            foreach (var item in pors)
+            {
+                Model.Conditioncheck.checkIsunenoughtpaid((double)item.Tỷ_lệ_CTKM, item.Mã_SP_Mua, item.Mã_SP_KM);
+
+
+            }
+
+            var rs = from x in db.tbl_rptnotEnoughts
+                         //  where x.filter == true
+                     select x;
+
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Order Not enought Freecase ", 100, DateTime.Today, DateTime.Today);
+            viewtbl.Show();
+
+
+        }
+
+        private void wRONGSCHEMEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+            var rs = from p in db.tbl_SalesFreeOrders
+                     where p.enduser == enduser
+                     where p.ma_CTKM == "" || p.ma_CTKM == "0"
+                     select p;
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại sai chương trình", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
+            viewtbl.Show();
 
         }
     }

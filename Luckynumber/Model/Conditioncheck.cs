@@ -90,6 +90,7 @@ namespace arconfirmationletter.Model
             string enduser = Utils.getusername();
             var rs = from p in db.tbl_SalesFreeOrders
                      where p.enduser ==enduser
+                    && p.ma_CTKM != ""
                      select p;
 
 

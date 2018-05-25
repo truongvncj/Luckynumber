@@ -71,3 +71,4 @@ C:\Users\TRUONG\Desktop\Luckynumber\Luckynumber\obj\x86\Debug\RdlCompile.cache
 C:\Users\TRUONG\Desktop\Luckynumber\Luckynumber\obj\x86\Debug\RdlCompile.compiled
 C:\Users\TRUONG\Desktop\Luckynumber\Luckynumber\obj\x86\Debug\arconfirmationletter.exe
 C:\Users\TRUONG\Desktop\Luckynumber\Luckynumber\obj\x86\Debug\arconfirmationletter.pdb
+D:\GitHub\Luckynumber\Luckynumber\obj\x86\Debug\arconfirmationletter.View.inputselectvalue.resources

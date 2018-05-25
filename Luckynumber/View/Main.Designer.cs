@@ -73,6 +73,9 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.lblocate = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.masterViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderNotEnoughFreecaseDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wRONGSCHEMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -307,6 +310,9 @@
             // 
             // lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem
             // 
+            this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.masterViewToolStripMenuItem,
+            this.orderNotEnoughFreecaseDetailToolStripMenuItem});
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Name = "lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem";
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Text = "ORDER  NOT ENOUGH FREECASE ";
@@ -340,6 +346,8 @@
             // 
             // oRDERWRONGSKILLToolStripMenuItem
             // 
+            this.oRDERWRONGSKILLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.wRONGSCHEMEToolStripMenuItem});
             this.oRDERWRONGSKILLToolStripMenuItem.Name = "oRDERWRONGSKILLToolStripMenuItem";
             this.oRDERWRONGSKILLToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
             this.oRDERWRONGSKILLToolStripMenuItem.Text = "ORDER WRONG SCHEME";
@@ -432,6 +440,26 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Region: ";
             // 
+            // masterViewToolStripMenuItem
+            // 
+            this.masterViewToolStripMenuItem.Name = "masterViewToolStripMenuItem";
+            this.masterViewToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.masterViewToolStripMenuItem.Text = "Master View";
+            this.masterViewToolStripMenuItem.Click += new System.EventHandler(this.masterViewToolStripMenuItem_Click);
+            // 
+            // orderNotEnoughFreecaseDetailToolStripMenuItem
+            // 
+            this.orderNotEnoughFreecaseDetailToolStripMenuItem.Name = "orderNotEnoughFreecaseDetailToolStripMenuItem";
+            this.orderNotEnoughFreecaseDetailToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
+            this.orderNotEnoughFreecaseDetailToolStripMenuItem.Text = "Order not enough Freecase detail";
+            // 
+            // wRONGSCHEMEToolStripMenuItem
+            // 
+            this.wRONGSCHEMEToolStripMenuItem.Name = "wRONGSCHEMEToolStripMenuItem";
+            this.wRONGSCHEMEToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
+            this.wRONGSCHEMEToolStripMenuItem.Text = "WRONG SCHEME";
+            this.wRONGSCHEMEToolStripMenuItem.Click += new System.EventHandler(this.wRONGSCHEMEToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -500,6 +528,9 @@
         private ToolStripMenuItem uPLOADORDERLISTToolStripMenuItem;
         private ToolStripMenuItem uPLOADPROGARMEToolStripMenuItem;
         private ToolStripMenuItem cHECKMÃCTKHUYENMAIToolStripMenuItem;
+        private ToolStripMenuItem masterViewToolStripMenuItem;
+        private ToolStripMenuItem orderNotEnoughFreecaseDetailToolStripMenuItem;
+        private ToolStripMenuItem wRONGSCHEMEToolStripMenuItem;
     }
 }
 

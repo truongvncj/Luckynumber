@@ -38,11 +38,11 @@ namespace arconfirmationletter.View
 
         public IQueryable rs;
         LinqtoSQLDataContext db;
-        public DataGridView Dtgridview;
-        public List<ComboboxItem> dataCollectionaccount;
+        //     public DataGridView Dtgridview;
+        //     public List<ComboboxItem> dataCollectionaccount;
 
-        public List<ComboboxItem> dataCollectiongroup;//{ get; private set; }
-                                                      //1. Định nghĩa 1 delegate
+        public List<ComboboxItem> datacolecttionselect;//{ get; private set; }
+                                                       //1. Định nghĩa 1 delegate
 
 
         class datatoExport
@@ -384,8 +384,8 @@ namespace arconfirmationletter.View
 
 
 
-            //string connection_string = Utils.getConnectionstr();
-            //LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
+
+            //               datacolecttionselect
 
             //var rsthisperiod = from tblFBL5NthisperiodSum in dc.tblFBL5NthisperiodSums
             //                   where ((int)tblFBL5NthisperiodSum.Account).ToString().Contains(text)
@@ -1079,6 +1079,101 @@ namespace arconfirmationletter.View
 
             //     DateTime fromdate;
             //     DateTime todate;
+
+
+            if (this.viewcode == 555) // 555 là hiện lên các chương trình khuyến mại để chọn
+            {
+
+                if (dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["id"].Value != null && dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Material"].Value != null)
+                {
+                    int indexID = int.Parse(dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["id"].Value.ToString());
+
+                    string materialcode = dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Material"].Value.ToString();
+                    DateTime Dlv_Date = (DateTime)dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Dlv_Date"].Value;
+
+                    string enduser = Utils.getusername();
+
+                    string connection_string = Utils.getConnectionstr();
+                    LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
+                    var rsprogarme = from p in dc.tbl_CTKMs
+                                     where p.enduser == enduser
+                                     && p.Mã_SP_KM == materialcode
+                                     && p.Từ_ngày <= Dlv_Date
+                                      && p.Đến_Ngày >= Dlv_Date
+
+                                     select p;
+                    //       public List<ComboboxItem> datacolecttionselect;//{ get; private set; }
+                    //1. Định nghĩa 1 delegate
+                    List<ComboboxItem> datacolecttionselect = new List<ComboboxItem>();//{ get; private set; }
+
+                    ComboboxItem datadetailo = new ComboboxItem();
+                    datadetailo.Value = "0";
+                    datadetailo.Text = "Không có chương trình khuyến mại";
+                    datacolecttionselect.Add(datadetailo);
+
+                    foreach (var item in rsprogarme)
+                    {
+                        ComboboxItem datadetail = new ComboboxItem();
+                        datadetail.Value = item.Mã_CT;
+                        datadetail.Text = item.PO_Message;
+
+                        datacolecttionselect.Add(datadetail);
+                    }
+
+
+
+
+
+                    View.inputselectvalue progaame = new inputselectvalue("555", datacolecttionselect);
+
+                    progaame.ShowDialog();
+                    string mactkm = progaame.selectvalue;
+                    string namectkm = progaame.selecttext;
+                    bool kq = progaame.kq;
+
+
+                    if (kq)
+                    {
+
+
+                        dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["ma_CTKM"].Value = mactkm;
+                        dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["New_PO_number"].Value = namectkm;
+
+                        //  Update vao sql
+
+                        var rsvalue = from p in dc.tbl_SalesFreeOrders
+                                         where p.enduser == enduser
+                                         && p.id == indexID
+                                         select p;
+
+                        if (rsvalue.Count()>=0)
+                        {
+
+                            foreach (var item2 in rsvalue)
+                            {
+                                item2.ma_CTKM = mactkm;
+                                item2.New_PO_number = namectkm;
+                                dc.SubmitChanges();
+                            }
+
+                        }
+
+
+
+
+                    }
+
+
+
+                }
+
+
+            }
+
+
+
+
+
 
             if (this.viewcode == 13) // afeter vẻyfy  adj
             {

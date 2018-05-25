@@ -54,7 +54,7 @@ namespace arconfirmationletter
     #endregion
 		
 		public LinqtoSQLDataContext() : 
-				base(global::arconfirmationletter.Properties.Settings.Default.LuckynumberConnectionString1, mappingSource)
+				base(global::arconfirmationletter.Properties.Settings.Default.LuckynumberConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1762,6 +1762,8 @@ namespace arconfirmationletter
 		
 		private System.Nullable<System.DateTime> _Dlv_Date;
 		
+		private string _New_PO_number;
+		
 		private System.Nullable<double> _Order_Number;
 		
 		private System.Nullable<double> _Sold_to_party;
@@ -1812,6 +1814,8 @@ namespace arconfirmationletter
     partial void OnDoc_DateChanged();
     partial void OnDlv_DateChanging(System.Nullable<System.DateTime> value);
     partial void OnDlv_DateChanged();
+    partial void OnNew_PO_numberChanging(string value);
+    partial void OnNew_PO_numberChanged();
     partial void OnOrder_NumberChanging(System.Nullable<double> value);
     partial void OnOrder_NumberChanged();
     partial void OnSold_to_partyChanging(System.Nullable<double> value);
@@ -1951,6 +1955,26 @@ namespace arconfirmationletter
 					this._Dlv_Date = value;
 					this.SendPropertyChanged("Dlv_Date");
 					this.OnDlv_DateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_New_PO_number", DbType="NVarChar(255)")]
+		public string New_PO_number
+		{
+			get
+			{
+				return this._New_PO_number;
+			}
+			set
+			{
+				if ((this._New_PO_number != value))
+				{
+					this.OnNew_PO_numberChanging(value);
+					this.SendPropertyChanging();
+					this._New_PO_number = value;
+					this.SendPropertyChanged("New_PO_number");
+					this.OnNew_PO_numberChanged();
 				}
 			}
 		}
