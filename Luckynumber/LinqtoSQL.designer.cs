@@ -45,6 +45,9 @@ namespace arconfirmationletter
     partial void Inserttbl_rptnotEnought(tbl_rptnotEnought instance);
     partial void Updatetbl_rptnotEnought(tbl_rptnotEnought instance);
     partial void Deletetbl_rptnotEnought(tbl_rptnotEnought instance);
+    partial void Inserttbl_SalesFreehavetopaid(tbl_SalesFreehavetopaid instance);
+    partial void Updatetbl_SalesFreehavetopaid(tbl_SalesFreehavetopaid instance);
+    partial void Deletetbl_SalesFreehavetopaid(tbl_SalesFreehavetopaid instance);
     partial void Inserttbl_SalesFreeOrder(tbl_SalesFreeOrder instance);
     partial void Updatetbl_SalesFreeOrder(tbl_SalesFreeOrder instance);
     partial void Deletetbl_SalesFreeOrder(tbl_SalesFreeOrder instance);
@@ -120,6 +123,14 @@ namespace arconfirmationletter
 			get
 			{
 				return this.GetTable<tbl_rptnotEnought>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_SalesFreehavetopaid> tbl_SalesFreehavetopaids
+		{
+			get
+			{
+				return this.GetTable<tbl_SalesFreehavetopaid>();
 			}
 		}
 		
@@ -1721,6 +1732,212 @@ namespace arconfirmationletter
 					this._id = value;
 					this.SendPropertyChanged("id");
 					this.OnidChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_SalesFreehavetopaid")]
+	public partial class tbl_SalesFreehavetopaid : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Nullable<double> _Order_Number;
+		
+		private string _ma_CTKM;
+		
+		private string _Material;
+		
+		private string _Description;
+		
+		private System.Nullable<double> _EstimateFree_quantity;
+		
+		private int _id;
+		
+		private string _enduser;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnOrder_NumberChanging(System.Nullable<double> value);
+    partial void OnOrder_NumberChanged();
+    partial void Onma_CTKMChanging(string value);
+    partial void Onma_CTKMChanged();
+    partial void OnMaterialChanging(string value);
+    partial void OnMaterialChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnEstimateFree_quantityChanging(System.Nullable<double> value);
+    partial void OnEstimateFree_quantityChanged();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnenduserChanging(string value);
+    partial void OnenduserChanged();
+    #endregion
+		
+		public tbl_SalesFreehavetopaid()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Order_Number", DbType="Float")]
+		public System.Nullable<double> Order_Number
+		{
+			get
+			{
+				return this._Order_Number;
+			}
+			set
+			{
+				if ((this._Order_Number != value))
+				{
+					this.OnOrder_NumberChanging(value);
+					this.SendPropertyChanging();
+					this._Order_Number = value;
+					this.SendPropertyChanged("Order_Number");
+					this.OnOrder_NumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_CTKM", DbType="NVarChar(255)")]
+		public string ma_CTKM
+		{
+			get
+			{
+				return this._ma_CTKM;
+			}
+			set
+			{
+				if ((this._ma_CTKM != value))
+				{
+					this.Onma_CTKMChanging(value);
+					this.SendPropertyChanging();
+					this._ma_CTKM = value;
+					this.SendPropertyChanged("ma_CTKM");
+					this.Onma_CTKMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Material", DbType="NVarChar(255)")]
+		public string Material
+		{
+			get
+			{
+				return this._Material;
+			}
+			set
+			{
+				if ((this._Material != value))
+				{
+					this.OnMaterialChanging(value);
+					this.SendPropertyChanging();
+					this._Material = value;
+					this.SendPropertyChanged("Material");
+					this.OnMaterialChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(255)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstimateFree_quantity", DbType="Float")]
+		public System.Nullable<double> EstimateFree_quantity
+		{
+			get
+			{
+				return this._EstimateFree_quantity;
+			}
+			set
+			{
+				if ((this._EstimateFree_quantity != value))
+				{
+					this.OnEstimateFree_quantityChanging(value);
+					this.SendPropertyChanging();
+					this._EstimateFree_quantity = value;
+					this.SendPropertyChanged("EstimateFree_quantity");
+					this.OnEstimateFree_quantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enduser", DbType="NVarChar(255)")]
+		public string enduser
+		{
+			get
+			{
+				return this._enduser;
+			}
+			set
+			{
+				if ((this._enduser != value))
+				{
+					this.OnenduserChanging(value);
+					this.SendPropertyChanging();
+					this._enduser = value;
+					this.SendPropertyChanged("enduser");
+					this.OnenduserChanged();
 				}
 			}
 		}

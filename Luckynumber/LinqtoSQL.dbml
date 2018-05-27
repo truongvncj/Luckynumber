@@ -79,6 +79,17 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.tbl_SalesFreehavetopaid" Member="tbl_SalesFreehavetopaids">
+    <Type Name="tbl_SalesFreehavetopaid">
+      <Column Name="Order_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ma_CTKM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Material" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EstimateFree_quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="enduser" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.tbl_SalesFreeOrder" Member="tbl_SalesFreeOrders">
     <Type Name="tbl_SalesFreeOrder">
       <Column Name="Created" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />

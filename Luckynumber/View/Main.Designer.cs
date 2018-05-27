@@ -60,11 +60,14 @@
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.masterViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderNotEnoughFreecaseDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lISTORDERHAVEOVERFREECASEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lISTORDERWRONGMESSAGEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oRDERWRONGSKILLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wRONGSCHEMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serverNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userAndRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,9 +76,9 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.lblocate = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.masterViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderNotEnoughFreecaseDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wRONGSCHEMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fILTERORDERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.puchaseOrderWithValueEqua0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.freeCaseWithValue0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -295,7 +298,8 @@
             this.lISTORDERWRONGMESSAGEToolStripMenuItem,
             this.toolStripSeparator2,
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem,
-            this.oRDERWRONGSKILLToolStripMenuItem});
+            this.oRDERWRONGSKILLToolStripMenuItem,
+            this.fILTERORDERToolStripMenuItem});
             this.reportsToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reportsToolStripMenuItem.Image")));
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
@@ -317,6 +321,19 @@
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Text = "ORDER  NOT ENOUGH FREECASE ";
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Click += new System.EventHandler(this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem_Click);
+            // 
+            // masterViewToolStripMenuItem
+            // 
+            this.masterViewToolStripMenuItem.Name = "masterViewToolStripMenuItem";
+            this.masterViewToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
+            this.masterViewToolStripMenuItem.Text = "Master View";
+            this.masterViewToolStripMenuItem.Click += new System.EventHandler(this.masterViewToolStripMenuItem_Click);
+            // 
+            // orderNotEnoughFreecaseDetailToolStripMenuItem
+            // 
+            this.orderNotEnoughFreecaseDetailToolStripMenuItem.Name = "orderNotEnoughFreecaseDetailToolStripMenuItem";
+            this.orderNotEnoughFreecaseDetailToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
+            this.orderNotEnoughFreecaseDetailToolStripMenuItem.Text = "Order not enough Freecase detail";
             // 
             // lISTORDERHAVEOVERFREECASEToolStripMenuItem
             // 
@@ -352,6 +369,13 @@
             this.oRDERWRONGSKILLToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
             this.oRDERWRONGSKILLToolStripMenuItem.Text = "ORDER WRONG SCHEME";
             this.oRDERWRONGSKILLToolStripMenuItem.Click += new System.EventHandler(this.oRDERWRONGSKILLToolStripMenuItem_Click);
+            // 
+            // wRONGSCHEMEToolStripMenuItem
+            // 
+            this.wRONGSCHEMEToolStripMenuItem.Name = "wRONGSCHEMEToolStripMenuItem";
+            this.wRONGSCHEMEToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
+            this.wRONGSCHEMEToolStripMenuItem.Text = "WRONG SCHEME";
+            this.wRONGSCHEMEToolStripMenuItem.Click += new System.EventHandler(this.wRONGSCHEMEToolStripMenuItem_Click);
             // 
             // systemConfigToolStripMenuItem
             // 
@@ -440,25 +464,28 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Region: ";
             // 
-            // masterViewToolStripMenuItem
+            // fILTERORDERToolStripMenuItem
             // 
-            this.masterViewToolStripMenuItem.Name = "masterViewToolStripMenuItem";
-            this.masterViewToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.masterViewToolStripMenuItem.Text = "Master View";
-            this.masterViewToolStripMenuItem.Click += new System.EventHandler(this.masterViewToolStripMenuItem_Click);
+            this.fILTERORDERToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.puchaseOrderWithValueEqua0ToolStripMenuItem,
+            this.freeCaseWithValue0ToolStripMenuItem});
+            this.fILTERORDERToolStripMenuItem.Name = "fILTERORDERToolStripMenuItem";
+            this.fILTERORDERToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
+            this.fILTERORDERToolStripMenuItem.Text = "FILTER ORDER";
             // 
-            // orderNotEnoughFreecaseDetailToolStripMenuItem
+            // puchaseOrderWithValueEqua0ToolStripMenuItem
             // 
-            this.orderNotEnoughFreecaseDetailToolStripMenuItem.Name = "orderNotEnoughFreecaseDetailToolStripMenuItem";
-            this.orderNotEnoughFreecaseDetailToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
-            this.orderNotEnoughFreecaseDetailToolStripMenuItem.Text = "Order not enough Freecase detail";
+            this.puchaseOrderWithValueEqua0ToolStripMenuItem.Name = "puchaseOrderWithValueEqua0ToolStripMenuItem";
+            this.puchaseOrderWithValueEqua0ToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
+            this.puchaseOrderWithValueEqua0ToolStripMenuItem.Text = "Puchase order with value = 0";
+            this.puchaseOrderWithValueEqua0ToolStripMenuItem.Click += new System.EventHandler(this.puchaseOrderWithValueEqua0ToolStripMenuItem_Click);
             // 
-            // wRONGSCHEMEToolStripMenuItem
+            // freeCaseWithValue0ToolStripMenuItem
             // 
-            this.wRONGSCHEMEToolStripMenuItem.Name = "wRONGSCHEMEToolStripMenuItem";
-            this.wRONGSCHEMEToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
-            this.wRONGSCHEMEToolStripMenuItem.Text = "WRONG SCHEME";
-            this.wRONGSCHEMEToolStripMenuItem.Click += new System.EventHandler(this.wRONGSCHEMEToolStripMenuItem_Click);
+            this.freeCaseWithValue0ToolStripMenuItem.Name = "freeCaseWithValue0ToolStripMenuItem";
+            this.freeCaseWithValue0ToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
+            this.freeCaseWithValue0ToolStripMenuItem.Text = "FreeCase with value <> 0";
+            this.freeCaseWithValue0ToolStripMenuItem.Click += new System.EventHandler(this.freeCaseWithValue0ToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -531,6 +558,9 @@
         private ToolStripMenuItem masterViewToolStripMenuItem;
         private ToolStripMenuItem orderNotEnoughFreecaseDetailToolStripMenuItem;
         private ToolStripMenuItem wRONGSCHEMEToolStripMenuItem;
+        private ToolStripMenuItem fILTERORDERToolStripMenuItem;
+        private ToolStripMenuItem puchaseOrderWithValueEqua0ToolStripMenuItem;
+        private ToolStripMenuItem freeCaseWithValue0ToolStripMenuItem;
     }
 }
 

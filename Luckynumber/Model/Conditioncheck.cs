@@ -90,7 +90,7 @@ namespace arconfirmationletter.Model
             string enduser = Utils.getusername();
             var rs = from p in db.tbl_SalesFreeOrders
                      where p.enduser ==enduser
-                    && p.ma_CTKM != ""
+                           && p.ma_CTKM == ""
                      select p;
 
 
@@ -219,5 +219,56 @@ namespace arconfirmationletter.Model
 
 
         }
+
+        public static void tinhvaupdatefreeetimatetable(double ordernumber, DateTime ngayorder)
+        {
+
+
+            bool kq = true;
+            string connection_string = Utils.getConnectionstr();
+            string enduser = Utils.getusername();
+            var db = new LinqtoSQLDataContext(connection_string);
+
+            var rs = from p in db.tbl_Salesorders
+                     
+                     where  p.enduser == enduser
+                     && p.Dlv_Date == ngayorder
+                     select p;
+
+
+
+
+
+
+
+            //   throw new NotImplementedException();
+        }
+
+
+        public static bool checkoverschemebyorderandate(double  ordernumber, DateTime  ngayorder)
+        {
+
+            bool kq = true;
+            string connection_string = Utils.getConnectionstr();
+            string enduser = Utils.getusername();
+            var db = new LinqtoSQLDataContext(connection_string);
+
+            var rs = from p in db.tbl_SalesFreeOrders
+
+                     where p.rptselect == true && p.enduser == enduser
+                     select p;
+
+
+
+
+
+
+            return kq;
+
+
+            //   throw new NotImplementedException();
+        }
+
+
     }
 }
