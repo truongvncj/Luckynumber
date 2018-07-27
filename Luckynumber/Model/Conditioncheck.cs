@@ -224,7 +224,7 @@ namespace arconfirmationletter.Model
         {
 
 
-            bool kq = true;
+         //   bool kq = true;
             string connection_string = Utils.getConnectionstr();
             string enduser = Utils.getusername();
             var db = new LinqtoSQLDataContext(connection_string);
@@ -232,7 +232,7 @@ namespace arconfirmationletter.Model
             var rs = from p in db.tbl_Salesorders
                      
                      where  p.enduser == enduser
-                     && p.Dlv_Date == ngayorder
+                    // && p.Dlv_Date == ngayorder
                      select p;
 
 

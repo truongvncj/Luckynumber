@@ -4141,7 +4141,7 @@ namespace arconfirmationletter.View
 
 
 
-            Model.Conditioncheck.checkoverschemebyorderandate( ordernumber  ,  ngayorder);
+     //       Model.Conditioncheck.checkoverschemebyorderandate( ordernumber  ,  ngayorder);
 
 
 
