@@ -93,6 +93,8 @@ namespace arconfirmationletter.Model
                            && p.ma_CTKM == ""
                      select p;
 
+           //View.Viewtable viewtbl = new View.Viewtable(rs, db, "listcheck", 100, DateTime.Today, DateTime.Today);
+           // viewtbl.Show();
 
             foreach (var item in rs)
             {

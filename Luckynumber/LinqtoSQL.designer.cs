@@ -2589,9 +2589,9 @@ namespace arconfirmationletter
 		
 		private string _PO_number;
 		
-		private string _Doc_Date;
+		private System.Nullable<System.DateTime> _Doc_Date;
 		
-		private string _Dlv_Date;
+		private System.Nullable<System.DateTime> _Dlv_Date;
 		
 		private System.Nullable<double> _Order_Number;
 		
@@ -2635,9 +2635,9 @@ namespace arconfirmationletter
     partial void OnSOrgChanged();
     partial void OnPO_numberChanging(string value);
     partial void OnPO_numberChanged();
-    partial void OnDoc_DateChanging(string value);
+    partial void OnDoc_DateChanging(System.Nullable<System.DateTime> value);
     partial void OnDoc_DateChanged();
-    partial void OnDlv_DateChanging(string value);
+    partial void OnDlv_DateChanging(System.Nullable<System.DateTime> value);
     partial void OnDlv_DateChanged();
     partial void OnOrder_NumberChanging(System.Nullable<double> value);
     partial void OnOrder_NumberChanged();
@@ -2738,8 +2738,8 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Doc_Date", DbType="NVarChar(255)")]
-		public string Doc_Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Doc_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Doc_Date
 		{
 			get
 			{
@@ -2758,8 +2758,8 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dlv_Date", DbType="NVarChar(255)")]
-		public string Dlv_Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dlv_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Dlv_Date
 		{
 			get
 			{

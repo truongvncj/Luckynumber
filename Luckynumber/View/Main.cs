@@ -3939,6 +3939,7 @@ namespace arconfirmationletter.View
 
 
 
+
         }
 
         private void vIEWORDERToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3997,6 +3998,8 @@ namespace arconfirmationletter.View
             luckyno md = new luckyno();
 
             md.UpFreePUCHASEORDER();
+
+            Model.Conditioncheck.UpdateMaCTKM();
         }
 
         private void lISTORDERWRONGMESSAGEToolStripMenuItem_Click(object sender, EventArgs e)
@@ -4008,7 +4011,7 @@ namespace arconfirmationletter.View
 
             var rsfreee = from p in db.tbl_SalesFreeOrders
                           where p.enduser == enduser
-                        
+
                           select p;
             foreach (var item in rsfreee)
             {
@@ -4025,9 +4028,9 @@ namespace arconfirmationletter.View
                     item.rptselect = false;
                 }
 
-                
-                       
-                        
+
+
+
 
 
 
@@ -4049,33 +4052,22 @@ namespace arconfirmationletter.View
         private void lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-         
+
 
 
         }
 
         private void cHECKMÃCTKHUYENMAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Model.Conditioncheck.UpdateMaCTKM();
+            // Model.Conditioncheck.UpdateMaCTKM();
 
-            string connection_string = Utils.getConnectionstr();
 
-            var db = new LinqtoSQLDataContext(connection_string);
-            string enduser = Utils.getusername();
-
-            var rs = from p in db.tbl_SalesFreeOrders
-                     where p.enduser == enduser
-                     where p.ma_CTKM ==""
-                     select p;
-
-            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại chưa phân loại được mã chương trình", 555, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
-            viewtbl.Show();
 
         }
 
         private void oRDERWRONGSKILLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-         
+
 
 
 
@@ -4096,9 +4088,9 @@ namespace arconfirmationletter.View
             var rscheck = from p in db.tbl_SalesFreeOrders
                           where p.enduser == enduser
                           && p.ma_CTKM != "0"
-                          && p.ma_CTKM !=""
-                          where p.ma_CTKM !=""
-                      select p;
+                          && p.ma_CTKM != ""
+                          where p.ma_CTKM != ""
+                          select p;
 
             foreach (var item in rscheck)
             {
@@ -4141,7 +4133,7 @@ namespace arconfirmationletter.View
 
 
 
-     //       Model.Conditioncheck.checkoverschemebyorderandate( ordernumber  ,  ngayorder);
+            //       Model.Conditioncheck.checkoverschemebyorderandate( ordernumber  ,  ngayorder);
 
 
 
@@ -4319,8 +4311,46 @@ namespace arconfirmationletter.View
             Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại lại có giá trị khác không !", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
             viewtbl.Show();
         }
-    }
 
+        private void fREECASEWRONGFRECASECODEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Model.Conditioncheck.UpdateMaCTKM();
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+            var rs = from pm in db.tbl_SalesFreeOrders
+                     where pm.enduser == enduser
+                     where pm.ma_CTKM == ""
+                     select pm;
+                     
+                     //new
+                     //{
+
+                     //    pm.Created,
+                     //    pm.Dlv_Date,
+                     //    pm.byOrder,
+                     //    pm.PO_number,
+                     //    pm.ma_CTKM,
+                     //    pm.Material,
+                     //    pm.Description,
+                     //    pm.New_PO_number,
+                     //    pm.SOrg,
+                     //    pm.Sold_to_party,
+                     //    pm.Name,
+                     //    pm.id,
+
+
+
+                     //};
+
+
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại chưa phân loại được mã chương trình", 555, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
+            viewtbl.Show();
+        }
+    }
 
 }
 

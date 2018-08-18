@@ -95,25 +95,9 @@ namespace arconfirmationletter.View
                 // beginbalance
                 //    letterreturn
 
-                if (tablename == "letterreturn")
-                {
-                    Fromviewable.Reloadletterreturn(this.sendingtext.Text);
-                }
-
-                if (tablename == "beginbalance")
-                {
-                    Fromviewable.Reloadcustomerbeginbalance(this.sendingtext.Text);
-                }
-
+             
                 if (tablename == "tblCustomer")
-                    {
-                        Fromviewable.Reloadcustomer(this.sendingtext.Text);
-                    }
-                    if (tablename == "tblFBL5Nnewthisperiod")
-                    {
-                        Fromviewable.ReloadtblFBL5Nnewthisperiod(this.sendingtext.Text);
-                    }
-                    //     
+                    
                   
 
                     //  tblCustomered
@@ -135,14 +119,7 @@ namespace arconfirmationletter.View
 
                 //   fbl5nnew
             
-                //       tblbangtonghoptheocodekhachhangchung
-                if (tablename == "tblbangtonghoptheocodekhachhangchung")
-                {
-
-
-                    Fromviewable.Reloadthisbytblbangtonghoptheocodekhachhangchung(this.sendingtext.Text);
-                }
-
+             
 
                 //   tblFBL5beginbalace
                 if (tablename == "tblFBL5beginbalace")

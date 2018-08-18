@@ -834,6 +834,7 @@ namespace arconfirmationletter.Model
 
             batable.Columns.Add("NetValue", typeof(double));
             batable.Columns.Add("enduser", typeof(string));
+            batable.Columns.Add("maCTKM", typeof(string));
 
             int Createdid = -1;
             int SOrgid = -1;
@@ -1126,7 +1127,9 @@ namespace arconfirmationletter.Model
 
                     dr["NetValue"] = double.Parse(sourceData.Rows[rowixd][NetValueid].ToString());//.Truncate(225).Trim();
                     dr["enduser"] = enduser;// sourceData.Rows[rowixd][Statusid].ToString().Truncate(225).Trim();
-                    
+                    dr["maCTKM"] = "";// sourceData.Rows[rowixd][Statusid].ToString().Truncate(225).Trim();
+
+                  //  batable.Columns.Add("maCTKM", typeof(string));
 
                     batable.Rows.Add(dr);
 
@@ -1171,8 +1174,9 @@ namespace arconfirmationletter.Model
                 bulkCopy.ColumnMappings.Add("NetValue", "Net_value");
                 bulkCopy.ColumnMappings.Add("enduser", "enduser");
 
+                bulkCopy.ColumnMappings.Add("maCTKM", "ma_CTKM");
 
-                
+
 
                 try
                 {
