@@ -117,7 +117,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(210, 20);
             this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "DESKTOP-8D4F853\\SQLEXPRESS";
+            this.textBox1.Text = "HAN-L-3PFF7H2";
             // 
             // button1
             // 

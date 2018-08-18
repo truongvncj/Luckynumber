@@ -71,7 +71,7 @@ namespace arconfirmationletter.View
             if (textBox1.Text != "" & textBox2.Text != "")
             {
                 string queryText = @"SELECT Count(*) FROM tbl_Temp 
-                             WHERE username = @Username AND password = @Password";
+                             WHERE enduser = @enduser AND password = @Password";
                 using (SqlConnection cn = new SqlConnection(connection_string))
                 using (SqlCommand cmd = new SqlCommand(queryText, cn))
                 {
@@ -86,7 +86,7 @@ namespace arconfirmationletter.View
                         return;
                     }
 
-                    cmd.Parameters.AddWithValue("@Username", textBox1.Text);
+                    cmd.Parameters.AddWithValue("@enduser", textBox1.Text);
                     cmd.Parameters.AddWithValue("@Password", textBox2.Text);
                     int result = (int)cmd.ExecuteScalar();
                     if (result > 0)

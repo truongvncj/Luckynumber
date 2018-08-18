@@ -489,7 +489,7 @@ namespace arconfirmationletter
 		
 		private string _server;
 		
-		private string _username;
+		private string _enduser;
 		
 		private string _password;
 		
@@ -549,8 +549,8 @@ namespace arconfirmationletter
     partial void OnVersionChanged();
     partial void OnserverChanging(string value);
     partial void OnserverChanged();
-    partial void OnusernameChanging(string value);
-    partial void OnusernameChanged();
+    partial void OnenduserChanging(string value);
+    partial void OnenduserChanged();
     partial void OnpasswordChanging(string value);
     partial void OnpasswordChanged();
     partial void OnsignoffbyChanging(string value);
@@ -666,22 +666,22 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NChar(225)")]
-		public string username
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enduser", DbType="NChar(225)")]
+		public string enduser
 		{
 			get
 			{
-				return this._username;
+				return this._enduser;
 			}
 			set
 			{
-				if ((this._username != value))
+				if ((this._enduser != value))
 				{
-					this.OnusernameChanging(value);
+					this.OnenduserChanging(value);
 					this.SendPropertyChanging();
-					this._username = value;
-					this.SendPropertyChanged("username");
-					this.OnusernameChanged();
+					this._enduser = value;
+					this.SendPropertyChanged("enduser");
+					this.OnenduserChanged();
 				}
 			}
 		}
@@ -1971,25 +1971,27 @@ namespace arconfirmationletter
 		
 		private string _Created;
 		
+		private System.Nullable<System.DateTime> _Dlv_Date;
+		
 		private string _SOrg;
 		
 		private string _PO_number;
 		
-		private System.Nullable<System.DateTime> _Doc_Date;
-		
-		private System.Nullable<System.DateTime> _Dlv_Date;
+		private string _ma_CTKM;
 		
 		private string _New_PO_number;
 		
 		private System.Nullable<double> _Order_Number;
 		
+		private string _Material;
+		
+		private string _Description;
+		
 		private System.Nullable<double> _Sold_to_party;
 		
 		private string _Name;
 		
-		private string _Material;
-		
-		private string _Description;
+		private System.Nullable<System.DateTime> _Doc_Date;
 		
 		private System.Nullable<double> _Order_quantity;
 		
@@ -2013,8 +2015,6 @@ namespace arconfirmationletter
 		
 		private bool _rptselect;
 		
-		private string _ma_CTKM;
-		
 		private string _enduser;
 		
     #region Extensibility Method Definitions
@@ -2023,26 +2023,28 @@ namespace arconfirmationletter
     partial void OnCreated();
     partial void OnCreatedChanging(string value);
     partial void OnCreatedChanged();
+    partial void OnDlv_DateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDlv_DateChanged();
     partial void OnSOrgChanging(string value);
     partial void OnSOrgChanged();
     partial void OnPO_numberChanging(string value);
     partial void OnPO_numberChanged();
-    partial void OnDoc_DateChanging(System.Nullable<System.DateTime> value);
-    partial void OnDoc_DateChanged();
-    partial void OnDlv_DateChanging(System.Nullable<System.DateTime> value);
-    partial void OnDlv_DateChanged();
+    partial void Onma_CTKMChanging(string value);
+    partial void Onma_CTKMChanged();
     partial void OnNew_PO_numberChanging(string value);
     partial void OnNew_PO_numberChanged();
     partial void OnOrder_NumberChanging(System.Nullable<double> value);
     partial void OnOrder_NumberChanged();
-    partial void OnSold_to_partyChanging(System.Nullable<double> value);
-    partial void OnSold_to_partyChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
     partial void OnMaterialChanging(string value);
     partial void OnMaterialChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
+    partial void OnSold_to_partyChanging(System.Nullable<double> value);
+    partial void OnSold_to_partyChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnDoc_DateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDoc_DateChanged();
     partial void OnOrder_quantityChanging(System.Nullable<double> value);
     partial void OnOrder_quantityChanged();
     partial void OnConfirmQtyChanging(System.Nullable<double> value);
@@ -2065,8 +2067,6 @@ namespace arconfirmationletter
     partial void OnbyOrderChanged();
     partial void OnrptselectChanging(bool value);
     partial void OnrptselectChanged();
-    partial void Onma_CTKMChanging(string value);
-    partial void Onma_CTKMChanged();
     partial void OnenduserChanging(string value);
     partial void OnenduserChanged();
     #endregion
@@ -2092,6 +2092,26 @@ namespace arconfirmationletter
 					this._Created = value;
 					this.SendPropertyChanged("Created");
 					this.OnCreatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dlv_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Dlv_Date
+		{
+			get
+			{
+				return this._Dlv_Date;
+			}
+			set
+			{
+				if ((this._Dlv_Date != value))
+				{
+					this.OnDlv_DateChanging(value);
+					this.SendPropertyChanging();
+					this._Dlv_Date = value;
+					this.SendPropertyChanged("Dlv_Date");
+					this.OnDlv_DateChanged();
 				}
 			}
 		}
@@ -2136,42 +2156,22 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Doc_Date", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Doc_Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_CTKM", DbType="NVarChar(255)")]
+		public string ma_CTKM
 		{
 			get
 			{
-				return this._Doc_Date;
+				return this._ma_CTKM;
 			}
 			set
 			{
-				if ((this._Doc_Date != value))
+				if ((this._ma_CTKM != value))
 				{
-					this.OnDoc_DateChanging(value);
+					this.Onma_CTKMChanging(value);
 					this.SendPropertyChanging();
-					this._Doc_Date = value;
-					this.SendPropertyChanged("Doc_Date");
-					this.OnDoc_DateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dlv_Date", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Dlv_Date
-		{
-			get
-			{
-				return this._Dlv_Date;
-			}
-			set
-			{
-				if ((this._Dlv_Date != value))
-				{
-					this.OnDlv_DateChanging(value);
-					this.SendPropertyChanging();
-					this._Dlv_Date = value;
-					this.SendPropertyChanged("Dlv_Date");
-					this.OnDlv_DateChanged();
+					this._ma_CTKM = value;
+					this.SendPropertyChanged("ma_CTKM");
+					this.Onma_CTKMChanged();
 				}
 			}
 		}
@@ -2216,6 +2216,46 @@ namespace arconfirmationletter
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Material", DbType="NVarChar(255)")]
+		public string Material
+		{
+			get
+			{
+				return this._Material;
+			}
+			set
+			{
+				if ((this._Material != value))
+				{
+					this.OnMaterialChanging(value);
+					this.SendPropertyChanging();
+					this._Material = value;
+					this.SendPropertyChanged("Material");
+					this.OnMaterialChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(255)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sold_to_party", DbType="Float")]
 		public System.Nullable<double> Sold_to_party
 		{
@@ -2256,42 +2296,22 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Material", DbType="NVarChar(255)")]
-		public string Material
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Doc_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Doc_Date
 		{
 			get
 			{
-				return this._Material;
+				return this._Doc_Date;
 			}
 			set
 			{
-				if ((this._Material != value))
+				if ((this._Doc_Date != value))
 				{
-					this.OnMaterialChanging(value);
+					this.OnDoc_DateChanging(value);
 					this.SendPropertyChanging();
-					this._Material = value;
-					this.SendPropertyChanged("Material");
-					this.OnMaterialChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(255)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
+					this._Doc_Date = value;
+					this.SendPropertyChanged("Doc_Date");
+					this.OnDoc_DateChanged();
 				}
 			}
 		}
@@ -2512,26 +2532,6 @@ namespace arconfirmationletter
 					this._rptselect = value;
 					this.SendPropertyChanged("rptselect");
 					this.OnrptselectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_CTKM", DbType="NVarChar(255)")]
-		public string ma_CTKM
-		{
-			get
-			{
-				return this._ma_CTKM;
-			}
-			set
-			{
-				if ((this._ma_CTKM != value))
-				{
-					this.Onma_CTKMChanging(value);
-					this.SendPropertyChanging();
-					this._ma_CTKM = value;
-					this.SendPropertyChanged("ma_CTKM");
-					this.Onma_CTKMChanged();
 				}
 			}
 		}

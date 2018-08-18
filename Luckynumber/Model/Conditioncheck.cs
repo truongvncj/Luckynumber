@@ -99,8 +99,12 @@ namespace arconfirmationletter.Model
             foreach (var item in rs)
             {
 
-                item.ma_CTKM = Model.Conditioncheck.FindProgarmebymessageandmaterial(item.PO_number, item.Material.Trim());
-
+               string maCTKM = Model.Conditioncheck.FindProgarmebymessageandmaterial(item.PO_number, item.Material.Trim());
+                item.ma_CTKM = maCTKM;
+                if (maCTKM !="")
+                {
+                    item.New_PO_number = item.PO_number;
+                }
                 db.SubmitChanges();
 
             }

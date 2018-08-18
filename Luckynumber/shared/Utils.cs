@@ -1183,7 +1183,7 @@ namespace arconfirmationletter
             LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
 
             var rs = (from tbl_Temp in dc.tbl_Temps
-                      where tbl_Temp.username == Name
+                      where tbl_Temp.enduser == Name
 
                       select tbl_Temp).FirstOrDefault();
             if (rs != null)

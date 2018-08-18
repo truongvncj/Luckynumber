@@ -154,17 +154,7 @@ namespace arconfirmationletter.View
             source2 = new BindingSource();
             source2.AllowNew = true;
             source2.DataSource = results3;
-            //  source2.AddNew();
-
-            //source2.AllowNew = true;
-            //if (results3 == null)
-            //{
-            //    source2.AddNew();
-            //}
-            //    results3
-
-
-
+            
 
             this.dataGridView2.DataSource = source2;  // view 2 la main view 1 detaik
 
