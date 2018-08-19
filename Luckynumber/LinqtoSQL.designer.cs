@@ -157,8 +157,6 @@ namespace arconfirmationletter
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _Created;
-		
 		private System.Nullable<double> _Sold_to_party;
 		
 		private string _Name;
@@ -169,16 +167,26 @@ namespace arconfirmationletter
 		
 		private string _maCTKM;
 		
+		private string _Ma_SP_Duoc_KM;
+		
 		private System.Nullable<double> _So_luong_duoc_KM;
 		
 		private System.Nullable<double> _So_luong_thuc_te_KM;
+		
+		private string _PO_message;
+		
+		private string _Sale_Region;
+		
+		private System.Nullable<double> _So_luong_hang_Mua;
+		
+		private System.Nullable<int> _STT;
+		
+		private string _TenCTKM;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnCreatedChanging(string value);
-    partial void OnCreatedChanged();
     partial void OnSold_to_partyChanging(System.Nullable<double> value);
     partial void OnSold_to_partyChanged();
     partial void OnNameChanging(string value);
@@ -189,35 +197,27 @@ namespace arconfirmationletter
     partial void OnenduserChanged();
     partial void OnmaCTKMChanging(string value);
     partial void OnmaCTKMChanged();
+    partial void OnMa_SP_Duoc_KMChanging(string value);
+    partial void OnMa_SP_Duoc_KMChanged();
     partial void OnSo_luong_duoc_KMChanging(System.Nullable<double> value);
     partial void OnSo_luong_duoc_KMChanged();
     partial void OnSo_luong_thuc_te_KMChanging(System.Nullable<double> value);
     partial void OnSo_luong_thuc_te_KMChanged();
+    partial void OnPO_messageChanging(string value);
+    partial void OnPO_messageChanged();
+    partial void OnSale_RegionChanging(string value);
+    partial void OnSale_RegionChanged();
+    partial void OnSo_luong_hang_MuaChanging(System.Nullable<double> value);
+    partial void OnSo_luong_hang_MuaChanged();
+    partial void OnSTTChanging(System.Nullable<int> value);
+    partial void OnSTTChanged();
+    partial void OnTenCTKMChanging(string value);
+    partial void OnTenCTKMChanged();
     #endregion
 		
 		public tbl_ChecktongKM()
 		{
 			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Created", DbType="NVarChar(255)")]
-		public string Created
-		{
-			get
-			{
-				return this._Created;
-			}
-			set
-			{
-				if ((this._Created != value))
-				{
-					this.OnCreatedChanging(value);
-					this.SendPropertyChanging();
-					this._Created = value;
-					this.SendPropertyChanged("Created");
-					this.OnCreatedChanged();
-				}
-			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sold_to_party", DbType="Float")]
@@ -320,6 +320,26 @@ namespace arconfirmationletter
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ma_SP_Duoc_KM", DbType="NVarChar(255)")]
+		public string Ma_SP_Duoc_KM
+		{
+			get
+			{
+				return this._Ma_SP_Duoc_KM;
+			}
+			set
+			{
+				if ((this._Ma_SP_Duoc_KM != value))
+				{
+					this.OnMa_SP_Duoc_KMChanging(value);
+					this.SendPropertyChanging();
+					this._Ma_SP_Duoc_KM = value;
+					this.SendPropertyChanged("Ma_SP_Duoc_KM");
+					this.OnMa_SP_Duoc_KMChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_So_luong_duoc_KM", DbType="Float")]
 		public System.Nullable<double> So_luong_duoc_KM
 		{
@@ -356,6 +376,106 @@ namespace arconfirmationletter
 					this._So_luong_thuc_te_KM = value;
 					this.SendPropertyChanged("So_luong_thuc_te_KM");
 					this.OnSo_luong_thuc_te_KMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PO_message", DbType="NVarChar(255)")]
+		public string PO_message
+		{
+			get
+			{
+				return this._PO_message;
+			}
+			set
+			{
+				if ((this._PO_message != value))
+				{
+					this.OnPO_messageChanging(value);
+					this.SendPropertyChanging();
+					this._PO_message = value;
+					this.SendPropertyChanged("PO_message");
+					this.OnPO_messageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sale_Region", DbType="NVarChar(255)")]
+		public string Sale_Region
+		{
+			get
+			{
+				return this._Sale_Region;
+			}
+			set
+			{
+				if ((this._Sale_Region != value))
+				{
+					this.OnSale_RegionChanging(value);
+					this.SendPropertyChanging();
+					this._Sale_Region = value;
+					this.SendPropertyChanged("Sale_Region");
+					this.OnSale_RegionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_So_luong_hang_Mua", DbType="Float")]
+		public System.Nullable<double> So_luong_hang_Mua
+		{
+			get
+			{
+				return this._So_luong_hang_Mua;
+			}
+			set
+			{
+				if ((this._So_luong_hang_Mua != value))
+				{
+					this.OnSo_luong_hang_MuaChanging(value);
+					this.SendPropertyChanging();
+					this._So_luong_hang_Mua = value;
+					this.SendPropertyChanged("So_luong_hang_Mua");
+					this.OnSo_luong_hang_MuaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", DbType="Int")]
+		public System.Nullable<int> STT
+		{
+			get
+			{
+				return this._STT;
+			}
+			set
+			{
+				if ((this._STT != value))
+				{
+					this.OnSTTChanging(value);
+					this.SendPropertyChanging();
+					this._STT = value;
+					this.SendPropertyChanged("STT");
+					this.OnSTTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenCTKM", DbType="NVarChar(255)")]
+		public string TenCTKM
+		{
+			get
+			{
+				return this._TenCTKM;
+			}
+			set
+			{
+				if ((this._TenCTKM != value))
+				{
+					this.OnTenCTKMChanging(value);
+					this.SendPropertyChanging();
+					this._TenCTKM = value;
+					this.SendPropertyChanged("TenCTKM");
+					this.OnTenCTKMChanged();
 				}
 			}
 		}

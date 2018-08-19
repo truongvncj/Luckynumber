@@ -2,14 +2,19 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=HAN-L-3PFF7H2;Initial Catalog=Luckynumber;Persist Security Info=True;User ID=sa" SettingsObjectName="arconfirmationletter.Properties.Settings" SettingsPropertyName="LuckynumberConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbl_ChecktongKM" Member="tbl_ChecktongKMs">
     <Type Name="tbl_ChecktongKM">
-      <Column Name="Created" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Sold_to_party" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="enduser" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="maCTKM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ma_SP_Duoc_KM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="So_luong_duoc_KM" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="So_luong_thuc_te_KM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PO_message" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Sale_Region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="So_luong_hang_Mua" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenCTKM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_Temp" Member="tbl_Temps">

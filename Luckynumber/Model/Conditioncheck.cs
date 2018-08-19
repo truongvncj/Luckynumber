@@ -101,9 +101,12 @@ namespace arconfirmationletter.Model
 
                 string maCTKM = Model.Conditioncheck.FindProgarmebymessageandmaterial(item.PO_number, item.Material.Trim());
                 item.ma_CTKM = maCTKM;
+
                 if (maCTKM != "")
                 {
-                    item.New_PO_number = item.PO_number;
+                    item.New_PO_number = (from p in db.tbl_CTKMs
+                                          where p.enduser == enduser && p.Mã_CT == maCTKM
+                                          select p.PO_Message).FirstOrDefault();
                 }
                 db.SubmitChanges();
 
@@ -288,7 +291,7 @@ namespace arconfirmationletter.Model
 
             foreach (var item in rs)
             {
-                if (item.Mã_SP_Mua == material && item.Từ_ngày <= dlv_Date && item.Đến_Ngày >= dlv_Date && item.Nhóm_khách_hàng == nhomKHKM)
+                if (item.Mã_SP_Mua == material && item.Từ_ngày <= dlv_Date && item.Đến_Ngày >= dlv_Date && (item.Nhóm_khách_hàng == nhomKHKM || item.Nhóm_khách_hàng ==""))
                 {
 
                     var rs2 = from kh in db.tbl_Salesorders
