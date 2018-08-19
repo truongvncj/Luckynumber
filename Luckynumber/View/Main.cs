@@ -3989,6 +3989,21 @@ namespace arconfirmationletter.View
             luckyno md = new luckyno();
 
             md.UpPUCHASEORDER();
+            Model.Conditioncheck.updaMAKHKM();
+
+            Model.Conditioncheck.updaCTVAsoluongKM();
+
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+            var rs = from p in db.tbl_Salesorders
+                     where p.enduser == enduser
+                     select p;
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng mua", 100, DateTime.Today, DateTime.Today);
+            viewtbl.Show();
 
 
         }
@@ -4000,6 +4015,16 @@ namespace arconfirmationletter.View
             md.UpFreePUCHASEORDER();
 
             Model.Conditioncheck.UpdateMaCTKM();
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+            var rs = from p in db.tbl_SalesFreeOrders
+                     where p.enduser == enduser
+                     select p;
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại", 100, DateTime.Today, DateTime.Today);
+            viewtbl.Show();
         }
 
         private void lISTORDERWRONGMESSAGEToolStripMenuItem_Click(object sender, EventArgs e)
@@ -4041,9 +4066,27 @@ namespace arconfirmationletter.View
 
             var rs = from p in db.tbl_SalesFreeOrders
                      where p.rptselect == true
-                     select p;
+                     select new
+                     {
 
-            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách các đơn hàng khuyến mại sai Message PO", 100, DateTime.Today, DateTime.Today);
+                         p.Created,
+                         p.SOrg,
+                     
+                         p.PO_number,
+                         p.New_PO_number,
+                         p.Sold_to_party,
+                         p.Name,
+                         p.Material,
+                         p.Description,
+                         p.Dlv_Date,
+                         p.Order_Number,
+                         p.Order_quantity,
+                      
+
+                     };
+
+
+            Viewtable viewtbl = new Viewtable(rs, db, "DANH SÁCH ĐƠN HÀNG KHUYẾN MẠI SAI MESSAGE", 100, DateTime.Today, DateTime.Today);
             viewtbl.Show();
 
 
@@ -4052,6 +4095,126 @@ namespace arconfirmationletter.View
         private void lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            luckyno lk = new luckyno();
+            lk.deletetbl_ChecktongKM();
+
+
+            string connection_string = Utils.getConnectionstr();
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+
+
+            #region  update bảng tông khuyến mại và so sánh
+
+
+            var rs = from p in db.tbl_Salesorders
+                     where p.enduser == enduser
+                     group p by new
+                     {
+                         //    p.Created,
+                         p.Sold_to_party,//.Customer,
+                                         //   p.maCTKM,//  tblCustomer.SOrg,
+                     }
+                    into g
+
+                     select new
+
+                     {
+                         //  Created = g.Key.Created,
+                         Sold_to = g.Key.Sold_to_party,
+                         //  MaCTKM = g.Key.maCTKM,
+                         name = g.FirstOrDefault().Name,
+
+
+                         Quantityfree = (g.Sum(m => m.So_luong_duoc_KM)),
+
+
+                     };
+
+
+            foreach (var item in rs)
+            {
+                tbl_ChecktongKM tong = new tbl_ChecktongKM();
+                //      tong.Created = item.Created;
+                tong.Name = item.name;
+                tong.enduser = enduser;
+                tong.So_luong_duoc_KM = item.Quantityfree;
+                tong.Sold_to_party = item.Sold_to;
+                db.tbl_ChecktongKMs.InsertOnSubmit(tong);
+                db.SubmitChanges();
+
+            }
+
+
+            var rs3 = from p in db.tbl_SalesFreeOrders
+                      where p.enduser == enduser
+                      group p by new
+                      {
+                          //    p.Created,
+                          p.Sold_to_party,//.Customer,
+                                          //     p.ma_CTKM,//  tblCustomer.SOrg,
+                      }
+                into g
+
+                      select new
+
+                      {
+                          //  Created = g.Key.Created,
+                          Sold_to = g.Key.Sold_to_party,
+                          //   MaCTKM = g.Key.ma_CTKM,
+                          //       QantityBuy = g.Sum(m => m.Order_quantity),
+
+
+                          Quantityfree = (g.Sum(m => m.ConfirmQty)),
+
+
+                      };
+
+            foreach (var item in rs3)
+            {
+
+                var rs4 = from p in db.tbl_ChecktongKMs
+                          where p.enduser == enduser && p.Sold_to_party == item.Sold_to
+                          select p;
+
+                foreach (var item2 in rs4)
+                {
+                    item2.So_luong_thuc_te_KM = item.Quantityfree;
+                    db.SubmitChanges();
+
+                }
+
+
+
+
+
+
+            }
+
+            #endregion
+
+
+
+
+
+            var rs2 = from p in db.tbl_ChecktongKMs
+
+                      where p.enduser == enduser && p.So_luong_duoc_KM > p.So_luong_thuc_te_KM
+                      select new
+                      {
+                          Code_Khách_hàng = p.Sold_to_party,
+                          Name_Khách_hàng = p.Name,
+
+                          Số_lượng_được_KM = p.So_luong_duoc_KM,
+                          Số_lượng_KM_trả_thực_tế = p.So_luong_thuc_te_KM,
+                          Trả_thiếu = p.So_luong_duoc_KM - p.So_luong_thuc_te_KM,
+
+                      };
+
+
+            Viewtable viewtbl = new Viewtable(rs2, db, "DANH SÁCH ĐƠN HÀNG TRẢ THIẾU KHUYẾN MẠI", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
+            viewtbl.Show();
 
 
 
@@ -4067,6 +4230,18 @@ namespace arconfirmationletter.View
 
         private void oRDERWRONGSKILLToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+            var rs = from p in db.tbl_SalesFreeOrders
+                     where p.enduser == enduser
+                     where p.ma_CTKM == "" || p.ma_CTKM == "0"
+                     select p;
+
+            Viewtable viewtbl = new Viewtable(rs, db, "DANH SÁCH ĐƠN HÀNG TRẢ KHUYẾN MẠI SAI CHƯƠNG TRÌNH KHUYẾN MẠI", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
+            viewtbl.Show();
 
 
 
@@ -4108,9 +4283,23 @@ namespace arconfirmationletter.View
             var rs = from p in db.tbl_SalesFreeOrders
 
                      where p.rptselect == true && p.enduser == enduser
-                     select p;
+                     select new
+                     {
 
-            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại ngoài khung thời gian", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
+                         p.Created,
+                         p.SOrg,
+                         p.Sold_to_party,
+                         p.Name,
+                         p.Material,
+                         p.Description,
+                         p.Dlv_Date,
+                         p.Order_Number,
+                         p.Order_quantity,
+                         p.Net_value,
+
+                     };
+
+            Viewtable viewtbl = new Viewtable(rs, db, "DANH SÁCH ĐƠN HÀNG TRẢ KHUYẾN MẠI NGOÀI KHUNG THỜI GIAN CHƯƠNG TRÌNH ", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
             viewtbl.Show();
 
 
@@ -4125,6 +4314,9 @@ namespace arconfirmationletter.View
 
         private void lISTORDERHAVEOVERFREECASEToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            luckyno lk = new luckyno();
+            lk.deletetbl_ChecktongKM();
+
 
             string connection_string = Utils.getConnectionstr();
             var db = new LinqtoSQLDataContext(connection_string);
@@ -4132,98 +4324,120 @@ namespace arconfirmationletter.View
 
 
 
-
-            //       Model.Conditioncheck.checkoverschemebyorderandate( ordernumber  ,  ngayorder);
-
+            #region  update bảng tông khuyến mại và so sánh
 
 
-            var rs = from p in db.tbl_SalesFreeOrders
+            var rs = from p in db.tbl_Salesorders
+                     where p.enduser == enduser
+                     group p by new
+                     {
+                         //    p.Created,
+                         p.Sold_to_party,//.Customer,
+                                         //   p.maCTKM,//  tblCustomer.SOrg,
+                     }
+                    into g
 
-                     where p.rptselect == true && p.enduser == enduser
-                     select p;
+                     select new
 
-            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách các đơn hàng trả thừa khuyến mại", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
+                     {
+                         //  Created = g.Key.Created,
+                         Sold_to = g.Key.Sold_to_party,
+                         //  MaCTKM = g.Key.maCTKM,
+                         name = g.FirstOrDefault().Name,
+
+
+                         Quantityfree = (g.Sum(m => m.So_luong_duoc_KM)),
+
+
+                     };
+
+
+            foreach (var item in rs)
+            {
+                tbl_ChecktongKM tong = new tbl_ChecktongKM();
+                //      tong.Created = item.Created;
+                tong.Name = item.name;
+                tong.enduser = enduser;
+                tong.So_luong_duoc_KM = item.Quantityfree;
+                tong.Sold_to_party = item.Sold_to;
+                db.tbl_ChecktongKMs.InsertOnSubmit(tong);
+                db.SubmitChanges();
+
+            }
+
+
+            var rs3 = from p in db.tbl_SalesFreeOrders
+                      where p.enduser == enduser
+                      group p by new
+                      {
+                          //    p.Created,
+                          p.Sold_to_party,//.Customer,
+                                          //     p.ma_CTKM,//  tblCustomer.SOrg,
+                      }
+                into g
+
+                      select new
+
+                      {
+                          //  Created = g.Key.Created,
+                          Sold_to = g.Key.Sold_to_party,
+                          //   MaCTKM = g.Key.ma_CTKM,
+                          //       QantityBuy = g.Sum(m => m.Order_quantity),
+
+
+                          Quantityfree = (g.Sum(m => m.ConfirmQty)),
+
+
+                      };
+
+            foreach (var item in rs3)
+            {
+
+                var rs4 = from p in db.tbl_ChecktongKMs
+                          where p.enduser == enduser && p.Sold_to_party == item.Sold_to
+                          select p;
+
+                foreach (var item2 in rs4)
+                {
+                    item2.So_luong_thuc_te_KM = item.Quantityfree;
+                    db.SubmitChanges();
+
+                }
+
+
+
+
+
+
+            }
+
+            #endregion
+
+
+
+
+
+            var rs2 = from p in db.tbl_ChecktongKMs
+
+                      where p.enduser == enduser && p.So_luong_duoc_KM < p.So_luong_thuc_te_KM
+                      select new
+                      {
+                          Code_KH = p.Sold_to_party,
+                          Name_KH = p.Name,
+
+                          Số_lượng_được_KM = p.So_luong_duoc_KM,
+                          Số_lượng_KM_trả_thực_tế = p.So_luong_thuc_te_KM,
+                          Trả_thừa = p.So_luong_thuc_te_KM - p.So_luong_duoc_KM  ,
+
+                      };
+
+
+            Viewtable viewtbl = new Viewtable(rs2, db, "DANH SÁCH ĐƠN HÀNG TRẢ THỪA KHUYẾN MẠI", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
             viewtbl.Show();
 
 
 
-            //#region // kiem tra xem co sai mesage
 
-            //string connection_string = Utils.getConnectionstr();
-
-            //var db = new LinqtoSQLDataContext(connection_string);
-
-            //var rs = from p in db.tbl_Salesorders
-            //         where p.Material == materialbuy
-            //         group p by new
-            //         {
-            //             p.Created,//.Customer,
-            //             p.Material,//  tblCustomer.SOrg,
-            //         }
-            //        into g
-
-            //         select new
-
-            //         {
-            //             Created = g.Key.Created,
-            //             Material = g.Key.Material,
-            //             Quantytibuy = g.Sum(m => m.Order_quantity),
-
-
-            //             Quantityfree = (g.Sum(m => m.Order_quantity)) / tyle,
-            //             FreeclasesPaid = 0.0,
-            //             filter = 0,
-
-            //         };
-
-            //foreach (var item in rs)
-            //{
-
-
-            //    var rsQuantityfree = (from p in db.tbl_SalesFreeOrders
-            //                          where p.Material == materialfree
-            //                          && p.Created == item.Created
-            //                          group p by new
-            //                          {
-            //                              p.Created,//.Customer,
-            //                              p.Material,//  tblCustomer.SOrg,
-            //                          }
-            //                           into g
-            //                          select new
-            //                          {
-            //                              Quantityfree = g.Sum(m => m.Order_quantity),
-            //                          }).FirstOrDefault();
-
-            //    if (rsQuantityfree != null)
-            //    {
-
-            //        if (item.Quantityfree > rsQuantityfree.Quantityfree)
-            //        {
-            //            tbl_rptnotEnought rpt = new tbl_rptnotEnought();
-            //            rpt.Created = item.Created;
-            //            rpt.Material = item.Material;
-            //            rpt.Quantytibuy = item.Quantytibuy;
-            //            rpt.Quantityfree = item.Quantityfree;
-            //            rpt.FreeclasesPaid = rsQuantityfree.Quantityfree;
-
-            //            rpt.filter = true;
-
-
-            //            db.tbl_rptnotEnoughts.InsertOnSubmit(rpt);
-            //            db.SubmitChanges();
-
-            //        }
-
-
-
-
-            //    }
-
-
-            //}
-
-
-            //#endregion
 
 
 
@@ -4236,80 +4450,46 @@ namespace arconfirmationletter.View
 
         private void masterViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string connection_string = Utils.getConnectionstr();
+            //  string connection_string = Utils.getConnectionstr();
 
-            var db = new LinqtoSQLDataContext(connection_string);
+            //  var db = new LinqtoSQLDataContext(connection_string);
 
-            var pors = from x in db.tbl_CTKMs
-                       select x;
-
-
-            foreach (var item in pors)
-            {
-                Model.Conditioncheck.checkIsunenoughtpaid((double)item.Tỷ_lệ_CTKM, item.Mã_SP_Mua, item.Mã_SP_KM);
+            //  var pors = from x in db.tbl_CTKMs
+            //             select x;
 
 
-            }
-
-            var rs = from x in db.tbl_rptnotEnoughts
-                         //  where x.filter == true
-                     select x;
+            //  foreach (var item in pors)
+            //  {
+            ////      Model.Conditioncheck.checkIsunenoughtpaid((double)item.Tỷ_lệ_CTKM, item.Mã_SP_Mua, item.Mã_SP_KM);
 
 
-            Viewtable viewtbl = new Viewtable(rs, db, "Order Not enought Freecase ", 100, DateTime.Today, DateTime.Today);
-            viewtbl.Show();
+            //  }
+
+            //var rs = from x in db.tbl_rptnotEnoughts
+            //             //  where x.filter == true
+            //         select x;
+
+
+            //     Viewtable viewtbl = new Viewtable(rs, db, "Order Not enought Freecase ", 100, DateTime.Today, DateTime.Today);
+            //   viewtbl.Show();
 
 
         }
 
         private void wRONGSCHEMEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string connection_string = Utils.getConnectionstr();
-
-            var db = new LinqtoSQLDataContext(connection_string);
-            string enduser = Utils.getusername();
-
-            var rs = from p in db.tbl_SalesFreeOrders
-                     where p.enduser == enduser
-                     where p.ma_CTKM == "" || p.ma_CTKM == "0"
-                     select p;
-
-            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại sai chương trình", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
-            viewtbl.Show();
-
+          
         }
 
         private void puchaseOrderWithValueEqua0ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            string connection_string = Utils.getConnectionstr();
 
-            var db = new LinqtoSQLDataContext(connection_string);
-            string enduser = Utils.getusername();
-
-            var rs = from p in db.tbl_Salesorders
-                     where p.enduser == enduser
-                     where p.Net_value == 0
-                     select p;
-
-            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng mua lại có giá trị bằng không !", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
-            viewtbl.Show();
         }
 
         private void freeCaseWithValue0ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string connection_string = Utils.getConnectionstr();
 
-            var db = new LinqtoSQLDataContext(connection_string);
-            string enduser = Utils.getusername();
-
-            var rs = from p in db.tbl_SalesFreeOrders
-                     where p.enduser == enduser
-                     where p.Net_value != 0
-                     select p;
-
-            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại lại có giá trị khác không !", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
-            viewtbl.Show();
         }
 
         private void fREECASEWRONGFRECASECODEToolStripMenuItem_Click(object sender, EventArgs e)
@@ -4324,30 +4504,88 @@ namespace arconfirmationletter.View
                      where pm.enduser == enduser
                      where pm.ma_CTKM == ""
                      select pm;
-                     
-                     //new
-                     //{
 
-                     //    pm.Created,
-                     //    pm.Dlv_Date,
-                     //    pm.byOrder,
-                     //    pm.PO_number,
-                     //    pm.ma_CTKM,
-                     //    pm.Material,
-                     //    pm.Description,
-                     //    pm.New_PO_number,
-                     //    pm.SOrg,
-                     //    pm.Sold_to_party,
-                     //    pm.Name,
-                     //    pm.id,
+            //new
+            //{
+
+            //    pm.Created,
+            //    pm.Dlv_Date,
+            //    pm.byOrder,
+            //    pm.PO_number,
+            //    pm.ma_CTKM,
+            //    pm.Material,
+            //    pm.Description,
+            //    pm.New_PO_number,
+            //    pm.SOrg,
+            //    pm.Sold_to_party,
+            //    pm.Name,
+            //    pm.id,
 
 
 
-                     //};
+            //};
 
 
 
             Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại chưa phân loại được mã chương trình", 555, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
+            viewtbl.Show();
+        }
+
+        private void orderNotEnoughFreecaseDetailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+            var rs = from p in db.tbl_Salesorders
+                     where p.enduser == enduser
+                     where p.Net_value == 0
+                     select new {
+
+                         p.Created,
+                         p.SOrg,
+                         p.Sold_to_party,
+                         p.Name,
+                         p.Order_Number,
+                         p.Order_quantity,
+                         p.Net_value,
+                        
+                     };
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng mua lại có giá trị bằng không !", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
+            viewtbl.Show();
+        }
+
+        private void đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+            var rs = from p in db.tbl_SalesFreeOrders
+                     where p.enduser == enduser
+                     where p.Net_value != 0
+                     select new
+                     {
+
+                         p.Created,
+                         p.SOrg,
+                         p.Sold_to_party,
+                         p.Name,
+                         p.Order_Number,
+                         p.Order_quantity,
+                         p.Net_value,
+
+                     };
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại lại có giá trị khác không !", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
             viewtbl.Show();
         }
     }

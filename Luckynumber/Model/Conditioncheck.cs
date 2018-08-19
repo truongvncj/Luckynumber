@@ -17,7 +17,7 @@ namespace arconfirmationletter.Model
             var db = new LinqtoSQLDataContext(connection_string);
 
             var rs = from p in db.tbl_CTKMs
-                   where  p.enduser == enduser
+                     where p.enduser == enduser
                      where p.Mã_SP_KM.Trim() == material
                      //    && message.IndexOf(p.PO_Message) > 0
                      select p;
@@ -89,19 +89,19 @@ namespace arconfirmationletter.Model
             var db = new LinqtoSQLDataContext(connection_string);
             string enduser = Utils.getusername();
             var rs = from p in db.tbl_SalesFreeOrders
-                     where p.enduser ==enduser
+                     where p.enduser == enduser
                            && p.ma_CTKM == ""
                      select p;
 
-           //View.Viewtable viewtbl = new View.Viewtable(rs, db, "listcheck", 100, DateTime.Today, DateTime.Today);
-           // viewtbl.Show();
+            //View.Viewtable viewtbl = new View.Viewtable(rs, db, "listcheck", 100, DateTime.Today, DateTime.Today);
+            // viewtbl.Show();
 
             foreach (var item in rs)
             {
 
-               string maCTKM = Model.Conditioncheck.FindProgarmebymessageandmaterial(item.PO_number, item.Material.Trim());
+                string maCTKM = Model.Conditioncheck.FindProgarmebymessageandmaterial(item.PO_number, item.Material.Trim());
                 item.ma_CTKM = maCTKM;
-                if (maCTKM !="")
+                if (maCTKM != "")
                 {
                     item.New_PO_number = item.PO_number;
                 }
@@ -112,87 +112,87 @@ namespace arconfirmationletter.Model
         }
 
 
-        public static void checkIsunenoughtpaid(double tyle, string materialbuy, string materialfree)
-        {
-            #region // kiem tra xem co sai mesage
+        //public static void checkIsunenoughtpaid(double tyle, string materialbuy, string materialfree)
+        //{
+        //    #region // kiem tra xem co sai mesage
 
-            string connection_string = Utils.getConnectionstr();
+        //    string connection_string = Utils.getConnectionstr();
 
-            var db = new LinqtoSQLDataContext(connection_string);
+        //    var db = new LinqtoSQLDataContext(connection_string);
 
-            var rs = from p in db.tbl_Salesorders
-                     where p.Material == materialbuy
-                     group p by new
-                     {
-                         p.Created,//.Customer,
-                         p.Material,//  tblCustomer.SOrg,
-                     }
-                    into g
+        //    var rs = from p in db.tbl_Salesorders
+        //             where p.Material == materialbuy
+        //             group p by new
+        //             {
+        //                 p.Created,//.Customer,
+        //                 p.Material,//  tblCustomer.SOrg,
+        //             }
+        //            into g
 
-                     select new
+        //             select new
 
-                     {
-                         Created = g.Key.Created,
-                         Material = g.Key.Material,
-                         Quantytibuy = g.Sum(m => m.Order_quantity),
-
-
-                         Quantityfree = (g.Sum(m => m.Order_quantity)) / tyle,
-                         FreeclasesPaid = 0.0,
-                         filter = 0,
-
-                     };
-
-            foreach (var item in rs)
-            {
+        //             {
+        //                 Created = g.Key.Created,
+        //                 Material = g.Key.Material,
+        //                 Quantytibuy = g.Sum(m => m.Order_quantity),
 
 
-                var rsQuantityfree = (from p in db.tbl_SalesFreeOrders
-                                      where p.Material == materialfree
-                                      && p.Created == item.Created
-                                      group p by new
-                                      {
-                                          p.Created,//.Customer,
-                                          p.Material,//  tblCustomer.SOrg,
-                                      }
-                                       into g
-                                      select new
-                                      {
-                                          Quantityfree = g.Sum(m => m.Order_quantity),
-                                      }).FirstOrDefault();
+        //                 Quantityfree = (g.Sum(m => m.Order_quantity)) / tyle,
+        //                 FreeclasesPaid = 0.0,
+        //                 filter = 0,
 
-                if (rsQuantityfree != null)
-                {
+        //             };
 
-                    if (item.Quantityfree > rsQuantityfree.Quantityfree)
-                    {
-                        tbl_rptnotEnought rpt = new tbl_rptnotEnought();
-                        rpt.Created = item.Created;
-                        rpt.Material = item.Material;
-                        rpt.Quantytibuy = item.Quantytibuy;
-                        rpt.Quantityfree = item.Quantityfree;
-                        rpt.FreeclasesPaid = rsQuantityfree.Quantityfree;
-
-                        rpt.filter = true;
+        //    foreach (var item in rs)
+        //    {
 
 
-                        db.tbl_rptnotEnoughts.InsertOnSubmit(rpt);
-                        db.SubmitChanges();
+        //        var rsQuantityfree = (from p in db.tbl_SalesFreeOrders
+        //                              where p.Material == materialfree
+        //                              && p.Created == item.Created
+        //                              group p by new
+        //                              {
+        //                                  p.Created,//.Customer,
+        //                                  p.Material,//  tblCustomer.SOrg,
+        //                              }
+        //                               into g
+        //                              select new
+        //                              {
+        //                                  Quantityfree = g.Sum(m => m.Order_quantity),
+        //                              }).FirstOrDefault();
 
-                    }
+        //        if (rsQuantityfree != null)
+        //        {
+
+        //            if (item.Quantityfree > rsQuantityfree.Quantityfree)
+        //            {
+        //                tbl_rptnotEnought rpt = new tbl_rptnotEnought();
+        //                rpt.Created = item.Created;
+        //                rpt.Material = item.Material;
+        //                rpt.Quantytibuy = item.Quantytibuy;
+        //                rpt.Quantityfree = item.Quantityfree;
+        //                rpt.FreeclasesPaid = rsQuantityfree.Quantityfree;
+
+        //                rpt.filter = true;
+
+
+        //                db.tbl_rptnotEnoughts.InsertOnSubmit(rpt);
+        //                db.SubmitChanges();
+
+        //            }
 
 
 
 
-                }
+        //        }
 
 
-            }
+        //    }
 
 
-            #endregion
+        //    #endregion
 
-        }
+        //}
 
         public static bool checkIsOvertimeofGROgarame(string mact, DateTime deliverydate)
         {
@@ -203,13 +203,13 @@ namespace arconfirmationletter.Model
 
             var ctkm = (from p in db.tbl_CTKMs
 
-                     where p.Mã_CT == mact
-                     && p.enduser == enduser
-                     select p).FirstOrDefault();
+                        where p.Mã_CT == mact
+                        && p.enduser == enduser
+                        select p).FirstOrDefault();
 
             if (ctkm != null)
             {
-                if (ctkm.Từ_ngày <= deliverydate && ctkm.Đến_Ngày >=deliverydate)
+                if (ctkm.Từ_ngày <= deliverydate && ctkm.Đến_Ngày >= deliverydate)
                 {
                     kq = false;
                 }
@@ -218,7 +218,7 @@ namespace arconfirmationletter.Model
             }
 
             return kq;
-          
+
 
 
 
@@ -230,15 +230,15 @@ namespace arconfirmationletter.Model
         {
 
 
-         //   bool kq = true;
+            //   bool kq = true;
             string connection_string = Utils.getConnectionstr();
             string enduser = Utils.getusername();
             var db = new LinqtoSQLDataContext(connection_string);
 
             var rs = from p in db.tbl_Salesorders
-                     
-                     where  p.enduser == enduser
-                    // && p.Dlv_Date == ngayorder
+
+                     where p.enduser == enduser
+                     // && p.Dlv_Date == ngayorder
                      select p;
 
 
@@ -251,7 +251,7 @@ namespace arconfirmationletter.Model
         }
 
 
-        public static bool checkoverschemebyorderandate(double  ordernumber, DateTime  ngayorder)
+        public static bool checkoverschemebyorderandate(double ordernumber, DateTime ngayorder)
         {
 
             bool kq = true;
@@ -275,6 +275,121 @@ namespace arconfirmationletter.Model
             //   throw new NotImplementedException();
         }
 
+        public static void UpdateMaCTKMchodonhangmua(string material, DateTime dlv_Date, string nhomKHKM, int id)
+        {
+           
+            string connection_string = Utils.getConnectionstr();
+            string enduser = Utils.getusername();
+            var db = new LinqtoSQLDataContext(connection_string);
 
+            var rs = from p in db.tbl_CTKMs
+                     where p.enduser == enduser
+                     select p;
+
+            foreach (var item in rs)
+            {
+                if (item.Mã_SP_Mua == material && item.Từ_ngày <= dlv_Date && item.Đến_Ngày >= dlv_Date && item.Nhóm_khách_hàng == nhomKHKM)
+                {
+
+                    var rs2 = from kh in db.tbl_Salesorders
+                             where kh.id == id
+                             select kh;
+
+                    foreach (var item2 in rs2)
+                    {
+                        item2.maCTKM = item.Mã_CT;
+                        item2.Ma_SP_Duoc_KM = item.Mã_SP_KM;
+                        item2.So_luong_duoc_KM = item2.ConfirmQty/item.Tỷ_lệ_CTKM  ;
+                        db.SubmitChanges();
+                    }
+
+
+
+                }
+
+
+
+            }
+
+
+
+
+
+
+
+            //   throw new NotImplementedException();
+        }
+
+        public static void updaMAKHKM()
+        {
+
+
+
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+            var rs = from p in db.tbl_Salesorders
+                     where p.enduser == enduser
+
+                     select p;
+
+            foreach (var item in rs)
+            {
+
+
+
+                string maKH = (from kh in db.tbl_NhomKHKMs
+                               where kh.enduser == enduser
+                               && kh.CodeKH == item.Sold_to_party
+
+                               select kh.Mã_nhóm_KH).FirstOrDefault();
+
+                if (maKH != null)
+                {
+                    item.Mã_nhóm_KH = maKH;
+                }
+                else
+                {
+                    item.Mã_nhóm_KH = "";
+                }
+
+
+                db.SubmitChanges();
+
+            }
+
+
+
+            //throw new NotImplementedException();
+        }
+
+        public static void updaCTVAsoluongKM()
+        {
+            string connection_string = Utils.getConnectionstr();
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+            #region update ctkm
+            var rs1 = from p in db.tbl_Salesorders
+
+                      where p.enduser == enduser
+                      select p;
+
+            foreach (var item in rs1)
+            {
+                item.selectprt = false;
+
+
+                Model.Conditioncheck.UpdateMaCTKMchodonhangmua(item.Material, (DateTime)item.Dlv_Date, item.Mã_nhóm_KH, item.id);
+
+
+            }
+
+
+
+            #endregion
+        }
     }
 }

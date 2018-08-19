@@ -57,18 +57,14 @@
             this.vIEWORDERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uPLOADORDERLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fREECASEWRONGFRECASECODEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderNotEnoughFreecaseDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lISTORDERHAVEOVERFREECASEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lISTORDERWRONGMESSAGEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oRDERWRONGSKILLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wRONGSCHEMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fILTERORDERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.puchaseOrderWithValueEqua0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.freeCaseWithValue0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serverNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userAndRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,7 +73,8 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.lblocate = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.fREECASEWRONGFRECASECODEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -236,10 +233,10 @@
             // uPLOADDATAToolStripMenuItem
             // 
             this.uPLOADDATAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.oRDERBYEToolStripMenuItem,
-            this.fREEORDERToolStripMenuItem});
+            this.fREEORDERToolStripMenuItem,
+            this.oRDERBYEToolStripMenuItem});
             this.uPLOADDATAToolStripMenuItem.Name = "uPLOADDATAToolStripMenuItem";
-            this.uPLOADDATAToolStripMenuItem.Size = new System.Drawing.Size(348, 26);
+            this.uPLOADDATAToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this.uPLOADDATAToolStripMenuItem.Text = "PUCHASE ORDER";
             // 
             // oRDERBYEToolStripMenuItem
@@ -259,10 +256,10 @@
             // fREECASESORDERToolStripMenuItem
             // 
             this.fREECASESORDERToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vIEWORDERToolStripMenuItem,
-            this.uPLOADORDERLISTToolStripMenuItem});
+            this.uPLOADORDERLISTToolStripMenuItem,
+            this.vIEWORDERToolStripMenuItem});
             this.fREECASESORDERToolStripMenuItem.Name = "fREECASESORDERToolStripMenuItem";
-            this.fREECASESORDERToolStripMenuItem.Size = new System.Drawing.Size(348, 26);
+            this.fREECASESORDERToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this.fREECASESORDERToolStripMenuItem.Text = "FREECASES ORDER";
             // 
             // vIEWORDERToolStripMenuItem
@@ -290,7 +287,8 @@
             this.toolStripSeparator2,
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem,
             this.oRDERWRONGSKILLToolStripMenuItem,
-            this.fILTERORDERToolStripMenuItem});
+            this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem,
+            this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem});
             this.reportsToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reportsToolStripMenuItem.Image")));
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
@@ -298,90 +296,63 @@
             this.reportsToolStripMenuItem.Text = "TRACKING";
             this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 
+            // fREECASEWRONGFRECASECODEToolStripMenuItem
+            // 
+            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.th5YSKEK6I1;
+            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Name = "fREECASEWRONGFRECASECODEToolStripMenuItem";
+            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Text = "REVIEW MÃ KHUYẾN MẠI VÀ MESSAGE";
+            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Click += new System.EventHandler(this.fREECASEWRONGFRECASECODEToolStripMenuItem_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(294, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(362, 6);
             // 
             // lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem
             // 
-            this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.orderNotEnoughFreecaseDetailToolStripMenuItem});
+            this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.thTPVPNXXL;
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Name = "lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem";
-            this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Size = new System.Drawing.Size(310, 24);
-            this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Text = "ORDER  NOT ENOUGH FREECASE ";
+            this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Text = "ĐƠN HÀNG TRẢ THIẾU KHUYẾN MẠI";
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Click += new System.EventHandler(this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem_Click);
-            // 
-            // orderNotEnoughFreecaseDetailToolStripMenuItem
-            // 
-            this.orderNotEnoughFreecaseDetailToolStripMenuItem.Name = "orderNotEnoughFreecaseDetailToolStripMenuItem";
-            this.orderNotEnoughFreecaseDetailToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
-            this.orderNotEnoughFreecaseDetailToolStripMenuItem.Text = "Order not enough Freecase detail";
             // 
             // lISTORDERHAVEOVERFREECASEToolStripMenuItem
             // 
+            this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.progress;
             this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Name = "lISTORDERHAVEOVERFREECASEToolStripMenuItem";
-            this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
-            this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Text = "ORDER HAVE OVER BUGET";
+            this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Text = "ĐƠN HÀNG KHUYẾN MẠI TRẢ THỪA";
             this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Click += new System.EventHandler(this.lISTORDERHAVEOVERFREECASEToolStripMenuItem_Click);
             // 
             // lISTORDERWRONGMESSAGEToolStripMenuItem
             // 
+            this.lISTORDERWRONGMESSAGEToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.th5YSKEK6I;
             this.lISTORDERWRONGMESSAGEToolStripMenuItem.Name = "lISTORDERWRONGMESSAGEToolStripMenuItem";
-            this.lISTORDERWRONGMESSAGEToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
-            this.lISTORDERWRONGMESSAGEToolStripMenuItem.Text = "ORDER WRONG MESSAGE";
+            this.lISTORDERWRONGMESSAGEToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.lISTORDERWRONGMESSAGEToolStripMenuItem.Text = "ĐƠN HÀNG SAI MESSAGE";
             this.lISTORDERWRONGMESSAGEToolStripMenuItem.Click += new System.EventHandler(this.lISTORDERWRONGMESSAGEToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(294, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(362, 6);
             // 
             // oRDEROVERTIMEOFPROGARMEToolStripMenuItem
             // 
+            this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.cocacola;
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Name = "oRDEROVERTIMEOFPROGARMEToolStripMenuItem";
-            this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
-            this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Text = "ORDER OVERTIME OF PROGARME";
+            this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Text = "ĐƠN HÀNG KM KHÔNG TRONG THỜI GIAN CTKM";
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Click += new System.EventHandler(this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem_Click);
             // 
             // oRDERWRONGSKILLToolStripMenuItem
             // 
-            this.oRDERWRONGSKILLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.wRONGSCHEMEToolStripMenuItem});
+            this.oRDERWRONGSKILLToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.progress;
             this.oRDERWRONGSKILLToolStripMenuItem.Name = "oRDERWRONGSKILLToolStripMenuItem";
-            this.oRDERWRONGSKILLToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
-            this.oRDERWRONGSKILLToolStripMenuItem.Text = "ORDER WRONG SCHEME";
+            this.oRDERWRONGSKILLToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.oRDERWRONGSKILLToolStripMenuItem.Text = "ĐƠN HÀNG KM SAI SCHEME";
             this.oRDERWRONGSKILLToolStripMenuItem.Click += new System.EventHandler(this.oRDERWRONGSKILLToolStripMenuItem_Click);
-            // 
-            // wRONGSCHEMEToolStripMenuItem
-            // 
-            this.wRONGSCHEMEToolStripMenuItem.Name = "wRONGSCHEMEToolStripMenuItem";
-            this.wRONGSCHEMEToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
-            this.wRONGSCHEMEToolStripMenuItem.Text = "WRONG SCHEME";
-            this.wRONGSCHEMEToolStripMenuItem.Click += new System.EventHandler(this.wRONGSCHEMEToolStripMenuItem_Click);
-            // 
-            // fILTERORDERToolStripMenuItem
-            // 
-            this.fILTERORDERToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.puchaseOrderWithValueEqua0ToolStripMenuItem,
-            this.freeCaseWithValue0ToolStripMenuItem});
-            this.fILTERORDERToolStripMenuItem.Name = "fILTERORDERToolStripMenuItem";
-            this.fILTERORDERToolStripMenuItem.Size = new System.Drawing.Size(297, 24);
-            this.fILTERORDERToolStripMenuItem.Text = "FILTER ORDER";
-            // 
-            // puchaseOrderWithValueEqua0ToolStripMenuItem
-            // 
-            this.puchaseOrderWithValueEqua0ToolStripMenuItem.Name = "puchaseOrderWithValueEqua0ToolStripMenuItem";
-            this.puchaseOrderWithValueEqua0ToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
-            this.puchaseOrderWithValueEqua0ToolStripMenuItem.Text = "Puchase order with value = 0";
-            this.puchaseOrderWithValueEqua0ToolStripMenuItem.Click += new System.EventHandler(this.puchaseOrderWithValueEqua0ToolStripMenuItem_Click);
-            // 
-            // freeCaseWithValue0ToolStripMenuItem
-            // 
-            this.freeCaseWithValue0ToolStripMenuItem.Name = "freeCaseWithValue0ToolStripMenuItem";
-            this.freeCaseWithValue0ToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
-            this.freeCaseWithValue0ToolStripMenuItem.Text = "FreeCase with value <> 0";
-            this.freeCaseWithValue0ToolStripMenuItem.Click += new System.EventHandler(this.freeCaseWithValue0ToolStripMenuItem_Click);
             // 
             // systemConfigToolStripMenuItem
             // 
@@ -470,12 +441,21 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Region: ";
             // 
-            // fREECASEWRONGFRECASECODEToolStripMenuItem
+            // đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem
             // 
-            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Name = "fREECASEWRONGFRECASECODEToolStripMenuItem";
-            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Size = new System.Drawing.Size(365, 24);
-            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Text = "FREECASE WRONG FRECASE CODE REVIEW";
-            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Click += new System.EventHandler(this.fREECASEWRONGFRECASECODEToolStripMenuItem_Click);
+            this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.coca_anim_48;
+            this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Name = "đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem";
+            this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Text = "ĐƠN HÀNG MUA GIÁ TIỀN = 0";
+            this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Click += new System.EventHandler(this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem_Click);
+            // 
+            // đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem
+            // 
+            this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.thTPVPNXXL;
+            this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Name = "đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem";
+            this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Text = "ĐƠN HÀNG KHUYẾN MẠI GIÁ TIỀN <>";
+            this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Click += new System.EventHandler(this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -544,12 +524,9 @@
         private ToolStripMenuItem vIEWORDERToolStripMenuItem;
         private ToolStripMenuItem uPLOADORDERLISTToolStripMenuItem;
         private ToolStripMenuItem uPLOADPROGARMEToolStripMenuItem;
-        private ToolStripMenuItem orderNotEnoughFreecaseDetailToolStripMenuItem;
-        private ToolStripMenuItem wRONGSCHEMEToolStripMenuItem;
-        private ToolStripMenuItem fILTERORDERToolStripMenuItem;
-        private ToolStripMenuItem puchaseOrderWithValueEqua0ToolStripMenuItem;
-        private ToolStripMenuItem freeCaseWithValue0ToolStripMenuItem;
         private ToolStripMenuItem fREECASEWRONGFRECASECODEToolStripMenuItem;
+        private ToolStripMenuItem đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem;
+        private ToolStripMenuItem đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem;
     }
 }
 

@@ -30,21 +30,21 @@ namespace arconfirmationletter
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Inserttbl_CTKM(tbl_CTKM instance);
-    partial void Updatetbl_CTKM(tbl_CTKM instance);
-    partial void Deletetbl_CTKM(tbl_CTKM instance);
+    partial void Inserttbl_ChecktongKM(tbl_ChecktongKM instance);
+    partial void Updatetbl_ChecktongKM(tbl_ChecktongKM instance);
+    partial void Deletetbl_ChecktongKM(tbl_ChecktongKM instance);
     partial void Inserttbl_Temp(tbl_Temp instance);
     partial void Updatetbl_Temp(tbl_Temp instance);
     partial void Deletetbl_Temp(tbl_Temp instance);
+    partial void Inserttbl_CTKM(tbl_CTKM instance);
+    partial void Updatetbl_CTKM(tbl_CTKM instance);
+    partial void Deletetbl_CTKM(tbl_CTKM instance);
     partial void Inserttbl_NhomKHKM(tbl_NhomKHKM instance);
     partial void Updatetbl_NhomKHKM(tbl_NhomKHKM instance);
     partial void Deletetbl_NhomKHKM(tbl_NhomKHKM instance);
     partial void Inserttbl_Product(tbl_Product instance);
     partial void Updatetbl_Product(tbl_Product instance);
     partial void Deletetbl_Product(tbl_Product instance);
-    partial void Inserttbl_rptnotEnought(tbl_rptnotEnought instance);
-    partial void Updatetbl_rptnotEnought(tbl_rptnotEnought instance);
-    partial void Deletetbl_rptnotEnought(tbl_rptnotEnought instance);
     partial void Inserttbl_SalesFreehavetopaid(tbl_SalesFreehavetopaid instance);
     partial void Updatetbl_SalesFreehavetopaid(tbl_SalesFreehavetopaid instance);
     partial void Deletetbl_SalesFreehavetopaid(tbl_SalesFreehavetopaid instance);
@@ -86,11 +86,11 @@ namespace arconfirmationletter
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<tbl_CTKM> tbl_CTKMs
+		public System.Data.Linq.Table<tbl_ChecktongKM> tbl_ChecktongKMs
 		{
 			get
 			{
-				return this.GetTable<tbl_CTKM>();
+				return this.GetTable<tbl_ChecktongKM>();
 			}
 		}
 		
@@ -99,6 +99,14 @@ namespace arconfirmationletter
 			get
 			{
 				return this.GetTable<tbl_Temp>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_CTKM> tbl_CTKMs
+		{
+			get
+			{
+				return this.GetTable<tbl_CTKM>();
 			}
 		}
 		
@@ -115,14 +123,6 @@ namespace arconfirmationletter
 			get
 			{
 				return this.GetTable<tbl_Product>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_rptnotEnought> tbl_rptnotEnoughts
-		{
-			get
-			{
-				return this.GetTable<tbl_rptnotEnought>();
 			}
 		}
 		
@@ -151,267 +151,111 @@ namespace arconfirmationletter
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_CTKM")]
-	public partial class tbl_CTKM : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_ChecktongKM")]
+	public partial class tbl_ChecktongKM : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _Mã_CT;
+		private string _Created;
 		
-		private string _PO_Message;
+		private System.Nullable<double> _Sold_to_party;
 		
-		private string _Mã_SP_Mua;
-		
-		private string _Mã_SP_KM;
-		
-		private string _Tên_SP_mua;
-		
-		private string _Tên_SP_KM;
-		
-		private System.Nullable<double> _Tỷ_lệ_CTKM;
-		
-		private System.Nullable<System.DateTime> _Từ_ngày;
-		
-		private System.Nullable<System.DateTime> _Đến_Ngày;
-		
-		private string _Nhóm_khách_hàng;
+		private string _Name;
 		
 		private int _id;
 		
 		private string _enduser;
 		
+		private string _maCTKM;
+		
+		private System.Nullable<double> _So_luong_duoc_KM;
+		
+		private System.Nullable<double> _So_luong_thuc_te_KM;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMã_CTChanging(string value);
-    partial void OnMã_CTChanged();
-    partial void OnPO_MessageChanging(string value);
-    partial void OnPO_MessageChanged();
-    partial void OnMã_SP_MuaChanging(string value);
-    partial void OnMã_SP_MuaChanged();
-    partial void OnMã_SP_KMChanging(string value);
-    partial void OnMã_SP_KMChanged();
-    partial void OnTên_SP_muaChanging(string value);
-    partial void OnTên_SP_muaChanged();
-    partial void OnTên_SP_KMChanging(string value);
-    partial void OnTên_SP_KMChanged();
-    partial void OnTỷ_lệ_CTKMChanging(System.Nullable<double> value);
-    partial void OnTỷ_lệ_CTKMChanged();
-    partial void OnTừ_ngàyChanging(System.Nullable<System.DateTime> value);
-    partial void OnTừ_ngàyChanged();
-    partial void OnĐến_NgàyChanging(System.Nullable<System.DateTime> value);
-    partial void OnĐến_NgàyChanged();
-    partial void OnNhóm_khách_hàngChanging(string value);
-    partial void OnNhóm_khách_hàngChanged();
+    partial void OnCreatedChanging(string value);
+    partial void OnCreatedChanged();
+    partial void OnSold_to_partyChanging(System.Nullable<double> value);
+    partial void OnSold_to_partyChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
     partial void OnidChanging(int value);
     partial void OnidChanged();
     partial void OnenduserChanging(string value);
     partial void OnenduserChanged();
+    partial void OnmaCTKMChanging(string value);
+    partial void OnmaCTKMChanged();
+    partial void OnSo_luong_duoc_KMChanging(System.Nullable<double> value);
+    partial void OnSo_luong_duoc_KMChanged();
+    partial void OnSo_luong_thuc_te_KMChanging(System.Nullable<double> value);
+    partial void OnSo_luong_thuc_te_KMChanged();
     #endregion
 		
-		public tbl_CTKM()
+		public tbl_ChecktongKM()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã CT]", Storage="_Mã_CT", DbType="NVarChar(255)")]
-		public string Mã_CT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Created", DbType="NVarChar(255)")]
+		public string Created
 		{
 			get
 			{
-				return this._Mã_CT;
+				return this._Created;
 			}
 			set
 			{
-				if ((this._Mã_CT != value))
+				if ((this._Created != value))
 				{
-					this.OnMã_CTChanging(value);
+					this.OnCreatedChanging(value);
 					this.SendPropertyChanging();
-					this._Mã_CT = value;
-					this.SendPropertyChanged("Mã_CT");
-					this.OnMã_CTChanged();
+					this._Created = value;
+					this.SendPropertyChanged("Created");
+					this.OnCreatedChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[PO Message]", Storage="_PO_Message", DbType="NVarChar(255)")]
-		public string PO_Message
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sold_to_party", DbType="Float")]
+		public System.Nullable<double> Sold_to_party
 		{
 			get
 			{
-				return this._PO_Message;
+				return this._Sold_to_party;
 			}
 			set
 			{
-				if ((this._PO_Message != value))
+				if ((this._Sold_to_party != value))
 				{
-					this.OnPO_MessageChanging(value);
+					this.OnSold_to_partyChanging(value);
 					this.SendPropertyChanging();
-					this._PO_Message = value;
-					this.SendPropertyChanged("PO_Message");
-					this.OnPO_MessageChanged();
+					this._Sold_to_party = value;
+					this.SendPropertyChanged("Sold_to_party");
+					this.OnSold_to_partyChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã SP Mua]", Storage="_Mã_SP_Mua", DbType="NVarChar(255)")]
-		public string Mã_SP_Mua
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(255)")]
+		public string Name
 		{
 			get
 			{
-				return this._Mã_SP_Mua;
+				return this._Name;
 			}
 			set
 			{
-				if ((this._Mã_SP_Mua != value))
+				if ((this._Name != value))
 				{
-					this.OnMã_SP_MuaChanging(value);
+					this.OnNameChanging(value);
 					this.SendPropertyChanging();
-					this._Mã_SP_Mua = value;
-					this.SendPropertyChanged("Mã_SP_Mua");
-					this.OnMã_SP_MuaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã SP KM]", Storage="_Mã_SP_KM", DbType="NVarChar(255)")]
-		public string Mã_SP_KM
-		{
-			get
-			{
-				return this._Mã_SP_KM;
-			}
-			set
-			{
-				if ((this._Mã_SP_KM != value))
-				{
-					this.OnMã_SP_KMChanging(value);
-					this.SendPropertyChanging();
-					this._Mã_SP_KM = value;
-					this.SendPropertyChanged("Mã_SP_KM");
-					this.OnMã_SP_KMChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Tên SP mua]", Storage="_Tên_SP_mua", DbType="NVarChar(255)")]
-		public string Tên_SP_mua
-		{
-			get
-			{
-				return this._Tên_SP_mua;
-			}
-			set
-			{
-				if ((this._Tên_SP_mua != value))
-				{
-					this.OnTên_SP_muaChanging(value);
-					this.SendPropertyChanging();
-					this._Tên_SP_mua = value;
-					this.SendPropertyChanged("Tên_SP_mua");
-					this.OnTên_SP_muaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Tên SP KM]", Storage="_Tên_SP_KM", DbType="NVarChar(255)")]
-		public string Tên_SP_KM
-		{
-			get
-			{
-				return this._Tên_SP_KM;
-			}
-			set
-			{
-				if ((this._Tên_SP_KM != value))
-				{
-					this.OnTên_SP_KMChanging(value);
-					this.SendPropertyChanging();
-					this._Tên_SP_KM = value;
-					this.SendPropertyChanged("Tên_SP_KM");
-					this.OnTên_SP_KMChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Tỷ lệ CTKM]", Storage="_Tỷ_lệ_CTKM", DbType="Float")]
-		public System.Nullable<double> Tỷ_lệ_CTKM
-		{
-			get
-			{
-				return this._Tỷ_lệ_CTKM;
-			}
-			set
-			{
-				if ((this._Tỷ_lệ_CTKM != value))
-				{
-					this.OnTỷ_lệ_CTKMChanging(value);
-					this.SendPropertyChanging();
-					this._Tỷ_lệ_CTKM = value;
-					this.SendPropertyChanged("Tỷ_lệ_CTKM");
-					this.OnTỷ_lệ_CTKMChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Từ ngày]", Storage="_Từ_ngày", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Từ_ngày
-		{
-			get
-			{
-				return this._Từ_ngày;
-			}
-			set
-			{
-				if ((this._Từ_ngày != value))
-				{
-					this.OnTừ_ngàyChanging(value);
-					this.SendPropertyChanging();
-					this._Từ_ngày = value;
-					this.SendPropertyChanged("Từ_ngày");
-					this.OnTừ_ngàyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Đến Ngày]", Storage="_Đến_Ngày", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Đến_Ngày
-		{
-			get
-			{
-				return this._Đến_Ngày;
-			}
-			set
-			{
-				if ((this._Đến_Ngày != value))
-				{
-					this.OnĐến_NgàyChanging(value);
-					this.SendPropertyChanging();
-					this._Đến_Ngày = value;
-					this.SendPropertyChanged("Đến_Ngày");
-					this.OnĐến_NgàyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Nhóm khách hàng]", Storage="_Nhóm_khách_hàng", DbType="NVarChar(255)")]
-		public string Nhóm_khách_hàng
-		{
-			get
-			{
-				return this._Nhóm_khách_hàng;
-			}
-			set
-			{
-				if ((this._Nhóm_khách_hàng != value))
-				{
-					this.OnNhóm_khách_hàngChanging(value);
-					this.SendPropertyChanging();
-					this._Nhóm_khách_hàng = value;
-					this.SendPropertyChanged("Nhóm_khách_hàng");
-					this.OnNhóm_khách_hàngChanged();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
 				}
 			}
 		}
@@ -452,6 +296,66 @@ namespace arconfirmationletter
 					this._enduser = value;
 					this.SendPropertyChanged("enduser");
 					this.OnenduserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maCTKM", DbType="NVarChar(255)")]
+		public string maCTKM
+		{
+			get
+			{
+				return this._maCTKM;
+			}
+			set
+			{
+				if ((this._maCTKM != value))
+				{
+					this.OnmaCTKMChanging(value);
+					this.SendPropertyChanging();
+					this._maCTKM = value;
+					this.SendPropertyChanged("maCTKM");
+					this.OnmaCTKMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_So_luong_duoc_KM", DbType="Float")]
+		public System.Nullable<double> So_luong_duoc_KM
+		{
+			get
+			{
+				return this._So_luong_duoc_KM;
+			}
+			set
+			{
+				if ((this._So_luong_duoc_KM != value))
+				{
+					this.OnSo_luong_duoc_KMChanging(value);
+					this.SendPropertyChanging();
+					this._So_luong_duoc_KM = value;
+					this.SendPropertyChanged("So_luong_duoc_KM");
+					this.OnSo_luong_duoc_KMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_So_luong_thuc_te_KM", DbType="Float")]
+		public System.Nullable<double> So_luong_thuc_te_KM
+		{
+			get
+			{
+				return this._So_luong_thuc_te_KM;
+			}
+			set
+			{
+				if ((this._So_luong_thuc_te_KM != value))
+				{
+					this.OnSo_luong_thuc_te_KMChanging(value);
+					this.SendPropertyChanging();
+					this._So_luong_thuc_te_KM = value;
+					this.SendPropertyChanged("So_luong_thuc_te_KM");
+					this.OnSo_luong_thuc_te_KMChanged();
 				}
 			}
 		}
@@ -1187,6 +1091,332 @@ namespace arconfirmationletter
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_CTKM")]
+	public partial class tbl_CTKM : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Mã_CT;
+		
+		private string _PO_Message;
+		
+		private string _Mã_SP_Mua;
+		
+		private string _Mã_SP_KM;
+		
+		private string _Tên_SP_mua;
+		
+		private string _Tên_SP_KM;
+		
+		private System.Nullable<double> _Tỷ_lệ_CTKM;
+		
+		private System.Nullable<System.DateTime> _Từ_ngày;
+		
+		private System.Nullable<System.DateTime> _Đến_Ngày;
+		
+		private string _Nhóm_khách_hàng;
+		
+		private int _id;
+		
+		private string _enduser;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMã_CTChanging(string value);
+    partial void OnMã_CTChanged();
+    partial void OnPO_MessageChanging(string value);
+    partial void OnPO_MessageChanged();
+    partial void OnMã_SP_MuaChanging(string value);
+    partial void OnMã_SP_MuaChanged();
+    partial void OnMã_SP_KMChanging(string value);
+    partial void OnMã_SP_KMChanged();
+    partial void OnTên_SP_muaChanging(string value);
+    partial void OnTên_SP_muaChanged();
+    partial void OnTên_SP_KMChanging(string value);
+    partial void OnTên_SP_KMChanged();
+    partial void OnTỷ_lệ_CTKMChanging(System.Nullable<double> value);
+    partial void OnTỷ_lệ_CTKMChanged();
+    partial void OnTừ_ngàyChanging(System.Nullable<System.DateTime> value);
+    partial void OnTừ_ngàyChanged();
+    partial void OnĐến_NgàyChanging(System.Nullable<System.DateTime> value);
+    partial void OnĐến_NgàyChanged();
+    partial void OnNhóm_khách_hàngChanging(string value);
+    partial void OnNhóm_khách_hàngChanged();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnenduserChanging(string value);
+    partial void OnenduserChanged();
+    #endregion
+		
+		public tbl_CTKM()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã CT]", Storage="_Mã_CT", DbType="NVarChar(255)")]
+		public string Mã_CT
+		{
+			get
+			{
+				return this._Mã_CT;
+			}
+			set
+			{
+				if ((this._Mã_CT != value))
+				{
+					this.OnMã_CTChanging(value);
+					this.SendPropertyChanging();
+					this._Mã_CT = value;
+					this.SendPropertyChanged("Mã_CT");
+					this.OnMã_CTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[PO Message]", Storage="_PO_Message", DbType="NVarChar(255)")]
+		public string PO_Message
+		{
+			get
+			{
+				return this._PO_Message;
+			}
+			set
+			{
+				if ((this._PO_Message != value))
+				{
+					this.OnPO_MessageChanging(value);
+					this.SendPropertyChanging();
+					this._PO_Message = value;
+					this.SendPropertyChanged("PO_Message");
+					this.OnPO_MessageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã SP Mua]", Storage="_Mã_SP_Mua", DbType="NVarChar(255)")]
+		public string Mã_SP_Mua
+		{
+			get
+			{
+				return this._Mã_SP_Mua;
+			}
+			set
+			{
+				if ((this._Mã_SP_Mua != value))
+				{
+					this.OnMã_SP_MuaChanging(value);
+					this.SendPropertyChanging();
+					this._Mã_SP_Mua = value;
+					this.SendPropertyChanged("Mã_SP_Mua");
+					this.OnMã_SP_MuaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mã SP KM]", Storage="_Mã_SP_KM", DbType="NVarChar(255)")]
+		public string Mã_SP_KM
+		{
+			get
+			{
+				return this._Mã_SP_KM;
+			}
+			set
+			{
+				if ((this._Mã_SP_KM != value))
+				{
+					this.OnMã_SP_KMChanging(value);
+					this.SendPropertyChanging();
+					this._Mã_SP_KM = value;
+					this.SendPropertyChanged("Mã_SP_KM");
+					this.OnMã_SP_KMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Tên SP mua]", Storage="_Tên_SP_mua", DbType="NVarChar(255)")]
+		public string Tên_SP_mua
+		{
+			get
+			{
+				return this._Tên_SP_mua;
+			}
+			set
+			{
+				if ((this._Tên_SP_mua != value))
+				{
+					this.OnTên_SP_muaChanging(value);
+					this.SendPropertyChanging();
+					this._Tên_SP_mua = value;
+					this.SendPropertyChanged("Tên_SP_mua");
+					this.OnTên_SP_muaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Tên SP KM]", Storage="_Tên_SP_KM", DbType="NVarChar(255)")]
+		public string Tên_SP_KM
+		{
+			get
+			{
+				return this._Tên_SP_KM;
+			}
+			set
+			{
+				if ((this._Tên_SP_KM != value))
+				{
+					this.OnTên_SP_KMChanging(value);
+					this.SendPropertyChanging();
+					this._Tên_SP_KM = value;
+					this.SendPropertyChanged("Tên_SP_KM");
+					this.OnTên_SP_KMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Tỷ lệ CTKM]", Storage="_Tỷ_lệ_CTKM", DbType="Float")]
+		public System.Nullable<double> Tỷ_lệ_CTKM
+		{
+			get
+			{
+				return this._Tỷ_lệ_CTKM;
+			}
+			set
+			{
+				if ((this._Tỷ_lệ_CTKM != value))
+				{
+					this.OnTỷ_lệ_CTKMChanging(value);
+					this.SendPropertyChanging();
+					this._Tỷ_lệ_CTKM = value;
+					this.SendPropertyChanged("Tỷ_lệ_CTKM");
+					this.OnTỷ_lệ_CTKMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Từ ngày]", Storage="_Từ_ngày", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Từ_ngày
+		{
+			get
+			{
+				return this._Từ_ngày;
+			}
+			set
+			{
+				if ((this._Từ_ngày != value))
+				{
+					this.OnTừ_ngàyChanging(value);
+					this.SendPropertyChanging();
+					this._Từ_ngày = value;
+					this.SendPropertyChanged("Từ_ngày");
+					this.OnTừ_ngàyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Đến Ngày]", Storage="_Đến_Ngày", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Đến_Ngày
+		{
+			get
+			{
+				return this._Đến_Ngày;
+			}
+			set
+			{
+				if ((this._Đến_Ngày != value))
+				{
+					this.OnĐến_NgàyChanging(value);
+					this.SendPropertyChanging();
+					this._Đến_Ngày = value;
+					this.SendPropertyChanged("Đến_Ngày");
+					this.OnĐến_NgàyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Nhóm khách hàng]", Storage="_Nhóm_khách_hàng", DbType="NVarChar(255)")]
+		public string Nhóm_khách_hàng
+		{
+			get
+			{
+				return this._Nhóm_khách_hàng;
+			}
+			set
+			{
+				if ((this._Nhóm_khách_hàng != value))
+				{
+					this.OnNhóm_khách_hàngChanging(value);
+					this.SendPropertyChanging();
+					this._Nhóm_khách_hàng = value;
+					this.SendPropertyChanged("Nhóm_khách_hàng");
+					this.OnNhóm_khách_hàngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enduser", DbType="NVarChar(255)")]
+		public string enduser
+		{
+			get
+			{
+				return this._enduser;
+			}
+			set
+			{
+				if ((this._enduser != value))
+				{
+					this.OnenduserChanging(value);
+					this.SendPropertyChanging();
+					this._enduser = value;
+					this.SendPropertyChanged("enduser");
+					this.OnenduserChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_NhomKHKM")]
 	public partial class tbl_NhomKHKM : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1195,7 +1425,7 @@ namespace arconfirmationletter
 		
 		private string _Mã_nhóm_KH;
 		
-		private string _CodeKH;
+		private System.Nullable<double> _CodeKH;
 		
 		private int _id;
 		
@@ -1207,7 +1437,7 @@ namespace arconfirmationletter
     partial void OnCreated();
     partial void OnMã_nhóm_KHChanging(string value);
     partial void OnMã_nhóm_KHChanged();
-    partial void OnCodeKHChanging(string value);
+    partial void OnCodeKHChanging(System.Nullable<double> value);
     partial void OnCodeKHChanged();
     partial void OnidChanging(int value);
     partial void OnidChanged();
@@ -1240,8 +1470,8 @@ namespace arconfirmationletter
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeKH", DbType="NVarChar(30)")]
-		public string CodeKH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeKH", DbType="Float")]
+		public System.Nullable<double> CodeKH
 		{
 			get
 			{
@@ -1502,236 +1732,6 @@ namespace arconfirmationletter
 					this._enduser = value;
 					this.SendPropertyChanged("enduser");
 					this.OnenduserChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_rptnotEnought")]
-	public partial class tbl_rptnotEnought : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Created;
-		
-		private string _Material;
-		
-		private System.Nullable<double> _Quantytibuy;
-		
-		private System.Nullable<double> _Quantityfree;
-		
-		private System.Nullable<double> _FreeclasesPaid;
-		
-		private bool _filter;
-		
-		private string _enduser;
-		
-		private int _id;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCreatedChanging(string value);
-    partial void OnCreatedChanged();
-    partial void OnMaterialChanging(string value);
-    partial void OnMaterialChanged();
-    partial void OnQuantytibuyChanging(System.Nullable<double> value);
-    partial void OnQuantytibuyChanged();
-    partial void OnQuantityfreeChanging(System.Nullable<double> value);
-    partial void OnQuantityfreeChanged();
-    partial void OnFreeclasesPaidChanging(System.Nullable<double> value);
-    partial void OnFreeclasesPaidChanged();
-    partial void OnfilterChanging(bool value);
-    partial void OnfilterChanged();
-    partial void OnenduserChanging(string value);
-    partial void OnenduserChanged();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    #endregion
-		
-		public tbl_rptnotEnought()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Created", DbType="NVarChar(255)")]
-		public string Created
-		{
-			get
-			{
-				return this._Created;
-			}
-			set
-			{
-				if ((this._Created != value))
-				{
-					this.OnCreatedChanging(value);
-					this.SendPropertyChanging();
-					this._Created = value;
-					this.SendPropertyChanged("Created");
-					this.OnCreatedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Material", DbType="NVarChar(255)")]
-		public string Material
-		{
-			get
-			{
-				return this._Material;
-			}
-			set
-			{
-				if ((this._Material != value))
-				{
-					this.OnMaterialChanging(value);
-					this.SendPropertyChanging();
-					this._Material = value;
-					this.SendPropertyChanged("Material");
-					this.OnMaterialChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantytibuy", DbType="Float")]
-		public System.Nullable<double> Quantytibuy
-		{
-			get
-			{
-				return this._Quantytibuy;
-			}
-			set
-			{
-				if ((this._Quantytibuy != value))
-				{
-					this.OnQuantytibuyChanging(value);
-					this.SendPropertyChanging();
-					this._Quantytibuy = value;
-					this.SendPropertyChanged("Quantytibuy");
-					this.OnQuantytibuyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantityfree", DbType="Float")]
-		public System.Nullable<double> Quantityfree
-		{
-			get
-			{
-				return this._Quantityfree;
-			}
-			set
-			{
-				if ((this._Quantityfree != value))
-				{
-					this.OnQuantityfreeChanging(value);
-					this.SendPropertyChanging();
-					this._Quantityfree = value;
-					this.SendPropertyChanged("Quantityfree");
-					this.OnQuantityfreeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FreeclasesPaid", DbType="Float")]
-		public System.Nullable<double> FreeclasesPaid
-		{
-			get
-			{
-				return this._FreeclasesPaid;
-			}
-			set
-			{
-				if ((this._FreeclasesPaid != value))
-				{
-					this.OnFreeclasesPaidChanging(value);
-					this.SendPropertyChanging();
-					this._FreeclasesPaid = value;
-					this.SendPropertyChanged("FreeclasesPaid");
-					this.OnFreeclasesPaidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_filter", DbType="Bit NOT NULL")]
-		public bool filter
-		{
-			get
-			{
-				return this._filter;
-			}
-			set
-			{
-				if ((this._filter != value))
-				{
-					this.OnfilterChanging(value);
-					this.SendPropertyChanging();
-					this._filter = value;
-					this.SendPropertyChanged("filter");
-					this.OnfilterChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enduser", DbType="NVarChar(255)")]
-		public string enduser
-		{
-			get
-			{
-				return this._enduser;
-			}
-			set
-			{
-				if ((this._enduser != value))
-				{
-					this.OnenduserChanging(value);
-					this.SendPropertyChanging();
-					this._enduser = value;
-					this.SendPropertyChanged("enduser");
-					this.OnenduserChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
 				}
 			}
 		}
@@ -2625,6 +2625,14 @@ namespace arconfirmationletter
 		
 		private string _enduser;
 		
+		private string _maCTKM;
+		
+		private string _Ma_SP_Duoc_KM;
+		
+		private System.Nullable<double> _So_luong_duoc_KM;
+		
+		private string _Mã_nhóm_KH;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2671,6 +2679,14 @@ namespace arconfirmationletter
     partial void OnselectprtChanged();
     partial void OnenduserChanging(string value);
     partial void OnenduserChanged();
+    partial void OnmaCTKMChanging(string value);
+    partial void OnmaCTKMChanged();
+    partial void OnMa_SP_Duoc_KMChanging(string value);
+    partial void OnMa_SP_Duoc_KMChanged();
+    partial void OnSo_luong_duoc_KMChanging(System.Nullable<double> value);
+    partial void OnSo_luong_duoc_KMChanged();
+    partial void OnMã_nhóm_KHChanging(string value);
+    partial void OnMã_nhóm_KHChanged();
     #endregion
 		
 		public tbl_Salesorder()
@@ -3094,6 +3110,86 @@ namespace arconfirmationletter
 					this._enduser = value;
 					this.SendPropertyChanged("enduser");
 					this.OnenduserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maCTKM", DbType="NVarChar(255)")]
+		public string maCTKM
+		{
+			get
+			{
+				return this._maCTKM;
+			}
+			set
+			{
+				if ((this._maCTKM != value))
+				{
+					this.OnmaCTKMChanging(value);
+					this.SendPropertyChanging();
+					this._maCTKM = value;
+					this.SendPropertyChanged("maCTKM");
+					this.OnmaCTKMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ma_SP_Duoc_KM", DbType="NVarChar(255)")]
+		public string Ma_SP_Duoc_KM
+		{
+			get
+			{
+				return this._Ma_SP_Duoc_KM;
+			}
+			set
+			{
+				if ((this._Ma_SP_Duoc_KM != value))
+				{
+					this.OnMa_SP_Duoc_KMChanging(value);
+					this.SendPropertyChanging();
+					this._Ma_SP_Duoc_KM = value;
+					this.SendPropertyChanged("Ma_SP_Duoc_KM");
+					this.OnMa_SP_Duoc_KMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_So_luong_duoc_KM", DbType="Float")]
+		public System.Nullable<double> So_luong_duoc_KM
+		{
+			get
+			{
+				return this._So_luong_duoc_KM;
+			}
+			set
+			{
+				if ((this._So_luong_duoc_KM != value))
+				{
+					this.OnSo_luong_duoc_KMChanging(value);
+					this.SendPropertyChanging();
+					this._So_luong_duoc_KM = value;
+					this.SendPropertyChanged("So_luong_duoc_KM");
+					this.OnSo_luong_duoc_KMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mã_nhóm_KH", DbType="NVarChar(30)")]
+		public string Mã_nhóm_KH
+		{
+			get
+			{
+				return this._Mã_nhóm_KH;
+			}
+			set
+			{
+				if ((this._Mã_nhóm_KH != value))
+				{
+					this.OnMã_nhóm_KHChanging(value);
+					this.SendPropertyChanging();
+					this._Mã_nhóm_KH = value;
+					this.SendPropertyChanged("Mã_nhóm_KH");
+					this.OnMã_nhóm_KHChanged();
 				}
 			}
 		}

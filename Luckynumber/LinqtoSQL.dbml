@@ -1,19 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Luckynumber" Class="LinqtoSQLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=HAN-L-3PFF7H2;Initial Catalog=Luckynumber;Persist Security Info=True;User ID=sa" SettingsObjectName="arconfirmationletter.Properties.Settings" SettingsPropertyName="LuckynumberConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.tbl_CTKM" Member="tbl_CTKMs">
-    <Type Name="tbl_CTKM">
-      <Column Name="[Mã CT]" Member="Mã_CT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[PO Message]" Member="PO_Message" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Mã SP Mua]" Member="Mã_SP_Mua" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Mã SP KM]" Member="Mã_SP_KM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Tên SP mua]" Member="Tên_SP_mua" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Tên SP KM]" Member="Tên_SP_KM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Tỷ lệ CTKM]" Member="Tỷ_lệ_CTKM" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[Từ ngày]" Member="Từ_ngày" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="[Đến Ngày]" Member="Đến_Ngày" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="[Nhóm khách hàng]" Member="Nhóm_khách_hàng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+  <Table Name="dbo.tbl_ChecktongKM" Member="tbl_ChecktongKMs">
+    <Type Name="tbl_ChecktongKM">
+      <Column Name="Created" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Sold_to_party" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="enduser" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="maCTKM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="So_luong_duoc_KM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="So_luong_thuc_te_KM" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_Temp" Member="tbl_Temps">
@@ -48,10 +44,26 @@
       <Column Name="nationKA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.tbl_CTKM" Member="tbl_CTKMs">
+    <Type Name="tbl_CTKM">
+      <Column Name="[Mã CT]" Member="Mã_CT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[PO Message]" Member="PO_Message" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Mã SP Mua]" Member="Mã_SP_Mua" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Mã SP KM]" Member="Mã_SP_KM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Tên SP mua]" Member="Tên_SP_mua" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Tên SP KM]" Member="Tên_SP_KM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Tỷ lệ CTKM]" Member="Tỷ_lệ_CTKM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Từ ngày]" Member="Từ_ngày" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Đến Ngày]" Member="Đến_Ngày" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Nhóm khách hàng]" Member="Nhóm_khách_hàng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="enduser" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.tbl_NhomKHKM" Member="tbl_NhomKHKMs">
     <Type Name="tbl_NhomKHKM">
       <Column Name="Mã_nhóm_KH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="CodeKH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CodeKH" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="enduser" Type="System.String" DbType="NVarChar(225)" CanBeNull="true" />
     </Type>
@@ -65,18 +77,6 @@
       <Column Name="[UC Rate]" Member="UC_Rate" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="enduser" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tbl_rptnotEnought" Member="tbl_rptnotEnoughts">
-    <Type Name="tbl_rptnotEnought">
-      <Column Name="Created" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Material" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Quantytibuy" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Quantityfree" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="FreeclasesPaid" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="filter" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="enduser" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_SalesFreehavetopaid" Member="tbl_SalesFreehavetopaids">
@@ -141,6 +141,10 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="selectprt" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="enduser" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="maCTKM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ma_SP_Duoc_KM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="So_luong_duoc_KM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Mã_nhóm_KH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

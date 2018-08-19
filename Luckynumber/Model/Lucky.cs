@@ -16,6 +16,29 @@ namespace arconfirmationletter.Model
     class luckyno
     {
 
+        public bool deletetbl_ChecktongKM()
+        {
+            string connection_string = Utils.getConnectionstr();
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+            db.CommandTimeout = 0;
+            try
+            {
+                db.ExecuteCommand("DELETE FROM tbl_ChecktongKM  WHERE [tbl_ChecktongKM].enduser  = '" + enduser + "'");
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Lỗi khi xóa bảng tbl_ChecktongKM " + ex.ToString());
+            }
+            //    dc.tblFBL5Nnewthisperiods.DeleteAllOnSubmit(rsthisperiod);
+            db.SubmitChanges();
+
+            return true;
+        }
+
+
         public bool deleteProductlist()
         {
             string connection_string = Utils.getConnectionstr();
