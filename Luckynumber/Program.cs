@@ -3,7 +3,7 @@ using System.Net;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace arconfirmationletter
+namespace Luckynumber
 {
     static class Program
     {

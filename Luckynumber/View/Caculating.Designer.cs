@@ -1,4 +1,4 @@
-﻿namespace arconfirmationletter.View
+﻿namespace Luckynumber.View
 {
     partial class Caculating
     {
@@ -72,9 +72,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.ErrorImage = global::arconfirmationletter.Properties.Resources.progress;
-            this.pictureBox1.Image = global::arconfirmationletter.Properties.Resources.progress;
-            this.pictureBox1.InitialImage = global::arconfirmationletter.Properties.Resources.progress;
+            this.pictureBox1.ErrorImage = global::Luckynumber.Properties.Resources.progress;
+            this.pictureBox1.Image = global::Luckynumber.Properties.Resources.progress;
+            this.pictureBox1.InitialImage = global::Luckynumber.Properties.Resources.progress;
             this.pictureBox1.Location = new System.Drawing.Point(33, 14);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(163, 106);

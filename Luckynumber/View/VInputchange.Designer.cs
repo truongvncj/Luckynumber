@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace arconfirmationletter.View
+namespace Luckynumber.View
 {
     partial class VInputchange
     {
@@ -166,9 +166,9 @@ namespace arconfirmationletter.View
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.ErrorImage = global::arconfirmationletter.Properties.Resources.coca_anim_48;
-            this.pictureBox2.Image = global::arconfirmationletter.Properties.Resources.coca_anim_48;
-            this.pictureBox2.InitialImage = global::arconfirmationletter.Properties.Resources.coca_anim_48;
+            this.pictureBox2.ErrorImage = global::Luckynumber.Properties.Resources.coca_anim_48;
+            this.pictureBox2.Image = global::Luckynumber.Properties.Resources.coca_anim_48;
+            this.pictureBox2.InitialImage = global::Luckynumber.Properties.Resources.coca_anim_48;
             this.pictureBox2.Location = new System.Drawing.Point(562, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(145, 74);

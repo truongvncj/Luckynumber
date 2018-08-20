@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using arconfirmationletter.View;
+using Luckynumber.View;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using System.ComponentModel;
@@ -10,10 +10,10 @@ using System.Threading;
 using System.Data.OleDb;
 using System.Data;
 using System.Data.SqlClient;
-using arconfirmationletter.shared;
+using Luckynumber.shared;
 
 
-namespace arconfirmationletter.Model
+namespace Luckynumber.Model
 {
     class vat_ctrl
     {

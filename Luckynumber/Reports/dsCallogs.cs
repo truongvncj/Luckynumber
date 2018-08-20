@@ -1,19 +1,19 @@
-﻿namespace arconfirmationletter.Reports
+﻿namespace Luckynumber.Reports
 {
 }
 
-namespace arconfirmationletter.Reports
+namespace Luckynumber.Reports
 {
 }
 
-namespace arconfirmationletter.Reports
+namespace Luckynumber.Reports
 {
 }
 
-namespace arconfirmationletter.Reports
+namespace Luckynumber.Reports
 {
 }
-//namespace arconfirmationletter.Reports
+//namespace Luckynumber.Reports
 //{
 
 
@@ -59,14 +59,14 @@ namespace arconfirmationletter.Reports
 //    }
 //}
 
-//namespace arconfirmationletter.Reports.DataSet1TableAdapters {
+//namespace Luckynumber.Reports.DataSet1TableAdapters {
 
 
 //    public partial class TourDetailsTableAdapter {
 //    }
 //}
 
-namespace arconfirmationletter.Reports
+namespace Luckynumber.Reports
 {
 
 

@@ -1,13 +1,13 @@
 ﻿
-using arconfirmationletter.Control;
-using arconfirmationletter.Model;
+using Luckynumber.Control;
+using Luckynumber.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace arconfirmationletter.View
+namespace Luckynumber.View
 {
 
     // public partial

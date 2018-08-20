@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace arconfirmationletter.View
+namespace Luckynumber.View
 {
     public partial class valueinput : Form
     {

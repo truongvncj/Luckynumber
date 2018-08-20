@@ -3083,7 +3083,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\TRUONG\Desktop\ArconfirmationC#\arconfirmationletter\arconfirmationletter\Reports\dsCallogs.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\TRUONG\Desktop\ArconfirmationC#\Luckynumber\Luckynumber\Reports\dsCallogs.xsd</rd:SchemaPath>
         <rd:TableName>Rpt_Coldetail</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

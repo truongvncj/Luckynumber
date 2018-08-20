@@ -7,17 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.Sql;
-using arconfirmationletter.Model;
-using arconfirmationletter.Control;
-//using arconfirmationletter.Entity;
+using Luckynumber.Model;
+using Luckynumber.Control;
+//using Luckynumber.Entity;
 
 using System.Threading;
 using System.Data.SqlClient;
-using arconfirmationletter.View;
+using Luckynumber.View;
 //using System.Collections.Generic;
 //using System.Linq;
 
-namespace arconfirmationletter.View
+namespace Luckynumber.View
 {
     public partial class Main : Form
     {

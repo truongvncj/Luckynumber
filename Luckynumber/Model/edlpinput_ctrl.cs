@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using arconfirmationletter.View;
+using Luckynumber.View;
 using System.Windows.Forms;
 //using Microsoft.Office.Interop.Excel;
 using System.Threading;
@@ -11,7 +11,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 
-namespace arconfirmationletter.Model
+namespace Luckynumber.Model
 {
     class edlpinput_ctrl
     {

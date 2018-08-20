@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using cExcel = Microsoft.Office.Interop.Excel;
-using arconfirmationletter.View;
+using Luckynumber.View;
 using System.Threading;
 using System.Data.SqlClient;
 using System.Data;
 using ClosedXML.Excel;
 
-//arconfirmationletter.LinqtoSQLDataContext
+//Luckynumber.LinqtoSQLDataContext
 
-namespace arconfirmationletter.Control
+namespace Luckynumber.Control
 {
     class Control_ac
     {

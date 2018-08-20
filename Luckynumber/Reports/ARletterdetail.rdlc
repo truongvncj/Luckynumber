@@ -529,7 +529,7 @@
                 <TablixCell>
                   <CellContents>
                     <Subreport Name="SubARletterdetail">
-                      <ReportName>arconfirmationletter.Reports.SubARletterdetail.rdlc</ReportName>
+                      <ReportName>Luckynumber.Reports.SubARletterdetail.rdlc</ReportName>
                       <Parameters>
                         <Parameter Name="custGroupid">
                           <Value>=Fields!custcodeGRoup.Value</Value>
@@ -1606,7 +1606,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\TRUONG\Desktop\ArconfirmationC#\arconfirmationletter\arconfirmationletter\Reports\dsCallogs.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\TRUONG\Desktop\ArconfirmationC#\Luckynumber\Luckynumber\Reports\dsCallogs.xsd</rd:SchemaPath>
         <rd:TableName>Rpt_ARdetail</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -1682,7 +1682,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\TRUONG\Desktop\Developing product\ARdevelop\arconfirmationletter\Reports\dsCallogs.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\TRUONG\Desktop\Developing product\ARdevelop\Luckynumber\Reports\dsCallogs.xsd</rd:SchemaPath>
         <rd:TableName>Rpt_ARdetalheader</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

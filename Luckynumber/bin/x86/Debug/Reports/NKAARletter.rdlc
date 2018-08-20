@@ -1703,7 +1703,7 @@
       </ConnectionProperties>
       <rd:DataSourceID>43e44ecf-a234-4bc3-8218-f4fb187da880</rd:DataSourceID>
     </DataSource>
-    <DataSource Name="arconfirmationletter">
+    <DataSource Name="Luckynumber">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
@@ -1749,7 +1749,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>E:\Desktop\Developing product\ARdevelop\arconfirmationletter\Reports\dsCallogs.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\Desktop\Developing product\ARdevelop\Luckynumber\Reports\dsCallogs.xsd</rd:SchemaPath>
         <rd:TableName>Rpt_Infor</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -1801,7 +1801,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>E:\Product\Arconfirmationletter\arconfirmationletter\Reports\dsCallogs.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\Product\Luckynumber\Luckynumber\Reports\dsCallogs.xsd</rd:SchemaPath>
         <rd:TableName>NKARpt_Arletter</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

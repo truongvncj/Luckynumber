@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace arconfirmationletter.Reports {
+namespace Luckynumber.Reports {
     
     
     /// <summary>
@@ -17229,7 +17229,7 @@ namespace arconfirmationletter.Reports {
         }
     }
 }
-namespace arconfirmationletter.Reports.DataSet1TableAdapters {
+namespace Luckynumber.Reports.DataSet1TableAdapters {
     
     
     /// <summary>
@@ -17484,7 +17484,7 @@ SELECT customernameGRoup, customername, address, phone, code, region, sumAmountf
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::arconfirmationletter.Properties.Settings.Default.ARconfirmationletterConnectionString1;
+            this._connection.ConnectionString = global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18201,7 +18201,7 @@ SELECT TourID, TourName, Days, Nights, Image, Description, Price FROM tours WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::arconfirmationletter.Properties.Settings.Default.ARconfirmationletterConnectionString1;
+            this._connection.ConnectionString = global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18930,7 +18930,7 @@ SELECT Assignment, [Posting Date], [Document Type], [Document Number], [Document
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::arconfirmationletter.Properties.Settings.Default.ARconfirmationletterConnectionString1;
+            this._connection.ConnectionString = global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20381,7 +20381,7 @@ SELECT Account, Assignment, [Posting Date], [Document Type], [Document Number], 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::arconfirmationletter.Properties.Settings.Default.ARconfirmationletterConnectionString1;
+            this._connection.ConnectionString = global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21477,7 +21477,7 @@ SELECT Account, Assignment, [Posting Date], [Document Type], [Document Number], 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::arconfirmationletter.Properties.Settings.Default.ARconfirmationletterConnectionString1;
+            this._connection.ConnectionString = global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21783,7 +21783,7 @@ SELECT Customercode, SOrg, Rg, SOff, Plnt, SDst, id, CustomerGRp FROM tblCusARle
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::arconfirmationletter.Properties.Settings.Default.ARconfirmationletterConnectionString1;
+            this._connection.ConnectionString = global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22601,7 +22601,7 @@ SELECT Customer, SOrg, [Name 1], [House num & Street], [Street 4], City, Rg, [Te
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::arconfirmationletter.Properties.Settings.Default.ARconfirmationletterConnectionString1;
+            this._connection.ConnectionString = global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24213,7 +24213,7 @@ SELECT Fbl5nID, Account, Assignment, [Posting Date], [Document Type], [Document 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::arconfirmationletter.Properties.Settings.Default.ARconfirmationletterConnectionString1;
+            this._connection.ConnectionString = global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25489,7 +25489,7 @@ SELECT Fbl5nID, Account, Assignment, [Posting Date], [Document Type], [Document 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::arconfirmationletter.Properties.Settings.Default.ARconfirmationletterConnectionString1;
+            this._connection.ConnectionString = global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27219,7 +27219,7 @@ SELECT ID, [Invoice Registration Number], [Invoice Number], [SAP Delivery Number
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::arconfirmationletter.Properties.Settings.Default.ARconfirmationletterConnectionString1;
+            this._connection.ConnectionString = global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27758,7 +27758,7 @@ SELECT TourDetailID, TourID, TourName, Days, Place, Detail, Vehice FROM TourDeta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::arconfirmationletter.Properties.Settings.Default.ARconfirmationletterConnectionString1;
+            this._connection.ConnectionString = global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

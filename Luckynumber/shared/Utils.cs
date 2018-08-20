@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using cExcel = Microsoft.Office.Interop.Excel;
 using System.Diagnostics;
-using arconfirmationletter.shared;
+using Luckynumber.shared;
 using System.Globalization;
 using System.Data.Sql;
 using System.Data;
@@ -16,7 +16,7 @@ using System.Text.RegularExpressions;
 using System.Data.OleDb;
 using System.IO;
 
-namespace arconfirmationletter
+namespace Luckynumber
 {
     class Utils
     {
@@ -191,7 +191,7 @@ namespace arconfirmationletter
                     string st3 = parts[2].Trim();
                     string st4 = parts[3].Trim();
                     connection_string = ("Data Source =" + st1 + "; Initial Catalog = " + st4 + "; User Id =" + st2 + "; Password =" + st3).Trim();
-                    //  connection_string = ("Data Source =" + st1 + "; Initial Catalog = ARconfirmationletter; User Id =" + st2 + "; Password =" + st3).Trim();
+                    //  connection_string = ("Data Source =" + st1 + "; Initial Catalog = Luckynumber; User Id =" + st2 + "; Password =" + st3).Trim();
                     return connection_string;
 
 

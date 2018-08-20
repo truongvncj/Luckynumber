@@ -1,4 +1,4 @@
-﻿namespace arconfirmationletter.View
+﻿namespace Luckynumber.View
 {
     partial class Login
     {
@@ -56,7 +56,7 @@
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = global::arconfirmationletter.Properties.Resources.coca_anim_48;
+            this.pictureBox1.Image = global::Luckynumber.Properties.Resources.coca_anim_48;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(6, 10);
             this.pictureBox1.Name = "pictureBox1";

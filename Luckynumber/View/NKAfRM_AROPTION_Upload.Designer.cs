@@ -1,4 +1,4 @@
-﻿namespace arconfirmationletter.View
+﻿namespace Luckynumber.View
 {
     partial class NKAfRM_AROPTION_Upload
     {

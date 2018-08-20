@@ -7,15 +7,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using arconfirmationletter.Control;
-using arconfirmationletter.shared;
+using Luckynumber.Control;
+using Luckynumber.shared;
 using System.Globalization;
 using System.Threading;
-using arconfirmationletter.Model;
+using Luckynumber.Model;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 
-namespace arconfirmationletter.View
+namespace Luckynumber.View
 {
 
     //   public static DataGridView dataGridView2;// = new DataGridView();
@@ -3937,7 +3937,7 @@ namespace arconfirmationletter.View
 
 
             //                           //                                       Severity Code    Description Project File    Line
-            //                           //Error   CS1503  Argument 2: cannot convert from 'bool' to 'System.Linq.Expressions.Expression<System.Func<bool?, bool>>'    arconfirmationletter C:\Users\TRUONG\Desktop\Developing product\ARdevelop\arconfirmationletter\View\Viewtable.cs 2945
+            //                           //Error   CS1503  Argument 2: cannot convert from 'bool' to 'System.Linq.Expressions.Expression<System.Func<bool?, bool>>'    Luckynumber C:\Users\TRUONG\Desktop\Developing product\ARdevelop\Luckynumber\View\Viewtable.cs 2945
 
 
             //                           Binhpmicc02 = g.Sum(gg => gg.Binhpmicc02),//        tblFBL5Nnewthisperiod.Binhpmicc02,

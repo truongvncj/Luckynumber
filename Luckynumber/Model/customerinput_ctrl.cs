@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using arconfirmationletter.shared;
+using Luckynumber.shared;
 using System.Windows.Forms;
 //using Microsoft.Office.Interop.Excel;
 using System.Threading;
@@ -11,7 +11,7 @@ using System.Data;
 using Microsoft.Office.Interop.Excel;
 using System.Data.SqlClient;
 
-namespace arconfirmationletter.Model
+namespace Luckynumber.Model
 {
     class customerinput_ctrl
     {

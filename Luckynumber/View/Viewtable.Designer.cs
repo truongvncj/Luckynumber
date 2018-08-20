@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace arconfirmationletter.View
+namespace Luckynumber.View
 {
     partial class Viewtable
     {

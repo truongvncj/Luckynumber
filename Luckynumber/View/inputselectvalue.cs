@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using arconfirmationletter.shared;
+using Luckynumber.shared;
 
-namespace arconfirmationletter.View
+namespace Luckynumber.View
 {
     public partial class inputselectvalue : Form
     {

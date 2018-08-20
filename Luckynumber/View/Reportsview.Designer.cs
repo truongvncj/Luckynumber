@@ -1,4 +1,4 @@
-﻿namespace arconfirmationletter.View
+﻿namespace Luckynumber.View
 {
   
     partial class Reportsview
@@ -7,9 +7,9 @@
         /// Required designer variable.
         /// </summary>
         /// 
-     //   arconfirmationletter.Fakes
+     //   Luckynumber.Fakes
         private System.ComponentModel.IContainer components = null;
-       // private arconfirmationletter.i
+       // private Luckynumber.i
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -33,7 +33,7 @@
         {
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reportsview));
-            this.dataSet1 = new arconfirmationletter.Reports.DataSet1();
+            this.dataSet1 = new Luckynumber.Reports.DataSet1();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +51,7 @@
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = null;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "arconfirmationletter.Reports.RPt_callogs.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Luckynumber.Reports.RPt_callogs.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(902, 422);

@@ -1,4 +1,4 @@
-﻿using arconfirmationletter.View;
+﻿using Luckynumber.View;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
@@ -9,9 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using arconfirmationletter.shared;
+using Luckynumber.shared;
 
-namespace arconfirmationletter.Model
+namespace Luckynumber.Model
 {
     class Remarks
     {

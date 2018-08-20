@@ -1,4 +1,4 @@
-﻿using arconfirmationletter.View;
+﻿using Luckynumber.View;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace arconfirmationletter.Model
+namespace Luckynumber.Model
 {
     class fREEGALSSES_CTRL
     {

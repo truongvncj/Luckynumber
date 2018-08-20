@@ -1,6 +1,6 @@
-﻿namespace arconfirmationletter.View
+﻿namespace Luckynumber.View
 {
-    using arconfirmationletter;
+    using Luckynumber;
     using System.Windows.Forms;
 
     partial class Main
@@ -98,9 +98,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.ErrorImage = global::arconfirmationletter.Properties.Resources.coca_anim_48;
-            this.pictureBox1.Image = global::arconfirmationletter.Properties.Resources.coca_anim_48;
-            this.pictureBox1.InitialImage = global::arconfirmationletter.Properties.Resources.coca_anim_48;
+            this.pictureBox1.ErrorImage = global::Luckynumber.Properties.Resources.coca_anim_48;
+            this.pictureBox1.Image = global::Luckynumber.Properties.Resources.coca_anim_48;
+            this.pictureBox1.InitialImage = global::Luckynumber.Properties.Resources.coca_anim_48;
             this.pictureBox1.Location = new System.Drawing.Point(191, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(456, 408);
@@ -228,7 +228,7 @@
             this.dATAENTRYToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.uPLOADDATAToolStripMenuItem,
             this.fREECASESORDERToolStripMenuItem});
-            this.dATAENTRYToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.thTPVPNXXL;
+            this.dATAENTRYToolStripMenuItem.Image = global::Luckynumber.Properties.Resources.thTPVPNXXL;
             this.dATAENTRYToolStripMenuItem.Name = "dATAENTRYToolStripMenuItem";
             this.dATAENTRYToolStripMenuItem.Size = new System.Drawing.Size(130, 25);
             this.dATAENTRYToolStripMenuItem.Text = "DATA ENTRY";
@@ -301,7 +301,7 @@
             // 
             // fREECASEWRONGFRECASECODEToolStripMenuItem
             // 
-            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.th5YSKEK6I1;
+            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Image = global::Luckynumber.Properties.Resources.th5YSKEK6I1;
             this.fREECASEWRONGFRECASECODEToolStripMenuItem.Name = "fREECASEWRONGFRECASECODEToolStripMenuItem";
             this.fREECASEWRONGFRECASECODEToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
             this.fREECASEWRONGFRECASECODEToolStripMenuItem.Text = "REVIEW MÃ KHUYẾN MẠI VÀ MESSAGE";
@@ -328,7 +328,7 @@
             // 
             // lISTORDERWRONGMESSAGEToolStripMenuItem
             // 
-            this.lISTORDERWRONGMESSAGEToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.th5YSKEK6I;
+            this.lISTORDERWRONGMESSAGEToolStripMenuItem.Image = global::Luckynumber.Properties.Resources.th5YSKEK6I;
             this.lISTORDERWRONGMESSAGEToolStripMenuItem.Name = "lISTORDERWRONGMESSAGEToolStripMenuItem";
             this.lISTORDERWRONGMESSAGEToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
             this.lISTORDERWRONGMESSAGEToolStripMenuItem.Text = "ĐƠN HÀNG SAI MESSAGE";
@@ -341,7 +341,7 @@
             // 
             // oRDEROVERTIMEOFPROGARMEToolStripMenuItem
             // 
-            this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Image = global::arconfirmationletter.Properties.Resources.cocacola;
+            this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Image = global::Luckynumber.Properties.Resources.cocacola;
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Name = "oRDEROVERTIMEOFPROGARMEToolStripMenuItem";
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Text = "ĐƠN HÀNG KM KHÔNG TRONG THỜI GIAN CTKM";
@@ -459,7 +459,7 @@
             // 
             this.rEPORTSToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bÁOCÁOCTKMToolStripMenuItem});
-            this.rEPORTSToolStripMenuItem1.Image = global::arconfirmationletter.Properties.Resources.th5YSKEK6I1;
+            this.rEPORTSToolStripMenuItem1.Image = global::Luckynumber.Properties.Resources.th5YSKEK6I1;
             this.rEPORTSToolStripMenuItem1.Name = "rEPORTSToolStripMenuItem1";
             this.rEPORTSToolStripMenuItem1.Size = new System.Drawing.Size(107, 25);
             this.rEPORTSToolStripMenuItem1.Text = "REPORTS";

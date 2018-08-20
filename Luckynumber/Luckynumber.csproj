@@ -7,8 +7,8 @@
     <ProjectGuid>{A73260CF-F7D1-4B42-AC47-6F8FFBC418E7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>arconfirmationletter</RootNamespace>
-    <AssemblyName>arconfirmationletter</AssemblyName>
+    <RootNamespace>Luckynumber</RootNamespace>
+    <AssemblyName>Luckynumber</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -50,7 +50,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>arconfirmationletter.Program</StartupObject>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -71,7 +72,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>LOGO.ico</ApplicationIcon>
+    <ApplicationIcon>value_add_services_trim2_Kl0_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClosedXML">
@@ -402,6 +403,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LOGO.ico" />
+    <Content Include="value_add_services_trim2_Kl0_icon.ico" />
     <None Include="Resources\coca_anim_48.gif" />
     <None Include="Resources\progress.gif" />
     <None Include="Resources\cocacola.gif" />

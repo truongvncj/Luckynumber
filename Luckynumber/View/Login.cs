@@ -13,7 +13,7 @@ using System.Xml;
 
 
 
-namespace arconfirmationletter.View
+namespace Luckynumber.View
 {
     public partial class Login : Form
     {
@@ -61,7 +61,7 @@ namespace arconfirmationletter.View
                     connection_string = ("Data Source =" + st1 + "; Initial Catalog = " + st4 + "; User Id =" + st2 + "; Password =" + st3).Trim();
                     //    }
                     // /
-                    //       connection_string = "Data Source = DESKTOP-8D4F853\\SQLEXPRESS; Initial Catalog = ARconfirmationletter; User Id = SA; Password = 123123";
+                    //       connection_string = "Data Source = DESKTOP-8D4F853\\SQLEXPRESS; Initial Catalog = Luckynumber; User Id = SA; Password = 123123";
 
 
 

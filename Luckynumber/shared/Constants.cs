@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using cExcel = Microsoft.Office.Interop.Excel;
 
 
-namespace arconfirmationletter.shared
+namespace Luckynumber.shared
 {
 
 

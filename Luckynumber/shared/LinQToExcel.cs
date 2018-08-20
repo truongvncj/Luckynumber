@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 using System.ComponentModel;
 
-using arconfirmationletter.shared;
+using Luckynumber.shared;
 
 //--
-namespace arconfirmationletter
+namespace Luckynumber
 {
 
 

@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using arconfirmationletter.View;
+using Luckynumber.View;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using System.Data.OleDb;
 using System.Threading;
 using System.Data.SqlClient;
 using System.Data;
-using arconfirmationletter.shared;
+using Luckynumber.shared;
 
-namespace arconfirmationletter.Model
+namespace Luckynumber.Model
 {
     class luckyno
     {

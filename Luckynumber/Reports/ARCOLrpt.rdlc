@@ -536,7 +536,7 @@
                 <TablixCell>
                   <CellContents>
                     <Subreport Name="SubARcoldetail">
-                      <ReportName>arconfirmationletter.Reports.SubARcoldetail.rdlc</ReportName>
+                      <ReportName>Luckynumber.Reports.SubARcoldetail.rdlc</ReportName>
                       <Parameters>
                         <Parameter Name="custGroupid">
                           <Value>=Fields!custcodeGRoup.Value</Value>
@@ -1795,7 +1795,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\TRUONG\Desktop\Developing product\ARdevelop\arconfirmationletter\Reports\dsCallogs.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\TRUONG\Desktop\Developing product\ARdevelop\Luckynumber\Reports\dsCallogs.xsd</rd:SchemaPath>
         <rd:TableName>Rpt_ARdetalheader</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

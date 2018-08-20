@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace arconfirmationletter.View
+namespace Luckynumber.View
 {
     public partial class Reportsview : Form
     {
@@ -37,10 +37,10 @@ namespace arconfirmationletter.View
 
             // chọn báo cáo hiển thị
             // ARCOLrpt.rdlc
-            //    this.reportViewer1.LocalReport.ReportEmbeddedResource = "arconfirmationletter.Reports.ARCOLrpt.rdlc";
+            //    this.reportViewer1.LocalReport.ReportEmbeddedResource = "Luckynumber.Reports.ARCOLrpt.rdlc";
 
-            //    this.reportViewer1.LocalReport.ReportEmbeddedResource = "arconfirmationletter.Reports.RPt_callogs.rdlc";
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "arconfirmationletter.Reports."+ rptname + "";
+            //    this.reportViewer1.LocalReport.ReportEmbeddedResource = "Luckynumber.Reports.RPt_callogs.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Luckynumber.Reports."+ rptname + "";
             // chọn báo cáo hiển thị
 
             // chọn data hiển thị

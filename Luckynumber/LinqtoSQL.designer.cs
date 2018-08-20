@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace arconfirmationletter
+namespace Luckynumber
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -57,7 +57,7 @@ namespace arconfirmationletter
     #endregion
 		
 		public LinqtoSQLDataContext() : 
-				base(global::arconfirmationletter.Properties.Settings.Default.LuckynumberConnectionString, mappingSource)
+				base(global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

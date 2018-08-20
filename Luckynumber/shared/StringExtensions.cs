@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace arconfirmationletter.shared
+namespace Luckynumber.shared
 {
     public static class StringExtensions
     {
