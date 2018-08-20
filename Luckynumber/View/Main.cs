@@ -2429,7 +2429,7 @@ namespace Luckynumber.View
 
             var typeff = typeof(tbl_Temp);
 
-            VInputchange inputcdata = new VInputchange("", "USERNAME AND PASSWORD CONFIG ! ", dc, "tbl_Temp", "tbl_Temp", typeff, "id", "id");
+            VInputchange inputcdata = new VInputchange("", "USERNAME AND PASSWORD", dc, "tbl_Temp", "tbl_Temp", typeff, "id", "id");
             inputcdata.Visible = false;
             inputcdata.ShowDialog();
         }

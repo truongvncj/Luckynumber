@@ -56,11 +56,7 @@ namespace Luckynumber
     partial void Deletetbl_Salesorder(tbl_Salesorder instance);
     #endregion
 		
-		public LinqtoSQLDataContext() : 
-				base(global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString, mappingSource)
-		{
-			OnCreated();
-		}
+	
 		
 		public LinqtoSQLDataContext(string connection) : 
 				base(connection, mappingSource)

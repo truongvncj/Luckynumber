@@ -128,12 +128,6 @@ namespace Luckynumber.View
 
 
 
-            if (tblnamemain == "tbl_CustomerneedLetter")
-            {
-
-                this.Bt_Adddata.Visible = false;
-
-            }
 
             this.db = db;
             this.tblnamemain = tblnamemain;
@@ -147,6 +141,8 @@ namespace Luckynumber.View
 
 
             string slqtext = "select * from " + tblnamemain + " where "+ tblnamemain+".enduser ='" +enduser+"'";
+
+         
 
             var results3 = db.ExecuteQuery(Typeofftable, slqtext);
 
@@ -174,6 +170,12 @@ namespace Luckynumber.View
 
             slqtext = "select *  from  " + tblnamesub + " where " + tblnamesub + ".enduser ='" + enduser + "'";
 
+            if (lbsub == "USERNAME AND PASSWORD")
+            {
+
+                slqtext = "select *  from  " + tblnamesub;// + " where " + tblnamesub + ".enduser ='" + enduser + "'";
+
+            }
 
             var results2 = db.ExecuteQuery(Typeofftable, slqtext);
 
@@ -315,7 +317,7 @@ namespace Luckynumber.View
 
 
 
-            // deleted cac dong cos tron data khong co trong gridview
+            // insert  cac dong cos mới trong gridview
             #region   foreach (DataGridViewRow r in dataGridView1.Rows)
 
 
@@ -344,6 +346,7 @@ namespace Luckynumber.View
 
 
                             var valueid = r.Cells[colheadertext].Value;
+                         
 
                             if (valueid != null && colheadertext != IDsub)
                             {
@@ -370,6 +373,16 @@ namespace Luckynumber.View
                                 {
 
                                     valueid = "'" + valueid + "'";
+                                }
+
+                                if (valueid.ToString() == "False")
+                                {
+                                    valueid = 0;
+                                }
+                                
+                                if (valueid.ToString() == "True")
+                                {
+                                    valueid = 1;
                                 }
 
                                 if (stringvalue != "")
@@ -405,15 +418,15 @@ namespace Luckynumber.View
 
                             var results4 = db.ExecuteQuery(Typeofftable, StrQuery);
                         }
-                        catch// (Exception ex)
+                        catch (Exception ex)
                         {
-
+                      //      MessageBox.Show(ex.ToString());
                             //this.dataGridView1.Rows[0].Cells["Status"].Value = ex.ToString();
                         }
 
 
 
-                        //MessageBox.Show(StrQuery, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //      MessageBox.Show(StrQuery, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                     }
@@ -429,151 +442,7 @@ namespace Luckynumber.View
             }
             #endregion foreach
 
-            #region  1213 // //check data customer code
-            if (tblnamesub == "tbl_CustomerGroupTemp")
-            {
-                #region  xoas dong banl customer
-                foreach (DataGridViewRow r in dataGridView1.Rows)
-                {
-                    if (r.Cells["Customercode"].Value == null && !r.IsNewRow)
-
-                    {
-
-                        var gridviewid = int.Parse(r.Cells[IDsub].Value.ToString());
-
-
-                        var slqtext2 = "delete  from  " + tblnamesub + " where " + IDsub + " = " + gridviewid;
-                        try
-                        {
-                            db.ExecuteQuery(Typeofftable, slqtext2);
-                        }
-                        catch (Exception)
-                        {
-
-
-                            //  /     //   throw;
-                        }
-
-
-
-                        this.dataGridView1.Rows.Remove(r);
-                        db.SubmitChanges();
-                    }
-
-
-
-
-
-                }
-                #endregion  xoas dong banl customer
-
-                #region // updade dong trang group+ name group
-                float vCustomergropcode = 0;
-                string vGroupName = "";
-                foreach (DataGridViewRow r in dataGridView1.Rows)
-                {
-
-
-                    if (r.Cells["Customergropcode"].Value != null && r.Cells["Customergropcode"].Value.ToString() != "")
-                    {
-
-                        vCustomergropcode = float.Parse(r.Cells["Customergropcode"].Value.ToString());
-
-
-                    }
-                    if (r.Cells["Group_Name"].Value != null)
-                    {
-
-                        vGroupName = r.Cells["Group_Name"].Value.ToString();
-
-                    }
-
-
-
-
-
-                    if ((r.Cells["Customergropcode"].Value == null || r.Cells["Group_Name"].Value == null) && !r.IsNewRow)
-
-                    {
-
-                        if (vCustomergropcode != 0)
-
-                        {
-                            r.Cells["Customergropcode"].Value = vCustomergropcode.ToString();
-
-                        }
-                        else
-                        {
-                            // chay xuong duoi cho den khi data co hoac dong cuoi
-                            for (int i = r.Index + 1; i < dataGridView1.Rows.Count; i++)
-                            {
-                                var check1 = dataGridView1.Rows[i].Cells["Customergropcode"].Value;
-                                //     var check2 = dataGridView1.Rows[i].Cells["Group_Name"].Value;
-
-                                if (check1 != null)
-                                {
-
-                                    r.Cells["Customergropcode"].Value = check1;
-                                    vCustomergropcode = float.Parse(check1.ToString());
-                                }
-
-
-
-                            }
-
-                            //  // chay xuong duoi cho den khi data co hoac dong cuoi
-
-                        }
-
-
-                        if (vGroupName != "")
-                        {
-
-
-                            r.Cells["Group_Name"].Value = vGroupName.ToString();
-                        }
-                        else
-                        {
-
-
-                            // chay xuong duoi cho den khi data co hoac dong cuoi
-                            for (int i = r.Index + 1; i < dataGridView1.Rows.Count; i++)
-                            {
-                                //  var check1 = dataGridView1.Rows[i].Cells["Customergropcode"].Value;
-                                var check2 = dataGridView1.Rows[i].Cells["Group_Name"].Value;
-
-
-                                if (check2 != null)
-                                {
-
-                                    r.Cells["Group_Name"].Value = check2.ToString();
-                                    vGroupName = check2.ToString();
-                                }
-
-                            }
-
-                            //  // chay xuong duoi cho den khi data co hoac dong cuoi
-                        }
-
-
-
-                    }
-
-
-
-
-
-
-
-
-                }
-                #endregion // updade dong trang group+ name group
-
-
-
-            }
-            #endregion // check data customer code != nll, ""
-
+       
             source1.EndEdit();
 
             db.SubmitChanges();
@@ -581,6 +450,15 @@ namespace Luckynumber.View
             // view lại
             string enduser = Utils.getusername();
             string slqtext = "select *  from  " + tblnamesub + " where " + tblnamesub + ".enduser ='" + enduser + "'";
+
+            if (lb_headersub.Text == "USERNAME AND PASSWORD")
+            {
+
+                slqtext = "select *  from  " + tblnamesub;// + " where " + tblnamesub + ".enduser ='" + enduser + "'";
+
+            }
+
+
             var results2 = db.ExecuteQuery(Typeofftable, slqtext);
             source1.DataSource = results2;
             this.dataGridView1.DataSource = source1;

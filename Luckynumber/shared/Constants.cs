@@ -35,10 +35,8 @@ namespace Luckynumber.shared
         public const string URLtoFileStoreData = @"C:\" ;
         //  public const string Khong_Dat_text_Value = "Không Đạt";
         #endregion
-        #region linq
-      public static LinqtoSQLDataContext db = new LinqtoSQLDataContext() ;
-      //  public static LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-        #endregion
+
+     
 
         public static DataGridView DataGridView1 = new DataGridView();
     }
