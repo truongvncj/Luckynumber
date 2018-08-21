@@ -38,7 +38,7 @@ namespace Luckynumber.View
 
         public IQueryable rs;
         LinqtoSQLDataContext db;
-      
+
         public List<ComboboxItem> datacolecttionselect;//{ get; private set; }
                                                        //1. Định nghĩa 1 delegate
 
@@ -255,7 +255,7 @@ namespace Luckynumber.View
         public Viewtable(IQueryable rs, LinqtoSQLDataContext db, string fornname, int viewcode, DateTime fromdate, DateTime todate)
         {
             InitializeComponent();
-           
+
             this.db = db;
             this.fromdate = fromdate;
             this.todate = todate;
@@ -276,10 +276,10 @@ namespace Luckynumber.View
             this.bt_listunsend.Visible = false;
             btpostclear.Visible = false;
             lb_seach.Visible = false;
-            lb_totalrecord.Text = dataGridView1.RowCount.ToString();
+
 
             this.dataGridView1.DataSource = rs;
-
+            lb_totalrecord.Text = dataGridView1.RowCount.ToString();
         }
 
         private void bt_exporttoex_Click(object sender, EventArgs e)
@@ -357,7 +357,7 @@ namespace Luckynumber.View
                 double codeandgroup = (double)this.dataGridView1.CurrentRow.Cells["Account"].Value;
 
 
-            
+
 
             }
 
@@ -600,11 +600,11 @@ namespace Luckynumber.View
                         //  Update vao sql
 
                         var rsvalue = from p in dc.tbl_SalesFreeOrders
-                                         where p.enduser == enduser
-                                         && p.id == indexID
-                                         select p;
+                                      where p.enduser == enduser
+                                      && p.id == indexID
+                                      select p;
 
-                        if (rsvalue.Count()>=0)
+                        if (rsvalue.Count() >= 0)
                         {
 
                             foreach (var item2 in rsvalue)

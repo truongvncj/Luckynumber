@@ -3989,21 +3989,29 @@ namespace Luckynumber.View
             luckyno md = new luckyno();
 
             md.UpPUCHASEORDER();
-            Model.Conditioncheck.updaMAKHKM();
+       ///     Model.Conditioncheck.updaMAKHKM();
+            //    Control_ac ct = new Control_ac();
 
-            Model.Conditioncheck.updaCTVAsoluongKM();
+            Thread t1 = new Thread(Model.Conditioncheck.updaCTVAsoluongKM); // gồm cả updaet mã khkm mà só lương ctkm
+            t1.IsBackground = true;
+            t1.Start();
+            MessageBox.Show("Upload done", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            string connection_string = Utils.getConnectionstr();
+            //     Model.Conditioncheck.updaMAKHKM();
+            //   xxx
+            //Model.Conditioncheck.updaCTVAsoluongKM();
 
-            var db = new LinqtoSQLDataContext(connection_string);
-            string enduser = Utils.getusername();
+            //string connection_string = Utils.getConnectionstr();
 
-            var rs = from p in db.tbl_Salesorders
-                     where p.enduser == enduser
-                     select p;
+            //var db = new LinqtoSQLDataContext(connection_string);
+            //string enduser = Utils.getusername();
 
-            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng mua", 100, DateTime.Today, DateTime.Today);
-            viewtbl.Show();
+            //var rs = from p in db.tbl_Salesorders
+            //         where p.enduser == enduser
+            //         select p;
+
+            //Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng mua", 100, DateTime.Today, DateTime.Today);
+            //viewtbl.Show();
 
 
         }
@@ -4014,18 +4022,26 @@ namespace Luckynumber.View
 
             md.UpFreePUCHASEORDER();
 
-            Model.Conditioncheck.UpdateMaCTKM();
+         //   Model.Conditioncheck.UpdateMaCTKM();
 
-            string connection_string = Utils.getConnectionstr();
+            Thread t1 = new Thread(Model.Conditioncheck.UpdateMaCTKM); // gồm cả updaet mã khkm mà só lương ctkm
+            t1.IsBackground = true;
+            t1.Start();
+            MessageBox.Show("Upload done", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            var db = new LinqtoSQLDataContext(connection_string);
-            string enduser = Utils.getusername();
-            var rs = from p in db.tbl_SalesFreeOrders
-                     where p.enduser == enduser
-                     select p;
 
-            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại", 100, DateTime.Today, DateTime.Today);
-            viewtbl.Show();
+
+
+            //string connection_string = Utils.getConnectionstr();
+
+            //var db = new LinqtoSQLDataContext(connection_string);
+            //string enduser = Utils.getusername();
+            //var rs = from p in db.tbl_SalesFreeOrders
+            //         where p.enduser == enduser
+            //         select p;
+
+            //Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng khuyến mại", 100, DateTime.Today, DateTime.Today);
+            //viewtbl.Show();
         }
 
         private void lISTORDERWRONGMESSAGEToolStripMenuItem_Click(object sender, EventArgs e)
@@ -4123,6 +4139,7 @@ namespace Luckynumber.View
 
                      {
                          //  Created = g.Key.Created,
+                         saleregion = g.FirstOrDefault().SOrg,
                          Sold_to = g.Key.Sold_to_party,
                          //  MaCTKM = g.Key.maCTKM,
                          name = g.FirstOrDefault().Name,
@@ -4141,6 +4158,7 @@ namespace Luckynumber.View
                 tong.Name = item.name;
                 tong.enduser = enduser;
                 tong.So_luong_duoc_KM = item.Quantityfree;
+                tong.Sale_Region = item.saleregion;
                 tong.Sold_to_party = item.Sold_to;
                 db.tbl_ChecktongKMs.InsertOnSubmit(tong);
                 db.SubmitChanges();
@@ -4204,6 +4222,7 @@ namespace Luckynumber.View
                       where p.enduser == enduser && p.So_luong_duoc_KM > p.So_luong_thuc_te_KM
                       select new
                       {
+                          SaleOrg = p.Sale_Region,
                           Code_Khách_hàng = p.Sold_to_party,
                           Name_Khách_hàng = p.Name,
 
@@ -4342,6 +4361,7 @@ namespace Luckynumber.View
 
                      {
                          //  Created = g.Key.Created,
+                         saleorg = g.FirstOrDefault().SOrg,
                          Sold_to = g.Key.Sold_to_party,
                          //  MaCTKM = g.Key.maCTKM,
                          name = g.FirstOrDefault().Name,
@@ -4358,6 +4378,7 @@ namespace Luckynumber.View
                 tbl_ChecktongKM tong = new tbl_ChecktongKM();
                 //      tong.Created = item.Created;
                 tong.Name = item.name;
+                tong.Sale_Region = item.saleorg;
                 tong.enduser = enduser;
                 tong.So_luong_duoc_KM = item.Quantityfree;
                 tong.Sold_to_party = item.Sold_to;
@@ -4423,6 +4444,7 @@ namespace Luckynumber.View
                       where p.enduser == enduser && p.So_luong_duoc_KM < p.So_luong_thuc_te_KM
                       select new
                       {
+                          SaleOrg = p.Sale_Region,
                           Code_KH = p.Sold_to_party,
                           Name_KH = p.Name,
 
@@ -4607,7 +4629,7 @@ namespace Luckynumber.View
 
 
             var rs = from p in db.tbl_Salesorders
-                     where p.enduser == enduser && p.maCTKM !=""
+                     where p.enduser == enduser && p.maCTKM != ""
                      group p by new
                      {
                          //    p.Created,
@@ -4647,7 +4669,7 @@ namespace Luckynumber.View
                                    && kh.Mã_CT == item.maCTKM
 
                                    select kh.PO_Message).FirstOrDefault();
-          
+
 
                 tong.enduser = enduser;
                 tong.So_luong_hang_Mua = item.Quantitybuy;
@@ -4713,7 +4735,7 @@ namespace Luckynumber.View
 
             var rs2 = from p in db.tbl_ChecktongKMs
 
-                      where p.enduser == enduser && p.maCTKM !=""
+                      where p.enduser == enduser && p.maCTKM != ""
                       orderby p.STT
                       select new
                       {
@@ -4723,9 +4745,9 @@ namespace Luckynumber.View
                           Code_KH = p.Sold_to_party,
                           Tên_KH = p.Name,
                           Mã_CTKM = p.maCTKM,
-                      
+
                           PO_Message = p.PO_message,
-                        
+
                           Số_lượng_hàng_mua = p.So_luong_hang_Mua,
                           Số_lượng_được_trả = p.So_luong_duoc_KM,
                           Số_lượng_đã_trả = p.So_luong_thuc_te_KM,

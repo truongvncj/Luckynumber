@@ -1215,6 +1215,8 @@ namespace Luckynumber
 		
 		private string _Mã_CT;
 		
+		private string _SaleOrg;
+		
 		private string _PO_Message;
 		
 		private string _Mã_SP_Mua;
@@ -1233,9 +1235,9 @@ namespace Luckynumber
 		
 		private string _Nhóm_khách_hàng;
 		
-		private int _id;
-		
 		private string _enduser;
+		
+		private int _id;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1243,6 +1245,8 @@ namespace Luckynumber
     partial void OnCreated();
     partial void OnMã_CTChanging(string value);
     partial void OnMã_CTChanged();
+    partial void OnSaleOrgChanging(string value);
+    partial void OnSaleOrgChanged();
     partial void OnPO_MessageChanging(string value);
     partial void OnPO_MessageChanged();
     partial void OnMã_SP_MuaChanging(string value);
@@ -1261,10 +1265,10 @@ namespace Luckynumber
     partial void OnĐến_NgàyChanged();
     partial void OnNhóm_khách_hàngChanging(string value);
     partial void OnNhóm_khách_hàngChanged();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
     partial void OnenduserChanging(string value);
     partial void OnenduserChanged();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
     #endregion
 		
 		public tbl_CTKM()
@@ -1288,6 +1292,26 @@ namespace Luckynumber
 					this._Mã_CT = value;
 					this.SendPropertyChanged("Mã_CT");
 					this.OnMã_CTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaleOrg", DbType="NVarChar(255)")]
+		public string SaleOrg
+		{
+			get
+			{
+				return this._SaleOrg;
+			}
+			set
+			{
+				if ((this._SaleOrg != value))
+				{
+					this.OnSaleOrgChanging(value);
+					this.SendPropertyChanging();
+					this._SaleOrg = value;
+					this.SendPropertyChanged("SaleOrg");
+					this.OnSaleOrgChanged();
 				}
 			}
 		}
@@ -1472,26 +1496,6 @@ namespace Luckynumber
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enduser", DbType="NVarChar(255)")]
 		public string enduser
 		{
@@ -1508,6 +1512,26 @@ namespace Luckynumber
 					this._enduser = value;
 					this.SendPropertyChanged("enduser");
 					this.OnenduserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -2133,6 +2157,8 @@ namespace Luckynumber
 		
 		private string _enduser;
 		
+		private string _maNhomKHKM;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2185,6 +2211,8 @@ namespace Luckynumber
     partial void OnrptselectChanged();
     partial void OnenduserChanging(string value);
     partial void OnenduserChanged();
+    partial void OnmaNhomKHKMChanging(string value);
+    partial void OnmaNhomKHKMChanged();
     #endregion
 		
 		public tbl_SalesFreeOrder()
@@ -2668,6 +2696,26 @@ namespace Luckynumber
 					this._enduser = value;
 					this.SendPropertyChanged("enduser");
 					this.OnenduserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNhomKHKM", DbType="NVarChar(255)")]
+		public string maNhomKHKM
+		{
+			get
+			{
+				return this._maNhomKHKM;
+			}
+			set
+			{
+				if ((this._maNhomKHKM != value))
+				{
+					this.OnmaNhomKHKMChanging(value);
+					this.SendPropertyChanging();
+					this._maNhomKHKM = value;
+					this.SendPropertyChanged("maNhomKHKM");
+					this.OnmaNhomKHKMChanged();
 				}
 			}
 		}

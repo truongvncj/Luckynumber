@@ -421,12 +421,13 @@ namespace Luckynumber.Model
             batable.Columns.Add("denngay", typeof(DateTime));
             batable.Columns.Add("manhomKHkhuyenmai", typeof(string));
             batable.Columns.Add("enduser", typeof(string));
+            batable.Columns.Add("SaleOrg", typeof(string));
 
-
+            
             string enduser = Utils.getusername();
 
 
-
+            int SaleOrgid = -1;
             int mactringid = -1;
             int pomessageid = -1;
             int maspmuaid = -1;
@@ -484,6 +485,17 @@ namespace Luckynumber.Model
 
                         }
 
+                        if (value.Trim() == ("SaleOrg"))
+                        {
+
+                            SaleOrgid = columid;
+                            //   headindex = 0;
+
+
+
+                        }
+                        
+
                         if (value.Trim() == ("Mã SP KM"))
                         {
 
@@ -535,6 +547,12 @@ namespace Luckynumber.Model
             if (pomessageid == -1)
             {
                 MessageBox.Show("Dữ liệu thiếu cột PO Message", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (SaleOrgid == -1)
+            {
+                MessageBox.Show("Dữ liệu thiếu cột SaleOrg", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -595,6 +613,7 @@ namespace Luckynumber.Model
                         dr["maspmua"] = sourceData.Rows[rowixd][maspmuaid].ToString().Truncate(225).Trim();
                         dr["maspmuakm"] = sourceData.Rows[rowixd][maspmuakmid].ToString().Truncate(225).Trim();
 
+                        dr["SaleOrg"] = sourceData.Rows[rowixd][SaleOrgid].ToString().Truncate(225).Trim();
 
 
 
@@ -607,6 +626,7 @@ namespace Luckynumber.Model
                         dr["manhomKHkhuyenmai"] = sourceData.Rows[rowixd][manhomKHkhuyenmai].ToString().Truncate(225).Trim();// double.Parse(sourceData.Rows[rowixd][manhomKHkhuyenmai].ToString());//.Truncate(225).Trim();
                         dr["enduser"] = enduser;// sourceData.Rows[rowixd][manhomKHkhuyenmai].ToString().Truncate(225).Trim();// double.Parse(sourceData.Rows[rowixd][manhomKHkhuyenmai].ToString());//.Truncate(225).Trim();
 
+                        
                     //    string enduser = Utils.getusername();
 
                         batable.Rows.Add(dr);
@@ -639,8 +659,9 @@ namespace Luckynumber.Model
                 bulkCopy.ColumnMappings.Add("denngay", "[Đến Ngày]");
                 bulkCopy.ColumnMappings.Add("manhomKHkhuyenmai", "[Nhóm khách hàng]");
                 bulkCopy.ColumnMappings.Add("enduser", "enduser");
+                bulkCopy.ColumnMappings.Add("SaleOrg", "SaleOrg");
 
-              
+
 
                 try
                 {
