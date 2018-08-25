@@ -4056,8 +4056,8 @@ namespace Luckynumber.View
 
 
             var rs = from p in db.tbl_SalesFreeOrders
-                     where     p.enduser == enduser
-                  
+                     where p.enduser == enduser
+
                      select p;
 
             foreach (var item in rs)
@@ -4070,7 +4070,7 @@ namespace Luckynumber.View
                 {
                     item.wrongmessage = true;
                 }
-              
+
                 db.SubmitChanges();
             }
 
@@ -4078,7 +4078,7 @@ namespace Luckynumber.View
             var rs1 = from p in db.tbl_SalesFreeOrders
                       where p.wrongmessage == true
                       && p.enduser == enduser
-                    
+
                       select new
                       {
 
@@ -4108,106 +4108,48 @@ namespace Luckynumber.View
         private void lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            luckyno lk = new luckyno();
-            lk.deletetbl_ChecktongKM();
+
+            #region  updatemã Rpttongctkhuyenmai
+            SqlConnection conn2 = null;
+            SqlDataReader rdr1 = null;
+            string enduser = Utils.getusername();
+            string destConnString = Utils.getConnectionstr();
+            try
+            {
+
+                conn2 = new SqlConnection(destConnString);
+                conn2.Open();
+                SqlCommand cmd1 = new SqlCommand("Rpttongctkhuyenmai", conn2);
+                cmd1.CommandType = CommandType.StoredProcedure;
+
+                cmd1.Parameters.Add("@enduser", SqlDbType.NVarChar).Value = enduser;
+                cmd1.CommandTimeout = 0;
+                rdr1 = cmd1.ExecuteReader();
+
+
+
+                //       rdr1 = cmd1.ExecuteReader();
+
+            }
+            finally
+            {
+                if (conn2 != null)
+                {
+                    conn2.Close();
+                }
+                if (rdr1 != null)
+                {
+                    rdr1.Close();
+                }
+            }
+            //     MessageBox.Show("ok", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            #endregion
+
 
 
             string connection_string = Utils.getConnectionstr();
             var db = new LinqtoSQLDataContext(connection_string);
-            string enduser = Utils.getusername();
-
-
-
-            #region  update bảng tông khuyến mại và so sánh
-
-
-            var rs = from p in db.tbl_Salesorders
-                     where p.enduser == enduser
-                     group p by new
-                     {
-                         //    p.Created,
-                         p.Sold_to_party,//.Customer,
-                                         //   p.maCTKM,//  tblCustomer.SOrg,
-                     }
-                    into g
-
-                     select new
-
-                     {
-                         //  Created = g.Key.Created,
-                         saleregion = g.FirstOrDefault().SOrg,
-                         Sold_to = g.Key.Sold_to_party,
-                         //  MaCTKM = g.Key.maCTKM,
-                         name = g.FirstOrDefault().Name,
-
-
-                         Quantityfree = (g.Sum(m => m.So_luong_duoc_KM)),
-
-
-                     };
-
-
-            foreach (var item in rs)
-            {
-                tbl_ChecktongKM tong = new tbl_ChecktongKM();
-                //      tong.Created = item.Created;
-                tong.Name = item.name;
-                tong.enduser = enduser;
-                tong.So_luong_duoc_KM = item.Quantityfree;
-                tong.Sale_Region = item.saleregion;
-                tong.Sold_to_party = item.Sold_to;
-                db.tbl_ChecktongKMs.InsertOnSubmit(tong);
-                db.SubmitChanges();
-
-            }
-
-
-            var rs3 = from p in db.tbl_SalesFreeOrders
-                      where p.enduser == enduser
-                      group p by new
-                      {
-                          //    p.Created,
-                          p.Sold_to_party,//.Customer,
-                                          //     p.ma_CTKM,//  tblCustomer.SOrg,
-                      }
-                into g
-
-                      select new
-
-                      {
-                          //  Created = g.Key.Created,
-                          Sold_to = g.Key.Sold_to_party,
-                          //   MaCTKM = g.Key.ma_CTKM,
-                          //       QantityBuy = g.Sum(m => m.Order_quantity),
-
-
-                          Quantityfree = (g.Sum(m => m.ConfirmQty)),
-
-
-                      };
-
-            foreach (var item in rs3)
-            {
-
-                var rs4 = from p in db.tbl_ChecktongKMs
-                          where p.enduser == enduser && p.Sold_to_party == item.Sold_to
-                          select p;
-
-                foreach (var item2 in rs4)
-                {
-                    item2.So_luong_thuc_te_KM = item.Quantityfree;
-                    db.SubmitChanges();
-
-                }
-
-
-
-
-
-
-            }
-
-            #endregion
 
 
 
@@ -4216,18 +4158,36 @@ namespace Luckynumber.View
             var rs2 = from p in db.tbl_ChecktongKMs
 
                       where p.enduser == enduser && p.So_luong_duoc_KM > p.So_luong_thuc_te_KM
+                      //select new
+                      //{
+                      //    SaleOrg = p.Sale_Region,
+                      //    Code_Khách_hàng = p.Sold_to_party,
+                      //    Name_Khách_hàng = p.Name,
+
+                      //    Số_lượng_được_KM = p.So_luong_duoc_KM,
+                      //    Số_lượng_KM_trả_thực_tế = p.So_luong_thuc_te_KM,
+                      //    Trả_thiếu = p.So_luong_duoc_KM - p.So_luong_thuc_te_KM,
+
+                      //};
+
+                      orderby p.Sold_to_party
                       select new
                       {
-                          SaleOrg = p.Sale_Region,
-                          Code_Khách_hàng = p.Sold_to_party,
-                          Name_Khách_hàng = p.Name,
+                          //     STT = i,
+                          Sale_region = p.Sale_Region,
+                          Code_KH = p.Sold_to_party,
+                          Tên_KH = p.Name,
+                          Mã_CTKM = p.maCTKM,
+
+                          PO_Message = p.PO_message,
 
                           Số_lượng_được_KM = p.So_luong_duoc_KM,
                           Số_lượng_KM_trả_thực_tế = p.So_luong_thuc_te_KM,
                           Trả_thiếu = p.So_luong_duoc_KM - p.So_luong_thuc_te_KM,
 
-                      };
 
+
+                      };
 
             Viewtable viewtbl = new Viewtable(rs2, db, "DANH SÁCH ĐƠN HÀNG TRẢ THIẾU KHUYẾN MẠI", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
             viewtbl.ShowDialog();
@@ -4254,7 +4214,21 @@ namespace Luckynumber.View
             var rs = from p in db.tbl_SalesFreeOrders
                      where p.enduser == enduser
                      where p.ma_CTKM == "" || p.ma_CTKM == "0"
-                     select p;
+                     select new
+                     {
+                         p.Created,
+                         p.SOrg,
+                         p.Sold_to_party,
+                         p.PO_number,
+                         p.New_PO_number,
+                         p.Name,
+                         p.Material,
+                         p.Description,
+                         p.Dlv_Date,
+                         p.Order_Number,
+                         p.Order_quantity,
+                         p.Net_value,
+                     };
 
             Viewtable viewtbl = new Viewtable(rs, db, "DANH SÁCH ĐƠN HÀNG TRẢ KHUYẾN MẠI SAI CHƯƠNG TRÌNH KHUYẾN MẠI", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
             viewtbl.Show();
@@ -4332,106 +4306,48 @@ namespace Luckynumber.View
 
         private void lISTORDERHAVEOVERFREECASEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            luckyno lk = new luckyno();
-            lk.deletetbl_ChecktongKM();
+
+            #region  updatemã Rpttongctkhuyenmai
+            SqlConnection conn2 = null;
+            SqlDataReader rdr1 = null;
+            string enduser = Utils.getusername();
+            string destConnString = Utils.getConnectionstr();
+            try
+            {
+
+                conn2 = new SqlConnection(destConnString);
+                conn2.Open();
+                SqlCommand cmd1 = new SqlCommand("Rpttongctkhuyenmai", conn2);
+                cmd1.CommandType = CommandType.StoredProcedure;
+
+                cmd1.Parameters.Add("@enduser", SqlDbType.NVarChar).Value = enduser;
+                cmd1.CommandTimeout = 0;
+                rdr1 = cmd1.ExecuteReader();
+
+
+
+                //       rdr1 = cmd1.ExecuteReader();
+
+            }
+            finally
+            {
+                if (conn2 != null)
+                {
+                    conn2.Close();
+                }
+                if (rdr1 != null)
+                {
+                    rdr1.Close();
+                }
+            }
+            //     MessageBox.Show("ok", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            #endregion
+
 
 
             string connection_string = Utils.getConnectionstr();
             var db = new LinqtoSQLDataContext(connection_string);
-            string enduser = Utils.getusername();
-
-
-
-            #region  update bảng tông khuyến mại và so sánh
-
-
-            var rs = from p in db.tbl_Salesorders
-                     where p.enduser == enduser
-                     group p by new
-                     {
-                         //    p.Created,
-                         p.Sold_to_party,//.Customer,
-                                         //   p.maCTKM,//  tblCustomer.SOrg,
-                     }
-                    into g
-
-                     select new
-
-                     {
-                         //  Created = g.Key.Created,
-                         saleorg = g.FirstOrDefault().SOrg,
-                         Sold_to = g.Key.Sold_to_party,
-                         //  MaCTKM = g.Key.maCTKM,
-                         name = g.FirstOrDefault().Name,
-
-
-                         Quantityfree = (g.Sum(m => m.So_luong_duoc_KM)),
-
-
-                     };
-
-
-            foreach (var item in rs)
-            {
-                tbl_ChecktongKM tong = new tbl_ChecktongKM();
-                //      tong.Created = item.Created;
-                tong.Name = item.name;
-                tong.Sale_Region = item.saleorg;
-                tong.enduser = enduser;
-                tong.So_luong_duoc_KM = item.Quantityfree;
-                tong.Sold_to_party = item.Sold_to;
-                db.tbl_ChecktongKMs.InsertOnSubmit(tong);
-                db.SubmitChanges();
-
-            }
-
-
-            var rs3 = from p in db.tbl_SalesFreeOrders
-                      where p.enduser == enduser
-                      group p by new
-                      {
-                          //    p.Created,
-                          p.Sold_to_party,//.Customer,
-                                          //     p.ma_CTKM,//  tblCustomer.SOrg,
-                      }
-                into g
-
-                      select new
-
-                      {
-                          //  Created = g.Key.Created,
-                          Sold_to = g.Key.Sold_to_party,
-                          //   MaCTKM = g.Key.ma_CTKM,
-                          //       QantityBuy = g.Sum(m => m.Order_quantity),
-
-
-                          Quantityfree = (g.Sum(m => m.ConfirmQty)),
-
-
-                      };
-
-            foreach (var item in rs3)
-            {
-
-                var rs4 = from p in db.tbl_ChecktongKMs
-                          where p.enduser == enduser && p.Sold_to_party == item.Sold_to
-                          select p;
-
-                foreach (var item2 in rs4)
-                {
-                    item2.So_luong_thuc_te_KM = item.Quantityfree;
-                    db.SubmitChanges();
-
-                }
-
-
-
-
-
-
-            }
-
-            #endregion
 
 
 
@@ -4440,18 +4356,34 @@ namespace Luckynumber.View
             var rs2 = from p in db.tbl_ChecktongKMs
 
                       where p.enduser == enduser && p.So_luong_duoc_KM < p.So_luong_thuc_te_KM
+                      //select new
+                      //{
+                      //    SaleOrg = p.Sale_Region,
+                      //    Code_KH = p.Sold_to_party,
+                      //    Name_KH = p.Name,
+
+                      //    Số_lượng_được_KM = p.So_luong_duoc_KM,
+                      //    Số_lượng_KM_trả_thực_tế = p.So_luong_thuc_te_KM,
+                      //    Trả_thừa = p.So_luong_thuc_te_KM - p.So_luong_duoc_KM,
+
+                      //};
+                      orderby p.Sold_to_party
                       select new
                       {
-                          SaleOrg = p.Sale_Region,
+                          //     STT = i,
+                          Sale_region = p.Sale_Region,
                           Code_KH = p.Sold_to_party,
-                          Name_KH = p.Name,
+                          Tên_KH = p.Name,
+                          Mã_CTKM = p.maCTKM,
+
+                          PO_Message = p.PO_message,
 
                           Số_lượng_được_KM = p.So_luong_duoc_KM,
                           Số_lượng_KM_trả_thực_tế = p.So_luong_thuc_te_KM,
                           Trả_thừa = p.So_luong_thuc_te_KM - p.So_luong_duoc_KM,
 
-                      };
 
+                      };
 
             Viewtable viewtbl = new Viewtable(rs2, db, "DANH SÁCH ĐƠN HÀNG TRẢ THỪA KHUYẾN MẠI", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
             viewtbl.ShowDialog();
@@ -4613,119 +4545,52 @@ namespace Luckynumber.View
 
         private void bÁOCÁOCTKMToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            luckyno lk = new luckyno();
-            lk.deletetbl_ChecktongKM();
+
+
+
+            #region  updatemã Rpttongctkhuyenmai
+            SqlConnection conn2 = null;
+            SqlDataReader rdr1 = null;
+            string enduser = Utils.getusername();
+            string destConnString = Utils.getConnectionstr();
+            try
+            {
+
+                conn2 = new SqlConnection(destConnString);
+                conn2.Open();
+                SqlCommand cmd1 = new SqlCommand("Rpttongctkhuyenmai", conn2);
+                cmd1.CommandType = CommandType.StoredProcedure;
+
+                cmd1.Parameters.Add("@enduser", SqlDbType.NVarChar).Value = enduser;
+                cmd1.CommandTimeout = 0;
+                rdr1 = cmd1.ExecuteReader();
+
+
+
+                //       rdr1 = cmd1.ExecuteReader();
+
+            }
+            finally
+            {
+                if (conn2 != null)
+                {
+                    conn2.Close();
+                }
+                if (rdr1 != null)
+                {
+                    rdr1.Close();
+                }
+            }
+            //     MessageBox.Show("ok", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            #endregion
+
+
+
 
 
             string connection_string = Utils.getConnectionstr();
             var db = new LinqtoSQLDataContext(connection_string);
-            string enduser = Utils.getusername();
-
-
-
-            #region  update bảng tông khuyến mại và so sánh
-
-
-            var rs = from p in db.tbl_Salesorders
-                     where p.enduser == enduser && p.maCTKM != ""
-                     group p by new
-                     {
-                         //    p.Created,
-                         p.Sold_to_party,//.Customer,
-                         p.maCTKM,
-                         //   p.maCTKM,//  tblCustomer.SOrg,
-                     }
-                    into g
-
-                     select new
-
-                     {
-                         //  Created = g.Key.Created,
-                         Sold_to = g.Key.Sold_to_party,
-                         //  MaCTKM = g.Key.maCTKM,
-                         name = g.FirstOrDefault().Name,
-                         saleOrg = g.FirstOrDefault().SOrg,
-                         maCTKM = g.Key.maCTKM,
-                         Quantitybuy = (g.Sum(m => m.ConfirmQty)),
-                         Quantityfree = (g.Sum(m => m.So_luong_duoc_KM)),
-
-
-                     };
-
-            int i = 0;
-            foreach (var item in rs)
-            {
-                i = i + 1;
-                tbl_ChecktongKM tong = new tbl_ChecktongKM();
-                tong.Sale_Region = item.saleOrg;
-                tong.Sold_to_party = item.Sold_to;
-                tong.Name = item.name;
-                tong.maCTKM = item.maCTKM;
-                tong.STT = i;
-                tong.PO_message = (from kh in db.tbl_CTKMs
-                                   where kh.enduser == enduser
-                                   && kh.Mã_CT == item.maCTKM
-
-                                   select kh.PO_Message).FirstOrDefault();
-
-
-                tong.enduser = enduser;
-                tong.So_luong_hang_Mua = item.Quantitybuy;
-                tong.So_luong_duoc_KM = item.Quantityfree;
-
-                db.tbl_ChecktongKMs.InsertOnSubmit(tong);
-                db.SubmitChanges();
-
-            }
-
-
-            var rs3 = from p in db.tbl_SalesFreeOrders
-                      where p.enduser == enduser
-                      group p by new
-                      {
-                          //    p.Created,
-                          p.Sold_to_party,//.Customer,
-                          p.ma_CTKM,                //     p.ma_CTKM,//  tblCustomer.SOrg,
-                      }
-                into g
-
-                      select new
-
-                      {
-                          //  Created = g.Key.Created,
-                          Sold_to = g.Key.Sold_to_party,
-                          MaCTKM = g.Key.ma_CTKM,
-                          //       QantityBuy = g.Sum(m => m.Order_quantity),
-
-
-                          Quantityfreepaid = (g.Sum(m => m.ConfirmQty)),
-
-
-                      };
-
-            foreach (var item in rs3)
-            {
-
-                var rs4 = from p in db.tbl_ChecktongKMs
-                          where p.enduser == enduser && p.Sold_to_party == item.Sold_to
-                          && p.maCTKM == item.MaCTKM
-                          select p;
-
-                foreach (var item2 in rs4)
-                {
-                    item2.So_luong_thuc_te_KM = item.Quantityfreepaid;
-                    db.SubmitChanges();
-
-                }
-
-
-
-
-
-
-            }
-
-            #endregion
 
 
 
@@ -4734,11 +4599,10 @@ namespace Luckynumber.View
             var rs2 = from p in db.tbl_ChecktongKMs
 
                       where p.enduser == enduser && p.maCTKM != ""
-                      orderby p.STT
+                      orderby p.Sold_to_party
                       select new
                       {
-
-                          STT = p.STT,
+                          //     STT = i,
                           Sale_region = p.Sale_Region,
                           Code_KH = p.Sold_to_party,
                           Tên_KH = p.Name,

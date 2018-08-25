@@ -281,17 +281,30 @@ namespace Luckynumber.View
             this.dataGridView1.DataSource = rs;
             if (fornname == "DANH SÁCH ĐƠN HÀNG TRẢ THIẾU KHUYẾN MẠI")
             {
-                this.dataGridView1.Columns["Số_lượng_được_KM"].DefaultCellStyle.Format = "N0";
-                this.dataGridView1.Columns["Số_lượng_KM_trả_thực_tế"].DefaultCellStyle.Format = "N0";
-                this.dataGridView1.Columns["Trả_thiếu"].DefaultCellStyle.Format = "N0";
+                this.dataGridView1.Columns["Số_lượng_được_KM"].DefaultCellStyle.Format = "N2";
+                this.dataGridView1.Columns["Số_lượng_KM_trả_thực_tế"].DefaultCellStyle.Format = "N2";
+                this.dataGridView1.Columns["Trả_thiếu"].DefaultCellStyle.Format = "N2";
             }
 
             if (fornname == "DANH SÁCH ĐƠN HÀNG TRẢ THỪA KHUYẾN MẠI")
             {
 
-                this.dataGridView1.Columns["Số_lượng_được_KM"].DefaultCellStyle.Format = "N0";
-                this.dataGridView1.Columns["Số_lượng_KM_trả_thực_tế"].DefaultCellStyle.Format = "N0";
-                this.dataGridView1.Columns["Trả_thừa"].DefaultCellStyle.Format = "N0";
+                this.dataGridView1.Columns["Số_lượng_được_KM"].DefaultCellStyle.Format = "N2";
+                this.dataGridView1.Columns["Số_lượng_KM_trả_thực_tế"].DefaultCellStyle.Format = "N2";
+                this.dataGridView1.Columns["Trả_thừa"].DefaultCellStyle.Format = "N2";
+            }
+
+            //  "BÁO CÁO CTKM"
+        //    Số_lượng_hàng_mua = p.So_luong_hang_Mua,
+          //                Số_lượng_được_trả = p.So_luong_duoc_KM,
+           //               Số_lượng_đã_trả = p.So_luong_thuc_te_KM,
+
+            if (fornname == "BÁO CÁO CTKM")
+            {
+
+                this.dataGridView1.Columns["Số_lượng_hàng_mua"].DefaultCellStyle.Format = "N2";
+                this.dataGridView1.Columns["Số_lượng_được_trả"].DefaultCellStyle.Format = "N2";
+                this.dataGridView1.Columns["Số_lượng_đã_trả"].DefaultCellStyle.Format = "N2";
             }
 
             lb_totalrecord.Text = dataGridView1.RowCount.ToString();
