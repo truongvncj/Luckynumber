@@ -77,5 +77,27 @@ namespace Luckynumber.Properties {
                 return ((string)(this["LuckynumberConnectionString11"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HAN-L-3PFF7H2;Initial Catalog=Luckynumber;Persist Security Info=True;" +
+            "User ID=sa")]
+        public string LuckynumberConnectionString4 {
+            get {
+                return ((string)(this["LuckynumberConnectionString4"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HAN-L-3PFF7H2;Initial Catalog=Luckynumber;Persist Security Info=True;" +
+            "User ID=sa;Password=Tienmat102$")]
+        public string LuckynumberConnectionString5 {
+            get {
+                return ((string)(this["LuckynumberConnectionString5"]));
+            }
+        }
     }
 }

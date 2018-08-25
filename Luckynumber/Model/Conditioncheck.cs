@@ -10,7 +10,7 @@ namespace Luckynumber.Model
     class Conditioncheck
     {
 
-        public static bool Iswrongmessage(string message, string material)
+        public static bool Iswrongmessage(string message, string maCTKM)
         {
             //  #region // kiem tra xem co sai mesage
             bool kq = true;
@@ -20,7 +20,7 @@ namespace Luckynumber.Model
 
             var rs = from p in db.tbl_CTKMs
                      where p.enduser == enduser
-                     where p.Mã_SP_KM.Trim() == material
+                     where p.Mã_CT == maCTKM
                      //    && message.IndexOf(p.PO_Message) > 0
                      select p;
             foreach (var item in rs)

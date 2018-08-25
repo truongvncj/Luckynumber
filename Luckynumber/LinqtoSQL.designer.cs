@@ -56,7 +56,11 @@ namespace Luckynumber
     partial void Deletetbl_Salesorder(tbl_Salesorder instance);
     #endregion
 		
-	
+		public LinqtoSQLDataContext() : 
+				base(global::Luckynumber.Properties.Settings.Default.LuckynumberConnectionString5, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public LinqtoSQLDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -2159,6 +2163,10 @@ namespace Luckynumber
 		
 		private string _maNhomKHKM;
 		
+		private bool _wrongmessage;
+		
+		private bool _outofdate;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2213,6 +2221,10 @@ namespace Luckynumber
     partial void OnenduserChanged();
     partial void OnmaNhomKHKMChanging(string value);
     partial void OnmaNhomKHKMChanged();
+    partial void OnwrongmessageChanging(bool value);
+    partial void OnwrongmessageChanged();
+    partial void OnoutofdateChanging(bool value);
+    partial void OnoutofdateChanged();
     #endregion
 		
 		public tbl_SalesFreeOrder()
@@ -2716,6 +2728,46 @@ namespace Luckynumber
 					this._maNhomKHKM = value;
 					this.SendPropertyChanged("maNhomKHKM");
 					this.OnmaNhomKHKMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_wrongmessage", DbType="Bit NOT NULL")]
+		public bool wrongmessage
+		{
+			get
+			{
+				return this._wrongmessage;
+			}
+			set
+			{
+				if ((this._wrongmessage != value))
+				{
+					this.OnwrongmessageChanging(value);
+					this.SendPropertyChanging();
+					this._wrongmessage = value;
+					this.SendPropertyChanged("wrongmessage");
+					this.OnwrongmessageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_outofdate", DbType="Bit NOT NULL")]
+		public bool outofdate
+		{
+			get
+			{
+				return this._outofdate;
+			}
+			set
+			{
+				if ((this._outofdate != value))
+				{
+					this.OnoutofdateChanging(value);
+					this.SendPropertyChanging();
+					this._outofdate = value;
+					this.SendPropertyChanged("outofdate");
+					this.OnoutofdateChanged();
 				}
 			}
 		}

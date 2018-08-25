@@ -89,7 +89,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "inputselectvalue";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Chọn chương trình";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

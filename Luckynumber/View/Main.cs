@@ -3989,7 +3989,7 @@ namespace Luckynumber.View
             luckyno md = new luckyno();
 
             md.UpPUCHASEORDER();
-       ///     Model.Conditioncheck.updaMAKHKM();
+            ///     Model.Conditioncheck.updaMAKHKM();
             //    Control_ac ct = new Control_ac();
 
             Thread t1 = new Thread(Model.Conditioncheck.updaCTVAsoluongKM); // gồm cả updaet mã khkm mà só lương ctkm
@@ -4022,7 +4022,7 @@ namespace Luckynumber.View
 
             md.UpFreePUCHASEORDER();
 
-         //   Model.Conditioncheck.UpdateMaCTKM();
+            //   Model.Conditioncheck.UpdateMaCTKM();
 
             Thread t1 = new Thread(Model.Conditioncheck.UpdateMaCTKM); // gồm cả updaet mã khkm mà só lương ctkm
             t1.IsBackground = true;
@@ -4046,65 +4046,61 @@ namespace Luckynumber.View
 
         private void lISTORDERWRONGMESSAGEToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+
+
             string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
             string enduser = Utils.getusername();
 
-            var rsfreee = from p in db.tbl_SalesFreeOrders
-                          where p.enduser == enduser
 
-                          select p;
-            foreach (var item in rsfreee)
+            var rs = from p in db.tbl_SalesFreeOrders
+                     where     p.enduser == enduser
+                  
+                     select p;
+
+            foreach (var item in rs)
             {
-
-                if (item.ma_CTKM != "0" && item.ma_CTKM != "" && Model.Conditioncheck.Iswrongmessage(item.PO_number, item.Material.Trim()))
+                if (item.New_PO_number != null && item.PO_number.Contains(item.New_PO_number))
                 {
-                    item.rptselect = true;
-
-
-
+                    item.wrongmessage = false;
                 }
                 else
                 {
-                    item.rptselect = false;
+                    item.wrongmessage = true;
                 }
-
-
-
-
-
-
-
+              
                 db.SubmitChanges();
-
             }
 
 
-            var rs = from p in db.tbl_SalesFreeOrders
-                     where p.rptselect == true
-                     select new
-                     {
+            var rs1 = from p in db.tbl_SalesFreeOrders
+                      where p.wrongmessage == true
+                      && p.enduser == enduser
+                    
+                      select new
+                      {
 
-                         p.Created,
-                         p.SOrg,
+                          p.Created,
+                          p.SOrg,
 
-                         p.PO_number,
-                         p.New_PO_number,
-                         p.Sold_to_party,
-                         p.Name,
-                         p.Material,
-                         p.Description,
-                         p.Dlv_Date,
-                         p.Order_Number,
-                         p.Order_quantity,
-
-
-                     };
+                          p.PO_number,
+                          p.New_PO_number,
+                          p.Sold_to_party,
+                          p.Name,
+                          p.Material,
+                          p.Description,
+                          p.Dlv_Date,
+                          p.Order_Number,
+                          p.Order_quantity,
 
 
-            Viewtable viewtbl = new Viewtable(rs, db, "DANH SÁCH ĐƠN HÀNG KHUYẾN MẠI SAI MESSAGE", 100, DateTime.Today, DateTime.Today);
-            viewtbl.Show();
+                      };
+
+
+            Viewtable viewtbl = new Viewtable(rs1, db, "DANH SÁCH ĐƠN HÀNG KHUYẾN MẠI SAI MESSAGE", 100, DateTime.Today, DateTime.Today);
+            viewtbl.ShowDialog();
 
 
         }
@@ -4234,7 +4230,7 @@ namespace Luckynumber.View
 
 
             Viewtable viewtbl = new Viewtable(rs2, db, "DANH SÁCH ĐƠN HÀNG TRẢ THIẾU KHUYẾN MẠI", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
-            viewtbl.Show();
+            viewtbl.ShowDialog();
 
 
 
@@ -4272,7 +4268,7 @@ namespace Luckynumber.View
         private void oRDEROVERTIMEOFPROGARMEToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            Model.Conditioncheck.UpdateMaCTKM();
+            // Model.Conditioncheck.UpdateMaCTKM();
 
 
             string connection_string = Utils.getConnectionstr();
@@ -4280,35 +4276,37 @@ namespace Luckynumber.View
 
             string enduser = Utils.getusername();
 
-            var rscheck = from p in db.tbl_SalesFreeOrders
-                          where p.enduser == enduser
-                          && p.ma_CTKM != "0"
-                          && p.ma_CTKM != ""
-                          where p.ma_CTKM != ""
-                          select p;
+            //var rscheck = from p in db.tbl_SalesFreeOrders
+            //              where p.enduser == enduser
+            //              && p.ma_CTKM != "0"
+            //              && p.ma_CTKM != ""
+            //              where p.ma_CTKM != ""
+            //              select p;
 
-            foreach (var item in rscheck)
-            {
-                item.rptselect = false;
-                if (Model.Conditioncheck.checkIsOvertimeofGROgarame(item.ma_CTKM, (DateTime)item.Dlv_Date))
-                {
+            //foreach (var item in rscheck)
+            //{
+            //    item.rptselect = false;
+            //    if (Model.Conditioncheck.checkIsOvertimeofGROgarame(item.ma_CTKM, (DateTime)item.Dlv_Date))
+            //    {
 
-                    item.rptselect = true;
-                }
+            //        item.rptselect = true;
+            //    }
 
 
-                db.SubmitChanges();
-            }
+            //    db.SubmitChanges();
+            //}
 
             var rs = from p in db.tbl_SalesFreeOrders
 
-                     where p.rptselect == true && p.enduser == enduser
+                     where p.outofdate == true && p.enduser == enduser
                      select new
                      {
 
                          p.Created,
                          p.SOrg,
                          p.Sold_to_party,
+                         p.PO_number,
+                         p.New_PO_number,
                          p.Name,
                          p.Material,
                          p.Description,
@@ -4456,7 +4454,7 @@ namespace Luckynumber.View
 
 
             Viewtable viewtbl = new Viewtable(rs2, db, "DANH SÁCH ĐƠN HÀNG TRẢ THỪA KHUYẾN MẠI", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
-            viewtbl.Show();
+            viewtbl.ShowDialog();
 
 
 
@@ -4551,7 +4549,7 @@ namespace Luckynumber.View
 
 
             Viewtable viewtbl = new Viewtable(rs, db, "DANH SÁCH ĐƠN HÀNG KHUYẾN MẠI CHƯA PHÂN LOẠI ĐƯỢC MÃ CTKM ", 555, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
-            viewtbl.Show();
+            viewtbl.ShowDialog();
         }
 
         private void orderNotEnoughFreecaseDetailToolStripMenuItem_Click(object sender, EventArgs e)

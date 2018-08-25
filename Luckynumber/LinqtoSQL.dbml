@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Luckynumber" Class="LinqtoSQLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HAN-L-3PFF7H2;Initial Catalog=Luckynumber;Persist Security Info=True;User ID=sa" SettingsObjectName="Luckynumber.Properties.Settings" SettingsPropertyName="LuckynumberConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HAN-L-3PFF7H2;Initial Catalog=Luckynumber;Persist Security Info=True;User ID=sa" SettingsObjectName="Luckynumber.Properties.Settings" SettingsPropertyName="LuckynumberConnectionString5" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbl_ChecktongKM" Member="tbl_ChecktongKMs">
     <Type Name="tbl_ChecktongKM">
       <Column Name="Sold_to_party" Type="System.Double" DbType="Float" CanBeNull="true" />
@@ -123,6 +123,8 @@
       <Column Name="rptselect" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="enduser" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="maNhomKHKM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="wrongmessage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="outofdate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_Salesorder" Member="tbl_Salesorders">

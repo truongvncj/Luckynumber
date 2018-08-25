@@ -279,6 +279,21 @@ namespace Luckynumber.View
 
 
             this.dataGridView1.DataSource = rs;
+            if (fornname == "DANH SÁCH ĐƠN HÀNG TRẢ THIẾU KHUYẾN MẠI")
+            {
+                this.dataGridView1.Columns["Số_lượng_được_KM"].DefaultCellStyle.Format = "N0";
+                this.dataGridView1.Columns["Số_lượng_KM_trả_thực_tế"].DefaultCellStyle.Format = "N0";
+                this.dataGridView1.Columns["Trả_thiếu"].DefaultCellStyle.Format = "N0";
+            }
+
+            if (fornname == "DANH SÁCH ĐƠN HÀNG TRẢ THỪA KHUYẾN MẠI")
+            {
+
+                this.dataGridView1.Columns["Số_lượng_được_KM"].DefaultCellStyle.Format = "N0";
+                this.dataGridView1.Columns["Số_lượng_KM_trả_thực_tế"].DefaultCellStyle.Format = "N0";
+                this.dataGridView1.Columns["Trả_thừa"].DefaultCellStyle.Format = "N0";
+            }
+
             lb_totalrecord.Text = dataGridView1.RowCount.ToString();
         }
 
@@ -320,30 +335,30 @@ namespace Luckynumber.View
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string connection_string = Utils.getConnectionstr();
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
+            //string connection_string = Utils.getConnectionstr();
+            //LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
 
 
 
-            if (this.Text == "Update Customer make reports !" || this.Text == "LIST CUSTOMER MAKE REPORTS")
-            {
+            //if (this.Text == "Update Customer make reports !" || this.Text == "LIST CUSTOMER MAKE REPORTS")
+            //{
 
 
 
-                if (this.dataGridView1.CurrentRow.Index >= 0 && this.dataGridView1.CurrentRow != null && dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Reportsend"].Value != null && dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Reportsend"].Value.ToString() != "")
-                {
-                    dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Reportsend"].Value = !(bool)dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Reportsend"].Value;
-                }
-                else
-                {
-                    dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Reportsend"].Value = true;
-                }
+            //    if (this.dataGridView1.CurrentRow.Index >= 0 && this.dataGridView1.CurrentRow != null && dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Reportsend"].Value != null && dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Reportsend"].Value.ToString() != "")
+            //    {
+            //        dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Reportsend"].Value = !(bool)dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Reportsend"].Value;
+            //    }
+            //    else
+            //    {
+            //        dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Reportsend"].Value = true;
+            //    }
 
 
 
 
 
-            }
+            //}
 
 
             // update sending status
@@ -548,6 +563,7 @@ namespace Luckynumber.View
 
                     string materialcode = dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Material"].Value.ToString();
                     DateTime Dlv_Date = (DateTime)dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Dlv_Date"].Value;
+               //     string re = dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Material"].Value.ToString();
 
                     string enduser = Utils.getusername();
 
@@ -556,8 +572,8 @@ namespace Luckynumber.View
                     var rsprogarme = from p in dc.tbl_CTKMs
                                      where p.enduser == enduser
                                      && p.Mã_SP_KM == materialcode
-                                     && p.Từ_ngày <= Dlv_Date
-                                      && p.Đến_Ngày >= Dlv_Date
+                                  //   && p.Từ_ngày <= Dlv_Date
+                                  //    && p.Đến_Ngày >= Dlv_Date
 
                                      select p;
                     //       public List<ComboboxItem> datacolecttionselect;//{ get; private set; }
@@ -587,6 +603,7 @@ namespace Luckynumber.View
                     progaame.ShowDialog();
                     string mactkm = progaame.selectvalue;
                     string namectkm = progaame.selecttext;
+                  
                     bool kq = progaame.kq;
 
 
@@ -611,6 +628,23 @@ namespace Luckynumber.View
                             {
                                 item2.ma_CTKM = mactkm;
                                 item2.New_PO_number = namectkm;
+                                              var ctkmchon = from p in dc.tbl_CTKMs
+                                              where p.enduser == enduser
+                                              && p.Mã_CT == mactkm
+                                               && p.PO_Message == namectkm
+                                              select p;
+
+                                foreach (var item in ctkmchon)
+                                {
+                                    if (item2.Dlv_Date < item.Từ_ngày || item2.Dlv_Date > item.Đến_Ngày)
+                                    {
+                                        item2.outofdate = true;
+                                    }
+                                }
+
+
+
+
                                 dc.SubmitChanges();
                             }
 
