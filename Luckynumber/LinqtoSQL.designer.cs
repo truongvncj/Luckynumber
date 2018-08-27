@@ -45,9 +45,6 @@ namespace Luckynumber
     partial void Inserttbl_Product(tbl_Product instance);
     partial void Updatetbl_Product(tbl_Product instance);
     partial void Deletetbl_Product(tbl_Product instance);
-    partial void Inserttbl_SalesFreehavetopaid(tbl_SalesFreehavetopaid instance);
-    partial void Updatetbl_SalesFreehavetopaid(tbl_SalesFreehavetopaid instance);
-    partial void Deletetbl_SalesFreehavetopaid(tbl_SalesFreehavetopaid instance);
     partial void Inserttbl_SalesFreeOrder(tbl_SalesFreeOrder instance);
     partial void Updatetbl_SalesFreeOrder(tbl_SalesFreeOrder instance);
     partial void Deletetbl_SalesFreeOrder(tbl_SalesFreeOrder instance);
@@ -123,14 +120,6 @@ namespace Luckynumber
 			get
 			{
 				return this.GetTable<tbl_Product>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_SalesFreehavetopaid> tbl_SalesFreehavetopaids
-		{
-			get
-			{
-				return this.GetTable<tbl_SalesFreehavetopaid>();
 			}
 		}
 		
@@ -511,57 +500,19 @@ namespace Luckynumber
 		
 		private System.Nullable<int> _Version;
 		
-		private string _server;
-		
 		private string _enduser;
 		
 		private string _password;
 		
-		private string _signoffby;
+		private bool _OrderFree;
 		
-		private string _possition;
+		private bool _Orderbuy;
 		
-		private string _phonecontact;
-		
-		private System.Nullable<int> _siteid;
-		
-		private string _note;
-		
-		private string _contactperson;
-		
-		private string _nameofbarnch;
-		
-		private string _addressofbarnch;
-		
-		private bool _DeleteData;
-		
-		private bool _EditServerData;
-		
-		private bool _Depositintput;
-		
-		private bool _EditReportsaffter;
-		
-		private bool _InputDepositInpass;
-		
-		private bool _PriodMake;
-		
-		private bool _Systemconfig;
-		
-		private bool _uploadBeginbalance;
-		
-		private bool _endyearPackdata;
-		
-		private bool _makedepostfromadjamount;
-		
-		private bool _deductdepositamount;
-		
-		private bool _redoInputviry;
-		
-		private bool _uploadpriviousPriod;
+		private bool _Totalreports;
 		
 		private System.Data.Linq.Binary _imagesign;
 		
-		private bool _nationKA;
+		private bool _Lkright;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -571,58 +522,20 @@ namespace Luckynumber
     partial void OnidChanged();
     partial void OnVersionChanging(System.Nullable<int> value);
     partial void OnVersionChanged();
-    partial void OnserverChanging(string value);
-    partial void OnserverChanged();
     partial void OnenduserChanging(string value);
     partial void OnenduserChanged();
     partial void OnpasswordChanging(string value);
     partial void OnpasswordChanged();
-    partial void OnsignoffbyChanging(string value);
-    partial void OnsignoffbyChanged();
-    partial void OnpossitionChanging(string value);
-    partial void OnpossitionChanged();
-    partial void OnphonecontactChanging(string value);
-    partial void OnphonecontactChanged();
-    partial void OnsiteidChanging(System.Nullable<int> value);
-    partial void OnsiteidChanged();
-    partial void OnnoteChanging(string value);
-    partial void OnnoteChanged();
-    partial void OncontactpersonChanging(string value);
-    partial void OncontactpersonChanged();
-    partial void OnnameofbarnchChanging(string value);
-    partial void OnnameofbarnchChanged();
-    partial void OnaddressofbarnchChanging(string value);
-    partial void OnaddressofbarnchChanged();
-    partial void OnDeleteDataChanging(bool value);
-    partial void OnDeleteDataChanged();
-    partial void OnEditServerDataChanging(bool value);
-    partial void OnEditServerDataChanged();
-    partial void OnDepositintputChanging(bool value);
-    partial void OnDepositintputChanged();
-    partial void OnEditReportsaffterChanging(bool value);
-    partial void OnEditReportsaffterChanged();
-    partial void OnInputDepositInpassChanging(bool value);
-    partial void OnInputDepositInpassChanged();
-    partial void OnPriodMakeChanging(bool value);
-    partial void OnPriodMakeChanged();
-    partial void OnSystemconfigChanging(bool value);
-    partial void OnSystemconfigChanged();
-    partial void OnuploadBeginbalanceChanging(bool value);
-    partial void OnuploadBeginbalanceChanged();
-    partial void OnendyearPackdataChanging(bool value);
-    partial void OnendyearPackdataChanged();
-    partial void OnmakedepostfromadjamountChanging(bool value);
-    partial void OnmakedepostfromadjamountChanged();
-    partial void OndeductdepositamountChanging(bool value);
-    partial void OndeductdepositamountChanged();
-    partial void OnredoInputviryChanging(bool value);
-    partial void OnredoInputviryChanged();
-    partial void OnuploadpriviousPriodChanging(bool value);
-    partial void OnuploadpriviousPriodChanged();
+    partial void OnOrderFreeChanging(bool value);
+    partial void OnOrderFreeChanged();
+    partial void OnOrderbuyChanging(bool value);
+    partial void OnOrderbuyChanged();
+    partial void OnTotalreportsChanging(bool value);
+    partial void OnTotalreportsChanged();
     partial void OnimagesignChanging(System.Data.Linq.Binary value);
     partial void OnimagesignChanged();
-    partial void OnnationKAChanging(bool value);
-    partial void OnnationKAChanged();
+    partial void OnLkrightChanging(bool value);
+    partial void OnLkrightChanged();
     #endregion
 		
 		public tbl_Temp()
@@ -670,26 +583,6 @@ namespace Luckynumber
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_server", DbType="NChar(225)")]
-		public string server
-		{
-			get
-			{
-				return this._server;
-			}
-			set
-			{
-				if ((this._server != value))
-				{
-					this.OnserverChanging(value);
-					this.SendPropertyChanging();
-					this._server = value;
-					this.SendPropertyChanged("server");
-					this.OnserverChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enduser", DbType="NChar(225)")]
 		public string enduser
 		{
@@ -730,422 +623,62 @@ namespace Luckynumber
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_signoffby", DbType="NChar(225)")]
-		public string signoffby
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderFree", DbType="Bit NOT NULL")]
+		public bool OrderFree
 		{
 			get
 			{
-				return this._signoffby;
+				return this._OrderFree;
 			}
 			set
 			{
-				if ((this._signoffby != value))
+				if ((this._OrderFree != value))
 				{
-					this.OnsignoffbyChanging(value);
+					this.OnOrderFreeChanging(value);
 					this.SendPropertyChanging();
-					this._signoffby = value;
-					this.SendPropertyChanged("signoffby");
-					this.OnsignoffbyChanged();
+					this._OrderFree = value;
+					this.SendPropertyChanged("OrderFree");
+					this.OnOrderFreeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_possition", DbType="NChar(225)")]
-		public string possition
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Orderbuy", DbType="Bit NOT NULL")]
+		public bool Orderbuy
 		{
 			get
 			{
-				return this._possition;
+				return this._Orderbuy;
 			}
 			set
 			{
-				if ((this._possition != value))
+				if ((this._Orderbuy != value))
 				{
-					this.OnpossitionChanging(value);
+					this.OnOrderbuyChanging(value);
 					this.SendPropertyChanging();
-					this._possition = value;
-					this.SendPropertyChanged("possition");
-					this.OnpossitionChanged();
+					this._Orderbuy = value;
+					this.SendPropertyChanged("Orderbuy");
+					this.OnOrderbuyChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phonecontact", DbType="NChar(225)")]
-		public string phonecontact
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Totalreports", DbType="Bit NOT NULL")]
+		public bool Totalreports
 		{
 			get
 			{
-				return this._phonecontact;
+				return this._Totalreports;
 			}
 			set
 			{
-				if ((this._phonecontact != value))
+				if ((this._Totalreports != value))
 				{
-					this.OnphonecontactChanging(value);
+					this.OnTotalreportsChanging(value);
 					this.SendPropertyChanging();
-					this._phonecontact = value;
-					this.SendPropertyChanged("phonecontact");
-					this.OnphonecontactChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_siteid", DbType="Int")]
-		public System.Nullable<int> siteid
-		{
-			get
-			{
-				return this._siteid;
-			}
-			set
-			{
-				if ((this._siteid != value))
-				{
-					this.OnsiteidChanging(value);
-					this.SendPropertyChanging();
-					this._siteid = value;
-					this.SendPropertyChanged("siteid");
-					this.OnsiteidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_note", DbType="NChar(225)")]
-		public string note
-		{
-			get
-			{
-				return this._note;
-			}
-			set
-			{
-				if ((this._note != value))
-				{
-					this.OnnoteChanging(value);
-					this.SendPropertyChanging();
-					this._note = value;
-					this.SendPropertyChanged("note");
-					this.OnnoteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contactperson", DbType="NChar(225)")]
-		public string contactperson
-		{
-			get
-			{
-				return this._contactperson;
-			}
-			set
-			{
-				if ((this._contactperson != value))
-				{
-					this.OncontactpersonChanging(value);
-					this.SendPropertyChanging();
-					this._contactperson = value;
-					this.SendPropertyChanged("contactperson");
-					this.OncontactpersonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nameofbarnch", DbType="NChar(225)")]
-		public string nameofbarnch
-		{
-			get
-			{
-				return this._nameofbarnch;
-			}
-			set
-			{
-				if ((this._nameofbarnch != value))
-				{
-					this.OnnameofbarnchChanging(value);
-					this.SendPropertyChanging();
-					this._nameofbarnch = value;
-					this.SendPropertyChanged("nameofbarnch");
-					this.OnnameofbarnchChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_addressofbarnch", DbType="NChar(225)")]
-		public string addressofbarnch
-		{
-			get
-			{
-				return this._addressofbarnch;
-			}
-			set
-			{
-				if ((this._addressofbarnch != value))
-				{
-					this.OnaddressofbarnchChanging(value);
-					this.SendPropertyChanging();
-					this._addressofbarnch = value;
-					this.SendPropertyChanged("addressofbarnch");
-					this.OnaddressofbarnchChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeleteData", DbType="Bit NOT NULL")]
-		public bool DeleteData
-		{
-			get
-			{
-				return this._DeleteData;
-			}
-			set
-			{
-				if ((this._DeleteData != value))
-				{
-					this.OnDeleteDataChanging(value);
-					this.SendPropertyChanging();
-					this._DeleteData = value;
-					this.SendPropertyChanged("DeleteData");
-					this.OnDeleteDataChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EditServerData", DbType="Bit NOT NULL")]
-		public bool EditServerData
-		{
-			get
-			{
-				return this._EditServerData;
-			}
-			set
-			{
-				if ((this._EditServerData != value))
-				{
-					this.OnEditServerDataChanging(value);
-					this.SendPropertyChanging();
-					this._EditServerData = value;
-					this.SendPropertyChanged("EditServerData");
-					this.OnEditServerDataChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Depositintput", DbType="Bit NOT NULL")]
-		public bool Depositintput
-		{
-			get
-			{
-				return this._Depositintput;
-			}
-			set
-			{
-				if ((this._Depositintput != value))
-				{
-					this.OnDepositintputChanging(value);
-					this.SendPropertyChanging();
-					this._Depositintput = value;
-					this.SendPropertyChanged("Depositintput");
-					this.OnDepositintputChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EditReportsaffter", DbType="Bit NOT NULL")]
-		public bool EditReportsaffter
-		{
-			get
-			{
-				return this._EditReportsaffter;
-			}
-			set
-			{
-				if ((this._EditReportsaffter != value))
-				{
-					this.OnEditReportsaffterChanging(value);
-					this.SendPropertyChanging();
-					this._EditReportsaffter = value;
-					this.SendPropertyChanged("EditReportsaffter");
-					this.OnEditReportsaffterChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InputDepositInpass", DbType="Bit NOT NULL")]
-		public bool InputDepositInpass
-		{
-			get
-			{
-				return this._InputDepositInpass;
-			}
-			set
-			{
-				if ((this._InputDepositInpass != value))
-				{
-					this.OnInputDepositInpassChanging(value);
-					this.SendPropertyChanging();
-					this._InputDepositInpass = value;
-					this.SendPropertyChanged("InputDepositInpass");
-					this.OnInputDepositInpassChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriodMake", DbType="Bit NOT NULL")]
-		public bool PriodMake
-		{
-			get
-			{
-				return this._PriodMake;
-			}
-			set
-			{
-				if ((this._PriodMake != value))
-				{
-					this.OnPriodMakeChanging(value);
-					this.SendPropertyChanging();
-					this._PriodMake = value;
-					this.SendPropertyChanged("PriodMake");
-					this.OnPriodMakeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Systemconfig", DbType="Bit NOT NULL")]
-		public bool Systemconfig
-		{
-			get
-			{
-				return this._Systemconfig;
-			}
-			set
-			{
-				if ((this._Systemconfig != value))
-				{
-					this.OnSystemconfigChanging(value);
-					this.SendPropertyChanging();
-					this._Systemconfig = value;
-					this.SendPropertyChanged("Systemconfig");
-					this.OnSystemconfigChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uploadBeginbalance", DbType="Bit NOT NULL")]
-		public bool uploadBeginbalance
-		{
-			get
-			{
-				return this._uploadBeginbalance;
-			}
-			set
-			{
-				if ((this._uploadBeginbalance != value))
-				{
-					this.OnuploadBeginbalanceChanging(value);
-					this.SendPropertyChanging();
-					this._uploadBeginbalance = value;
-					this.SendPropertyChanged("uploadBeginbalance");
-					this.OnuploadBeginbalanceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_endyearPackdata", DbType="Bit NOT NULL")]
-		public bool endyearPackdata
-		{
-			get
-			{
-				return this._endyearPackdata;
-			}
-			set
-			{
-				if ((this._endyearPackdata != value))
-				{
-					this.OnendyearPackdataChanging(value);
-					this.SendPropertyChanging();
-					this._endyearPackdata = value;
-					this.SendPropertyChanged("endyearPackdata");
-					this.OnendyearPackdataChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_makedepostfromadjamount", DbType="Bit NOT NULL")]
-		public bool makedepostfromadjamount
-		{
-			get
-			{
-				return this._makedepostfromadjamount;
-			}
-			set
-			{
-				if ((this._makedepostfromadjamount != value))
-				{
-					this.OnmakedepostfromadjamountChanging(value);
-					this.SendPropertyChanging();
-					this._makedepostfromadjamount = value;
-					this.SendPropertyChanged("makedepostfromadjamount");
-					this.OnmakedepostfromadjamountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deductdepositamount", DbType="Bit NOT NULL")]
-		public bool deductdepositamount
-		{
-			get
-			{
-				return this._deductdepositamount;
-			}
-			set
-			{
-				if ((this._deductdepositamount != value))
-				{
-					this.OndeductdepositamountChanging(value);
-					this.SendPropertyChanging();
-					this._deductdepositamount = value;
-					this.SendPropertyChanged("deductdepositamount");
-					this.OndeductdepositamountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_redoInputviry", DbType="Bit NOT NULL")]
-		public bool redoInputviry
-		{
-			get
-			{
-				return this._redoInputviry;
-			}
-			set
-			{
-				if ((this._redoInputviry != value))
-				{
-					this.OnredoInputviryChanging(value);
-					this.SendPropertyChanging();
-					this._redoInputviry = value;
-					this.SendPropertyChanged("redoInputviry");
-					this.OnredoInputviryChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uploadpriviousPriod", DbType="Bit NOT NULL")]
-		public bool uploadpriviousPriod
-		{
-			get
-			{
-				return this._uploadpriviousPriod;
-			}
-			set
-			{
-				if ((this._uploadpriviousPriod != value))
-				{
-					this.OnuploadpriviousPriodChanging(value);
-					this.SendPropertyChanging();
-					this._uploadpriviousPriod = value;
-					this.SendPropertyChanged("uploadpriviousPriod");
-					this.OnuploadpriviousPriodChanged();
+					this._Totalreports = value;
+					this.SendPropertyChanged("Totalreports");
+					this.OnTotalreportsChanged();
 				}
 			}
 		}
@@ -1170,22 +703,22 @@ namespace Luckynumber
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nationKA", DbType="Bit NOT NULL")]
-		public bool nationKA
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lkright", DbType="Bit NOT NULL")]
+		public bool Lkright
 		{
 			get
 			{
-				return this._nationKA;
+				return this._Lkright;
 			}
 			set
 			{
-				if ((this._nationKA != value))
+				if ((this._Lkright != value))
 				{
-					this.OnnationKAChanging(value);
+					this.OnLkrightChanging(value);
 					this.SendPropertyChanging();
-					this._nationKA = value;
-					this.SendPropertyChanged("nationKA");
-					this.OnnationKAChanged();
+					this._Lkright = value;
+					this.SendPropertyChanged("Lkright");
+					this.OnLkrightChanged();
 				}
 			}
 		}
@@ -1836,212 +1369,6 @@ namespace Luckynumber
 					this._UC_Rate = value;
 					this.SendPropertyChanged("UC_Rate");
 					this.OnUC_RateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enduser", DbType="NVarChar(255)")]
-		public string enduser
-		{
-			get
-			{
-				return this._enduser;
-			}
-			set
-			{
-				if ((this._enduser != value))
-				{
-					this.OnenduserChanging(value);
-					this.SendPropertyChanging();
-					this._enduser = value;
-					this.SendPropertyChanged("enduser");
-					this.OnenduserChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_SalesFreehavetopaid")]
-	public partial class tbl_SalesFreehavetopaid : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<double> _Order_Number;
-		
-		private string _ma_CTKM;
-		
-		private string _Material;
-		
-		private string _Description;
-		
-		private System.Nullable<double> _EstimateFree_quantity;
-		
-		private int _id;
-		
-		private string _enduser;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnOrder_NumberChanging(System.Nullable<double> value);
-    partial void OnOrder_NumberChanged();
-    partial void Onma_CTKMChanging(string value);
-    partial void Onma_CTKMChanged();
-    partial void OnMaterialChanging(string value);
-    partial void OnMaterialChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnEstimateFree_quantityChanging(System.Nullable<double> value);
-    partial void OnEstimateFree_quantityChanged();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnenduserChanging(string value);
-    partial void OnenduserChanged();
-    #endregion
-		
-		public tbl_SalesFreehavetopaid()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Order_Number", DbType="Float")]
-		public System.Nullable<double> Order_Number
-		{
-			get
-			{
-				return this._Order_Number;
-			}
-			set
-			{
-				if ((this._Order_Number != value))
-				{
-					this.OnOrder_NumberChanging(value);
-					this.SendPropertyChanging();
-					this._Order_Number = value;
-					this.SendPropertyChanged("Order_Number");
-					this.OnOrder_NumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_CTKM", DbType="NVarChar(255)")]
-		public string ma_CTKM
-		{
-			get
-			{
-				return this._ma_CTKM;
-			}
-			set
-			{
-				if ((this._ma_CTKM != value))
-				{
-					this.Onma_CTKMChanging(value);
-					this.SendPropertyChanging();
-					this._ma_CTKM = value;
-					this.SendPropertyChanged("ma_CTKM");
-					this.Onma_CTKMChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Material", DbType="NVarChar(255)")]
-		public string Material
-		{
-			get
-			{
-				return this._Material;
-			}
-			set
-			{
-				if ((this._Material != value))
-				{
-					this.OnMaterialChanging(value);
-					this.SendPropertyChanging();
-					this._Material = value;
-					this.SendPropertyChanged("Material");
-					this.OnMaterialChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(255)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstimateFree_quantity", DbType="Float")]
-		public System.Nullable<double> EstimateFree_quantity
-		{
-			get
-			{
-				return this._EstimateFree_quantity;
-			}
-			set
-			{
-				if ((this._EstimateFree_quantity != value))
-				{
-					this.OnEstimateFree_quantityChanging(value);
-					this.SendPropertyChanging();
-					this._EstimateFree_quantity = value;
-					this.SendPropertyChanged("EstimateFree_quantity");
-					this.OnEstimateFree_quantityChanged();
 				}
 			}
 		}

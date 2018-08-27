@@ -67,6 +67,8 @@
             this.oRDERWRONGSKILLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.bÁOCÁOCTKMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serverNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userAndRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,8 +77,7 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.lblocate = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.rEPORTSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.bÁOCÁOCTKMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vIEWCUSTOMERLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -204,6 +205,7 @@
             // 
             this.cUSTOMERToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.uPLOADCUSTOMERDATAToolStripMenuItem,
+            this.vIEWCUSTOMERLISTToolStripMenuItem,
             this.eDITCUSTOMERLISTToolStripMenuItem});
             this.cUSTOMERToolStripMenuItem.Name = "cUSTOMERToolStripMenuItem";
             this.cUSTOMERToolStripMenuItem.Size = new System.Drawing.Size(238, 24);
@@ -268,15 +270,15 @@
             // uPLOADORDERLISTToolStripMenuItem
             // 
             this.uPLOADORDERLISTToolStripMenuItem.Name = "uPLOADORDERLISTToolStripMenuItem";
-            this.uPLOADORDERLISTToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.uPLOADORDERLISTToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.uPLOADORDERLISTToolStripMenuItem.Text = "UPLOAD ORDER LIST";
             this.uPLOADORDERLISTToolStripMenuItem.Click += new System.EventHandler(this.uPLOADORDERLISTToolStripMenuItem_Click);
             // 
             // vIEWORDERToolStripMenuItem
             // 
             this.vIEWORDERToolStripMenuItem.Name = "vIEWORDERToolStripMenuItem";
-            this.vIEWORDERToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
-            this.vIEWORDERToolStripMenuItem.Text = "VIEW ORDER LIST";
+            this.vIEWORDERToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.vIEWORDERToolStripMenuItem.Text = "VIEW FREEORDER LIST";
             this.vIEWORDERToolStripMenuItem.Click += new System.EventHandler(this.vIEWORDERToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
@@ -303,26 +305,26 @@
             // 
             this.fREECASEWRONGFRECASECODEToolStripMenuItem.Image = global::Luckynumber.Properties.Resources.th5YSKEK6I1;
             this.fREECASEWRONGFRECASECODEToolStripMenuItem.Name = "fREECASEWRONGFRECASECODEToolStripMenuItem";
-            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.fREECASEWRONGFRECASECODEToolStripMenuItem.Text = "REVIEW MÃ KHUYẾN MẠI VÀ MESSAGE";
             this.fREECASEWRONGFRECASECODEToolStripMenuItem.Click += new System.EventHandler(this.fREECASEWRONGFRECASECODEToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(384, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(380, 6);
             // 
             // lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem
             // 
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Name = "lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem";
-            this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Text = "ĐƠN HÀNG TRẢ THIẾU KHUYẾN MẠI";
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Click += new System.EventHandler(this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem_Click);
             // 
             // lISTORDERHAVEOVERFREECASEToolStripMenuItem
             // 
             this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Name = "lISTORDERHAVEOVERFREECASEToolStripMenuItem";
-            this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Text = "ĐƠN HÀNG KHUYẾN MẠI TRẢ THỪA";
             this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Click += new System.EventHandler(this.lISTORDERHAVEOVERFREECASEToolStripMenuItem_Click);
             // 
@@ -330,43 +332,59 @@
             // 
             this.lISTORDERWRONGMESSAGEToolStripMenuItem.Image = global::Luckynumber.Properties.Resources.th5YSKEK6I;
             this.lISTORDERWRONGMESSAGEToolStripMenuItem.Name = "lISTORDERWRONGMESSAGEToolStripMenuItem";
-            this.lISTORDERWRONGMESSAGEToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.lISTORDERWRONGMESSAGEToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.lISTORDERWRONGMESSAGEToolStripMenuItem.Text = "ĐƠN HÀNG SAI MESSAGE";
             this.lISTORDERWRONGMESSAGEToolStripMenuItem.Click += new System.EventHandler(this.lISTORDERWRONGMESSAGEToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(384, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(380, 6);
             // 
             // oRDEROVERTIMEOFPROGARMEToolStripMenuItem
             // 
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Image = global::Luckynumber.Properties.Resources.cocacola;
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Name = "oRDEROVERTIMEOFPROGARMEToolStripMenuItem";
-            this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Text = "ĐƠN HÀNG KM KHÔNG TRONG THỜI GIAN CTKM";
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Click += new System.EventHandler(this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem_Click);
             // 
             // oRDERWRONGSKILLToolStripMenuItem
             // 
             this.oRDERWRONGSKILLToolStripMenuItem.Name = "oRDERWRONGSKILLToolStripMenuItem";
-            this.oRDERWRONGSKILLToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.oRDERWRONGSKILLToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.oRDERWRONGSKILLToolStripMenuItem.Text = "ĐƠN HÀNG KM SAI SCHEME";
             this.oRDERWRONGSKILLToolStripMenuItem.Click += new System.EventHandler(this.oRDERWRONGSKILLToolStripMenuItem_Click);
             // 
             // đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem
             // 
             this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Name = "đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem";
-            this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Text = "ĐƠN HÀNG MUA GIÁ TIỀN = 0";
             this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Click += new System.EventHandler(this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem_Click);
             // 
             // đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem
             // 
             this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Name = "đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem";
-            this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Text = "ĐƠN HÀNG KHUYẾN MẠI GIÁ TIỀN <>";
             this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Click += new System.EventHandler(this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem_Click);
+            // 
+            // rEPORTSToolStripMenuItem1
+            // 
+            this.rEPORTSToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bÁOCÁOCTKMToolStripMenuItem});
+            this.rEPORTSToolStripMenuItem1.Image = global::Luckynumber.Properties.Resources.th5YSKEK6I1;
+            this.rEPORTSToolStripMenuItem1.Name = "rEPORTSToolStripMenuItem1";
+            this.rEPORTSToolStripMenuItem1.Size = new System.Drawing.Size(107, 25);
+            this.rEPORTSToolStripMenuItem1.Text = "REPORTS";
+            // 
+            // bÁOCÁOCTKMToolStripMenuItem
+            // 
+            this.bÁOCÁOCTKMToolStripMenuItem.Name = "bÁOCÁOCTKMToolStripMenuItem";
+            this.bÁOCÁOCTKMToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.bÁOCÁOCTKMToolStripMenuItem.Text = "BÁO CÁO CTKM";
+            this.bÁOCÁOCTKMToolStripMenuItem.Click += new System.EventHandler(this.bÁOCÁOCTKMToolStripMenuItem_Click);
             // 
             // systemConfigToolStripMenuItem
             // 
@@ -455,21 +473,12 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Region: ";
             // 
-            // rEPORTSToolStripMenuItem1
+            // vIEWCUSTOMERLISTToolStripMenuItem
             // 
-            this.rEPORTSToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bÁOCÁOCTKMToolStripMenuItem});
-            this.rEPORTSToolStripMenuItem1.Image = global::Luckynumber.Properties.Resources.th5YSKEK6I1;
-            this.rEPORTSToolStripMenuItem1.Name = "rEPORTSToolStripMenuItem1";
-            this.rEPORTSToolStripMenuItem1.Size = new System.Drawing.Size(107, 25);
-            this.rEPORTSToolStripMenuItem1.Text = "REPORTS";
-            // 
-            // bÁOCÁOCTKMToolStripMenuItem
-            // 
-            this.bÁOCÁOCTKMToolStripMenuItem.Name = "bÁOCÁOCTKMToolStripMenuItem";
-            this.bÁOCÁOCTKMToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
-            this.bÁOCÁOCTKMToolStripMenuItem.Text = "BÁO CÁO CTKM";
-            this.bÁOCÁOCTKMToolStripMenuItem.Click += new System.EventHandler(this.bÁOCÁOCTKMToolStripMenuItem_Click);
+            this.vIEWCUSTOMERLISTToolStripMenuItem.Name = "vIEWCUSTOMERLISTToolStripMenuItem";
+            this.vIEWCUSTOMERLISTToolStripMenuItem.Size = new System.Drawing.Size(238, 24);
+            this.vIEWCUSTOMERLISTToolStripMenuItem.Text = "VIEW CUSTOMER LIST";
+            this.vIEWCUSTOMERLISTToolStripMenuItem.Click += new System.EventHandler(this.vIEWCUSTOMERLISTToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -543,6 +552,7 @@
         private ToolStripMenuItem đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem;
         private ToolStripMenuItem rEPORTSToolStripMenuItem1;
         private ToolStripMenuItem bÁOCÁOCTKMToolStripMenuItem;
+        private ToolStripMenuItem vIEWCUSTOMERLISTToolStripMenuItem;
     }
 }
 

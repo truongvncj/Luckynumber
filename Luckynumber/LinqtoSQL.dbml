@@ -21,32 +21,13 @@
     <Type Name="tbl_Temp">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Version" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="server" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
       <Column Name="enduser" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
       <Column Name="password" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
-      <Column Name="signoffby" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
-      <Column Name="possition" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
-      <Column Name="phonecontact" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
-      <Column Name="siteid" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="note" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
-      <Column Name="contactperson" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
-      <Column Name="nameofbarnch" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
-      <Column Name="addressofbarnch" Type="System.String" DbType="NChar(225)" CanBeNull="true" />
-      <Column Name="DeleteData" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="EditServerData" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Depositintput" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="EditReportsaffter" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="InputDepositInpass" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="PriodMake" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Systemconfig" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="uploadBeginbalance" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="endyearPackdata" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="makedepostfromadjamount" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="deductdepositamount" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="redoInputviry" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="uploadpriviousPriod" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OrderFree" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Orderbuy" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Totalreports" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="imagesign" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="nationKA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Lkright" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_CTKM" Member="tbl_CTKMs">
@@ -81,17 +62,6 @@
       <Column Name="[Pack size]" Member="Pack_size" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="[PC Quy chuan]" Member="PC_Quy_chuan" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="[UC Rate]" Member="UC_Rate" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="enduser" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tbl_SalesFreehavetopaid" Member="tbl_SalesFreehavetopaids">
-    <Type Name="tbl_SalesFreehavetopaid">
-      <Column Name="Order_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="ma_CTKM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Material" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="EstimateFree_quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="enduser" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>

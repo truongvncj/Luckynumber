@@ -3987,6 +3987,21 @@ namespace Luckynumber.View
         {
 
             luckyno md = new luckyno();
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+            var rs = from p in db.tbl_Temps
+                     where p.enduser == enduser
+                     select p;
+            foreach (var item in rs)
+            {
+                item.Orderbuy = false;
+                db.SubmitChanges();
+            }
+
+
 
             md.UpPUCHASEORDER();
             ///     Model.Conditioncheck.updaMAKHKM();
@@ -4019,6 +4034,22 @@ namespace Luckynumber.View
         private void uPLOADORDERLISTToolStripMenuItem_Click(object sender, EventArgs e)
         {
             luckyno md = new luckyno();
+
+
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+            var rs = from p in db.tbl_Temps
+                     where p.enduser == enduser
+                     select p;
+            foreach (var item in rs)
+            {
+                item.OrderFree = false;
+                db.SubmitChanges();
+            }
+
 
             md.UpFreePUCHASEORDER();
 
@@ -4108,11 +4139,24 @@ namespace Luckynumber.View
         private void lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+            var rs = from p in db.tbl_Temps
+                     where p.enduser == enduser
+                     select p;
+            foreach (var item in rs)
+            {
+                item.Totalreports = false;
+                db.SubmitChanges();
+            }
 
             #region  updatemã Rpttongctkhuyenmai
             SqlConnection conn2 = null;
             SqlDataReader rdr1 = null;
-            string enduser = Utils.getusername();
+        //    string enduser = Utils.getusername();
             string destConnString = Utils.getConnectionstr();
             try
             {
@@ -4147,10 +4191,17 @@ namespace Luckynumber.View
             #endregion
 
 
+            bool kq = false;
+            do
+            {
+                System.Threading.Thread.Sleep(1000);
 
-            string connection_string = Utils.getConnectionstr();
-            var db = new LinqtoSQLDataContext(connection_string);
 
+                kq = (from p in db.tbl_Temps
+                      where p.enduser == enduser
+                      select p.Totalreports).FirstOrDefault();
+
+            } while (kq== false);
 
 
 
@@ -4306,11 +4357,23 @@ namespace Luckynumber.View
 
         private void lISTORDERHAVEOVERFREECASEToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string connection_string = Utils.getConnectionstr();
 
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+            var rs = from p in db.tbl_Temps
+                     where p.enduser == enduser
+                     select p;
+            foreach (var item in rs)
+            {
+                item.Totalreports = false;
+                db.SubmitChanges();
+            }
             #region  updatemã Rpttongctkhuyenmai
             SqlConnection conn2 = null;
             SqlDataReader rdr1 = null;
-            string enduser = Utils.getusername();
+        //    string enduser = Utils.getusername();
             string destConnString = Utils.getConnectionstr();
             try
             {
@@ -4345,9 +4408,17 @@ namespace Luckynumber.View
             #endregion
 
 
+            bool kq = false;
+            do
+            {
+                System.Threading.Thread.Sleep(1000);
 
-            string connection_string = Utils.getConnectionstr();
-            var db = new LinqtoSQLDataContext(connection_string);
+
+                kq = (from p in db.tbl_Temps
+                      where p.enduser == enduser
+                      select p.Totalreports).FirstOrDefault();
+
+            } while (kq==false);
 
 
 
@@ -4545,13 +4616,25 @@ namespace Luckynumber.View
 
         private void bÁOCÁOCTKMToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string connection_string = Utils.getConnectionstr();
 
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+            var rs = from p in db.tbl_Temps
+                     where p.enduser == enduser
+                     select p;
+            foreach (var item in rs)
+            {
+                item.Totalreports = false;
+                db.SubmitChanges();
+            }
 
 
             #region  updatemã Rpttongctkhuyenmai
             SqlConnection conn2 = null;
             SqlDataReader rdr1 = null;
-            string enduser = Utils.getusername();
+          //  string enduser = Utils.getusername();
             string destConnString = Utils.getConnectionstr();
             try
             {
@@ -4589,9 +4672,26 @@ namespace Luckynumber.View
 
 
 
-            string connection_string = Utils.getConnectionstr();
-            var db = new LinqtoSQLDataContext(connection_string);
+            //     string connection_string = Utils.getConnectionstr();
+            //     var db = new LinqtoSQLDataContext(connection_string);
+            //
 
+            bool kq = false;
+
+     
+            do 
+            {
+                System.Threading.Thread.Sleep(1000);
+
+
+                 kq = (from p in db.tbl_Temps
+                           where p.enduser == enduser
+                           select p.Totalreports).FirstOrDefault();                           
+
+            } while (kq==false);
+
+
+            
 
 
 
@@ -4620,16 +4720,30 @@ namespace Luckynumber.View
 
 
             Viewtable viewtbl = new Viewtable(rs2, db, "BÁO CÁO CTKM", 100, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
+            viewtbl.ShowDialog();
+
+
+
+
+
+
+
+
+
+        }
+
+        private void vIEWCUSTOMERLISTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+            var rs = from p in db.tbl_NhomKHKMs
+                     where p.enduser == enduser
+                     select p;
+
+            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách nhóm khách hàng", 100, DateTime.Today, DateTime.Today);
             viewtbl.Show();
-
-
-
-
-
-
-
-
-
         }
     }
 

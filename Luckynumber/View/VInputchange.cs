@@ -418,7 +418,7 @@ namespace Luckynumber.View
 
                             var results4 = db.ExecuteQuery(Typeofftable, StrQuery);
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
                       //      MessageBox.Show(ex.ToString());
                             //this.dataGridView1.Rows[0].Cells["Status"].Value = ex.ToString();

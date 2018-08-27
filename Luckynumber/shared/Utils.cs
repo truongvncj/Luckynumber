@@ -1191,29 +1191,29 @@ namespace Luckynumber
                 right = true;
 
                 Version = (int)rs.Version;
-                deleteAlldate = rs.DeleteData;
-                editOlddatabase = rs.EditReportsaffter;
+       //         deleteAlldate = rs.DeleteData;
+       //         editOlddatabase = rs.EditReportsaffter;
 
 
-                Depositintput = rs.Depositintput;
+        //        Depositintput = rs.Depositintput;
 
-                Systemconfig = rs.Systemconfig;
-
-
-                uploadBeginbalance = rs.uploadBeginbalance;
-
-                endyearPackdata = rs.endyearPackdata;
+                Systemconfig = rs.Lkright;
 
 
-                InputDepositInpass = rs.InputDepositInpass;
-                redoInputviry = rs.redoInputviry;
+//uploadBeginbalance = rs.uploadBeginbalance;
 
-                depostfromadjamount = rs.makedepostfromadjamount;
-                deductdepositamount = rs.deductdepositamount;
+          //      endyearPackdata = rs.endyearPackdata;
 
-                uploadpriviousPriod = rs.uploadpriviousPriod;
 
-                nationKA = rs.nationKA;
+//InputDepositInpass = rs.InputDepositInpass;
+         //       redoInputviry = rs.redoInputviry;
+
+           //     depostfromadjamount = rs.makedepostfromadjamount;
+           //     deductdepositamount = rs.deductdepositamount;
+
+           //     uploadpriviousPriod = rs.uploadpriviousPriod;
+
+           //     nationKA = rs.nationKA;
                 //salechange = rs.salechange;
 
                 //reports = rs.reports;
