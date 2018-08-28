@@ -3923,17 +3923,32 @@ namespace Luckynumber.View
 
         private void oRDERBYEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
             string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
             string enduser = Utils.getusername();
-            var rs = from p in db.tbl_Salesorders
-                     where p.enduser == enduser
-                     select p;
 
-            Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng mua", 100, DateTime.Today, DateTime.Today);
+            int i = 0;
+            bool kq = false;
+            do
+            {
+                i = i + 1;
+                System.Threading.Thread.Sleep(1000);
+
+
+                kq = (from p in db.tbl_Temps
+                      where p.enduser == enduser
+                      select p.Orderbuy).FirstOrDefault();
+
+            } while (kq == false || i < 10);
+
+
+
+            var rs1 = from p in db.tbl_Salesorders
+                      where p.enduser == enduser
+                      select p;
+
+            Viewtable viewtbl = new Viewtable(rs1, db, "Danh sách đơn hàng mua", 100, DateTime.Today, DateTime.Today);
             viewtbl.Show();
 
 
@@ -3945,9 +3960,37 @@ namespace Luckynumber.View
         private void vIEWORDERToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string connection_string = Utils.getConnectionstr();
+            //  string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
             string enduser = Utils.getusername();
+
+            //var rs = from p in db.tbl_Temps
+            //         where p.enduser == enduser
+            //         select p;
+            //foreach (var item in rs)
+            //{
+            //    item.Orderbuy = false;
+            //    db.SubmitChanges();
+            //}
+
+            bool kq = false;
+
+            int i = 0;
+            do
+            {
+                i = i + 1;
+                System.Threading.Thread.Sleep(1000);
+
+
+                kq = (from p in db.tbl_Temps
+                      where p.enduser == enduser
+                      select p.OrderFree).FirstOrDefault();
+
+            } while (kq == false || i < 10);
+
+            //  var db = new LinqtoSQLDataContext(connection_string);
+            //  string enduser = Utils.getusername();
             var rs = from p in db.tbl_SalesFreeOrders
                      where p.enduser == enduser
                      select p;
@@ -4156,7 +4199,7 @@ namespace Luckynumber.View
             #region  updatemã Rpttongctkhuyenmai
             SqlConnection conn2 = null;
             SqlDataReader rdr1 = null;
-        //    string enduser = Utils.getusername();
+            //    string enduser = Utils.getusername();
             string destConnString = Utils.getConnectionstr();
             try
             {
@@ -4191,9 +4234,11 @@ namespace Luckynumber.View
             #endregion
 
 
+        
             bool kq = false;
             do
             {
+               
                 System.Threading.Thread.Sleep(1000);
 
 
@@ -4201,9 +4246,7 @@ namespace Luckynumber.View
                       where p.enduser == enduser
                       select p.Totalreports).FirstOrDefault();
 
-            } while (kq== false);
-
-
+            } while (kq == false );
 
 
             var rs2 = from p in db.tbl_ChecktongKMs
@@ -4373,7 +4416,7 @@ namespace Luckynumber.View
             #region  updatemã Rpttongctkhuyenmai
             SqlConnection conn2 = null;
             SqlDataReader rdr1 = null;
-        //    string enduser = Utils.getusername();
+            //    string enduser = Utils.getusername();
             string destConnString = Utils.getConnectionstr();
             try
             {
@@ -4408,9 +4451,11 @@ namespace Luckynumber.View
             #endregion
 
 
+          
             bool kq = false;
             do
             {
+              
                 System.Threading.Thread.Sleep(1000);
 
 
@@ -4418,10 +4463,7 @@ namespace Luckynumber.View
                       where p.enduser == enduser
                       select p.Totalreports).FirstOrDefault();
 
-            } while (kq==false);
-
-
-
+            } while (kq == false );
 
 
             var rs2 = from p in db.tbl_ChecktongKMs
@@ -4634,7 +4676,7 @@ namespace Luckynumber.View
             #region  updatemã Rpttongctkhuyenmai
             SqlConnection conn2 = null;
             SqlDataReader rdr1 = null;
-          //  string enduser = Utils.getusername();
+            //  string enduser = Utils.getusername();
             string destConnString = Utils.getConnectionstr();
             try
             {
@@ -4672,26 +4714,22 @@ namespace Luckynumber.View
 
 
 
-            //     string connection_string = Utils.getConnectionstr();
-            //     var db = new LinqtoSQLDataContext(connection_string);
-            //
 
+        
             bool kq = false;
-
-     
-            do 
+            do
             {
+              
                 System.Threading.Thread.Sleep(1000);
 
 
-                 kq = (from p in db.tbl_Temps
-                           where p.enduser == enduser
-                           select p.Totalreports).FirstOrDefault();                           
+                kq = (from p in db.tbl_Temps
+                      where p.enduser == enduser
+                      select p.Totalreports).FirstOrDefault();
 
-            } while (kq==false);
+            } while (kq == false );
 
 
-            
 
 
 
@@ -4744,6 +4782,11 @@ namespace Luckynumber.View
 
             Viewtable viewtbl = new Viewtable(rs, db, "Danh sách nhóm khách hàng", 100, DateTime.Today, DateTime.Today);
             viewtbl.Show();
+        }
+
+        private void uPLOADDATAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
