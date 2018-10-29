@@ -295,9 +295,9 @@ namespace Luckynumber.View
             }
 
             //  "BÁO CÁO CTKM"
-        //    Số_lượng_hàng_mua = p.So_luong_hang_Mua,
-          //                Số_lượng_được_trả = p.So_luong_duoc_KM,
-           //               Số_lượng_đã_trả = p.So_luong_thuc_te_KM,
+            //    Số_lượng_hàng_mua = p.So_luong_hang_Mua,
+            //                Số_lượng_được_trả = p.So_luong_duoc_KM,
+            //               Số_lượng_đã_trả = p.So_luong_thuc_te_KM,
 
             if (fornname == "BÁO CÁO CTKM")
             {
@@ -576,7 +576,8 @@ namespace Luckynumber.View
 
                     string materialcode = dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Material"].Value.ToString();
                     DateTime Dlv_Date = (DateTime)dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Dlv_Date"].Value;
-               //     string re = dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Material"].Value.ToString();
+                    string Saleorg = dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["SOrg"].Value.ToString();
+                    //     string re = dataGridView1.Rows[this.dataGridView1.CurrentRow.Index].Cells["Material"].Value.ToString();
 
                     string enduser = Utils.getusername();
 
@@ -585,9 +586,9 @@ namespace Luckynumber.View
                     var rsprogarme = from p in dc.tbl_CTKMs
                                      where p.enduser == enduser
                                      && p.Mã_SP_KM == materialcode
-                                  //   && p.Từ_ngày <= Dlv_Date
-                                  //    && p.Đến_Ngày >= Dlv_Date
-
+                                    && p.SaleOrg == Saleorg
+                                      //   && p.Đến_Ngày >= Dlv_Date
+                                    //    && p.Từ_ngày <= Dlv_Date
                                      select p;
                     //       public List<ComboboxItem> datacolecttionselect;//{ get; private set; }
                     //1. Định nghĩa 1 delegate
@@ -602,7 +603,7 @@ namespace Luckynumber.View
                     {
                         ComboboxItem datadetail = new ComboboxItem();
                         datadetail.Value = item.Mã_CT;
-                        datadetail.Text = item.PO_Message;
+                        datadetail.Text =  item.SaleOrg + "  Buy : " + item.Mã_SP_Mua + "-- "+ item.Tên_SP_mua + "  --PO: " + item.PO_Message + "  --From date: " + item.Từ_ngày.Value.ToShortDateString() + "  --Todate: " + item.Đến_Ngày.Value.ToShortDateString();
 
                         datacolecttionselect.Add(datadetail);
                     }
@@ -616,7 +617,7 @@ namespace Luckynumber.View
                     progaame.ShowDialog();
                     string mactkm = progaame.selectvalue;
                     string namectkm = progaame.selecttext;
-                  
+
                     bool kq = progaame.kq;
 
 
@@ -641,11 +642,11 @@ namespace Luckynumber.View
                             {
                                 item2.ma_CTKM = mactkm;
                                 item2.New_PO_number = namectkm;
-                                              var ctkmchon = from p in dc.tbl_CTKMs
-                                              where p.enduser == enduser
-                                              && p.Mã_CT == mactkm
-                                               && p.PO_Message == namectkm
-                                              select p;
+                                var ctkmchon = from p in dc.tbl_CTKMs
+                                               where p.enduser == enduser
+                                               && p.Mã_CT == mactkm
+                                                && p.PO_Message == namectkm
+                                               select p;
 
                                 foreach (var item in ctkmchon)
                                 {

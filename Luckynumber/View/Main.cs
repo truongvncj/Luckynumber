@@ -3965,32 +3965,22 @@ namespace Luckynumber.View
             var db = new LinqtoSQLDataContext(connection_string);
             string enduser = Utils.getusername();
 
-            //var rs = from p in db.tbl_Temps
-            //         where p.enduser == enduser
-            //         select p;
-            //foreach (var item in rs)
+            //bool kq = false;
+
+            //int i = 0;
+            //do
             //{
-            //    item.Orderbuy = false;
-            //    db.SubmitChanges();
-            //}
-
-            bool kq = false;
-
-            int i = 0;
-            do
-            {
-                i = i + 1;
-                System.Threading.Thread.Sleep(1000);
+            //    i = i + 1;
+            //    System.Threading.Thread.Sleep(1000);
 
 
-                kq = (from p in db.tbl_Temps
-                      where p.enduser == enduser
-                      select p.OrderFree).FirstOrDefault();
+            //    kq = (from p in db.tbl_Temps
+            //          where p.enduser == enduser
+            //          select p.OrderFree).FirstOrDefault();
 
-            } while (kq == false || i < 10);
+            //} while (kq == false || i < 10);
 
-            //  var db = new LinqtoSQLDataContext(connection_string);
-            //  string enduser = Utils.getusername();
+       
             var rs = from p in db.tbl_SalesFreeOrders
                      where p.enduser == enduser
                      select p;
@@ -4050,10 +4040,10 @@ namespace Luckynumber.View
             ///     Model.Conditioncheck.updaMAKHKM();
             //    Control_ac ct = new Control_ac();
 
-            Thread t1 = new Thread(Model.Conditioncheck.updaCTVAsoluongKM); // gồm cả updaet mã khkm mà só lương ctkm
-            t1.IsBackground = true;
-            t1.Start();
-            MessageBox.Show("Upload done", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //Thread t1 = new Thread(Model.Conditioncheck.updaCTVAsoluongKM); // gồm cả updaet mã khkm mà só lương ctkm
+            //t1.IsBackground = true;
+            //t1.Start();
+            //MessageBox.Show("Upload done", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             //     Model.Conditioncheck.updaMAKHKM();
             //   xxx
@@ -4064,12 +4054,12 @@ namespace Luckynumber.View
             //var db = new LinqtoSQLDataContext(connection_string);
             //string enduser = Utils.getusername();
 
-            //var rs = from p in db.tbl_Salesorders
-            //         where p.enduser == enduser
-            //         select p;
+            var rs22 = from p in db.tbl_Salesorders
+                     where p.enduser == enduser
+                     select p;
 
-            //Viewtable viewtbl = new Viewtable(rs, db, "Danh sách đơn hàng mua", 100, DateTime.Today, DateTime.Today);
-            //viewtbl.Show();
+            Viewtable viewtbl = new Viewtable(rs22, db, "Danh sách đơn hàng mua", 100, DateTime.Today, DateTime.Today);
+            viewtbl.Show();
 
 
         }
@@ -4594,7 +4584,7 @@ namespace Luckynumber.View
 
 
             Viewtable viewtbl = new Viewtable(rs, db, "DANH SÁCH ĐƠN HÀNG KHUYẾN MẠI CHƯA PHÂN LOẠI ĐƯỢC MÃ CTKM ", 555, DateTime.Today, DateTime.Today);// 555 mã chuong trinh khuyen mai
-            viewtbl.ShowDialog();
+            viewtbl.Show();
         }
 
         private void orderNotEnoughFreecaseDetailToolStripMenuItem_Click(object sender, EventArgs e)

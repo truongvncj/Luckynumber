@@ -405,7 +405,7 @@ namespace Luckynumber.Model
             //throw new NotImplementedException();
         }
 
-        public static void updaCTVAsoluongKM()
+        public static void updaCTVAsoluongKM()  /// --- not use to update puchare order
         {
             //
 
@@ -475,6 +475,9 @@ namespace Luckynumber.Model
 
 
             //#endregion
-        }
+        }  /// --- not use
+
+
+
     }
 }

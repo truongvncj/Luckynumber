@@ -29,7 +29,7 @@ namespace Luckynumber.View
             InitializeComponent();
 
 
-
+            cbselect.DropDownWidth = 900;
             this.kq = false;
          //   cbselect
             if (fitername == "555")  // là setlec progarme
