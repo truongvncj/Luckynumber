@@ -3928,19 +3928,19 @@ namespace Luckynumber.View
             var db = new LinqtoSQLDataContext(connection_string);
             string enduser = Utils.getusername();
 
-            int i = 0;
-            bool kq = false;
-            do
-            {
-                i = i + 1;
-                System.Threading.Thread.Sleep(1000);
+            //int i = 0;
+            //bool kq = false;
+            //do
+            //{
+            //    i = i + 1;
+            //    System.Threading.Thread.Sleep(1000);
 
 
-                kq = (from p in db.tbl_Temps
-                      where p.enduser == enduser
-                      select p.Orderbuy).FirstOrDefault();
+            //    kq = (from p in db.tbl_Temps
+            //          where p.enduser == enduser
+            //          select p.Orderbuy).FirstOrDefault();
 
-            } while (kq == false || i < 10);
+            //} while (kq == false || i < 10);
 
 
 
