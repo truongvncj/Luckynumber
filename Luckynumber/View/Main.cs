@@ -4118,6 +4118,21 @@ namespace Luckynumber.View
             var db = new LinqtoSQLDataContext(connection_string);
             string enduser = Utils.getusername();
 
+            #region cehck xem da lam cai review chua
+            var rscheck = from pm in db.tbl_SalesFreeOrders
+                          where pm.enduser == enduser
+                          where pm.ma_CTKM == ""
+                          select pm;
+
+
+            if (rscheck.Count() > 0)
+            {
+                MessageBox.Show("Please do the review khuyến mại và message first !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            #endregion  cehck xem da lam cai review chua
+
+
 
             var rs = from p in db.tbl_SalesFreeOrders
                      where p.enduser == enduser
@@ -4186,6 +4201,24 @@ namespace Luckynumber.View
                 db.SubmitChanges();
             }
 
+            //    string connection_string = Utils.getConnectionstr();
+
+            //     var db = new LinqtoSQLDataContext(connection_string);
+            //     string enduser = Utils.getusername();
+            #region cehck xem da lam cai review chua
+            var rscheck = from pm in db.tbl_SalesFreeOrders
+                     where pm.enduser == enduser
+                     where pm.ma_CTKM == ""
+                     select pm;
+
+
+            if (rscheck.Count() >0)
+            {
+                MessageBox.Show("Please do the review khuyến mại và message first !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            #endregion  cehck xem da lam cai review chua
+
             #region  updatemã Rpttongctkhuyenmai
             SqlConnection conn2 = null;
             SqlDataReader rdr1 = null;
@@ -4225,18 +4258,18 @@ namespace Luckynumber.View
 
 
         
-            bool kq = false;
-            do
-            {
+            //bool kq = false;
+            //do
+            //{
                
-                System.Threading.Thread.Sleep(1000);
+            //    System.Threading.Thread.Sleep(1000);
 
 
-                kq = (from p in db.tbl_Temps
-                      where p.enduser == enduser
-                      select p.Totalreports).FirstOrDefault();
+            //    kq = (from p in db.tbl_Temps
+            //          where p.enduser == enduser
+            //          select p.Totalreports).FirstOrDefault();
 
-            } while (kq == false );
+            //} while (kq == false );
 
 
             var rs2 = from p in db.tbl_ChecktongKMs
@@ -4295,6 +4328,22 @@ namespace Luckynumber.View
             var db = new LinqtoSQLDataContext(connection_string);
             string enduser = Utils.getusername();
 
+            #region cehck xem da lam cai review chua
+            var rscheck = from pm in db.tbl_SalesFreeOrders
+                          where pm.enduser == enduser
+                          where pm.ma_CTKM == ""
+                          select pm;
+
+
+            if (rscheck.Count() > 0)
+            {
+                MessageBox.Show("Please do the review khuyến mại và message first !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            #endregion  cehck xem da lam cai review chua
+
+
+
             var rs = from p in db.tbl_SalesFreeOrders
                      where p.enduser == enduser
                      where p.ma_CTKM == "" || p.ma_CTKM == "0"
@@ -4334,25 +4383,23 @@ namespace Luckynumber.View
 
             string enduser = Utils.getusername();
 
-            //var rscheck = from p in db.tbl_SalesFreeOrders
-            //              where p.enduser == enduser
-            //              && p.ma_CTKM != "0"
-            //              && p.ma_CTKM != ""
-            //              where p.ma_CTKM != ""
-            //              select p;
-
-            //foreach (var item in rscheck)
-            //{
-            //    item.rptselect = false;
-            //    if (Model.Conditioncheck.checkIsOvertimeofGROgarame(item.ma_CTKM, (DateTime)item.Dlv_Date))
-            //    {
-
-            //        item.rptselect = true;
-            //    }
+            #region cehck xem da lam cai review chua
+            var rscheck = from pm in db.tbl_SalesFreeOrders
+                          where pm.enduser == enduser
+                          where pm.ma_CTKM == ""
+                          select pm;
 
 
-            //    db.SubmitChanges();
-            //}
+            if (rscheck.Count() > 0)
+            {
+                MessageBox.Show("Please do the review khuyến mại và message first !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            #endregion  cehck xem da lam cai review chua
+
+
+
+
 
             var rs = from p in db.tbl_SalesFreeOrders
 
@@ -4395,14 +4442,32 @@ namespace Luckynumber.View
             var db = new LinqtoSQLDataContext(connection_string);
             string enduser = Utils.getusername();
 
-            var rs = from p in db.tbl_Temps
-                     where p.enduser == enduser
-                     select p;
-            foreach (var item in rs)
+            //var rs = from p in db.tbl_Temps
+            //         where p.enduser == enduser
+            //         select p;
+            //foreach (var item in rs)
+            //{
+            //    item.Totalreports = false;
+            //    db.SubmitChanges();
+            //}
+
+            #region cehck xem da lam cai review chua
+            var rscheck = from pm in db.tbl_SalesFreeOrders
+                          where pm.enduser == enduser
+                          where pm.ma_CTKM == ""
+                          select pm;
+
+
+            if (rscheck.Count() > 0)
             {
-                item.Totalreports = false;
-                db.SubmitChanges();
+                MessageBox.Show("Please do the review khuyến mại và message first !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+            #endregion  cehck xem da lam cai review chua
+
+
+
+
             #region  updatemã Rpttongctkhuyenmai
             SqlConnection conn2 = null;
             SqlDataReader rdr1 = null;
@@ -4442,18 +4507,18 @@ namespace Luckynumber.View
 
 
           
-            bool kq = false;
-            do
-            {
+            //bool kq = false;
+            //do
+            //{
               
-                System.Threading.Thread.Sleep(1000);
+            //    System.Threading.Thread.Sleep(1000);
 
 
-                kq = (from p in db.tbl_Temps
-                      where p.enduser == enduser
-                      select p.Totalreports).FirstOrDefault();
+            //    kq = (from p in db.tbl_Temps
+            //          where p.enduser == enduser
+            //          select p.Totalreports).FirstOrDefault();
 
-            } while (kq == false );
+            //} while (kq == false );
 
 
             var rs2 = from p in db.tbl_ChecktongKMs
@@ -4599,6 +4664,23 @@ namespace Luckynumber.View
             var db = new LinqtoSQLDataContext(connection_string);
             string enduser = Utils.getusername();
 
+            #region cehck xem da lam cai review chua
+            var rscheck = from pm in db.tbl_SalesFreeOrders
+                          where pm.enduser == enduser
+                          where pm.ma_CTKM == ""
+                          select pm;
+
+
+            if (rscheck.Count() > 0)
+            {
+                MessageBox.Show("Please do the review khuyến mại và message first !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            #endregion  cehck xem da lam cai review chua
+
+
+
+
             var rs = from p in db.tbl_Salesorders
                      where p.enduser == enduser
                      where p.Net_value == 0
@@ -4625,7 +4707,19 @@ namespace Luckynumber.View
 
             var db = new LinqtoSQLDataContext(connection_string);
             string enduser = Utils.getusername();
+            #region cehck xem da lam cai review chua
+            var rscheck = from pm in db.tbl_SalesFreeOrders
+                          where pm.enduser == enduser
+                          where pm.ma_CTKM == ""
+                          select pm;
 
+
+            if (rscheck.Count() > 0)
+            {
+                MessageBox.Show("Please do the review khuyến mại và message first !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            #endregion  cehck xem da lam cai review chua
             var rs = from p in db.tbl_SalesFreeOrders
                      where p.enduser == enduser
                      where p.Net_value != 0
