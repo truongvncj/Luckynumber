@@ -263,18 +263,18 @@ namespace Luckynumber.View
             this.rs = rs;
             this.lb_seach.Text = "F3 TÌM KIẾM";
 
-            this.bt_sendinggroup.Visible = false;
+          //  this.bt_sendinggroup.Visible = false;
             this.lb_seach.Visible = false;
             this.Pl_endview.Visible = false;
 
 
 
             this.Text = fornname;
-            this.btAutoUpdatedepo.Visible = false;
+         //   this.btAutoUpdatedepo.Visible = false;
 
-            this.btSendlistUpdate.Visible = false;
-            this.bt_listunsend.Visible = false;
-            btpostclear.Visible = false;
+        //    this.btSendlistUpdate.Visible = false;
+         //   this.bt_listunsend.Visible = false;
+        //    btpostclear.Visible = false;
             lb_seach.Visible = false;
 
 
@@ -5155,6 +5155,36 @@ namespace Luckynumber.View
 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
         {
+
+
+
+        }
+
+        private void btCaculationProgr_Click(object sender, EventArgs e)
+        {
+            string connection_string = Utils.getConnectionstr();
+
+            var db = new LinqtoSQLDataContext(connection_string);
+            string enduser = Utils.getusername();
+
+
+            #region cehck xem da lam cai review chua
+            var rscheck = from pm in db.tbl_SalesFreeOrders
+                          where pm.enduser == enduser
+                          where pm.ma_CTKM == ""
+                          select pm;
+
+
+            if (rscheck.Count() > 0)
+            {
+                MessageBox.Show("Please finish all the review khuyến mại và message first !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            #endregion  cehck xem da lam cai review chua
+
+
+
+
 
 
 

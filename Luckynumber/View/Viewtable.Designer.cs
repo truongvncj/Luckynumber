@@ -47,13 +47,9 @@ namespace Luckynumber.View
             this.lb_tongamount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btpostclear = new System.Windows.Forms.Button();
-            this.btAutoUpdatedepo = new System.Windows.Forms.Button();
-            this.bt_sendinggroup = new System.Windows.Forms.Button();
-            this.btSendlistUpdate = new System.Windows.Forms.Button();
             this.lb_seach = new System.Windows.Forms.Label();
-            this.bt_listunsend = new System.Windows.Forms.Button();
             this.bt_exporttoex = new System.Windows.Forms.Button();
+            this.btCaculationProgr = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.Pl_endview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -254,54 +250,6 @@ namespace Luckynumber.View
             this.dataGridView1.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView1_Paint);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
-            // btpostclear
-            // 
-            this.btpostclear.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btpostclear.Location = new System.Drawing.Point(1027, 12);
-            this.btpostclear.Name = "btpostclear";
-            this.btpostclear.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btpostclear.Size = new System.Drawing.Size(201, 21);
-            this.btpostclear.TabIndex = 9;
-            this.btpostclear.Text = "Post Clear FressGlasses on Letter";
-            this.btpostclear.UseVisualStyleBackColor = true;
-            this.btpostclear.Click += new System.EventHandler(this.btpostclear_Click);
-            // 
-            // btAutoUpdatedepo
-            // 
-            this.btAutoUpdatedepo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btAutoUpdatedepo.Location = new System.Drawing.Point(131, 10);
-            this.btAutoUpdatedepo.Name = "btAutoUpdatedepo";
-            this.btAutoUpdatedepo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btAutoUpdatedepo.Size = new System.Drawing.Size(119, 21);
-            this.btAutoUpdatedepo.TabIndex = 8;
-            this.btAutoUpdatedepo.Text = "Auto Update Deposit";
-            this.btAutoUpdatedepo.UseVisualStyleBackColor = true;
-            this.btAutoUpdatedepo.Click += new System.EventHandler(this.btAutoUpdatedepo_Click);
-            // 
-            // bt_sendinggroup
-            // 
-            this.bt_sendinggroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_sendinggroup.Location = new System.Drawing.Point(372, 9);
-            this.bt_sendinggroup.Name = "bt_sendinggroup";
-            this.bt_sendinggroup.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bt_sendinggroup.Size = new System.Drawing.Size(124, 22);
-            this.bt_sendinggroup.TabIndex = 7;
-            this.bt_sendinggroup.Text = "Upload Sending Group";
-            this.bt_sendinggroup.UseVisualStyleBackColor = true;
-            this.bt_sendinggroup.Click += new System.EventHandler(this.bt_sendinggroup_Click);
-            // 
-            // btSendlistUpdate
-            // 
-            this.btSendlistUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btSendlistUpdate.Location = new System.Drawing.Point(254, 10);
-            this.btSendlistUpdate.Name = "btSendlistUpdate";
-            this.btSendlistUpdate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btSendlistUpdate.Size = new System.Drawing.Size(112, 21);
-            this.btSendlistUpdate.TabIndex = 5;
-            this.btSendlistUpdate.Text = "List Send Upload";
-            this.btSendlistUpdate.UseVisualStyleBackColor = true;
-            this.btSendlistUpdate.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // lb_seach
             // 
             this.lb_seach.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -316,18 +264,6 @@ namespace Luckynumber.View
             this.lb_seach.Text = "F3: Seach Code";
             this.lb_seach.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // bt_listunsend
-            // 
-            this.bt_listunsend.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_listunsend.Location = new System.Drawing.Point(502, 9);
-            this.bt_listunsend.Name = "bt_listunsend";
-            this.bt_listunsend.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bt_listunsend.Size = new System.Drawing.Size(115, 21);
-            this.bt_listunsend.TabIndex = 4;
-            this.bt_listunsend.Text = "List Unsend Upload";
-            this.bt_listunsend.UseVisualStyleBackColor = true;
-            this.bt_listunsend.Click += new System.EventHandler(this.bt_listunsend_Click);
-            // 
             // bt_exporttoex
             // 
             this.bt_exporttoex.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -340,19 +276,27 @@ namespace Luckynumber.View
             this.bt_exporttoex.UseVisualStyleBackColor = true;
             this.bt_exporttoex.Click += new System.EventHandler(this.bt_exporttoex_Click);
             // 
+            // btCaculationProgr
+            // 
+            this.btCaculationProgr.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btCaculationProgr.Location = new System.Drawing.Point(131, 10);
+            this.btCaculationProgr.Name = "btCaculationProgr";
+            this.btCaculationProgr.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btCaculationProgr.Size = new System.Drawing.Size(143, 21);
+            this.btCaculationProgr.TabIndex = 10;
+            this.btCaculationProgr.Text = "Make Caculation ";
+            this.btCaculationProgr.UseVisualStyleBackColor = true;
+            this.btCaculationProgr.Click += new System.EventHandler(this.btCaculationProgr_Click);
+            // 
             // Viewtable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 481);
-            this.Controls.Add(this.btpostclear);
+            this.Controls.Add(this.btCaculationProgr);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lb_seach);
-            this.Controls.Add(this.btAutoUpdatedepo);
-            this.Controls.Add(this.bt_sendinggroup);
             this.Controls.Add(this.bt_exporttoex);
-            this.Controls.Add(this.btSendlistUpdate);
-            this.Controls.Add(this.bt_listunsend);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "Viewtable";
@@ -393,14 +337,10 @@ namespace Luckynumber.View
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lb_tongamount;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button bt_listunsend;
         private System.Windows.Forms.Label Status;
-        private System.Windows.Forms.Button btSendlistUpdate;
         private System.Windows.Forms.Label lbpayment;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lb_seach;
-        private System.Windows.Forms.Button bt_sendinggroup;
-        private System.Windows.Forms.Button btAutoUpdatedepo;
-        private System.Windows.Forms.Button btpostclear;
+        private System.Windows.Forms.Button btCaculationProgr;
     }
 }

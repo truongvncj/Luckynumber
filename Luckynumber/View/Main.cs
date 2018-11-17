@@ -4192,19 +4192,7 @@ namespace Luckynumber.View
             var db = new LinqtoSQLDataContext(connection_string);
             string enduser = Utils.getusername();
 
-            var rs = from p in db.tbl_Temps
-                     where p.enduser == enduser
-                     select p;
-            foreach (var item in rs)
-            {
-                item.Totalreports = false;
-                db.SubmitChanges();
-            }
-
-            //    string connection_string = Utils.getConnectionstr();
-
-            //     var db = new LinqtoSQLDataContext(connection_string);
-            //     string enduser = Utils.getusername();
+         
             #region cehck xem da lam cai review chua
             var rscheck = from pm in db.tbl_SalesFreeOrders
                      where pm.enduser == enduser
