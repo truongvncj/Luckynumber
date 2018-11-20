@@ -267,7 +267,7 @@ namespace Luckynumber.View
             this.lb_seach.Visible = false;
             this.Pl_endview.Visible = false;
 
-
+            btCaculmake.Visible = false;
 
             this.Text = fornname;
          //   this.btAutoUpdatedepo.Visible = false;
@@ -276,6 +276,8 @@ namespace Luckynumber.View
          //   this.bt_listunsend.Visible = false;
         //    btpostclear.Visible = false;
             lb_seach.Visible = false;
+
+            
 
 
             this.dataGridView1.DataSource = rs;
@@ -294,10 +296,10 @@ namespace Luckynumber.View
                 this.dataGridView1.Columns["Trả_thừa"].DefaultCellStyle.Format = "N2";
             }
 
-            //  "BÁO CÁO CTKM"
-            //    Số_lượng_hàng_mua = p.So_luong_hang_Mua,
-            //                Số_lượng_được_trả = p.So_luong_duoc_KM,
-            //               Số_lượng_đã_trả = p.So_luong_thuc_te_KM,
+            if (fornname == "DANH SÁCH ĐƠN HÀNG KHUYẾN MẠI CHƯA PHÂN LOẠI ĐƯỢC MÃ CTKM ")
+            {
+                btCaculmake.Visible = true;
+            }
 
             if (fornname == "BÁO CÁO CTKM")
             {

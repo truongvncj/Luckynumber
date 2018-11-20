@@ -49,7 +49,7 @@ namespace Luckynumber.View
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lb_seach = new System.Windows.Forms.Label();
             this.bt_exporttoex = new System.Windows.Forms.Button();
-            this.btCaculationProgr = new System.Windows.Forms.Button();
+            this.btCaculmake = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.Pl_endview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -276,24 +276,24 @@ namespace Luckynumber.View
             this.bt_exporttoex.UseVisualStyleBackColor = true;
             this.bt_exporttoex.Click += new System.EventHandler(this.bt_exporttoex_Click);
             // 
-            // btCaculationProgr
+            // btCaculmake
             // 
-            this.btCaculationProgr.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btCaculationProgr.Location = new System.Drawing.Point(131, 10);
-            this.btCaculationProgr.Name = "btCaculationProgr";
-            this.btCaculationProgr.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btCaculationProgr.Size = new System.Drawing.Size(143, 21);
-            this.btCaculationProgr.TabIndex = 10;
-            this.btCaculationProgr.Text = "Make Caculation ";
-            this.btCaculationProgr.UseVisualStyleBackColor = true;
-            this.btCaculationProgr.Click += new System.EventHandler(this.btCaculationProgr_Click);
+            this.btCaculmake.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btCaculmake.Location = new System.Drawing.Point(131, 10);
+            this.btCaculmake.Name = "btCaculmake";
+            this.btCaculmake.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btCaculmake.Size = new System.Drawing.Size(143, 21);
+            this.btCaculmake.TabIndex = 10;
+            this.btCaculmake.Text = "Make Caculation ";
+            this.btCaculmake.UseVisualStyleBackColor = true;
+            this.btCaculmake.Click += new System.EventHandler(this.btCaculationProgr_Click);
             // 
             // Viewtable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 481);
-            this.Controls.Add(this.btCaculationProgr);
+            this.Controls.Add(this.btCaculmake);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lb_seach);
             this.Controls.Add(this.bt_exporttoex);
@@ -341,6 +341,6 @@ namespace Luckynumber.View
         private System.Windows.Forms.Label lbpayment;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lb_seach;
-        private System.Windows.Forms.Button btCaculationProgr;
+        private System.Windows.Forms.Button btCaculmake;
     }
 }
