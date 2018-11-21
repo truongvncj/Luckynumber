@@ -278,7 +278,7 @@ namespace Luckynumber.View
 
         private void updateNewAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            luckyno md = new luckyno();
+            Lucky md = new Lucky();
             //   customerinput_ctrl md = new customerinput_ctrl();
             DialogResult kq1 = MessageBox.Show("Xóa tblFBL5n thay thế bằng bảng mới ? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             // bool kq;
@@ -429,47 +429,7 @@ namespace Luckynumber.View
         }
 
 
-        private void updateNewAllToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-            //     bool kq;
-            vat_ctrl md = new vat_ctrl();
-
-            DialogResult kq1 = MessageBox.Show("Xóa VAT out thay thế bằng bảng mới ? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            switch (kq1)
-            {
-                case DialogResult.None:
-                    break;
-                case DialogResult.OK:
-
-
-                    break;
-                case DialogResult.Cancel:
-                    break;
-                case DialogResult.Abort:
-                    break;
-                case DialogResult.Retry:
-                    break;
-                case DialogResult.Ignore:
-                    break;
-                case DialogResult.Yes:
-
-
-                    //    md.vat_input();
-
-
-                    break;
-                case DialogResult.No:
-                    break;
-                default:
-                    break;
-            }
-
-
-
-        }
-
+    
         private void viewVATDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //string connection_string = Utils.getConnectionstr();
@@ -614,49 +574,8 @@ namespace Luckynumber.View
 
 
 
-        private void byMonthToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            //var db = new LinqtoSQLDataContext(connection_string);
-            //      fRM_AROPTION fromoptiong = new fRM_AROPTION("ARletter.rdlc");
-            //     fromoptiong.Show();
-
-            //
-            string connection_string = Utils.getConnectionstr();
-
-            var db = new LinqtoSQLDataContext(connection_string);
-
-            Control_ac ctrac = new Control_ac();
-
-            //rs1 = ctrac.ARletterdataset1(db);
-            //rs2 = ctrac.ARletterdataset2(db);
-
-
-
-
-
-
-
-        }
-
-        private void byDateFromToToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // fRM_AROPTION fromoptiong = new fRM_AROPTION("ARletterdetail.rdlc");
-            //fRM_AROPTION fromoptiong = new fRM_AROPTION("SubARletterdetail.rdlc");
-
-            string connection_string = Utils.getConnectionstr();
-
-            //    var db = new LinqtoSQLDataContext(connection_string);
-            var db = new LinqtoSQLDataContext(connection_string);
-
-
-            //  string rptname = "ARletterdetail.rdlc";
-            //      string rptname = "SubARletterdetail.rdlc";
-            Control_ac ctrac = new Control_ac();
-
-
-        }
-
+    
+   
         private void cOLReportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -718,54 +637,7 @@ namespace Luckynumber.View
 
         }
 
-        private void addUpdateAndReplaceToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-            //    bool kq;
-            edlpinput_ctrl md = new edlpinput_ctrl();
-
-            DialogResult kq1 = MessageBox.Show("Xóa Edlpinput thay thế bằng bảng mới ? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            switch (kq1)
-            {
-                case DialogResult.None:
-                    break;
-                case DialogResult.OK:
-
-
-                    break;
-                case DialogResult.Cancel:
-                    break;
-                case DialogResult.Abort:
-                    break;
-                case DialogResult.Retry:
-                    break;
-                case DialogResult.Ignore:
-                    break;
-                case DialogResult.Yes:
-
-
-                    //     this.addUpdateAndReplaceToolStripMenuItem1.Enabled = false;
-                    //    this.reportsToolStripMenuItem.Enabled = false;
-
-                    md.edlpinput();
-
-
-
-                    break;
-                case DialogResult.No:
-                    break;
-                default:
-                    break;
-            }
-
-
-
-
-
-
-        }
-
+  
         private void vATInputToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -854,28 +726,7 @@ namespace Luckynumber.View
             //inputcdata.ShowDialog();
         }
 
-        private void lETTERCOLREPORTSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            string connection_string = Utils.getConnectionstr();
-
-            //  var db = new LinqtoSQLDataContext(connection_string);
-            //    LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-
-
-            var db = new LinqtoSQLDataContext(connection_string);
-
-
-            //     string rptname = "ARCOLrpt.rdlc";
-            //      string rptname = "SubARletterdetail.rdlc";
-            Control_ac ctrac = new Control_ac();
-
-
-
-
-        }
-
+   
         private void eDITCUSTOMERDATAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string connection_string = Utils.getConnectionstr();
@@ -1032,64 +883,7 @@ namespace Luckynumber.View
 
         }
 
-        private void uploadToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //  bool kq;
-            Remarks md = new Remarks();
-
-            DialogResult kq1 = MessageBox.Show("Xóa Remark thay thế bằng bảng mới ? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            switch (kq1)
-            {
-                case DialogResult.None:
-                    break;
-                case DialogResult.OK:
-
-
-                    break;
-                case DialogResult.Cancel:
-                    break;
-                case DialogResult.Abort:
-                    break;
-                case DialogResult.Retry:
-                    break;
-                case DialogResult.Ignore:
-                    break;
-                case DialogResult.Yes:
-
-
-
-                    //this.updateNewAllToolStripMenuItem1.Enabled = false;
-
-                    //this.reportsToolStripMenuItem.Enabled = false;
-                    md.Remark_input();
-
-
-                    //      var rs = md.vatsetlect_all();
-                    //        Viewtable viewtbl = new Viewtable(rs, "VAT ZFI data uploaded ");
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    break;
-                case DialogResult.No:
-                    break;
-                default:
-                    break;
-            }
-
-
-        }
-
+  
         private void vIEWREMARKLISTToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -1109,68 +903,7 @@ namespace Luckynumber.View
 
         }
 
-        private void uploadToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-
-            //  bool kq;
-            fREEGALSSES_CTRL md = new fREEGALSSES_CTRL();
-
-            DialogResult kq1 = MessageBox.Show("Xóa FREEGALSSES  thay thế bằng bảng mới ? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            switch (kq1)
-            {
-                case DialogResult.None:
-                    break;
-                case DialogResult.OK:
-
-
-                    break;
-                case DialogResult.Cancel:
-                    break;
-                case DialogResult.Abort:
-                    break;
-                case DialogResult.Retry:
-                    break;
-                case DialogResult.Ignore:
-                    break;
-                case DialogResult.Yes:
-
-
-
-                    //this.updateNewAllToolStripMenuItem1.Enabled = false;
-
-                    //this.reportsToolStripMenuItem.Enabled = false;
-                    md.Freglasses_input();
-
-
-                    //      var rs = md.vatsetlect_all();
-                    //        Viewtable viewtbl = new Viewtable(rs, "VAT ZFI data uploaded ");
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    break;
-                case DialogResult.No:
-                    break;
-                default:
-                    break;
-            }
-
-
-
-
-        }
-
+ 
         private void rEPORTSMAKEToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ////var db = new LinqtoSQLDataContext(connection_string);
@@ -1196,30 +929,7 @@ namespace Luckynumber.View
 
         }
 
-        private void vIEWLISTCUSTMAKEREPORTSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            Control_ac ct = new Control_ac();
-            //    ct.updateCustgoupinListcustmakeRpt();
-
-            string connection_string = Utils.getConnectionstr();
-
-            //  var db = new LinqtoSQLDataContext(connection_string);
-            //   LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-            LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-            //var rsCust2 = from tblCustomer in dc.tblCustomers
-            //              where tblCustomer.Reportsend == true
-            //              orderby tblCustomer.Customer
-            //              select tblCustomer;
-
-            ////  MessageBox.Show("Data add/ change Customer done !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //Viewtable viewtbl = new Viewtable(rsCust2, dc, "LIST CUSTOMER MAKE REPORTS", 1, DateTime.Today, DateTime.Today);
-            ////    viewtbl.Show();
-
-
-        }
-
+  
         private void rEPORTSMAKEToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
 
@@ -1236,230 +946,9 @@ namespace Luckynumber.View
 
         }
 
-        private void vIEWALLDATABASEONSERVERToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-
-            fromdateandcode fromtochoice = new View.fromdateandcode();
-            Control_ac ctrac = new Control_ac();
-
-            fromtochoice.ShowDialog();
-
-
-            string connection_string = Utils.getConnectionstr();
-
-            //  var db = new LinqtoSQLDataContext(connection_string);
-            //      LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-
-
-
-            DateTime fromdate = fromtochoice.tungay;
-            DateTime todate = fromtochoice.denngay;
-            double custcode = fromtochoice.custcode;
-
-            bool choice = fromtochoice.chon;
-
-
-
-
-            if (choice == true)
-            {
-                LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-                dc.CommandTimeout = 0;
-
-                if (custcode != 0)
-                {
-
-                    //#region  chọn 1 coed
-
-
-
-                    //var rs2 = from tblFBL5Nnew in dc.tblFBL5Nnews
-                    //          where tblFBL5Nnew.Posting_Date >= fromdate && tblFBL5Nnew.Posting_Date <= todate
-                    //          && tblFBL5Nnew.Account == custcode
-                    //          // select tblFBL5Nnew;
-
-                    //          select new
-
-
-                    //          {
-                    //              tblFBL5Nnew.codeGroup,
-
-                    //              //         check = tblFBL5Nnewthisperiod.Account.ToString(),
-                    //              Sorg = tblFBL5Nnew.Business_Area,
-                    //              tblFBL5Nnew.Account,
-                    //              Customer_Name = tblFBL5Nnew.name,
-
-                    //              //     tblFBL5Nnewthisperiod.COL_value,
-
-                    //              tblFBL5Nnew.Posting_Date,
-                    //              tblFBL5Nnew.Assignment,
-                    //              tblFBL5Nnew.Document_Number,
-
-                    //              FBL5N_amount = tblFBL5Nnew.Amount_in_local_currency,
-
-
-                    //              tblFBL5Nnew.Payment_amount,
-                    //              Adj_amount = tblFBL5Nnew.Adjusted_amount,
-
-                    //              //    tblFBL5Nnewthisperiod.Invoice_Amount,
-                    //              tblFBL5Nnew.Fullgood_amount,
-                    //              tblFBL5Nnew.Empty_Amount,
-                    //              tblFBL5Nnew.Deposit_amount,
-
-
-                    //              Invoice_date = tblFBL5Nnew.Formula_invoice_date,
-                    //              //       Invoice =   tblFBL5Nnewthisperiod.Invoice_Registration + " " + tblFBL5Nnewthisperiod.Invoice_Number,
-
-                    //              tblFBL5Nnew.Invoice,
-                    //              //    tblFBL5Nnewthisperiod.Vat_amount,
-                    //              Type = tblFBL5Nnew.Document_Type,
-                    //              tblFBL5Nnew.Binhpmicc02,
-                    //              tblFBL5Nnew.binhpmix9l,
-                    //              tblFBL5Nnew.Chaivothuong,
-                    //              tblFBL5Nnew.Chaivo1lit,
-                    //              tblFBL5Nnew.joy20l,
-                    //              tblFBL5Nnew.Ketnhua1lit,
-                    //              tblFBL5Nnew.Ketnhuathuong,
-                    //              tblFBL5Nnew.Ketvolit,
-                    //              tblFBL5Nnew.Ketvothuong,
-                    //              tblFBL5Nnew.paletnhua,
-                    //              tblFBL5Nnew.palletgo,
-                    //              tblFBL5Nnew.userupdate,
-                    //              tblFBL5Nnew.id,
-                    //              //   tblFBL5Nnewthisperiod.Empty_Amount_Notmach,
-
-
-                    //          };
-
-
-                    //#endregion chon 1 code
-                    //Viewtable viewtbl = new Viewtable(rs2, dc, "VIEWLIST DATABASE UPLOADED ON SYSYEM FROM-" + fromdate.Day + "/" + fromdate.Month + "/" + fromdate.Year + " -TO- " + todate.Day + "/" + todate.Month + "/" + todate.Year, 100, fromdate, todate); //view loại 5 là có fromdatetodate
-
-                    //   viewtbl.Show();
-
-
-                }
-
-                if (custcode == 0) // chon nhieu code
-                {
-
-                    //#region  chọn 1 coed
-
-
-
-                    //var rs2 = from tblFBL5Nnew in dc.tblFBL5Nnews
-                    //          where tblFBL5Nnew.Posting_Date >= fromdate && tblFBL5Nnew.Posting_Date <= todate
-                    //          //   && tblFBL5Nnew.Account == custcode
-                    //          // select tblFBL5Nnew;
-
-                    //          select new
-
-
-                    //          {
-                    //              tblFBL5Nnew.codeGroup,
-
-                    //              //         check = tblFBL5Nnewthisperiod.Account.ToString(),
-                    //              Sorg = tblFBL5Nnew.Business_Area,
-                    //              tblFBL5Nnew.Account,
-                    //              Customer_Name = tblFBL5Nnew.name,
-
-                    //              //     tblFBL5Nnewthisperiod.COL_value,
-
-                    //              tblFBL5Nnew.Posting_Date,
-                    //              tblFBL5Nnew.Assignment,
-                    //              tblFBL5Nnew.Document_Number,
-
-                    //              FBL5N_amount = tblFBL5Nnew.Amount_in_local_currency,
-
-
-                    //              tblFBL5Nnew.Payment_amount,
-                    //              Adj_amount = tblFBL5Nnew.Adjusted_amount,
-
-                    //              //    tblFBL5Nnewthisperiod.Invoice_Amount,
-                    //              tblFBL5Nnew.Fullgood_amount,
-                    //              tblFBL5Nnew.Empty_Amount,
-                    //              tblFBL5Nnew.Deposit_amount,
-
-
-                    //              Invoice_date = tblFBL5Nnew.Formula_invoice_date,
-                    //              //       Invoice =   tblFBL5Nnewthisperiod.Invoice_Registration + " " + tblFBL5Nnewthisperiod.Invoice_Number,
-
-                    //              tblFBL5Nnew.Invoice,
-                    //              //    tblFBL5Nnewthisperiod.Vat_amount,
-                    //              Type = tblFBL5Nnew.Document_Type,
-                    //              tblFBL5Nnew.Binhpmicc02,
-                    //              tblFBL5Nnew.binhpmix9l,
-                    //              tblFBL5Nnew.Chaivothuong,
-                    //              tblFBL5Nnew.Chaivo1lit,
-                    //              tblFBL5Nnew.joy20l,
-                    //              tblFBL5Nnew.Ketnhua1lit,
-                    //              tblFBL5Nnew.Ketnhuathuong,
-                    //              tblFBL5Nnew.Ketvolit,
-                    //              tblFBL5Nnew.Ketvothuong,
-                    //              tblFBL5Nnew.paletnhua,
-                    //              tblFBL5Nnew.palletgo,
-                    //              tblFBL5Nnew.userupdate,
-                    //              tblFBL5Nnew.id,
-                    //              //   tblFBL5Nnewthisperiod.Empty_Amount_Notmach,
-
-
-                    //          };
-
-
-                    //#endregion chon 1 code
-                    //Viewtable viewtbl = new Viewtable(rs2, dc, "VIEWLIST DATABASE UPLOADED ON SYSYEM FROM-" + fromdate.Day + "/" + fromdate.Month + "/" + fromdate.Year + " -TO- " + todate.Day + "/" + todate.Month + "/" + todate.Year, 100, fromdate, todate); //view loại 5 là có fromdatetodate
-
-                    //    viewtbl.Show();
-
-                }
-
-
-
-
-            }
-        }
-
-        private void vIEWLETTERDETAILREPORTSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string connection_string = Utils.getConnectionstr();
-
-            //  var db = new LinqtoSQLDataContext(connection_string);
-            //   LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-            //var db = new LinqtoSQLDataContext(connection_string);
-            //var rs = from tbl_ArletterdetailRpt in db.tbl_ArletterdetailRpts
-            //         select tbl_ArletterdetailRpt;
-
-
-            //Viewtable viewtbl = new Viewtable(rs, db, "Letter data detail reporst", 100, DateTime.Today, DateTime.Today);
-            //viewtbl.Show();
-
-        }
-
-        private void vIEWLETTERCOLREPORTSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            string connection_string = Utils.getConnectionstr();
-
-            //  var db = new LinqtoSQLDataContext(connection_string);
-            //    LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-
-            //var db = new LinqtoSQLDataContext(connection_string);
-            //var rs = from tbl_ColdetailRpt in db.tbl_ColdetailRpts
-            //         select tbl_ColdetailRpt;
-
-
-            //Viewtable viewtbl = new Viewtable(rs, db, "Letter COL detail reporst", 100, DateTime.Today, DateTime.Today);
-            //    viewtbl.Show();
-
-        }
-
+  
+ 
+ 
         private void eDITLETTERDETAILREPORTSToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -1497,57 +986,6 @@ namespace Luckynumber.View
             //VInputchange inputcdata = new VInputchange("", "DATA Arletter Col Detail Reports- CAREFULLY BEFORE CHANGE IT ! ", dc, "tbl_ColdetailRpt", "tbl_ColdetailRpt", typeff, "id", "id");
             //inputcdata.Visible = false;
             //inputcdata.ShowDialog();
-        }
-
-        private void eDITALLDATABASEToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-            fromdateandcode fromtochoice = new View.fromdateandcode();
-            Control_ac ctrac = new Control_ac();
-
-            fromtochoice.ShowDialog();
-
-
-            string connection_string = Utils.getConnectionstr();
-
-            //  var db = new LinqtoSQLDataContext(connection_string);
-            //      LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-            db.CommandTimeout = 0;
-
-
-
-
-            DateTime fromdate = fromtochoice.tungay;
-            DateTime todate = fromtochoice.denngay;
-            double custcode = fromtochoice.custcode;
-
-            bool choice = fromtochoice.chon;
-
-
-
-
-            if (choice == true && custcode != 0)
-            {
-
-
-
-                LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-                //var rs2 = from tblFBL5Nnew in dc.tblFBL5Nnews
-                //          where tblFBL5Nnew.Posting_Date >= fromdate && tblFBL5Nnew.Posting_Date <= todate
-                //           && tblFBL5Nnew.Account == custcode
-                //          select tblFBL5Nnew;
-
-
-                //Viewtable viewtbl = new Viewtable(rs2, dc, "EDIT DATABASE UPLOADED ON SYSYEM FROM-" + fromdate.Day + "/" + fromdate.Month + "/" + fromdate.Year + " -TO- " + todate.Day + "/" + todate.Month + "/" + todate.Year, 7, fromdate, todate); //view loại 7 là có LÀ CHO EDIT TOÀN BỘ THEO TỪNG DÒNG, CÓ HỖ TRỢ F3 CODE
-
-                //viewtbl.Show();
-
-
-
-            }
         }
 
         private void uploadFreeGlassToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1815,607 +1253,9 @@ namespace Luckynumber.View
 
 
 
-        static void ReportVNRunOnecode(object objextRPt)
-        {
 
-            RunreportsOnlyCode dat = (RunreportsOnlyCode)objextRPt;
-            LinqtoSQLDataContext db = dat.dc;
-            DateTime fromdate = dat.fromdate;
-            DateTime todate = dat.todate;
-            DateTime returndate = dat.returndate;
-            double onlycode = dat.onlyCode;
 
-            Control_ac ctrac = new Control_ac();
-            try
-            {
-                ctrac.ARlettermakebyGroupcode2Onlycode(db, fromdate, todate, returndate, onlycode);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("ERRor run: make ARlettermakebyGroupcode2 \n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-
-
-
-
-        }
-
-        static void ReportVNRun(object objextRPt)
-        {
-
-            Runreports dat = (Runreports)objextRPt;
-            LinqtoSQLDataContext db = dat.dc;
-            DateTime fromdate = dat.fromdate;
-            DateTime todate = dat.todate;
-            DateTime returndate = dat.returndate;
-            Control_ac ctrac = new Control_ac();
-            try
-            {
-                ctrac.ARlettermakebyGroupcode2(db, fromdate, todate, returndate);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("ERRor run: make ARlettermakebyGroupcode2 \n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-
-
-
-
-        }
-
-
-        static void ReportVNRegiom(object objextRPt)
-        {
-
-            Runreports dat = (Runreports)objextRPt;
-            LinqtoSQLDataContext db = dat.dc;
-            DateTime fromdate = dat.fromdate;
-            DateTime todate = dat.todate;
-            DateTime returndate = dat.returndate;
-            Control_ac ctrac = new Control_ac();
-            ctrac.ARlettermakebyGroupcodeRegion(db, fromdate, todate, returndate);
-
-
-
-
-
-        }
-
-
-        private void rEPORTSMAKEToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            string connection_string = Utils.getConnectionstr();
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-            db.CommandTimeout = 0;
-            try
-            {
-                db.ExecuteCommand("DELETE FROM tblFBL5beginbalaceTemp");
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("ERRor delete: tblFBL5beginbalaceTemp \n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            db.SubmitChanges();
-
-
-            //var db = new LinqtoSQLDataContext(connection_string);
-            fRM_AROPTION fromoptiong = new fRM_AROPTION();
-            Control_ac ctrac = new Control_ac();
-
-            fromoptiong.ShowDialog();
-
-
-
-            DateTime fromdate = fromoptiong.fromdate;
-            DateTime todate = fromoptiong.todate;
-            DateTime returndate = fromoptiong.returndate;
-            bool regionby = fromoptiong.byregion;
-            bool choice = fromoptiong.choice;
-            double onlycode = fromoptiong.custcode;
-
-
-            //     bool onlycodechoi = fromoptiong.onlycheckbook;
-            if (choice == true && onlycode != 0)  // chi tạo báo cáo 1 code
-            {
-
-                //                #region    // kiểm tra xem có số dư đầu kỳ không nếu không có bật ra bản thêm vào và kết thúc
-
-                //                //    db.SubmitChanges();
-
-                //                //    db.CommandTimeout = 10000;
-                //                var q13 = from tblCustomer in db.tblCustomers
-                //                          where tblCustomer.Customer == onlycode && !(from tblFBL5beginbalace in db.tblFBL5beginbalaces
-                //                                                                      select tblFBL5beginbalace.Account.ToString() + tblFBL5beginbalace.Business_Area).Contains(tblCustomer.Customer.ToString() + tblCustomer.SOrg)
-                //                          //  orderby tblCustomer.Customer
-                //                          group tblCustomer by new
-                //                          {
-                //                              tblCustomer.Customer,
-                //                              tblCustomer.SOrg,
-                //                          }
-                //                         into g
-                //                          select g;
-
-
-
-                //                if (q13.Count() > 0)
-
-                //                {
-
-
-                //                    #region mở update số dư dầu kỳ khi codegroupkhoong co trong so du dau ky nếu không có bắn ra bàng không có
-
-
-
-                //                    foreach (var item in q13)
-                //                    {
-
-
-                //                        var slqtext = @"insert into  tblFBL5beginbalaceTemp ( Account, [Business Area],[Amount in local currency],
-                // Binhpmicc02,binhpmix9l,Chaivo1lit,Chaivothuong,[Deposit amount],[Adjusted amount],[Empty Amount],[Empty Amount Notmach],
-                //[Fullgood amount],joy20l,Ketnhua1lit,Ketnhuathuong,paletnhua,palletgo,[Payment amount] ) 
-
-                //values (" + (double)item.Key.Customer + ",'" + item.Key.SOrg + @"',0,
-                // 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
-
-
-                //                        db.CommandTimeout = 0;
-
-                //                        try
-                //                        {
-                //                            db.ExecuteCommand(slqtext);
-                //                        }
-                //                        catch (Exception ex)
-                //                        {
-
-                //                            MessageBox.Show("ERRor insert : tblFBL5beginbalaceTemp \n" + slqtext + "\n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //                            return;
-                //                        }
-
-
-                //                        db.SubmitChanges();
-
-
-
-                //                    }
-
-
-
-                //                    var typeff = typeof(tblFBL5beginbalaceTemp);
-
-                //                    //     LinqtoSQLDataContext dbx = new LinqtoSQLDataContext(connection_string);
-
-
-                //                    View.VInputchange inputcdata = new View.VInputchange("MASTER BEGIN BALACE ", "LIST CUST NOT HAVE BEGIN BALACE, PLEASE CHECK ! ", db, "tblFBL5beginbalace", "tblFBL5beginbalaceTemp", typeff, "id", "id");
-                //                    inputcdata.Show();// = false;
-                //                    inputcdata.Focus();
-                //                    return;
-
-                //                    #endregion mở update số dư dầu kỳ khi codegroupkhoong co trong so du dau ky
-
-
-
-                //                }
-
-                //                //  MessageBox.Show("ok");
-
-                //                #endregion  // kiểm tra xem có so du dau ky không
-
-                //if (q13.Count() == 0)
-                //{
-                //    #region nếu không có số dư đủ thì thực hiện
-
-                //    if (regionby == false && choice == true)
-                //    {
-                //        LinqtoSQLDataContext dbx = new LinqtoSQLDataContext(connection_string);
-                //        Thread t1 = new Thread(ReportVNRunOnecode);
-                //        t1.IsBackground = true;
-                //        t1.Start(new RunreportsOnlyCode() { dc = dbx, fromdate = fromdate, todate = todate, returndate = returndate, onlyCode = onlycode });
-
-                //        Thread t2 = new Thread(showwait);
-                //        t2.Start();
-
-                //        t1.Join();
-                //        if (t1.ThreadState != ThreadState.Running)
-
-                //        {
-
-
-
-                //            Thread.Sleep(2999);
-
-                //            t2.Abort();
-
-
-
-
-
-
-                //        }
-
-                //        // ctrac.ARlettermakebyGroupcode2(db, fromdate, todate);
-
-                //    }
-
-
-                //    #endregion nếu không có số dư đủ thì thực hiện
-                //}
-
-
-                ////   make reports luon   eDITLISTCUSTMAKEREPORTSToolStripMenuItem_Click
-
-                //#region  updatepriterinvoice grouppriter
-                //SqlConnection conn2 = null;
-                //SqlDataReader rdr1 = null;
-
-                //string destConnString = Utils.getConnectionstr();
-                //try
-                //{
-
-                //    conn2 = new SqlConnection(destConnString);
-                //    conn2.Open();
-                //    SqlCommand cmd1 = new SqlCommand("updategroupprintletterOnlycodeChoice", conn2);
-                //    cmd1.CommandType = CommandType.StoredProcedure;
-                //    cmd1.Parameters.Add("@onlycode", SqlDbType.Float).Value = onlycode;
-
-                //    try
-                //    {
-                //        rdr1 = cmd1.ExecuteReader();
-                //    }
-                //    catch (Exception ex)
-                //    {
-
-                //        MessageBox.Show("error  updategroupprintletterChoice \n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //        return;
-                //    }
-
-
-
-
-                //    //       rdr1 = cmd1.ExecuteReader();
-
-                //}
-                //finally
-                //{
-                //    if (conn2 != null)
-                //    {
-                //        conn2.Close();
-                //    }
-                //    if (rdr1 != null)
-                //    {
-                //        rdr1.Close();
-                //    }
-                //}
-                ////     MessageBox.Show("ok", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                //#endregion
-
-
-                //#region print invoce
-
-
-                ////      string connection_string = Utils.getConnectionstr();
-
-                ////   var db = new LinqtoSQLDataContext(connection_string);
-
-                ////   Control_ac ctrac = new Control_ac();
-
-                //rs1 = ctrac.ARletterdataset1(db);
-                //rs2 = ctrac.ARletterdataset2(db);
-
-
-
-
-
-                //if (rs1 != null && rs2 != null)
-                //{
-
-                //    //  Utils ut = new Utils();
-                //    var dataset1 = Utils.ToDataTable(db, rs1);
-                //    var dataset2 = Utils.ToDataTable(db, rs2);
-                //    Reportsview rpt = new Reportsview(dataset1, dataset2, "ARletter.rdlc");
-                //    rpt.Show();
-
-                //}
-
-
-                //#endregion
-
-                //#region print detail
-
-                ////   string connection_string = Utils.getConnectionstr();
-
-                ////    var db = new LinqtoSQLDataContext(connection_string);
-                ////     var db = new LinqtoSQLDataContext(connection_string);
-
-
-                ////   string rptname = "ARletterdetail.rdlc";
-                ////      string rptname = "SubARletterdetail.rdlc";
-                ////    Control_ac ctrac = new Control_ac();
-
-                //var rs3 = ctrac.letterdetaildataset1(db);
-                //var rs4 = ctrac.letterdetaildataset2(db);
-
-
-                //if (rs1 != null && rs2 != null)
-                //{
-                //    //      var db = new LinqtoSQLDataContext(connection_string);
-                //    //   Utils ut = new Utils();
-                //    var dataset1 = Utils.ToDataTable(db, rs3);
-                //    var dataset2 = Utils.ToDataTable(db, rs4);
-                //    Reportsview rpt = new Reportsview(dataset1, dataset2, "ARletterdetail.rdlc");
-                //    rpt.Show();
-
-                //}
-
-                //#endregion
-
-                //#region print col
-                ////     string connection_string = Utils.getConnectionstr();
-
-                ////  var db = new LinqtoSQLDataContext(connection_string);
-                ////    LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-
-
-                ////  var db = new LinqtoSQLDataContext(connection_string);
-
-
-                ////   string rptname3 = "ARCOLrpt.rdlc";
-                ////      string rptname = "SubARletterdetail.rdlc";
-                ////      Control_ac ctrac = new Control_ac();
-
-                //var rs5 = ctrac.ARcoldataset1(db);
-                //var rs6 = ctrac.ARcoldataset2(db);
-
-
-                //if (rs1 != null && rs2 != null)
-                //{
-                //    //      var db = new LinqtoSQLDataContext(connection_string);
-                //    //   Utils ut = new Utils();
-                //    var dataset1 = Utils.ToDataTable(db, rs5);
-                //    var dataset2 = Utils.ToDataTable(db, rs6);
-                //    Reportsview rpt = new Reportsview(dataset1, dataset2, "ARCOLrpt.rdlc");
-                //    rpt.Show();
-
-
-
-                //}
-
-
-
-                //#endregion
-
-            }
-
-
-
-
-
-            if (choice == true && onlycode == 0)  /// với nhiều coed
-            {
-
-
-
-                //                #region    // kiểm tra xem có số dư đầu kỳ không nếu không có bật ra bản thêm vào và kết thúc
-
-                //                //    db.SubmitChanges();
-
-                //                //    db.CommandTimeout = 10000;
-                //                var q9 = from tblCustomer in db.tblCustomers
-                //                         where (tblCustomer.Reportsend == true) && !(from tblFBL5beginbalace in db.tblFBL5beginbalaces
-                //                                                                     select tblFBL5beginbalace.Account.ToString() + tblFBL5beginbalace.Business_Area).Contains(tblCustomer.Customer.ToString() + tblCustomer.SOrg)
-                //                         //  orderby tblCustomer.Customer
-                //                         group tblCustomer by new
-                //                         {
-                //                             tblCustomer.Customer,
-                //                             tblCustomer.SOrg,
-                //                         }
-                //                         into g
-                //                         select g;
-
-
-
-                //                if (q9.Count() > 0)
-
-                //                {
-
-
-                //                    #region mở update số dư dầu kỳ khi codegroupkhoong co trong so du dau ky nếu không có bắn ra bàng không có
-
-
-
-                //                    foreach (var item in q9)
-                //                    {
-
-
-                //                        var slqtext = @"insert into  tblFBL5beginbalaceTemp ( Account, [Business Area],[Amount in local currency],
-                // Binhpmicc02,binhpmix9l,Chaivo1lit,Chaivothuong,[Deposit amount],[Adjusted amount],[Empty Amount],[Empty Amount Notmach],
-                //[Fullgood amount],joy20l,Ketnhua1lit,Ketnhuathuong,paletnhua,palletgo,[Payment amount] ) 
-
-                //values (" + (double)item.Key.Customer + ",'" + item.Key.SOrg + @"',0,
-                // 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
-
-
-                //                        db.CommandTimeout = 0;
-
-                //                        try
-                //                        {
-                //                            db.ExecuteCommand(slqtext);
-                //                        }
-                //                        catch (Exception ex)
-                //                        {
-
-                //                            MessageBox.Show("ERRor insert : tblFBL5beginbalaceTemp \n" + slqtext + "\n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //                        }
-
-
-                //                        db.SubmitChanges();
-
-
-
-                //                    }
-
-
-
-                //                    var typeff = typeof(tblFBL5beginbalaceTemp);
-
-                //                    //     LinqtoSQLDataContext dbx = new LinqtoSQLDataContext(connection_string);
-
-
-                //                    View.VInputchange inputcdata = new View.VInputchange("MASTER BEGIN BALACE ", "LIST CUST NOT HAVE BEGIN BALACE, PLEASE CHECK ! ", db, "tblFBL5beginbalace", "tblFBL5beginbalaceTemp", typeff, "id", "id");
-                //                    inputcdata.Show();// = false;
-                //                    inputcdata.Focus();
-
-
-                //                    #endregion mở update số dư dầu kỳ khi codegroupkhoong co trong so du dau ky
-
-
-
-                //                }
-
-                //                //  MessageBox.Show("ok");
-
-                //                #endregion  // kiểm tra xem có so du dau ky không
-
-
-
-                //if (q9.Count() == 0)
-                //{
-
-                //    #region nếu không có số dư đủ thì thực hiện
-
-                //    if (regionby == false && choice == true)
-                //    {
-                //        LinqtoSQLDataContext dbx = new LinqtoSQLDataContext(connection_string);
-                //        Thread t1 = new Thread(ReportVNRun);
-                //        t1.IsBackground = true;
-                //        t1.Start(new Runreports() { dc = dbx, fromdate = fromdate, todate = todate, returndate = returndate });
-
-                //        Thread t2 = new Thread(showwait);
-                //        t2.Start();
-
-                //        t1.Join();
-                //        if (t1.ThreadState != ThreadState.Running)
-
-                //        {
-
-
-
-                //            Thread.Sleep(2999);
-
-                //            t2.Abort();
-
-
-
-
-
-
-                //        }
-
-                //        // ctrac.ARlettermakebyGroupcode2(db, fromdate, todate);
-
-                //    }
-
-                //    if (regionby == true && choice == true)
-                //    {
-
-                //        LinqtoSQLDataContext dbx = new LinqtoSQLDataContext(connection_string);
-                //        Thread t1 = new Thread(ReportVNRegiom);
-                //        t1.IsBackground = true;
-                //        t1.Start(new Runreports() { dc = dbx, fromdate = fromdate, todate = todate, returndate = returndate });
-
-                //        Thread t2 = new Thread(showwait);
-                //        t2.Start();
-
-                //        t1.Join();
-                //        if (t1.ThreadState != ThreadState.Running)
-                //        {
-                //            Thread.Sleep(2299);
-
-                //            t2.Abort();
-
-
-
-
-                //        }
-
-
-
-                //        //  ctrac.ARlettermakebyGroupcodeRegion(db, fromdate, todate);
-                //    }
-                //    #endregion nếu không có số dư đủ thì thực hiện
-                //}
-
-                //#region update cho view heet baso caso
-
-                ////     updategroupprintletterChoiceALL
-
-                //#region  updatepriterinvoice updategroupprintletterChoiceALL
-                //SqlConnection conn2 = null;
-                //SqlDataReader rdr1 = null;
-
-                //string destConnString = Utils.getConnectionstr();
-                //try
-                //{
-
-                //    conn2 = new SqlConnection(destConnString);
-                //    conn2.Open();
-                //    SqlCommand cmd1 = new SqlCommand("updategroupprintletterChoiceALL", conn2);
-                //    cmd1.CommandType = CommandType.StoredProcedure;
-                //    cmd1.CommandTimeout = 0;
-                //    //    cmd1.Parameters.Add("@groupsending", SqlDbType.VarChar).Value = groupsending;
-                //    try
-                //    {
-                //        rdr1 = cmd1.ExecuteReader();
-                //    }
-                //    catch (Exception ex)
-                //    {
-
-                //        MessageBox.Show("updategroupprintletterChoiceALL \n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    }
-
-
-
-
-                //    //       rdr1 = cmd1.ExecuteReader();
-
-                //}
-                //finally
-                //{
-                //    if (conn2 != null)
-                //    {
-                //        conn2.Close();
-                //    }
-                //    if (rdr1 != null)
-                //    {
-                //        rdr1.Close();
-                //    }
-                //}
-                ////     MessageBox.Show("ok", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                //#endregion
-
-
-                //#endregion
-
-
-            }
-
-
-
-
-
-
-        }
-
+    
         private void userAndRightToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -2468,95 +1308,7 @@ namespace Luckynumber.View
 
         }
 
-        private void dELETEALLDATABASEEDITToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult kq1 = MessageBox.Show(" BẠN MUỐN XÓA DỮ LIỆU TRÊN SERVER ! ", "Confirm ?", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-            // bool kq;
-            switch (kq1)
-            {
-                case DialogResult.None:
-                    break;
-                case DialogResult.OK:
-                    break;
-                case DialogResult.Cancel:
-                    break;
-                case DialogResult.Abort:
-                    break;
-                case DialogResult.Retry:
-                    break;
-                case DialogResult.Ignore:
-                    break;
-                case DialogResult.Yes:
-
-
-                    fromdate fromtochoice = new View.fromdate();
-                    Control_ac ctrac = new Control_ac();
-
-                    fromtochoice.ShowDialog();
-
-
-                    string connection_string = Utils.getConnectionstr();
-
-                    //  var db = new LinqtoSQLDataContext(connection_string);
-                    //      LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-                    LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-
-
-
-                    DateTime fromdate = fromtochoice.tungay;
-                    DateTime todate = fromtochoice.denngay;
-                    bool choice = fromtochoice.chon;
-
-
-
-
-                    if (choice == true)
-                    {
-
-                        string query = @"DELETE FROM tblFBL5Nnew where " +
-                                        "tblFBL5Nnew.[Posting Date] >= '" + fromdate.Year + "-" + fromdate.Month + "-" + fromdate.Day + "' and " +
-                                        "tblFBL5Nnew.[Posting Date] <= '" + todate.Year + "-" + todate.Month + "-" + todate.Day + "'";
-                        //  MessageBox.Show(query);
-                        try
-                        {
-                            db.ExecuteCommand(query);
-                        }
-                        catch (Exception)
-                        {
-
-                            MessageBox.Show(" Error uteCommand(query \n" + query, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-
-                        //    dc.tblFBL5Nnewthisperiods.DeleteAllOnSubmit(rsthisperiod);
-                        db.SubmitChanges();
-                        //   dc.tblFBL5Nnews.DeleteAllOnSubmit(rs2);
-                        //   dc.SubmitChanges();
-                        MessageBox.Show("Deleted !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    //   string connection_string = Utils.getConnectionstr();
-
-                    //  var db = new LinqtoSQLDataContext(connection_string);
-                    //     LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-
-                    //   LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-                    //    var rs2 = from tblFBL5Nnew in dc.tblFBL5Nnews
-                    //             select tblFBL5Nnew;
-
-
-
-
-                    break;
-                case DialogResult.No:
-                    break;
-                default:
-                    break;
-            }
-
-        }
-
+ 
         private void pRINTREPORTSBYOPTIONToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PrintLetterOption PrintOption = new PrintLetterOption();
@@ -2909,171 +1661,9 @@ namespace Luckynumber.View
 
         }
 
-        private void lETTERRETURNUPDATEToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-
-            fromdate fromtochoice = new View.fromdate();
-            Control_ac ctrac = new Control_ac();
-
-            fromtochoice.ShowDialog();
-
-
-            string connection_string = Utils.getConnectionstr();
-
-            //  var db = new LinqtoSQLDataContext(connection_string);
-            //      LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-
-
-
-            DateTime fromdate = fromtochoice.tungay;
-            DateTime todate = fromtochoice.denngay;
-            bool choice = fromtochoice.chon;
-
-
-
-
-            //if (choice == true)
-            //{
-            //    var rs = from tbl_Preriod in db.tbl_Preriods
-            //             where tbl_Preriod.fromdate >= fromdate && tbl_Preriod.todate <= todate
-            //             orderby tbl_Preriod.customercodeGR
-            //             select tbl_Preriod;
-
-
-
-            //    Viewtable viewtbl = new Viewtable(rs, db, "LETTER RETURN STATUS UPDATE", 1, DateTime.Today, DateTime.Today);
-            //    //      viewtbl.Visible = false;
-            //    //     viewtbl.Show();
-
-
-
-            //}
-
-
-
-
-
-
-            //    string connection_string = Utils.getConnectionstr();
-
-            //  var db = new LinqtoSQLDataContext(connection_string);
-            //    LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-
-        }
-
-        private void aRBalanceAndReportsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rEEDITDEPOSITVERIFYToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //---
-
-
-            fromdate fromtochoice = new View.fromdate();
-            Control_ac ctrac = new Control_ac();
-
-            fromtochoice.ShowDialog();
-
-
-            string connection_string = Utils.getConnectionstr();
-
-            //  var db = new LinqtoSQLDataContext(connection_string);
-            //      LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-
-
-
-            DateTime fromdate = fromtochoice.tungay;
-            DateTime todate = fromtochoice.denngay;
-            bool choice = fromtochoice.chon;
-
-
-
-
-            if (choice == true)
-            {
-
-
-
-                //LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-
-
-                //IQueryable rs2 = null;
-
-                //Viewtable viewtbl = new Viewtable(rs2, dc, "REINPUT DEPOSIT DATA FROM-" + fromdate.Day + "/" + fromdate.Month + "/" + fromdate.Year + " -TO- " + todate.Day + "/" + todate.Month + "/" + todate.Year, 2, fromdate, todate); //view 3 để reupdate
-
-                //viewtbl.Show();
-
-
-
-
-
-
-
-
-
-
-            }
-
-
-
-        }
-
-        private void lISTUNUSECUSTOMERToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            customerinput_ctrl md = new customerinput_ctrl();
-            DialogResult kq1 = MessageBox.Show("Xoa list unuse thay bằng list mói ? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //      bool kq;
-            switch (kq1)
-            {
-                case DialogResult.None:
-                    break;
-                case DialogResult.Yes:
-
-                    //  this.uploadCustomerToolStripMenuItem.Enabled = false;
-
-                    //    this.reportsToolStripMenuItem.Enabled = false;
-
-                    md.deleteunuselistcustomer();
-                    md.customerUNUSEinput();
-
-
-
-
-
-                    break;
-                case DialogResult.Cancel:
-                    break;
-                case DialogResult.Abort:
-                    break;
-                case DialogResult.Retry:
-                    break;
-                case DialogResult.Ignore:
-                    break;
-                case DialogResult.OK:
-                    break;
-                case DialogResult.No:
-
-                    md.customerUNUSEinput();
-
-                    break;
-                default:
-                    break;
-            }
-
-
-        }
-
+  
+ 
+   
         private void vIEWLISTUNUSECUSTOMERToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string connection_string = Utils.getConnectionstr();
@@ -3247,23 +1837,7 @@ namespace Luckynumber.View
 
         }
 
-        private void toolStripMenuItem5_Click(object sender, EventArgs e)
-        {
-            //var db = new LinqtoSQLDataContext(connection_string);
-            //      fRM_AROPTION fromoptiong = new fRM_AROPTION("ARletter.rdlc");
-            //     fromoptiong.Show();
-
-            //
-            string connection_string = Utils.getConnectionstr();
-
-            var db = new LinqtoSQLDataContext(connection_string);
-
-            Control_ac ctrac = new Control_ac();
-
-
-
-        }
-
+  
         private void uPLOADBALANCEToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             NKAfRM_AROPTION_Upload PrintOption = new NKAfRM_AROPTION_Upload();
@@ -3347,156 +1921,8 @@ namespace Luckynumber.View
 
         }
 
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-
-            fromdateandcode fromtochoice = new View.fromdateandcode();
-            Control_ac ctrac = new Control_ac();
-
-            fromtochoice.ShowDialog();
-
-
-            string connection_string = Utils.getConnectionstr();
-
-            //  var db = new LinqtoSQLDataContext(connection_string);
-            //      LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-            db.CommandTimeout = 0;
-
-
-
-
-            DateTime fromdate = fromtochoice.tungay;
-            DateTime todate = fromtochoice.denngay;
-            double custcode = fromtochoice.custcode;
-
-            bool choice = fromtochoice.chon;
-
-
-
-
-            if (choice == true)
-            {
-
-
-                //#region update EMPTY TO DEPOSTI AMOUNT
-                //SqlConnection conn2 = null;
-                //SqlDataReader rdr1 = null;
-
-                //string destConnString = Utils.getConnectionstr();
-                //try
-                //{
-
-                //    conn2 = new SqlConnection(destConnString);
-                //    conn2.Open();
-                //    SqlCommand cmd1 = new SqlCommand("UploademptyToDepositAmount", conn2);
-                //    cmd1.CommandType = CommandType.StoredProcedure;
-                //    cmd1.CommandTimeout = 0;
-                //    cmd1.Parameters.Add("@fromdate", SqlDbType.DateTime).Value = fromdate;
-                //    cmd1.Parameters.Add("@todate", SqlDbType.DateTime).Value = todate;
-                //    cmd1.Parameters.Add("@custcode", SqlDbType.Float).Value = custcode;
-
-                //    rdr1 = cmd1.ExecuteReader();
-
-
-
-                //    //       rdr1 = cmd1.ExecuteReader();
-
-                //}
-                //finally
-                //{
-                //    if (conn2 != null)
-                //    {
-                //        conn2.Close();
-                //    }
-                //    if (rdr1 != null)
-                //    {
-                //        rdr1.Close();
-                //    }
-                //}
-                //MessageBox.Show("Mass balance empty to deposit amount done !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                //#endregion
-
-
-
-
-
-
-
-
-
-            }
-        }
-
-        private void uPLOADCLEARFREEGLASSESPROGARMEToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            //  bool kq;
-            fREEGALSSES_CTRL md = new fREEGALSSES_CTRL();
-
-            DialogResult kq1 = MessageBox.Show("Update file clear glasses ? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            switch (kq1)
-            {
-                case DialogResult.None:
-                    break;
-                case DialogResult.OK:
-
-
-                    break;
-                case DialogResult.Cancel:
-                    break;
-                case DialogResult.Abort:
-                    break;
-                case DialogResult.Retry:
-                    break;
-                case DialogResult.Ignore:
-                    break;
-                case DialogResult.Yes:
-
-
-
-                    //this.updateNewAllToolStripMenuItem1.Enabled = false;
-
-                    //this.reportsToolStripMenuItem.Enabled = false;
-                    //md.clearFeeglasseeinputtemp();
-
-
-                    //// var rs = md.vatsetlect_all();
-                    ////        Viewtable viewtbl = new Viewtable(rs, "VAT ZFI data uploaded ");
-
-                    //string connection_string = Utils.getConnectionstr();
-
-                    //LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-                    //var rs = from FreGlassClear in db.tbl_FreGlassCleartemps
-                    //         select FreGlassClear;
-
-
-                    //Viewtable Viewtable = new Viewtable(rs, db, "Clear FressGlasses Progarme upload ", 11, DateTime.Today, DateTime.Today);
-
-
-
-
-
-
-
-
-
-
-
-                    break;
-                case DialogResult.No:
-                    break;
-                default:
-                    break;
-            }
-
-
-
-        }
-
+ 
+  
         private void toolStripMenuItem15_Click(object sender, EventArgs e)
         {
             string connection_string = Utils.getConnectionstr();
@@ -3515,327 +1941,12 @@ namespace Luckynumber.View
 
         }
 
-        private void toolStripMenuItem4_Click(object sender, EventArgs e)
-        {
-            fromdateandcode fromtochoice = new View.fromdateandcode();
-            Control_ac ctrac = new Control_ac();
-
-            fromtochoice.ShowDialog();
-
-
-            string connection_string = Utils.getConnectionstr();
-
-            //  var db = new LinqtoSQLDataContext(connection_string);
-            //      LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-
-            LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-            db.CommandTimeout = 0;
-
-
-
-
-            DateTime fromdate = fromtochoice.tungay;
-            DateTime todate = fromtochoice.denngay;
-            double custcode = fromtochoice.custcode;
-
-            bool choice = fromtochoice.chon;
-
-
-
-
-            if (choice == true)
-            {
-
-                //var rs = from tblFBL5Nnew in db.tblFBL5Nnews
-                //         where tblFBL5Nnew.Posting_Date >= fromdate
-                //         && tblFBL5Nnew.Posting_Date <= todate
-                //      && tblFBL5Nnew.Account == custcode
-                //         select tblFBL5Nnew;
-
-
-                //Viewtable Viewtable = new Viewtable(rs, db, "REdo Deposit veryfy of Close Priod by Click on Adj Amount, Empty Amount to move to Deposit Amount", 13, DateTime.Today, DateTime.Today);
-
-                ////    Viewtable.ShowDialog();
-
-
-
-            }
-
-
-
-
-        }
-
-        private void deleteWrongClearFreeGalassToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //  bool kq;
-            fREEGALSSES_CTRL md = new fREEGALSSES_CTRL();
-
-            DialogResult kq1 = MessageBox.Show("Delete wrong clear glasses ? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            switch (kq1)
-            {
-                case DialogResult.None:
-                    break;
-                case DialogResult.OK:
-
-
-                    break;
-                case DialogResult.Cancel:
-                    break;
-                case DialogResult.Abort:
-                    break;
-                case DialogResult.Retry:
-                    break;
-                case DialogResult.Ignore:
-                    break;
-                case DialogResult.Yes:
-
-
-
-                    //this.updateNewAllToolStripMenuItem1.Enabled = false;
-
-                    //this.reportsToolStripMenuItem.Enabled = false;
-                    //           md.deletewrongclearFeeglasseeinput();
-
-
-                    // var rs = md.vatsetlect_all();
-                    //        Viewtable viewtbl = new Viewtable(rs, "VAT ZFI data uploaded ");
-
-                    //string connection_string = Utils.getConnectionstr();
-
-                    //LinqtoSQLDataContext db = new LinqtoSQLDataContext(connection_string);
-                    //var rs = from FreGlassClear in db.tbl_FreGlassCleartemps
-                    //         select FreGlassClear;
-
-
-                    //Viewtable Viewtable = new Viewtable(rs, db, "Clear FressGlasses Progarme upload ", 11, DateTime.Today, DateTime.Today);
-
-
-
-
-
-
-
-
-
-
-
-                    break;
-                case DialogResult.No:
-                    break;
-                default:
-                    break;
-            }
-
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            View.DatecodePicker datefrom = new View.DatecodePicker("Select balace date: ");
-            datefrom.ShowDialog();
-            DateTime balancedate = datefrom.valuedate;
-            bool kq = datefrom.kq;
-            double custcode = datefrom.code;
-            string username = Utils.getusername();
-            string connection_string = Utils.getConnectionstr();
-            LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
-
-
-
-
-
-            if (kq == true)
-            {
-                //          SqlConnection conn2 = null;
-                //   SqlDataReader rdr1 = null;
-
-                string destConnString = Utils.getConnectionstr();
-                dc.CommandTimeout = 0;
-
-                //if (custcode == 0) // là chạy tất
-                //{
-                //    #region  //  tính bảng  tbl_Coldetail tren sql
-
-                //    try
-                //    {
-
-                //        conn2 = new SqlConnection(destConnString);
-                //        conn2.Open();
-                //        SqlCommand cmd1 = new SqlCommand("insertviewbalanceRpt", conn2);
-                //        cmd1.CommandType = CommandType.StoredProcedure;
-
-                //        //@balancedate datetime,
-                //        //@username nvarchar(50)
-
-                //        cmd1.Parameters.Add("@balancedate", SqlDbType.Date).Value = balancedate;
-                //        cmd1.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
-                //        cmd1.CommandTimeout = 0;
-                //        try
-                //        {
-                //            rdr1 = cmd1.ExecuteReader();
-
-                //        }
-                //        catch (Exception ex)
-                //        {
-
-                //            MessageBox.Show("ERRor make: balance view data \n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //        }
-
-
-
-                //        //       rdr1 = cmd1.ExecuteReader();
-
-                //    }
-                //    finally
-                //    {
-                //        if (conn2 != null)
-                //        {
-                //            conn2.Close();
-                //        }
-                //        if (rdr1 != null)
-                //        {
-                //            rdr1.Close();
-                //        }
-                //    }
-                //    //     MessageBox.Show("ok", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                //    #endregion
-
-
-                //}
-                //else // là only code
-                //{
-
-                //    #region  //  tính bảng  insertviewbalanceRptOnlycode tren sql
-
-                //    try
-                //    {
-
-                //        conn2 = new SqlConnection(destConnString);
-                //        conn2.Open();
-                //        SqlCommand cmd1 = new SqlCommand("insertviewbalanceRptOnlycode", conn2);
-                //        cmd1.CommandType = CommandType.StoredProcedure;
-
-                //        //@balancedate datetime,
-                //        //@username nvarchar(50)
-                //        cmd1.Parameters.Add("@onlycode", SqlDbType.Float).Value = custcode;
-                //        cmd1.Parameters.Add("@balancedate", SqlDbType.Date).Value = balancedate;
-                //        cmd1.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
-                //        cmd1.CommandTimeout = 0;
-                //        try
-                //        {
-                //            rdr1 = cmd1.ExecuteReader();
-
-                //        }
-                //        catch (Exception ex)
-                //        {
-
-                //            MessageBox.Show("ERRor make: balance view data \n" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //        }
-
-
-
-                //        //       rdr1 = cmd1.ExecuteReader();
-
-                //    }
-                //    finally
-                //    {
-                //        if (conn2 != null)
-                //        {
-                //            conn2.Close();
-                //        }
-                //        if (rdr1 != null)
-                //        {
-                //            rdr1.Close();
-                //        }
-                //    }
-                //    //     MessageBox.Show("ok", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                //    #endregion
-
-
-                //}
-
-                // view balance''
-
-                //#region  chọn 1 coed
-
-                ////var q3 = (from tblEDLP in dc.tblEDLPs
-                ////          group tblEDLP by tblEDLP.Invoice_Doc_Nr into OD//Tương đương GROUP BY trong SQL
-                ////          orderby OD.Key
-                ////          where !(from tblVat in dc.tblVats
-                ////                  select tblVat.SAP_Invoice_Number).Contains(OD.Key)
-
-                ////          select new
-                ////          {
-                ////              Document_Number = OD.Key,
-                ////              Name = OD.Select(m => m.Cust_Name).FirstOrDefault(),
-                ////              Value_Count = OD.Sum(m => m.Cond_Value)
-
-
-
-
-                ////          });
-
-
-                //var rs2 = from p in dc.tblFBL5NnewRptbalances
-                //          where p.username == username
-                //          group p by p.Account into h
-                //          select new
-                //          {
-                //              Account = h.Key,
-
-                //              Amount_in_local_currency = h.Sum(m => m.Amount_in_local_currency),
-                //              Payment_amount = h.Sum(m => m.Payment_amount),
-                //              Adjusted_amount = h.Sum(m => m.Adjusted_amount),
-                //              Fullgood_amount = h.Sum(m => m.Fullgood_amount),
-                //              Invoice_Amount = h.Sum(m => m.Invoice_Amount),
-
-                //              Deposit_amount = h.Sum(m => m.Deposit_amount),
-
-                //              Ketvothuong = h.Sum(m => m.Ketvothuong),
-                //              paletnhua = h.Sum(m => m.paletnhua),
-                //              palletgo = h.Sum(m => m.palletgo),
-
-                //              Binhpmicc02 = h.Sum(m => m.Binhpmicc02),
-                //              binhpmix9l = h.Sum(m => m.binhpmix9l),
-                //              Chaivo1lit = h.Sum(m => m.Chaivo1lit),
-                //              Chaivothuong = h.Sum(m => m.Chaivothuong),
-                //              //    Document_Number = h.Sum(m => m.Document_Number),
-                //              joy20l = h.Sum(m => m.joy20l),
-                //              Ketvolit = h.Sum(m => m.Ketvolit),
-                //              Ketnhua1lit = h.Sum(m => m.Ketnhua1lit),
-                //              Ketnhuathuong = h.Sum(m => m.Ketnhuathuong),
-
-
-
-
-
-                //          };
-
-
-                //#endregion
-                //Viewtable viewtbl = new Viewtable(rs2, dc, "BALANCE VIEW REPORTS AT: " + balancedate.ToShortDateString(), 100, DateTime.Today, DateTime.Today); //view loại 100 view bình thường là có fromdatetodate
-
-
-
-
-
-
-
-            }
-
-
-
-
-
-
-        }
-
+   
+   
+ 
         private void uPLOADPRODUCTLISTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            luckyno md = new luckyno();
+            Lucky md = new Lucky();
 
             md.Uploadproductlist();
 
@@ -3887,7 +1998,7 @@ namespace Luckynumber.View
 
         private void uPLOADPROGARMEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            luckyno md = new luckyno();
+            Lucky md = new Lucky();
 
             md.UploadProgamelist();
 
@@ -4010,7 +2121,7 @@ namespace Luckynumber.View
 
         private void uPLOADCUSTOMERDATAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            luckyno md = new luckyno();
+            Lucky md = new Lucky();
 
             md.UpnhomCTKM();
 
@@ -4019,7 +2130,7 @@ namespace Luckynumber.View
         private void fREEORDERToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            luckyno md = new luckyno();
+            Lucky md = new Lucky();
             string connection_string = Utils.getConnectionstr();
 
             var db = new LinqtoSQLDataContext(connection_string);
@@ -4066,7 +2177,7 @@ namespace Luckynumber.View
 
         private void uPLOADORDERLISTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            luckyno md = new luckyno();
+            Lucky md = new Lucky();
 
 
             string connection_string = Utils.getConnectionstr();
@@ -4087,11 +2198,56 @@ namespace Luckynumber.View
             md.UpFreePUCHASEORDER();
 
             //   Model.Conditioncheck.UpdateMaCTKM();
+            //string filename = theDialog.FileName.ToString();
+            //string storelocation = shipingpoint;
+
+            //Thread t1 = new Thread(InputBeginstore);
+            //t1.IsBackground = true;
+            //t1.Start(new datainportF() { filename = filename, storelocation = storelocation });
+
+
+            //View.MKTCaculating wat = new View.MKTCaculating();
+            //Thread t2 = new Thread(showwait);
+            //t2.Start(new datashowwait() { wat = wat });
+
+
+            //t1.Join();
+            //if (t1.ThreadState != ThreadState.Running)
+            //{
+
+             
+            //    wat.Invoke(wat.myDelegate);
+
+
+
+            //}
+
+
+
+
+            //sampele
 
             Thread t1 = new Thread(Model.Conditioncheck.UpdateMaCTKM); // gồm cả updaet mã khkm mà só lương ctkm
             t1.IsBackground = true;
             t1.Start();
-            MessageBox.Show("Upload done", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            View.Caculating wat = new View.Caculating();
+            Thread t2 = new Thread(showwait);
+         //   t2.Start(new datashowwait() { wat = wat });
+            t1.Start();
+
+            t1.Join();
+            if (t1.ThreadState != ThreadState.Running)
+            {
+
+
+                wat.Invoke(wat.myDelegate);
+
+
+
+            }
+
+
+            //     MessageBox.Show("Upload done", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 

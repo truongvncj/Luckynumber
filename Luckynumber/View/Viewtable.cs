@@ -41,6 +41,23 @@ namespace Luckynumber.View
 
         public List<ComboboxItem> datacolecttionselect;//{ get; private set; }
                                                        //1. Định nghĩa 1 delegate
+        public void showwait()
+        {
+            View.Caculating wat = new View.Caculating();
+
+            wat.ShowDialog();
+
+
+        }
+
+
+        class datashowwait
+        {
+
+            public View.Caculating wat { get; set; }
+
+
+        }
 
 
         class datatoExport
@@ -317,7 +334,7 @@ namespace Luckynumber.View
 
 
 
-            Control_ac ctrex = new Control_ac();
+            Control.Control ctrex = new Control.Control();
 
 
             ctrex.exportExceldatagridtofile(this.rs, this.db, this.Text);
@@ -5185,6 +5202,41 @@ namespace Luckynumber.View
             #endregion  cehck xem da lam cai review chua
 
 
+
+
+            #region  tính đơn hàng mua từ đơn hàng khuyến mại
+
+
+         //   tbl_SalesOrderFromFree newsales = new tbl_SalesOrderFromFree();
+
+            Thread t1 = new Thread(Model.Lucky.caculationOrderfromfree); // gồm cả updaet mã khkm mà só lương ctkm
+            t1.IsBackground = true;
+            t1.Start();
+            View.Caculating wat = new View.Caculating();
+            Thread t2 = new Thread(showwait);
+            t2.Start(new datashowwait() { wat = wat });
+           // t2.Start();
+
+            t1.Join();
+            if (t1.ThreadState != ThreadState.Running)
+            {
+
+
+                wat.Invoke(wat.myDelegate);
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+            #endregion
 
 
 

@@ -1329,115 +1329,13 @@ namespace Luckynumber.View
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (this.tblnamesub == "tbl_ProductlistTMP")
-            {
-                //var rs = from tbl_ProductlistTMP in db.tbl_ProductlistTMPs
-                //         select tbl_ProductlistTMP;
-                //this.rs = rs;
-
-            }
-
-            if (this.tblnamesub == "tblCustomerTmp")
-            {
-                //var rs = from tblCustomerTmp in db.tblCustomerTmps
-                //         select tblCustomerTmp;
-                //this.rs = rs;
-
-            }
-
-            if (this.tblnamesub == "tblFBL5beginbalaceTemp")
-            {
-                //var rs = from tblFBL5beginbalaceTemp in db.tblFBL5beginbalaceTemps
-                //         select tblFBL5beginbalaceTemp;
-                //this.rs = rs;
-
-            }
-
-            if (this.tblnamesub == "tbl_CustomerGroupTemp")
-            {
-                //var rs = from tbl_CustomerGroupTemp in db.tbl_CustomerGroupTemps
-                //         select tbl_CustomerGroupTemp;
-                //this.rs = rs;
-
-            }
-
-
-            if (this.tblnamesub == "tbl_Comboundtemp")
-            {
-                //var rs = from tbl_Comboundtemp in db.tbl_Comboundtemps
-                //         select tbl_Comboundtemp;
-                //this.rs = rs;
-
-            }
-            if (this.tblnamesub == "tblCustomer")
-            {
-                //var rs = from tblCustomer in db.tblCustomers
-                //         select tblCustomer;
-                //this.rs = rs;
-
-            }
-
-            if (this.tblnamesub == "tbl_Productlist")
-            {
-                //var rs = from tbl_Productlist in db.tbl_Productlists
-                //         select tbl_Productlist;
-                //this.rs = rs;
-
-            }
-            if (this.tblnamesub == "tblFBL5beginbalace")
-            {
-                //var rs = from tblFBL5beginbalace in db.tblFBL5beginbalaces
-                //         select tblFBL5beginbalace;
-                //this.rs = rs;
-
-            }
-
-            if (this.tblnamesub == "tblFBL5N")
-            {
-               //var rs = from tblFBL5N in db.tblFBL5Ns
-               //          select  tblFBL5N;
-               // this.rs = rs;
-
-            }
-
-            if (this.tblnamesub == "tblEDLP")
-            {
-                //var rs = from tblEDLP in db.tblEDLPs
-                //         select tblEDLP;
-                //this.rs = rs;
-
-            }
-
-            if (this.tblnamesub == "tblVat")
-            {
-                //var rs = from tblVat in db.tblVats
-                //         select tblVat;
-                //this.rs = rs;
-
-            }
-
-            if (this.tblnamesub == "tbl_Remark")
-            {
-                //var rs = from tbl_Remark in db.tbl_Remarks
-                //         select tbl_Remark;
-                //this.rs = rs;
-
-            }
-            if (this.tblnamesub == "tbl_FreGlass")
-            {
-                //var rs = from tbl_FreGlass in db.tbl_FreGlasses
-                //         select tbl_FreGlass;
-                //this.rs = rs;
-
-            }
-
-
+         
 
 
 
             if (this.rs != null)
             {
-                Control_ac ctrex = new Control_ac();
+                Control.Control ctrex = new  Control.Control();
 
 
                 ctrex.exportExceldatagridtofile(this.rs, this.db, this.Text);

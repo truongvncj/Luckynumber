@@ -13,7 +13,7 @@ using Luckynumber.shared;
 
 namespace Luckynumber.Model
 {
-    class luckyno
+    class Lucky
     {
 
         public bool deletetbl_ChecktongKM()
@@ -178,7 +178,7 @@ namespace Luckynumber.Model
         private void importproductlistsexcel(object obj)
         {
             //     List<tblFBL5N> fbl5n_ctrllist = new List<tblFBL5N>();
-            luckyno md = new luckyno();
+            Lucky md = new Lucky();
 
             bool kq = md.deleteProductlist();
 
@@ -393,7 +393,7 @@ namespace Luckynumber.Model
         private void importProgamelistsexcel(object obj)
         {
             //     List<tblFBL5N> fbl5n_ctrllist = new List<tblFBL5N>();
-            luckyno md = new luckyno();
+            Lucky md = new Lucky();
 
             bool kq = md.deleteProgramelist();
 
@@ -686,7 +686,7 @@ namespace Luckynumber.Model
         private void importNhomCTKMsexcel(object obj)
         {
             //     List<tblFBL5N> fbl5n_ctrllist = new List<tblFBL5N>();
-            luckyno md = new luckyno();
+            Lucky md = new Lucky();
 
             bool kq = md.deletelishnhomKHKMlist();
 
@@ -843,7 +843,7 @@ namespace Luckynumber.Model
         private void importFreePuchaseorderlistsexcel(object obj)
         {
             //     List<tblFBL5N> fbl5n_ctrllist = new List<tblFBL5N>();
-            luckyno md = new luckyno();
+            Lucky md = new Lucky();
 
             bool kq = md.deleteFreePuchasesorderlist();
 
@@ -1246,7 +1246,7 @@ namespace Luckynumber.Model
         private void importPuchaseorderlistsexcel(object obj)
         {
             //     List<tblFBL5N> fbl5n_ctrllist = new List<tblFBL5N>();
-            luckyno md = new luckyno();
+            Lucky md = new Lucky();
 
             bool kq = md.deletePuchasesorderlist();
 
@@ -1898,6 +1898,50 @@ namespace Luckynumber.Model
 
         }
 
-       
+        public static void caculationOrderfromfree()
+        {
+
+
+            #region  updatemã ctkm cho don hang km
+            SqlConnection conn2 = null;
+            SqlDataReader rdr1 = null;
+
+            string destConnString = Utils.getConnectionstr();
+            try
+            {
+                string enduser = Utils.getusername();
+                conn2 = new SqlConnection(destConnString);
+                conn2.Open();
+                SqlCommand cmd1 = new SqlCommand("updeMaKHKMvaCTVAsoluongKM", conn2);
+                cmd1.CommandType = CommandType.StoredProcedure;
+
+                cmd1.Parameters.Add("@enduser", SqlDbType.NVarChar).Value = enduser;
+                cmd1.CommandTimeout = 0;
+                rdr1 = cmd1.ExecuteReader();
+
+
+
+                //       rdr1 = cmd1.ExecuteReader();
+
+            }
+            finally
+            {
+                if (conn2 != null)
+                {
+                    conn2.Close();
+                }
+                if (rdr1 != null)
+                {
+                    rdr1.Close();
+                }
+            }
+            //     MessageBox.Show("ok", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            #endregion
+
+
+
+        }
+
     } // en class
 } // endname space

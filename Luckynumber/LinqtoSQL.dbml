@@ -126,4 +126,21 @@
       <Column Name="Mã_nhóm_KH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tbl_SalesOrderFromFree" Member="tbl_SalesOrderFromFrees">
+    <Type Name="tbl_SalesOrderFromFree">
+      <Column Name="Created" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Dlv_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SOrg" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ma_CTKM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Reference_Order_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Material" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Sold_to_party" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="rptselect" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="enduser" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

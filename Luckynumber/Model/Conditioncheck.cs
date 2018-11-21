@@ -123,31 +123,7 @@ namespace Luckynumber.Model
 
             #endregion
 
-            //string connection_string = Utils.getConnectionstr();
-
-            //var db = new LinqtoSQLDataContext(connection_string);
-            //string enduser = Utils.getusername();
-            //var rs = from p in db.tbl_SalesFreeOrders
-            //         where p.enduser == enduser
-            //               && p.ma_CTKM == ""
-            //         select p;
-
-
-            //foreach (var item in rs)
-            //{
-
-            //    string maCTKM = Model.Conditioncheck.FindProgarmebymessageandmaterial(item.PO_number, item.Material.Trim());
-            //    item.ma_CTKM = maCTKM;
-
-            //    if (maCTKM != "")
-            //    {
-            //        item.New_PO_number = (from p in db.tbl_CTKMs
-            //                              where p.enduser == enduser && p.Mã_CT == maCTKM
-            //                              select p.PO_Message).FirstOrDefault();
-            //    }
-            //    db.SubmitChanges();
-
-            //}
+        
 
         }
 
