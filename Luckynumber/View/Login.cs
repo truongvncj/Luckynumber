@@ -62,11 +62,12 @@ namespace Luckynumber.View
 
                 }
             }
-
+      //      [Username] [nchar](225) NULL,
+	///[Password] [nchar](225) NULL,
             if (textBox1.Text != "" & textBox2.Text != "")
             {
                 string queryText = @"SELECT Count(*) FROM tbl_Temp 
-                             WHERE enduser = @enduser AND password = @Password";
+                             WHERE Username = @Username AND Password = @Password";
                 using (SqlConnection cn = new SqlConnection(connection_string))
                 using (SqlCommand cmd = new SqlCommand(queryText, cn))
                 {
@@ -81,7 +82,7 @@ namespace Luckynumber.View
                         return;
                     }
 
-                    cmd.Parameters.AddWithValue("@enduser", textBox1.Text);
+                    cmd.Parameters.AddWithValue("@Username", textBox1.Text);
                     cmd.Parameters.AddWithValue("@Password", textBox2.Text);
                     int result = (int)cmd.ExecuteScalar();
                     if (result > 0)
@@ -113,7 +114,7 @@ namespace Luckynumber.View
                         int Ver = user.Version;
 
 
-                        if (Ver == 19)
+                        if (Ver == 1)
                         {
 
 
@@ -125,7 +126,7 @@ namespace Luckynumber.View
                         else
                         {
 
-                            MessageBox.Show("You are using old version \n please use the new KA Version: "+ Ver.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                            MessageBox.Show("You are using old version \n please use the new Lucky Version: "+ Ver.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                             this.Close();
 
 

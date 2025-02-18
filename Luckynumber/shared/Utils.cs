@@ -1183,7 +1183,7 @@ namespace Luckynumber
             LinqtoSQLDataContext dc = new LinqtoSQLDataContext(connection_string);
 
             var rs = (from tbl_Temp in dc.tbl_Temps
-                      where tbl_Temp.enduser == Name
+                      where tbl_Temp.Username == Name
 
                       select tbl_Temp).FirstOrDefault();
             if (rs != null)
@@ -1191,48 +1191,7 @@ namespace Luckynumber
                 right = true;
 
                 Version = (int)rs.Version;
-       //         deleteAlldate = rs.DeleteData;
-       //         editOlddatabase = rs.EditReportsaffter;
-
-
-        //        Depositintput = rs.Depositintput;
-
-                Systemconfig = rs.Lkright;
-
-
-//uploadBeginbalance = rs.uploadBeginbalance;
-
-          //      endyearPackdata = rs.endyearPackdata;
-
-
-//InputDepositInpass = rs.InputDepositInpass;
-         //       redoInputviry = rs.redoInputviry;
-
-           //     depostfromadjamount = rs.makedepostfromadjamount;
-           //     deductdepositamount = rs.deductdepositamount;
-
-           //     uploadpriviousPriod = rs.uploadpriviousPriod;
-
-           //     nationKA = rs.nationKA;
-                //salechange = rs.salechange;
-
-                //reports = rs.reports;
-                //masterdata = rs.masterdata;
-
-                //masterbegin = rs.masterbegin;
-
-                //userssetup = rs.userssetup;
-                //pricingcheckview = rs.pricingcheckview;
-
-                //pricingcheckupdate = rs.pricingcheckupdate;
-                ////    inputcontract =
-
-                //inputcontractfinalcontrol = rs.inputcontractfinalcontrol;
-
-
-
-                //masterdatafuction = rs.masterdatafuction;
-
+      
 
             }
             else

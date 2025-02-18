@@ -169,14 +169,12 @@
             this.viewProductsListToolStripMenuItem.Name = "viewProductsListToolStripMenuItem";
             this.viewProductsListToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.viewProductsListToolStripMenuItem.Text = "VIEW PRODUCTS LIST";
-            this.viewProductsListToolStripMenuItem.Click += new System.EventHandler(this.viewProductsListToolStripMenuItem_Click);
             // 
             // productCodeToolStripMenuItem
             // 
             this.productCodeToolStripMenuItem.Name = "productCodeToolStripMenuItem";
             this.productCodeToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.productCodeToolStripMenuItem.Text = "EDIT PRODUCTS LIST";
-            this.productCodeToolStripMenuItem.Click += new System.EventHandler(this.productCodeToolStripMenuItem_Click);
             // 
             // pROGRAMEFREECASESToolStripMenuItem
             // 
@@ -193,21 +191,18 @@
             this.uPLOADPROGARMEToolStripMenuItem.Name = "uPLOADPROGARMEToolStripMenuItem";
             this.uPLOADPROGARMEToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
             this.uPLOADPROGARMEToolStripMenuItem.Text = "UPLOAD PROGARME";
-            this.uPLOADPROGARMEToolStripMenuItem.Click += new System.EventHandler(this.uPLOADPROGARMEToolStripMenuItem_Click);
             // 
             // vIIEWPROGARAMEToolStripMenuItem
             // 
             this.vIIEWPROGARAMEToolStripMenuItem.Name = "vIIEWPROGARAMEToolStripMenuItem";
             this.vIIEWPROGARAMEToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
             this.vIIEWPROGARAMEToolStripMenuItem.Text = "VIEW PROGARAME";
-            this.vIIEWPROGARAMEToolStripMenuItem.Click += new System.EventHandler(this.vIIEWPROGARAMEToolStripMenuItem_Click);
             // 
             // eDITPROGRAMEToolStripMenuItem
             // 
             this.eDITPROGRAMEToolStripMenuItem.Name = "eDITPROGRAMEToolStripMenuItem";
             this.eDITPROGRAMEToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
             this.eDITPROGRAMEToolStripMenuItem.Text = "EDIT PROGRAME";
-            this.eDITPROGRAMEToolStripMenuItem.Click += new System.EventHandler(this.eDITPROGRAMEToolStripMenuItem_Click);
             // 
             // cUSTOMERToolStripMenuItem
             // 
@@ -231,14 +226,12 @@
             this.vIEWCUSTOMERLISTToolStripMenuItem.Name = "vIEWCUSTOMERLISTToolStripMenuItem";
             this.vIEWCUSTOMERLISTToolStripMenuItem.Size = new System.Drawing.Size(238, 24);
             this.vIEWCUSTOMERLISTToolStripMenuItem.Text = "VIEW CUSTOMER LIST";
-            this.vIEWCUSTOMERLISTToolStripMenuItem.Click += new System.EventHandler(this.vIEWCUSTOMERLISTToolStripMenuItem_Click);
             // 
             // eDITCUSTOMERLISTToolStripMenuItem
             // 
             this.eDITCUSTOMERLISTToolStripMenuItem.Name = "eDITCUSTOMERLISTToolStripMenuItem";
             this.eDITCUSTOMERLISTToolStripMenuItem.Size = new System.Drawing.Size(238, 24);
             this.eDITCUSTOMERLISTToolStripMenuItem.Text = "eDIT CUSTOMER GROUP";
-            this.eDITCUSTOMERLISTToolStripMenuItem.Click += new System.EventHandler(this.eDITCUSTOMERLISTToolStripMenuItem_Click);
             // 
             // dATAENTRYToolStripMenuItem
             // 
@@ -265,15 +258,13 @@
             this.fREEORDERToolStripMenuItem.Name = "fREEORDERToolStripMenuItem";
             this.fREEORDERToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
             this.fREEORDERToolStripMenuItem.Text = "UPLOAD ORDER LIST";
-            this.fREEORDERToolStripMenuItem.Click += new System.EventHandler(this.fREEORDERToolStripMenuItem_Click);
             // 
             // oRDERBYEToolStripMenuItem
             // 
             this.oRDERBYEToolStripMenuItem.Name = "oRDERBYEToolStripMenuItem";
             this.oRDERBYEToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
             this.oRDERBYEToolStripMenuItem.Text = "VIEW ORDER LIST";
-            this.oRDERBYEToolStripMenuItem.Click += new System.EventHandler(this.oRDERBYEToolStripMenuItem_Click);
-            // 
+           // 
             // fREECASESORDERToolStripMenuItem
             // 
             this.fREECASESORDERToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -288,14 +279,12 @@
             this.uPLOADORDERLISTToolStripMenuItem.Name = "uPLOADORDERLISTToolStripMenuItem";
             this.uPLOADORDERLISTToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.uPLOADORDERLISTToolStripMenuItem.Text = "UPLOAD ORDER LIST";
-            this.uPLOADORDERLISTToolStripMenuItem.Click += new System.EventHandler(this.uPLOADORDERLISTToolStripMenuItem_Click);
             // 
             // vIEWORDERToolStripMenuItem
             // 
             this.vIEWORDERToolStripMenuItem.Name = "vIEWORDERToolStripMenuItem";
             this.vIEWORDERToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.vIEWORDERToolStripMenuItem.Text = "VIEW FREEORDER LIST";
-            this.vIEWORDERToolStripMenuItem.Click += new System.EventHandler(this.vIEWORDERToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
@@ -323,7 +312,6 @@
             this.fREECASEWRONGFRECASECODEToolStripMenuItem.Name = "fREECASEWRONGFRECASECODEToolStripMenuItem";
             this.fREECASEWRONGFRECASECODEToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.fREECASEWRONGFRECASECODEToolStripMenuItem.Text = "REVIEW MÃ KHUYẾN MẠI VÀ MESSAGE";
-            this.fREECASEWRONGFRECASECODEToolStripMenuItem.Click += new System.EventHandler(this.fREECASEWRONGFRECASECODEToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -335,14 +323,12 @@
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Name = "lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem";
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Text = "ĐƠN HÀNG TRẢ THIẾU KHUYẾN MẠI";
-            this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem.Click += new System.EventHandler(this.lISTORDERLOSTFREECASEPAYMENTToolStripMenuItem_Click);
             // 
             // lISTORDERHAVEOVERFREECASEToolStripMenuItem
             // 
             this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Name = "lISTORDERHAVEOVERFREECASEToolStripMenuItem";
             this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Text = "ĐƠN HÀNG KHUYẾN MẠI TRẢ THỪA";
-            this.lISTORDERHAVEOVERFREECASEToolStripMenuItem.Click += new System.EventHandler(this.lISTORDERHAVEOVERFREECASEToolStripMenuItem_Click);
             // 
             // lISTORDERWRONGMESSAGEToolStripMenuItem
             // 
@@ -350,7 +336,6 @@
             this.lISTORDERWRONGMESSAGEToolStripMenuItem.Name = "lISTORDERWRONGMESSAGEToolStripMenuItem";
             this.lISTORDERWRONGMESSAGEToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.lISTORDERWRONGMESSAGEToolStripMenuItem.Text = "ĐƠN HÀNG SAI MESSAGE";
-            this.lISTORDERWRONGMESSAGEToolStripMenuItem.Click += new System.EventHandler(this.lISTORDERWRONGMESSAGEToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -363,7 +348,6 @@
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Name = "oRDEROVERTIMEOFPROGARMEToolStripMenuItem";
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Text = "ĐƠN HÀNG KM KHÔNG TRONG THỜI GIAN CTKM";
-            this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem.Click += new System.EventHandler(this.oRDEROVERTIMEOFPROGARMEToolStripMenuItem_Click);
             // 
             // oRDERWRONGSKILLToolStripMenuItem
             // 
@@ -377,15 +361,13 @@
             this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Name = "đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem";
             this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Text = "ĐƠN HÀNG MUA GIÁ TIỀN = 0";
-            this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem.Click += new System.EventHandler(this.đƠNHÀNGMUAGIÁTIỀN0ToolStripMenuItem_Click);
             // 
             // đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem
             // 
             this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Name = "đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem";
             this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Size = new System.Drawing.Size(383, 24);
             this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Text = "ĐƠN HÀNG KHUYẾN MẠI GIÁ TIỀN <>";
-            this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem.Click += new System.EventHandler(this.đƠNHÀNGKHUYẾNMẠIGIÁTIỀNToolStripMenuItem_Click);
-            // 
+           // 
             // rEPORTSToolStripMenuItem1
             // 
             this.rEPORTSToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -400,7 +382,6 @@
             this.bÁOCÁOCTKMToolStripMenuItem.Name = "bÁOCÁOCTKMToolStripMenuItem";
             this.bÁOCÁOCTKMToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.bÁOCÁOCTKMToolStripMenuItem.Text = "BÁO CÁO CTKM";
-            this.bÁOCÁOCTKMToolStripMenuItem.Click += new System.EventHandler(this.bÁOCÁOCTKMToolStripMenuItem_Click);
             // 
             // systemConfigToolStripMenuItem
             // 
